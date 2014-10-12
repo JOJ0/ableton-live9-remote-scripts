@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>_Framework.MomentaryModeObserver</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="_Framework-module.html">Package&nbsp;_Framework</a> ::
+        Module&nbsp;MomentaryModeObserver
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="_Framework.MomentaryModeObserver-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="_Framework.MomentaryModeObserver-module.html">Module _Framework.MomentaryModeObserver</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/_Framework/MomentaryModeObserver.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module _Framework.Defaults=_Framework.Defaults-module.html"><a title="_Framework.Defaults" class="py-name" href="#" onclick="return doclink('link-0', 'Defaults', 'link-0');">Defaults</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="MomentaryModeObserver"></a><div id="MomentaryModeObserver-def"><a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="MomentaryModeObserver-toggle" onclick="return toggle('MomentaryModeObserver');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html">MomentaryModeObserver</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MomentaryModeObserver-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="MomentaryModeObserver-expanded"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">    <tt class="py-docstring">""" Listens to the changes of a given set of controls and decides which mode to use """</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"> </tt>
+<a name="MomentaryModeObserver.__init__"></a><div id="MomentaryModeObserver.__init__-def"><a name="L7"></a><tt class="py-lineno"> 7</tt> <a class="py-toggle" href="#" id="MomentaryModeObserver.__init__-toggle" onclick="return toggle('MomentaryModeObserver.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MomentaryModeObserver.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MomentaryModeObserver.__init__-expanded"><a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">        <tt class="py-name">object</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Method _Framework.ButtonElement.ButtonElement.__init__()=_Framework.ButtonElement.ButtonElement-class.html#__init__,Method _Framework.ButtonMatrixElement.ButtonMatrixElement.__init__()=_Framework.ButtonMatrixElement.ButtonMatrixElement-class.html#__init__,Method _Framework.ButtonSliderElement.ButtonSliderElement.__init__()=_Framework.ButtonSliderElement.ButtonSliderElement-class.html#__init__,Method _Framework.ChannelStripComponent.ChannelStripComponent.__init__()=_Framework.ChannelStripComponent.ChannelStripComponent-class.html#__init__,Method _Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__()=_Framework.ChannelTranslationSelector.ChannelTranslationSelector-class.html#__init__,Method _Framework.ClipSlotComponent.ClipSlotComponent.__init__()=_Framework.ClipSlotComponent.ClipSlotComponent-class.html#__init__,Method _Framework.CompoundComponent.CompoundComponent.__init__()=_Framework.CompoundComponent.CompoundComponent-class.html#__init__,Method _Framework.CompoundElement.CompoundElement.__init__()=_Framework.CompoundElement.CompoundElement-class.html#__init__,Method _Framework.ControlElement.ControlElement.__init__()=_Framework.ControlElement.ControlElement-class.html#__init__,Method _Framework.ControlSurface.ControlSurface.__init__()=_Framework.ControlSurface.ControlSurface-class.html#__init__,Method _Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__()=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#__init__,Method _Framework.Dependency.InjectionFactory.__init__()=_Framework.Dependency.InjectionFactory-class.html#__init__,Method _Framework.Dependency.InjectionRegistry.__init__()=_Framework.Dependency.InjectionRegistry-class.html#__init__,Method _Framework.Dependency.RegistryInjector.__init__()=_Framework.Dependency.RegistryInjector-class.html#__init__,Method _Framework.Dependency.dependency.__init__()=_Framework.Dependency.dependency-class.html#__init__,Method _Framework.DeviceBankRegistry.DeviceBankRegistry.__init__()=_Framework.DeviceBankRegistry.DeviceBankRegistry-class.html#__init__,Method _Framework.DeviceComponent.DeviceComponent.__init__()=_Framework.DeviceComponent.DeviceComponent-class.html#__init__,Method _Framework.Disconnectable.CompoundDisconnectable.__init__()=_Framework.Disconnectable.CompoundDisconnectable-class.html#__init__,Method _Framework.Disconnectable.disconnectable.__init__()=_Framework.Disconnectable.disconnectable-class.html#__init__,Method _Framework.DisplayDataSource.DisplayDataSource.__init__()=_Framework.DisplayDataSource.DisplayDataSource-class.html#__init__,Method _Framework.EncoderElement.EncoderElement.__init__()=_Framework.EncoderElement.EncoderElement-class.html#__init__,Method _Framework.InputControlElement.InputControlElement.__init__()=_Framework.InputControlElement.InputControlElement-class.html#__init__,Method _Framework.InputControlElement.InputSignal.__init__()=_Framework.InputControlElement.InputSignal-class.html#__init__,Method _Framework.InputControlElement.ParameterSlot.__init__()=_Framework.InputControlElement.ParameterSlot-class.html#__init__,Method _Framework.Layer.Layer.__init__()=_Framework.Layer.Layer-class.html#__init__,Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#__init__,Method _Framework.MixerComponent.MixerComponent.__init__()=_Framework.MixerComponent.MixerComponent-class.html#__init__,Method _Framework.ModeSelectorComponent.ModeSelectorComponent.__init__()=_Framework.ModeSelectorComponent.ModeSelectorComponent-class.html#__init__,Method _Framework.ModesComponent.AddLayerMode.__init__()=_Framework.ModesComponent.AddLayerMode-class.html#__init__,Method _Framework.ModesComponent.AlternativeBehaviour.__init__()=_Framework.ModesComponent.AlternativeBehaviour-class.html#__init__,Method _Framework.ModesComponent.ComponentMode.__init__()=_Framework.ModesComponent.ComponentMode-class.html#__init__,Method _Framework.ModesComponent.CompoundMode.__init__()=_Framework.ModesComponent.CompoundMode-class.html#__init__,Method _Framework.ModesComponent.ContextManagerMode.__init__()=_Framework.ModesComponent.ContextManagerMode-class.html#__init__,Method _Framework.ModesComponent.DisableMode.__init__()=_Framework.ModesComponent.DisableMode-class.html#__init__,Method _Framework.ModesComponent.DisplayingModesComponent.__init__()=_Framework.ModesComponent.DisplayingModesComponent-class.html#__init__,Method _Framework.ModesComponent.DynamicBehaviourMixin.__init__()=_Framework.ModesComponent.DynamicBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.ExcludingBehaviourMixin.__init__()=_Framework.ModesComponent.ExcludingBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.LayerMode.__init__()=_Framework.ModesComponent.LayerMode-class.html#__init__,Method _Framework.ModesComponent.ModesComponent.__init__()=_Framework.ModesComponent.ModesComponent-class.html#__init__,Method _Framework.ModesComponent.MultiEntryMode.__init__()=_Framework.ModesComponent.MultiEntryMode-class.html#__init__,Method _Framework.ModesComponent.ReenterBehaviour.__init__()=_Framework.ModesComponent.ReenterBehaviour-class.html#__init__,Method _Framework.ModesComponent.SetAttributeMode.__init__()=_Framework.ModesComponent.SetAttributeMode-class.html#__init__,Method _Framework.MomentaryModeObserver.MomentaryModeObserver.__init__()=_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#__init__,Method _Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__()=_Framework.PhysicalDisplayElement.PhysicalDisplayElement-class.html#__init__,Method _Framework.Resource.CompoundResource.__init__()=_Framework.Resource.CompoundResource-class.html#__init__,Method _Framework.Resource.ExclusiveResource.__init__()=_Framework.Resource.ExclusiveResource-class.html#__init__,Method _Framework.Resource.PrioritizedResource.__init__()=_Framework.Resource.PrioritizedResource-class.html#__init__,Method _Framework.Resource.SharedResource.__init__()=_Framework.Resource.SharedResource-class.html#__init__,Method _Framework.Resource.StackingResource.__init__()=_Framework.Resource.StackingResource-class.html#__init__,Method _Framework.SceneComponent.SceneComponent.__init__()=_Framework.SceneComponent.SceneComponent-class.html#__init__,Method _Framework.ScrollComponent.ScrollComponent.__init__()=_Framework.ScrollComponent.ScrollComponent-class.html#__init__,Method _Framework.SessionComponent.SessionComponent.__init__()=_Framework.SessionComponent.SessionComponent-class.html#__init__,Method _Framework.SessionZoomingComponent.SessionZoomingComponent.__init__()=_Framework.SessionZoomingComponent.SessionZoomingComponent-class.html#__init__,Method _Framework.Signal.IdentifyingSlot.__init__()=_Framework.Signal.IdentifyingSlot-class.html#__init__,Method _Framework.Signal.Signal.__init__()=_Framework.Signal.Signal-class.html#__init__,Method _Framework.Signal.Slot.__init__()=_Framework.Signal.Slot-class.html#__init__,Method _Framework.SliderElement.SliderElement.__init__()=_Framework.SliderElement.SliderElement-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlot.__init__()=_Framework.SubjectSlot.SubjectSlot-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlotGroup.__init__()=_Framework.SubjectSlot.SubjectSlotGroup-class.html#__init__,Method _Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__()=_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent-class.html#__init__,Method _Framework.SysexValueControl.SysexValueControl.__init__()=_Framework.SysexValueControl.SysexValueControl-class.html#__init__,Method _Framework.Task.DelayTask.__init__()=_Framework.Task.DelayTask-class.html#__init__,Method _Framework.Task.FadeTask.__init__()=_Framework.Task.FadeTask-class.html#__init__,Method _Framework.Task.FuncTask.__init__()=_Framework.Task.FuncTask-class.html#__init__,Method _Framework.Task.GeneratorTask.__init__()=_Framework.Task.GeneratorTask-class.html#__init__,Method _Framework.Task.SequenceTask.__init__()=_Framework.Task.SequenceTask-class.html#__init__,Method _Framework.Task.Task.__init__()=_Framework.Task.Task-class.html#__init__,Method _Framework.Task.TaskGroup.__init__()=_Framework.Task.TaskGroup-class.html#__init__,Method _Framework.Task.WaitTask.__init__()=_Framework.Task.WaitTask-class.html#__init__,Method _Framework.Task.WrapperTask.__init__()=_Framework.Task.WrapperTask-class.html#__init__,Method _Framework.ToggleComponent.ToggleComponent.__init__()=_Framework.ToggleComponent.ToggleComponent-class.html#__init__,Method _Framework.TrackEQComponent.TrackEQComponent.__init__()=_Framework.TrackEQComponent.TrackEQComponent-class.html#__init__,Method _Framework.TrackFilterComponent.TrackFilterComponent.__init__()=_Framework.TrackFilterComponent.TrackFilterComponent-class.html#__init__,Method _Framework.TransportComponent.TransportComponent.__init__()=_Framework.TransportComponent.TransportComponent-class.html#__init__,Method _Framework.Util.BooleanContext.Manager.__init__()=_Framework.Util.BooleanContext.Manager-class.html#__init__,Method _Framework.Util.BooleanContext.__init__()=_Framework.Util.BooleanContext-class.html#__init__,Method _Framework.Util.CallCounter.__init__()=_Framework.Util.CallCounter-class.html#__init__,Method _Framework.Util.NamedTuple.__init__()=_Framework.Util.NamedTuple-class.html#__init__,Method _Framework.Util.lazy_attribute.__init__()=_Framework.Util.lazy_attribute-class.html#__init__,Method _Framework.Util.memoize.__init__()=_Framework.Util.memoize-class.html#__init__"><a title="_Framework.ButtonElement.ButtonElement.__init__
+_Framework.ButtonMatrixElement.ButtonMatrixElement.__init__
+_Framework.ButtonSliderElement.ButtonSliderElement.__init__
+_Framework.ChannelStripComponent.ChannelStripComponent.__init__
+_Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__
+_Framework.ClipSlotComponent.ClipSlotComponent.__init__
+_Framework.CompoundComponent.CompoundComponent.__init__
+_Framework.CompoundElement.CompoundElement.__init__
+_Framework.ControlElement.ControlElement.__init__
+_Framework.ControlSurface.ControlSurface.__init__
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__
+_Framework.Dependency.InjectionFactory.__init__
+_Framework.Dependency.InjectionRegistry.__init__
+_Framework.Dependency.RegistryInjector.__init__
+_Framework.Dependency.dependency.__init__
+_Framework.DeviceBankRegistry.DeviceBankRegistry.__init__
+_Framework.DeviceComponent.DeviceComponent.__init__
+_Framework.Disconnectable.CompoundDisconnectable.__init__
+_Framework.Disconnectable.disconnectable.__init__
+_Framework.DisplayDataSource.DisplayDataSource.__init__
+_Framework.EncoderElement.EncoderElement.__init__
+_Framework.InputControlElement.InputControlElement.__init__
+_Framework.InputControlElement.InputSignal.__init__
+_Framework.InputControlElement.ParameterSlot.__init__
+_Framework.Layer.Layer.__init__
+_Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__
+_Framework.MixerComponent.MixerComponent.__init__
+_Framework.ModeSelectorComponent.ModeSelectorComponent.__init__
+_Framework.ModesComponent.AddLayerMode.__init__
+_Framework.ModesComponent.AlternativeBehaviour.__init__
+_Framework.ModesComponent.ComponentMode.__init__
+_Framework.ModesComponent.CompoundMode.__init__
+_Framework.ModesComponent.ContextManagerMode.__init__
+_Framework.ModesComponent.DisableMode.__init__
+_Framework.ModesComponent.DisplayingModesComponent.__init__
+_Framework.ModesComponent.DynamicBehaviourMixin.__init__
+_Framework.ModesComponent.ExcludingBehaviourMixin.__init__
+_Framework.ModesComponent.LayerMode.__init__
+_Framework.ModesComponent.ModesComponent.__init__
+_Framework.ModesComponent.MultiEntryMode.__init__
+_Framework.ModesComponent.ReenterBehaviour.__init__
+_Framework.ModesComponent.SetAttributeMode.__init__
+_Framework.MomentaryModeObserver.MomentaryModeObserver.__init__
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__
+_Framework.Resource.CompoundResource.__init__
+_Framework.Resource.ExclusiveResource.__init__
+_Framework.Resource.PrioritizedResource.__init__
+_Framework.Resource.SharedResource.__init__
+_Framework.Resource.StackingResource.__init__
+_Framework.SceneComponent.SceneComponent.__init__
+_Framework.ScrollComponent.ScrollComponent.__init__
+_Framework.SessionComponent.SessionComponent.__init__
+_Framework.SessionZoomingComponent.SessionZoomingComponent.__init__
+_Framework.Signal.IdentifyingSlot.__init__
+_Framework.Signal.Signal.__init__
+_Framework.Signal.Slot.__init__
+_Framework.SliderElement.SliderElement.__init__
+_Framework.SubjectSlot.SubjectSlot.__init__
+_Framework.SubjectSlot.SubjectSlotGroup.__init__
+_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__
+_Framework.SysexValueControl.SysexValueControl.__init__
+_Framework.Task.DelayTask.__init__
+_Framework.Task.FadeTask.__init__
+_Framework.Task.FuncTask.__init__
+_Framework.Task.GeneratorTask.__init__
+_Framework.Task.SequenceTask.__init__
+_Framework.Task.Task.__init__
+_Framework.Task.TaskGroup.__init__
+_Framework.Task.WaitTask.__init__
+_Framework.Task.WrapperTask.__init__
+_Framework.ToggleComponent.ToggleComponent.__init__
+_Framework.TrackEQComponent.TrackEQComponent.__init__
+_Framework.TrackFilterComponent.TrackFilterComponent.__init__
+_Framework.TransportComponent.TransportComponent.__init__
+_Framework.Util.BooleanContext.Manager.__init__
+_Framework.Util.BooleanContext.__init__
+_Framework.Util.CallCounter.__init__
+_Framework.Util.NamedTuple.__init__
+_Framework.Util.lazy_attribute.__init__
+_Framework.Util.memoize.__init__" class="py-name" href="#" onclick="return doclink('link-1', '__init__', 'link-1');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_controls</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_mode_callback</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method _Framework.MomentaryModeObserver.MomentaryModeObserver._reset()=_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#_reset"><a title="_Framework.MomentaryModeObserver.MomentaryModeObserver._reset" class="py-name" href="#" onclick="return doclink('link-2', '_reset', 'link-2');">_reset</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"> </tt>
+<a name="MomentaryModeObserver.disconnect"></a><div id="MomentaryModeObserver.disconnect-def"><a name="L13"></a><tt class="py-lineno">13</tt> <a class="py-toggle" href="#" id="MomentaryModeObserver.disconnect-toggle" onclick="return toggle('MomentaryModeObserver.disconnect');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#disconnect">disconnect</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MomentaryModeObserver.disconnect-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MomentaryModeObserver.disconnect-expanded"><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name"><a title="_Framework.MomentaryModeObserver.MomentaryModeObserver._reset" class="py-name" href="#" onclick="return doclink('link-3', '_reset', 'link-2');">_reset</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="MomentaryModeObserver.set_mode_details"></a><div id="MomentaryModeObserver.set_mode_details-def"><a name="L16"></a><tt class="py-lineno">16</tt> <a class="py-toggle" href="#" id="MomentaryModeObserver.set_mode_details-toggle" onclick="return toggle('MomentaryModeObserver.set_mode_details');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#set_mode_details">set_mode_details</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">base_mode</tt><tt class="py-op">,</tt> <tt class="py-param">controls</tt><tt class="py-op">,</tt> <tt class="py-param">mode_callback</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MomentaryModeObserver.set_mode_details-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MomentaryModeObserver.set_mode_details-expanded"><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">base_mode</tt><tt class="py-op">,</tt> <tt class="py-name">int</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">controls</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">tuple</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">mode_callback</tt> <tt class="py-op">==</tt> <tt class="py-name">None</tt> <tt class="py-keyword">or</tt> <tt class="py-name">callable</tt><tt class="py-op">(</tt><tt class="py-name">mode_callback</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="_Framework.MomentaryModeObserver.MomentaryModeObserver._reset" class="py-name" href="#" onclick="return doclink('link-4', '_reset', 'link-2');">_reset</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_controls</tt> <tt class="py-op">=</tt> <tt class="py-name">controls</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt class="py-name">controls</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt id="link-5" class="py-name" targets="Variable _Framework.InputControlElement.ParameterSlot.control=_Framework.InputControlElement.ParameterSlot-class.html#control"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-5', 'control', 'link-5');">control</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_controls</tt><tt class="py-op">:</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">                <tt id="link-6" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-6', 'control', 'link-5');">control</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method _Framework.CompoundElement.CompoundElement.add_value_listener()=_Framework.CompoundElement.CompoundElement-class.html#add_value_listener"><a title="_Framework.CompoundElement.CompoundElement.add_value_listener" class="py-name" href="#" onclick="return doclink('link-7', 'add_value_listener', 'link-7');">add_value_listener</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method _Framework.MomentaryModeObserver.MomentaryModeObserver._control_changed()=_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#_control_changed"><a title="_Framework.MomentaryModeObserver.MomentaryModeObserver._control_changed" class="py-name" href="#" onclick="return doclink('link-8', '_control_changed', 'link-8');">_control_changed</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_base_mode</tt> <tt class="py-op">=</tt> <tt class="py-name">base_mode</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_mode_callback</tt> <tt class="py-op">=</tt> <tt class="py-name">mode_callback</tt> </tt>
+</div><a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
+<a name="MomentaryModeObserver.is_mode_momentary"></a><div id="MomentaryModeObserver.is_mode_momentary-def"><a name="L29"></a><tt class="py-lineno">29</tt> <a class="py-toggle" href="#" id="MomentaryModeObserver.is_mode_momentary-toggle" onclick="return toggle('MomentaryModeObserver.is_mode_momentary');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#is_mode_momentary">is_mode_momentary</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MomentaryModeObserver.is_mode_momentary-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MomentaryModeObserver.is_mode_momentary-expanded"><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_controls_changed</tt> <tt class="py-keyword">or</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_timer_count</tt> <tt class="py-op">&gt;=</tt> <tt id="link-9" class="py-name"><a title="_Framework.Defaults" class="py-name" href="#" onclick="return doclink('link-9', 'Defaults', 'link-0');">Defaults</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Variable _Framework.Defaults.MOMENTARY_DELAY_TICKS=_Framework.Defaults-module.html#MOMENTARY_DELAY_TICKS"><a title="_Framework.Defaults.MOMENTARY_DELAY_TICKS" class="py-name" href="#" onclick="return doclink('link-10', 'MOMENTARY_DELAY_TICKS', 'link-10');">MOMENTARY_DELAY_TICKS</a></tt> </tt>
+</div><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
+<a name="MomentaryModeObserver.on_timer"></a><div id="MomentaryModeObserver.on_timer-def"><a name="L32"></a><tt class="py-lineno">32</tt> <a class="py-toggle" href="#" id="MomentaryModeObserver.on_timer-toggle" onclick="return toggle('MomentaryModeObserver.on_timer');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#on_timer">on_timer</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MomentaryModeObserver.on_timer-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MomentaryModeObserver.on_timer-expanded"><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_timer_count</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+</div><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt>
+<a name="MomentaryModeObserver._control_changed"></a><div id="MomentaryModeObserver._control_changed-def"><a name="L35"></a><tt class="py-lineno">35</tt> <a class="py-toggle" href="#" id="MomentaryModeObserver._control_changed-toggle" onclick="return toggle('MomentaryModeObserver._control_changed');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#_control_changed">_control_changed</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MomentaryModeObserver._control_changed-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MomentaryModeObserver._control_changed-expanded"><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_mode_callback</tt> <tt class="py-op">==</tt> <tt class="py-name">None</tt> <tt class="py-keyword">or</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_mode_callback</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_base_mode</tt><tt class="py-op">:</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_controls_changed</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"> </tt>
+<a name="MomentaryModeObserver._release_controls"></a><div id="MomentaryModeObserver._release_controls-def"><a name="L39"></a><tt class="py-lineno">39</tt> <a class="py-toggle" href="#" id="MomentaryModeObserver._release_controls-toggle" onclick="return toggle('MomentaryModeObserver._release_controls');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#_release_controls">_release_controls</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MomentaryModeObserver._release_controls-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MomentaryModeObserver._release_controls-expanded"><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_controls</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt id="link-11" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-11', 'control', 'link-5');">control</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_controls</tt><tt class="py-op">:</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">                <tt id="link-12" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-12', 'control', 'link-5');">control</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method _Framework.CompoundElement.CompoundElement.remove_value_listener()=_Framework.CompoundElement.CompoundElement-class.html#remove_value_listener"><a title="_Framework.CompoundElement.CompoundElement.remove_value_listener" class="py-name" href="#" onclick="return doclink('link-13', 'remove_value_listener', 'link-13');">remove_value_listener</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="_Framework.MomentaryModeObserver.MomentaryModeObserver._control_changed" class="py-name" href="#" onclick="return doclink('link-14', '_control_changed', 'link-8');">_control_changed</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_controls</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"> </tt>
+<a name="MomentaryModeObserver._reset"></a><div id="MomentaryModeObserver._reset-def"><a name="L46"></a><tt class="py-lineno">46</tt> <a class="py-toggle" href="#" id="MomentaryModeObserver._reset-toggle" onclick="return toggle('MomentaryModeObserver._reset');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#_reset">_reset</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MomentaryModeObserver._reset-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MomentaryModeObserver._reset-expanded"><a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_base_mode</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_controls_changed</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_mode_callback</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_timer_count</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method _Framework.MomentaryModeObserver.MomentaryModeObserver._release_controls()=_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#_release_controls"><a title="_Framework.MomentaryModeObserver.MomentaryModeObserver._release_controls" class="py-name" href="#" onclick="return doclink('link-15', '_release_controls', 'link-15');">_release_controls</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 18:53:34 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

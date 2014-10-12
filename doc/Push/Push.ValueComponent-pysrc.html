@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Push.ValueComponent</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="Push-module.html">Package&nbsp;Push</a> ::
+        Module&nbsp;ValueComponent
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="Push.ValueComponent-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="Push.ValueComponent-module.html">Module Push.ValueComponent</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/Push/ValueComponent.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">CompoundComponent</tt> <tt class="py-keyword">import</tt> <tt class="py-name">CompoundComponent</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">ControlSurfaceComponent</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ControlSurfaceComponent</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">DisplayDataSource</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DisplayDataSource</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">SubjectSlot</tt> <tt class="py-keyword">import</tt> <tt class="py-name">subject_slot</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">Util</tt> <tt class="py-keyword">import</tt> <tt class="py-name">forward_property</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">InputControlElement</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ParameterSlot</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module Push.DisplayingDeviceComponent=Push.DisplayingDeviceComponent-module.html,Class Push.DisplayingDeviceComponent.DisplayingDeviceComponent=Push.DisplayingDeviceComponent.DisplayingDeviceComponent-class.html"><a title="Push.DisplayingDeviceComponent
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent" class="py-name" href="#" onclick="return doclink('link-0', 'DisplayingDeviceComponent', 'link-0');">DisplayingDeviceComponent</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Function Push.DisplayingDeviceComponent.convert_parameter_value_to_graphic()=Push.DisplayingDeviceComponent-module.html#convert_parameter_value_to_graphic"><a title="Push.DisplayingDeviceComponent.convert_parameter_value_to_graphic" class="py-name" href="#" onclick="return doclink('link-1', 'convert_parameter_value_to_graphic', 'link-1');">convert_parameter_value_to_graphic</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Module Push.consts=Push.consts-module.html"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-2', 'consts', 'link-2');">consts</a></tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable Push.ValueComponent.NUM_SEGMENTS=Push.ValueComponent-module.html#NUM_SEGMENTS"><a title="Push.ValueComponent.NUM_SEGMENTS" class="py-name" href="#" onclick="return doclink('link-3', 'NUM_SEGMENTS', 'link-3');">NUM_SEGMENTS</a></tt> <tt class="py-op">=</tt> <tt class="py-number">4</tt> </tt>
+<a name="convert_value_to_graphic"></a><div id="convert_value_to_graphic-def"><a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt> <a class="py-toggle" href="#" id="convert_value_to_graphic-toggle" onclick="return toggle('convert_value_to_graphic');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent-module.html#convert_value_to_graphic">convert_value_to_graphic</a><tt class="py-op">(</tt><tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="convert_value_to_graphic-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="convert_value_to_graphic-expanded"><a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Method Push.ScrollableList.ScrollableListItem.index()=Push.ScrollableList.ScrollableListItem-class.html#index"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-4', 'index', 'link-4');">index</a></tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt id="link-5" class="py-name" targets="Variable Push.Setting.Setting.value=Push.Setting.Setting-class.html#value"><a title="Push.Setting.Setting.value" class="py-name" href="#" onclick="return doclink('link-5', 'value', 'link-5');">value</a></tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-6', 'consts', 'link-2');">consts</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Variable Push.consts.GRAPH_VOL=Push.consts-module.html#GRAPH_VOL"><a title="Push.consts.GRAPH_VOL" class="py-name" href="#" onclick="return doclink('link-7', 'GRAPH_VOL', 'link-7');">GRAPH_VOL</a></tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-8" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-8', 'index', 'link-4');">index</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt id="link-9" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-9', 'index', 'link-4');">index</a></tt> <tt class="py-op">&lt;</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-10" class="py-name"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-10', 'consts', 'link-2');">consts</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="Push.consts.GRAPH_VOL" class="py-name" href="#" onclick="return doclink('link-11', 'GRAPH_VOL', 'link-7');">GRAPH_VOL</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-name">graphic_display_string</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-12', 'consts', 'link-2');">consts</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="Push.consts.GRAPH_VOL" class="py-name" href="#" onclick="return doclink('link-13', 'GRAPH_VOL', 'link-7');">GRAPH_VOL</a></tt><tt class="py-op">[</tt><tt id="link-14" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-14', 'index', 'link-4');">index</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt class="py-name">graphic_display_string</tt> <tt class="py-op">=</tt> <tt class="py-string">' '</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">graphic_display_string</tt> </tt>
+</div><a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase"></a><div id="ValueDisplayComponentBase-def"><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase-toggle" onclick="return toggle('ValueDisplayComponentBase');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html">ValueDisplayComponentBase</a><tt class="py-op">(</tt><tt class="py-base-class">ControlSurfaceComponent</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ValueDisplayComponentBase-expanded"><a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.__init__"></a><div id="ValueDisplayComponentBase.__init__-def"><a name="L23"></a><tt class="py-lineno"> 23</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.__init__-toggle" onclick="return toggle('ValueDisplayComponentBase.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display_label</tt> <tt class="py-op">=</tt> <tt class="py-string">' '</tt><tt class="py-op">,</tt> <tt class="py-param">display_seg_start</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.__init__-expanded"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name" targets="Class Push.ValueComponent.ValueDisplayComponentBase=Push.ValueComponent.ValueDisplayComponentBase-class.html"><a title="Push.ValueComponent.ValueDisplayComponentBase" class="py-name" href="#" onclick="return doclink('link-15', 'ValueDisplayComponentBase', 'link-15');">ValueDisplayComponentBase</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method Push.AccentComponent.AccentComponent.__init__()=Push.AccentComponent.AccentComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithOptionsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithSettingsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.OptionsComponent.__init__()=Push.ActionWithOptionsComponent.OptionsComponent-class.html#__init__,Method Push.Actions.CreateDefaultTrackComponent.__init__()=Push.Actions.CreateDefaultTrackComponent-class.html#__init__,Method Push.Actions.CreateDeviceComponent.__init__()=Push.Actions.CreateDeviceComponent-class.html#__init__,Method Push.Actions.CreateInstrumentTrackComponent.__init__()=Push.Actions.CreateInstrumentTrackComponent-class.html#__init__,Method Push.Actions.DeleteComponent.__init__()=Push.Actions.DeleteComponent-class.html#__init__,Method Push.Actions.DuplicateLoopComponent.__init__()=Push.Actions.DuplicateLoopComponent-class.html#__init__,Method Push.Actions.SelectComponent.__init__()=Push.Actions.SelectComponent-class.html#__init__,Method Push.Actions.SelectionDisplayComponent.__init__()=Push.Actions.SelectionDisplayComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmComponent.__init__()=Push.AutoArmComponent.AutoArmComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__()=Push.AutoArmComponent.AutoArmRestoreBehaviour-class.html#__init__,Method Push.BackgroundComponent.BackgroundComponent.__init__()=Push.BackgroundComponent.BackgroundComponent-class.html#__init__,Method Push.BackgroundComponent.ModifierBackgroundComponent.__init__()=Push.BackgroundComponent.ModifierBackgroundComponent-class.html#__init__,Method Push.BrowserComponent.BrowserComponent.__init__()=Push.BrowserComponent.BrowserComponent-class.html#__init__,Method Push.BrowserComponent.BrowserList.__init__()=Push.BrowserComponent.BrowserList-class.html#__init__,Method Push.BrowserComponent.BrowserModel.__init__()=Push.BrowserComponent.BrowserModel-class.html#__init__,Method Push.BrowserComponent.BrowserQuery.__init__()=Push.BrowserComponent.BrowserQuery-class.html#__init__,Method Push.BrowserComponent.FullBrowserModel.__init__()=Push.BrowserComponent.FullBrowserModel-class.html#__init__,Method Push.BrowserComponent.PathBrowserQuery.__init__()=Push.BrowserComponent.PathBrowserQuery-class.html#__init__,Method Push.BrowserComponent.QueryingBrowserModel.__init__()=Push.BrowserComponent.QueryingBrowserModel-class.html#__init__,Method Push.BrowserComponent.SourceBrowserQuery.__init__()=Push.BrowserComponent.SourceBrowserQuery-class.html#__init__,Method Push.BrowserComponent.TagBrowserQuery.__init__()=Push.BrowserComponent.TagBrowserQuery-class.html#__init__,Method Push.BrowserComponent.VirtualBrowserItem.__init__()=Push.BrowserComponent.VirtualBrowserItem-class.html#__init__,Method Push.BrowserModes.BrowserAddEffectMode.__init__()=Push.BrowserModes.BrowserAddEffectMode-class.html#__init__,Method Push.BrowserModes.BrowserHotswapMode.__init__()=Push.BrowserModes.BrowserHotswapMode-class.html#__init__,Method Push.ClipControlComponent.AudioClipSettingsComponent.__init__()=Push.ClipControlComponent.AudioClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.ClipControlComponent.__init__()=Push.ClipControlComponent.ClipControlComponent-class.html#__init__,Method Push.ClipControlComponent.ClipNameComponent.__init__()=Push.ClipControlComponent.ClipNameComponent-class.html#__init__,Method Push.ClipControlComponent.LoopSettingsComponent.__init__()=Push.ClipControlComponent.LoopSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.MidiClipSettingsComponent.__init__()=Push.ClipControlComponent.MidiClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.NoClipSettingsComponent.__init__()=Push.ClipControlComponent.NoClipSettingsComponent-class.html#__init__,Method Push.ClipCreator.ClipCreator.__init__()=Push.ClipCreator.ClipCreator-class.html#__init__,Method Push.Colors.AnimatedColor.__init__()=Push.Colors.AnimatedColor-class.html#__init__,Method Push.Colors.Blink.__init__()=Push.Colors.Blink-class.html#__init__,Method Push.Colors.Color.__init__()=Push.Colors.Color-class.html#__init__,Method Push.Colors.FallbackColor.__init__()=Push.Colors.FallbackColor-class.html#__init__,Method Push.Colors.Pulse.__init__()=Push.Colors.Pulse-class.html#__init__,Method Push.Colors.RgbColor.__init__()=Push.Colors.RgbColor-class.html#__init__,Method Push.ComboElement.ComboElement.__init__()=Push.ComboElement.ComboElement-class.html#__init__,Method Push.ComboElement.WrapperElement.__init__()=Push.ComboElement.WrapperElement-class.html#__init__,Method Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#__init__,Method Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__()=Push.DeviceNavigationComponent.DeviceNavigationComponent-class.html#__init__,Method Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__()=Push.DisplayingDeviceComponent.DisplayingDeviceComponent-class.html#__init__,Method Push.DrumGroupComponent.DrumGroupComponent.__init__()=Push.DrumGroupComponent.DrumGroupComponent-class.html#__init__,Method Push.HandshakeComponent.HandshakeComponent.__init__()=Push.HandshakeComponent.HandshakeComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentComponent.__init__()=Push.InstrumentComponent.InstrumentComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentPresetsComponent.__init__()=Push.InstrumentComponent.InstrumentPresetsComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentScalesComponent.__init__()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#__init__,Method Push.InstrumentComponent.ScalesInfoComponent.__init__()=Push.InstrumentComponent.ScalesInfoComponent-class.html#__init__,Method Push.LoopSelectorComponent.LoopSelectorComponent.__init__()=Push.LoopSelectorComponent.LoopSelectorComponent-class.html#__init__,Method Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__()=Push.M4LInterfaceComponent.M4LInterfaceComponent-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.NoteInfo.__init__()=Push.MelodicComponent.MelodicPattern.NoteInfo-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.__init__()=Push.MelodicComponent.MelodicPattern-class.html#__init__,Method Push.MelodicComponent.Modus.__init__()=Push.MelodicComponent.Modus-class.html#__init__,Method Push.MelodicComponent.Scale.__init__()=Push.MelodicComponent.Scale-class.html#__init__,Method Push.MessageBoxComponent.DialogComponent.__init__()=Push.MessageBoxComponent.DialogComponent-class.html#__init__,Method Push.MessageBoxComponent.MessageBoxComponent.__init__()=Push.MessageBoxComponent.MessageBoxComponent-class.html#__init__,Method Push.MessageBoxComponent.NotificationComponent.__init__()=Push.MessageBoxComponent.NotificationComponent-class.html#__init__,Method Push.MessageBoxComponent._CallbackControl.__init__()=Push.MessageBoxComponent._CallbackControl-class.html#__init__,Method Push.NavigationNode.ChainNode.__init__()=Push.NavigationNode.ChainNode-class.html#__init__,Method Push.NavigationNode.ModelNode.__init__()=Push.NavigationNode.ModelNode-class.html#__init__,Method Push.NavigationNode.RackNode.__init__()=Push.NavigationNode.RackNode-class.html#__init__,Method Push.NavigationNode.SimpleDeviceNode.__init__()=Push.NavigationNode.SimpleDeviceNode-class.html#__init__,Method Push.NavigationNode.SongNode.__init__()=Push.NavigationNode.SongNode-class.html#__init__,Method Push.NoteEditorComponent.NoteEditorComponent.__init__()=Push.NoteEditorComponent.NoteEditorComponent-class.html#__init__,Method Push.NoteEditorComponent.TimeStep.__init__()=Push.NoteEditorComponent.TimeStep-class.html#__init__,Method Push.NoteRepeatComponent.NoteRepeatComponent.__init__()=Push.NoteRepeatComponent.NoteRepeatComponent-class.html#__init__,Method Push.OptionalElement.OptionalElement.__init__()=Push.OptionalElement.OptionalElement-class.html#__init__,Method Push.PadSensitivity.PadSensitivity.__init__()=Push.PadSensitivity.PadSensitivity-class.html#__init__,Method Push.Push.Push.__init__()=Push.Push.Push-class.html#__init__,Method Push.ScrollableList.ListComponent.__init__()=Push.ScrollableList.ListComponent-class.html#__init__,Method Push.ScrollableList.ScrollableList.__init__()=Push.ScrollableList.ScrollableList-class.html#__init__,Method Push.ScrollableList.ScrollableListItem.__init__()=Push.ScrollableList.ScrollableListItem-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListComponent.__init__()=Push.ScrollableListComponent.ScrollableListComponent-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__()=Push.ScrollableListComponent.ScrollableListWithTogglesComponent-class.html#__init__,Method Push.Selection.L9CSelection.__init__()=Push.Selection.L9CSelection-class.html#__init__,Method Push.SessionRecordingComponent.SessionRecordingComponent.__init__()=Push.SessionRecordingComponent.SessionRecordingComponent-class.html#__init__,Method Push.Setting.EnumerableSetting.__init__()=Push.Setting.EnumerableSetting-class.html#__init__,Method Push.Setting.OnOffSetting.__init__()=Push.Setting.OnOffSetting-class.html#__init__,Method Push.Setting.Setting.__init__()=Push.Setting.Setting-class.html#__init__,Method Push.Skin.Skin.__init__()=Push.Skin.Skin-class.html#__init__,Method Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__()=Push.SpecialChanStripComponent.SpecialChanStripComponent-class.html#__init__,Method Push.SpecialMixerComponent.SpecialMixerComponent.__init__()=Push.SpecialMixerComponent.SpecialMixerComponent-class.html#__init__,Method Push.SpecialSessionComponent.DuplicateSceneComponent.__init__()=Push.SpecialSessionComponent.DuplicateSceneComponent-class.html#__init__,Method Push.SpecialSessionComponent.SpecialSessionComponent.__init__()=Push.SpecialSessionComponent.SpecialSessionComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationComponent.__init__()=Push.SpecialTransportComponent.QuantizationComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__()=Push.SpecialTransportComponent.QuantizationSettingsComponent-class.html#__init__,Method Push.SpecialTransportComponent.SpecialTransportComponent.__init__()=Push.SpecialTransportComponent.SpecialTransportComponent-class.html#__init__,Method Push.StepSeqComponent.StepSeqComponent.__init__()=Push.StepSeqComponent.StepSeqComponent-class.html#__init__,Method Push.TouchEncoderElement.TouchEncoderElement.__init__()=Push.TouchEncoderElement.TouchEncoderElement-class.html#__init__,Method Push.TouchStripController.TouchStripControllerComponent.__init__()=Push.TouchStripController.TouchStripControllerComponent-class.html#__init__,Method Push.TouchStripController.TouchStripEncoderConnection.__init__()=Push.TouchStripController.TouchStripEncoderConnection-class.html#__init__,Method Push.TouchStripElement.TouchStripElement.__init__()=Push.TouchStripElement.TouchStripElement-class.html#__init__,Method Push.UserSettingsComponent.UserComponent.__init__()=Push.UserSettingsComponent.UserComponent-class.html#__init__,Method Push.UserSettingsComponent.UserSettingsComponent.__init__()=Push.UserSettingsComponent.UserSettingsComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueComponent.__init__()=Push.ValueComponent.ParameterValueComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueDisplayComponent.__init__()=Push.ValueComponent.ParameterValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueComponent.__init__()=Push.ValueComponent.ValueComponent-class.html#__init__,Method Push.ValueComponent.ValueComponentBase.__init__()=Push.ValueComponent.ValueComponentBase-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponent.__init__()=Push.ValueComponent.ValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponentBase.__init__()=Push.ValueComponent.ValueDisplayComponentBase-class.html#__init__,Method Push.ViewControlComponent.ViewControlComponent.__init__()=Push.ViewControlComponent.ViewControlComponent-class.html#__init__,Method Push.ViewControlComponent._DeltaSongScroller.__init__()=Push.ViewControlComponent._DeltaSongScroller-class.html#__init__"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-16', '__init__', 'link-16');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_label_data_source</tt> <tt class="py-op">=</tt> <tt class="py-name">DisplayDataSource</tt><tt class="py-op">(</tt><tt class="py-name">display_label</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_value_data_source</tt> <tt class="py-op">=</tt> <tt class="py-name">DisplayDataSource</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_graphic_data_source</tt> <tt class="py-op">=</tt> <tt class="py-name">DisplayDataSource</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_label</tt> <tt class="py-op">=</tt> <tt class="py-name">display_label</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_seg_start</tt> <tt class="py-op">=</tt> <tt class="py-name">display_seg_start</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.get_value_string"></a><div id="ValueDisplayComponentBase.get_value_string-def"><a name="L31"></a><tt class="py-lineno"> 31</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.get_value_string-toggle" onclick="return toggle('ValueDisplayComponentBase.get_value_string');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#get_value_string">get_value_string</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.get_value_string-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.get_value_string-expanded"><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.get_graphic_string"></a><div id="ValueDisplayComponentBase.get_graphic_string-def"><a name="L34"></a><tt class="py-lineno"> 34</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.get_graphic_string-toggle" onclick="return toggle('ValueDisplayComponentBase.get_graphic_string');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#get_graphic_string">get_graphic_string</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.get_graphic_string-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.get_graphic_string-expanded"><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.set_label_display"></a><div id="ValueDisplayComponentBase.set_label_display-def"><a name="L37"></a><tt class="py-lineno"> 37</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.set_label_display-toggle" onclick="return toggle('ValueDisplayComponentBase.set_label_display');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#set_label_display">set_label_display</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.set_label_display-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.set_label_display-expanded"><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method Push.ValueComponent.ValueDisplayComponentBase._set_display()=Push.ValueComponent.ValueDisplayComponentBase-class.html#_set_display"><a title="Push.ValueComponent.ValueDisplayComponentBase._set_display" class="py-name" href="#" onclick="return doclink('link-17', '_set_display', 'link-17');">_set_display</a></tt><tt class="py-op">(</tt><tt class="py-name">display</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_label_data_source</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.set_value_display"></a><div id="ValueDisplayComponentBase.set_value_display-def"><a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.set_value_display-toggle" onclick="return toggle('ValueDisplayComponentBase.set_value_display');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#set_value_display">set_value_display</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.set_value_display-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.set_value_display-expanded"><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="Push.ValueComponent.ValueDisplayComponentBase._set_display" class="py-name" href="#" onclick="return doclink('link-18', '_set_display', 'link-17');">_set_display</a></tt><tt class="py-op">(</tt><tt class="py-name">display</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_value_data_source</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.set_graphic_display"></a><div id="ValueDisplayComponentBase.set_graphic_display-def"><a name="L43"></a><tt class="py-lineno"> 43</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.set_graphic_display-toggle" onclick="return toggle('ValueDisplayComponentBase.set_graphic_display');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#set_graphic_display">set_graphic_display</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.set_graphic_display-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.set_graphic_display-expanded"><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="Push.ValueComponent.ValueDisplayComponentBase._set_display" class="py-name" href="#" onclick="return doclink('link-19', '_set_display', 'link-17');">_set_display</a></tt><tt class="py-op">(</tt><tt class="py-name">display</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_graphic_data_source</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.set_clear_display1"></a><div id="ValueDisplayComponentBase.set_clear_display1-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.set_clear_display1-toggle" onclick="return toggle('ValueDisplayComponentBase.set_clear_display1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#set_clear_display1">set_clear_display1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.set_clear_display1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.set_clear_display1-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method Push.ValueComponent.ValueDisplayComponentBase._clear_display()=Push.ValueComponent.ValueDisplayComponentBase-class.html#_clear_display"><a title="Push.ValueComponent.ValueDisplayComponentBase._clear_display" class="py-name" href="#" onclick="return doclink('link-20', '_clear_display', 'link-20');">_clear_display</a></tt><tt class="py-op">(</tt><tt class="py-name">display</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.set_clear_display2"></a><div id="ValueDisplayComponentBase.set_clear_display2-def"><a name="L49"></a><tt class="py-lineno"> 49</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.set_clear_display2-toggle" onclick="return toggle('ValueDisplayComponentBase.set_clear_display2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#set_clear_display2">set_clear_display2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.set_clear_display2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.set_clear_display2-expanded"><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="Push.ValueComponent.ValueDisplayComponentBase._clear_display" class="py-name" href="#" onclick="return doclink('link-21', '_clear_display', 'link-20');">_clear_display</a></tt><tt class="py-op">(</tt><tt class="py-name">display</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.set_clear_display3"></a><div id="ValueDisplayComponentBase.set_clear_display3-def"><a name="L52"></a><tt class="py-lineno"> 52</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.set_clear_display3-toggle" onclick="return toggle('ValueDisplayComponentBase.set_clear_display3');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#set_clear_display3">set_clear_display3</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.set_clear_display3-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.set_clear_display3-expanded"><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="Push.ValueComponent.ValueDisplayComponentBase._clear_display" class="py-name" href="#" onclick="return doclink('link-22', '_clear_display', 'link-20');">_clear_display</a></tt><tt class="py-op">(</tt><tt class="py-name">display</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.set_clear_display4"></a><div id="ValueDisplayComponentBase.set_clear_display4-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.set_clear_display4-toggle" onclick="return toggle('ValueDisplayComponentBase.set_clear_display4');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#set_clear_display4">set_clear_display4</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.set_clear_display4-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.set_clear_display4-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="Push.ValueComponent.ValueDisplayComponentBase._clear_display" class="py-name" href="#" onclick="return doclink('link-23', '_clear_display', 'link-20');">_clear_display</a></tt><tt class="py-op">(</tt><tt class="py-name">display</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase._set_display"></a><div id="ValueDisplayComponentBase._set_display-def"><a name="L58"></a><tt class="py-lineno"> 58</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase._set_display-toggle" onclick="return toggle('ValueDisplayComponentBase._set_display');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#_set_display">_set_display</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display</tt><tt class="py-op">,</tt> <tt class="py-param">source</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase._set_display-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase._set_display-expanded"><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">display</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">            <tt class="py-name">display</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method Push.ScrollableList.ListComponent.set_data_sources()=Push.ScrollableList.ListComponent-class.html#set_data_sources"><a title="Push.ScrollableList.ListComponent.set_data_sources" class="py-name" href="#" onclick="return doclink('link-24', 'set_data_sources', 'link-24');">set_data_sources</a></tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> <tt class="py-op">*</tt> <tt id="link-25" class="py-name"><a title="Push.ValueComponent.NUM_SEGMENTS" class="py-name" href="#" onclick="return doclink('link-25', 'NUM_SEGMENTS', 'link-3');">NUM_SEGMENTS</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">            <tt class="py-name">display</tt><tt class="py-op">.</tt><tt class="py-name">segment</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_seg_start</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">set_data_source</tt><tt class="py-op">(</tt><tt id="link-26" class="py-name" targets="Variable Push.BrowserComponent.VirtualBrowserItem.source=Push.BrowserComponent.VirtualBrowserItem-class.html#source"><a title="Push.BrowserComponent.VirtualBrowserItem.source" class="py-name" href="#" onclick="return doclink('link-26', 'source', 'link-26');">source</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase._clear_display"></a><div id="ValueDisplayComponentBase._clear_display-def"><a name="L63"></a><tt class="py-lineno"> 63</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase._clear_display-toggle" onclick="return toggle('ValueDisplayComponentBase._clear_display');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#_clear_display">_clear_display</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase._clear_display-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase._clear_display-expanded"><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">display</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">            <tt class="py-name">display</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="Push.ScrollableList.ListComponent.set_data_sources" class="py-name" href="#" onclick="return doclink('link-27', 'set_data_sources', 'link-24');">set_data_sources</a></tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">            <tt class="py-name">display</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method Push.ConfigurableButtonElement.ConfigurableButtonElement.reset()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#reset,Method Push.MessageBoxComponent._TokenControlElement.reset()=Push.MessageBoxComponent._TokenControlElement-class.html#reset,Method Push.TouchStripElement.TouchStripElement.reset()=Push.TouchStripElement.TouchStripElement-class.html#reset"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.reset
+Push.MessageBoxComponent._TokenControlElement.reset
+Push.TouchStripElement.TouchStripElement.reset" class="py-name" href="#" onclick="return doclink('link-28', 'reset', 'link-28');">reset</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponentBase.update"></a><div id="ValueDisplayComponentBase.update-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="ValueDisplayComponentBase.update-toggle" onclick="return toggle('ValueDisplayComponentBase.update');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponentBase-class.html#update">update</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponentBase.update-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponentBase.update-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Method Push.ConfigurableButtonElement.ConfigurableButtonElement.is_enabled()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#is_enabled"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.is_enabled" class="py-name" href="#" onclick="return doclink('link-29', 'is_enabled', 'link-29');">is_enabled</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_value_data_source</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method Push.Actions.SelectionDisplayComponent.set_display_string()=Push.Actions.SelectionDisplayComponent-class.html#set_display_string"><a title="Push.Actions.SelectionDisplayComponent.set_display_string" class="py-name" href="#" onclick="return doclink('link-30', 'set_display_string', 'link-30');">set_display_string</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method Push.ValueComponent.ParameterValueDisplayComponent.get_value_string()=Push.ValueComponent.ParameterValueDisplayComponent-class.html#get_value_string,Method Push.ValueComponent.ValueDisplayComponent.get_value_string()=Push.ValueComponent.ValueDisplayComponent-class.html#get_value_string,Method Push.ValueComponent.ValueDisplayComponentBase.get_value_string()=Push.ValueComponent.ValueDisplayComponentBase-class.html#get_value_string"><a title="Push.ValueComponent.ParameterValueDisplayComponent.get_value_string
+Push.ValueComponent.ValueDisplayComponent.get_value_string
+Push.ValueComponent.ValueDisplayComponentBase.get_value_string" class="py-name" href="#" onclick="return doclink('link-31', 'get_value_string', 'link-31');">get_value_string</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_graphic_data_source</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="Push.Actions.SelectionDisplayComponent.set_display_string" class="py-name" href="#" onclick="return doclink('link-32', 'set_display_string', 'link-30');">set_display_string</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Method Push.ValueComponent.ParameterValueDisplayComponent.get_graphic_string()=Push.ValueComponent.ParameterValueDisplayComponent-class.html#get_graphic_string,Method Push.ValueComponent.ValueDisplayComponent.get_graphic_string()=Push.ValueComponent.ValueDisplayComponent-class.html#get_graphic_string,Method Push.ValueComponent.ValueDisplayComponentBase.get_graphic_string()=Push.ValueComponent.ValueDisplayComponentBase-class.html#get_graphic_string"><a title="Push.ValueComponent.ParameterValueDisplayComponent.get_graphic_string
+Push.ValueComponent.ValueDisplayComponent.get_graphic_string
+Push.ValueComponent.ValueDisplayComponentBase.get_graphic_string" class="py-name" href="#" onclick="return doclink('link-33', 'get_graphic_string', 'link-33');">get_graphic_string</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponentBase"></a><div id="ValueComponentBase-def"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt> <a class="py-toggle" href="#" id="ValueComponentBase-toggle" onclick="return toggle('ValueComponentBase');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponentBase-class.html">ValueComponentBase</a><tt class="py-op">(</tt><tt class="py-base-class">CompoundComponent</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponentBase-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ValueComponentBase-expanded"><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">    Component to control one continuous property with a infinite</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">    touch-sensitive encoder. You can optionally give it a display and</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    a button such that the value will be displayed while its pressed.</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponentBase.create_display_component"></a><div id="ValueComponentBase.create_display_component-def"><a name="L81"></a><tt class="py-lineno"> 81</tt> <a class="py-toggle" href="#" id="ValueComponentBase.create_display_component-toggle" onclick="return toggle('ValueComponentBase.create_display_component');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponentBase-class.html#create_display_component">create_display_component</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponentBase.create_display_component-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponentBase.create_display_component-expanded"><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponentBase.__init__"></a><div id="ValueComponentBase.__init__-def"><a name="L84"></a><tt class="py-lineno"> 84</tt> <a class="py-toggle" href="#" id="ValueComponentBase.__init__-toggle" onclick="return toggle('ValueComponentBase.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponentBase-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display_label</tt> <tt class="py-op">=</tt> <tt class="py-string">' '</tt><tt class="py-op">,</tt> <tt class="py-param">display_seg_start</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponentBase.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponentBase.__init__-expanded"><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-34" class="py-name" targets="Class Push.ValueComponent.ValueComponentBase=Push.ValueComponent.ValueComponentBase-class.html"><a title="Push.ValueComponent.ValueComponentBase" class="py-name" href="#" onclick="return doclink('link-34', 'ValueComponentBase', 'link-34');">ValueComponentBase</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-35', '__init__', 'link-16');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_button</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_component</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Method Push.ValueComponent.ParameterValueComponent.create_display_component()=Push.ValueComponent.ParameterValueComponent-class.html#create_display_component,Method Push.ValueComponent.ValueComponent.create_display_component()=Push.ValueComponent.ValueComponent-class.html#create_display_component,Method Push.ValueComponent.ValueComponentBase.create_display_component()=Push.ValueComponent.ValueComponentBase-class.html#create_display_component"><a title="Push.ValueComponent.ParameterValueComponent.create_display_component
+Push.ValueComponent.ValueComponent.create_display_component
+Push.ValueComponent.ValueComponentBase.create_display_component" class="py-name" href="#" onclick="return doclink('link-36', 'create_display_component', 'link-36');">create_display_component</a></tt><tt class="py-op">(</tt><tt class="py-name">display_label</tt><tt class="py-op">=</tt><tt class="py-name">display_label</tt><tt class="py-op">,</tt> <tt class="py-name">display_seg_start</tt><tt class="py-op">=</tt><tt class="py-name">display_seg_start</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Method Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#set_enabled"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled" class="py-name" href="#" onclick="return doclink('link-37', 'set_enabled', 'link-37');">set_enabled</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt id="link-38" class="py-name" targets="Variable Push.ValueComponent.ValueComponentBase.display_layer=Push.ValueComponent.ValueComponentBase-class.html#display_layer"><a title="Push.ValueComponent.ValueComponentBase.display_layer" class="py-name" href="#" onclick="return doclink('link-38', 'display_layer', 'link-38');">display_layer</a></tt> <tt class="py-op">=</tt> <tt class="py-name">forward_property</tt><tt class="py-op">(</tt><tt class="py-string">'_display'</tt><tt class="py-op">)</tt><tt class="py-op">(</tt><tt class="py-string">'layer'</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponentBase.set_encoder"></a><div id="ValueComponentBase.set_encoder-def"><a name="L92"></a><tt class="py-lineno"> 92</tt> <a class="py-toggle" href="#" id="ValueComponentBase.set_encoder-toggle" onclick="return toggle('ValueComponentBase.set_encoder');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponentBase-class.html#set_encoder">set_encoder</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">encoder</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponentBase.set_encoder-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponentBase.set_encoder-expanded"><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponentBase.set_button"></a><div id="ValueComponentBase.set_button-def"><a name="L95"></a><tt class="py-lineno"> 95</tt> <a class="py-toggle" href="#" id="ValueComponentBase.set_button-toggle" onclick="return toggle('ValueComponentBase.set_button');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponentBase-class.html#set_button">set_button</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">button</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponentBase.set_button-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponentBase.set_button-expanded"><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_button</tt> <tt class="py-op">=</tt> <tt class="py-name">button</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Method Push.ValueComponent.ValueComponentBase._on_button_value()=Push.ValueComponent.ValueComponentBase-class.html#_on_button_value"><a title="Push.ValueComponent.ValueComponentBase._on_button_value" class="py-name" href="#" onclick="return doclink('link-39', '_on_button_value', 'link-39');">_on_button_value</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt> <tt class="py-op">=</tt> <tt class="py-name">button</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled" class="py-name" href="#" onclick="return doclink('link-40', 'set_enabled', 'link-37');">set_enabled</a></tt><tt class="py-op">(</tt><tt class="py-name">button</tt> <tt class="py-keyword">and</tt> <tt class="py-name">button</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Method Push.ComboElement.WrapperElement.is_pressed()=Push.ComboElement.WrapperElement-class.html#is_pressed,Method Push.TouchEncoderElement.TouchEncoderElement.is_pressed()=Push.TouchEncoderElement.TouchEncoderElement-class.html#is_pressed,Method Push.TouchStripElement.TouchStripElement.is_pressed()=Push.TouchStripElement.TouchStripElement-class.html#is_pressed"><a title="Push.ComboElement.WrapperElement.is_pressed
+Push.TouchEncoderElement.TouchEncoderElement.is_pressed
+Push.TouchStripElement.TouchStripElement.is_pressed" class="py-name" href="#" onclick="return doclink('link-41', 'is_pressed', 'link-41');">is_pressed</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">subject_slot</tt><tt class="py-op">(</tt><tt class="py-string">'value'</tt><tt class="py-op">)</tt> </tt>
+<a name="ValueComponentBase._on_button_value"></a><div id="ValueComponentBase._on_button_value-def"><a name="L101"></a><tt class="py-lineno">101</tt> <a class="py-toggle" href="#" id="ValueComponentBase._on_button_value-toggle" onclick="return toggle('ValueComponentBase._on_button_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponentBase-class.html#_on_button_value">_on_button_value</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponentBase._on_button_value-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponentBase._on_button_value-expanded"><a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">button</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="Push.ValueComponent.ValueComponentBase._on_button_value" class="py-name" href="#" onclick="return doclink('link-42', '_on_button_value', 'link-39');">_on_button_value</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled" class="py-name" href="#" onclick="return doclink('link-43', 'set_enabled', 'link-37');">set_enabled</a></tt><tt class="py-op">(</tt><tt class="py-name">button</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="Push.ComboElement.WrapperElement.is_pressed
+Push.TouchEncoderElement.TouchEncoderElement.is_pressed
+Push.TouchStripElement.TouchStripElement.is_pressed" class="py-name" href="#" onclick="return doclink('link-44', 'is_pressed', 'link-41');">is_pressed</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponentBase.update"></a><div id="ValueComponentBase.update-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="ValueComponentBase.update-toggle" onclick="return toggle('ValueComponentBase.update');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponentBase-class.html#update">update</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponentBase.update-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponentBase.update-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">button</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="Push.ValueComponent.ValueComponentBase._on_button_value" class="py-name" href="#" onclick="return doclink('link-45', '_on_button_value', 'link-39');">_on_button_value</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled" class="py-name" href="#" onclick="return doclink('link-46', 'set_enabled', 'link-37');">set_enabled</a></tt><tt class="py-op">(</tt><tt class="py-name">button</tt> <tt class="py-keyword">and</tt> <tt class="py-name">button</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="Push.ComboElement.WrapperElement.is_pressed
+Push.TouchEncoderElement.TouchEncoderElement.is_pressed
+Push.TouchStripElement.TouchStripElement.is_pressed" class="py-name" href="#" onclick="return doclink('link-47', 'is_pressed', 'link-41');">is_pressed</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponent"></a><div id="ValueDisplayComponent-def"><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt> <a class="py-toggle" href="#" id="ValueDisplayComponent-toggle" onclick="return toggle('ValueDisplayComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponent-class.html">ValueDisplayComponent</a><tt class="py-op">(</tt><tt class="py-base-class">ValueDisplayComponentBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ValueDisplayComponent-expanded"><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">    Display for values from standard Python properties.</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponent.__init__"></a><div id="ValueDisplayComponent.__init__-def"><a name="L115"></a><tt class="py-lineno">115</tt> <a class="py-toggle" href="#" id="ValueDisplayComponent.__init__-toggle" onclick="return toggle('ValueDisplayComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">property_name</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">subject</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">display_format</tt> <tt class="py-op">=</tt> <tt class="py-string">'%f'</tt><tt class="py-op">,</tt> <tt class="py-param">view_transform</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">graphic_transform</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponent.__init__-expanded"><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-48" class="py-name" targets="Class Push.ValueComponent.ValueDisplayComponent=Push.ValueComponent.ValueDisplayComponent-class.html"><a title="Push.ValueComponent.ValueDisplayComponent" class="py-name" href="#" onclick="return doclink('link-48', 'ValueDisplayComponent', 'link-48');">ValueDisplayComponent</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-49', '__init__', 'link-16');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_subject</tt> <tt class="py-op">=</tt> <tt class="py-name">subject</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_property_name</tt> <tt class="py-op">=</tt> <tt class="py-name">property_name</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_format</tt> <tt class="py-op">=</tt> <tt class="py-name">display_format</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-50" class="py-name" targets="Method Push.ValueComponent.ValueComponent.view_transform()=Push.ValueComponent.ValueComponent-class.html#view_transform,Method Push.ValueComponent.ValueDisplayComponent.view_transform()=Push.ValueComponent.ValueDisplayComponent-class.html#view_transform"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-50', 'view_transform', 'link-50');">view_transform</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-51', 'view_transform', 'link-50');">view_transform</a></tt> <tt class="py-op">=</tt> <tt id="link-52" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-52', 'view_transform', 'link-50');">view_transform</a></tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-53" class="py-name" targets="Method Push.ValueComponent.ValueComponent.graphic_transform()=Push.ValueComponent.ValueComponent-class.html#graphic_transform,Method Push.ValueComponent.ValueDisplayComponent.graphic_transform()=Push.ValueComponent.ValueDisplayComponent-class.html#graphic_transform"><a title="Push.ValueComponent.ValueComponent.graphic_transform
+Push.ValueComponent.ValueDisplayComponent.graphic_transform" class="py-name" href="#" onclick="return doclink('link-53', 'graphic_transform', 'link-53');">graphic_transform</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="Push.ValueComponent.ValueComponent.graphic_transform
+Push.ValueComponent.ValueDisplayComponent.graphic_transform" class="py-name" href="#" onclick="return doclink('link-54', 'graphic_transform', 'link-53');">graphic_transform</a></tt> <tt class="py-op">=</tt> <tt id="link-55" class="py-name"><a title="Push.ValueComponent.ValueComponent.graphic_transform
+Push.ValueComponent.ValueDisplayComponent.graphic_transform" class="py-name" href="#" onclick="return doclink('link-55', 'graphic_transform', 'link-53');">graphic_transform</a></tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_slot</tt><tt class="py-op">(</tt><tt class="py-name">subject</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name" targets="Method Push.ValueComponent.ParameterValueDisplayComponent._on_value_changed()=Push.ValueComponent.ParameterValueDisplayComponent-class.html#_on_value_changed,Method Push.ValueComponent.ValueDisplayComponent._on_value_changed()=Push.ValueComponent.ValueDisplayComponent-class.html#_on_value_changed"><a title="Push.ValueComponent.ParameterValueDisplayComponent._on_value_changed
+Push.ValueComponent.ValueDisplayComponent._on_value_changed" class="py-name" href="#" onclick="return doclink('link-56', '_on_value_changed', 'link-56');">_on_value_changed</a></tt><tt class="py-op">,</tt> <tt class="py-name">property_name</tt><tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="Push.ValueComponent.ParameterValueDisplayComponent._on_value_changed
+Push.ValueComponent.ValueDisplayComponent._on_value_changed" class="py-name" href="#" onclick="return doclink('link-57', '_on_value_changed', 'link-56');">_on_value_changed</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponent.view_transform"></a><div id="ValueDisplayComponent.view_transform-def"><a name="L127"></a><tt class="py-lineno">127</tt> <a class="py-toggle" href="#" id="ValueDisplayComponent.view_transform-toggle" onclick="return toggle('ValueDisplayComponent.view_transform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponent-class.html#view_transform">view_transform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponent.view_transform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponent.view_transform-expanded"><a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">x</tt> </tt>
+</div><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponent.graphic_transform"></a><div id="ValueDisplayComponent.graphic_transform-def"><a name="L130"></a><tt class="py-lineno">130</tt> <a class="py-toggle" href="#" id="ValueDisplayComponent.graphic_transform-toggle" onclick="return toggle('ValueDisplayComponent.graphic_transform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponent-class.html#graphic_transform">graphic_transform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponent.graphic_transform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponent.graphic_transform-expanded"><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-58', 'view_transform', 'link-50');">view_transform</a></tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponent.get_value_string"></a><div id="ValueDisplayComponent.get_value_string-def"><a name="L133"></a><tt class="py-lineno">133</tt> <a class="py-toggle" href="#" id="ValueDisplayComponent.get_value_string-toggle" onclick="return toggle('ValueDisplayComponent.get_value_string');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponent-class.html#get_value_string">get_value_string</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponent.get_value_string-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponent.get_value_string-expanded"><a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt id="link-59" class="py-name"><a title="Push.Setting.Setting.value" class="py-name" href="#" onclick="return doclink('link-59', 'value', 'link-5');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_subject</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_property_name</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_format</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-60', 'view_transform', 'link-50');">view_transform</a></tt><tt class="py-op">(</tt><tt id="link-61" class="py-name"><a title="Push.Setting.Setting.value" class="py-name" href="#" onclick="return doclink('link-61', 'value', 'link-5');">value</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponent.get_graphic_string"></a><div id="ValueDisplayComponent.get_graphic_string-def"><a name="L137"></a><tt class="py-lineno">137</tt> <a class="py-toggle" href="#" id="ValueDisplayComponent.get_graphic_string-toggle" onclick="return toggle('ValueDisplayComponent.get_graphic_string');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponent-class.html#get_graphic_string">get_graphic_string</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponent.get_graphic_string-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponent.get_graphic_string-expanded"><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt id="link-62" class="py-name"><a title="Push.Setting.Setting.value" class="py-name" href="#" onclick="return doclink('link-62', 'value', 'link-5');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_subject</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_property_name</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-name">graph</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name"><a title="Push.ValueComponent.ValueComponent.graphic_transform
+Push.ValueComponent.ValueDisplayComponent.graphic_transform" class="py-name" href="#" onclick="return doclink('link-63', 'graphic_transform', 'link-53');">graphic_transform</a></tt><tt class="py-op">(</tt><tt id="link-64" class="py-name"><a title="Push.Setting.Setting.value" class="py-name" href="#" onclick="return doclink('link-64', 'value', 'link-5');">value</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-65" class="py-name" targets="Function Push.ValueComponent.convert_value_to_graphic()=Push.ValueComponent-module.html#convert_value_to_graphic"><a title="Push.ValueComponent.convert_value_to_graphic" class="py-name" href="#" onclick="return doclink('link-65', 'convert_value_to_graphic', 'link-65');">convert_value_to_graphic</a></tt><tt class="py-op">(</tt><tt class="py-name">graph</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"> </tt>
+<a name="ValueDisplayComponent._on_value_changed"></a><div id="ValueDisplayComponent._on_value_changed-def"><a name="L142"></a><tt class="py-lineno">142</tt> <a class="py-toggle" href="#" id="ValueDisplayComponent._on_value_changed-toggle" onclick="return toggle('ValueDisplayComponent._on_value_changed');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueDisplayComponent-class.html#_on_value_changed">_on_value_changed</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueDisplayComponent._on_value_changed-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueDisplayComponent._on_value_changed-expanded"><a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name" targets="Method Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update()=Push.ActionWithOptionsComponent.ActionWithSettingsComponent-class.html#update,Method Push.ActionWithOptionsComponent.OptionsComponent.update()=Push.ActionWithOptionsComponent.OptionsComponent-class.html#update,Method Push.Actions.CreateDefaultTrackComponent.update()=Push.Actions.CreateDefaultTrackComponent-class.html#update,Method Push.Actions.CreateDeviceComponent.update()=Push.Actions.CreateDeviceComponent-class.html#update,Method Push.Actions.CreateInstrumentTrackComponent.update()=Push.Actions.CreateInstrumentTrackComponent-class.html#update,Method Push.Actions.DeleteComponent.update()=Push.Actions.DeleteComponent-class.html#update,Method Push.Actions.SelectComponent.update()=Push.Actions.SelectComponent-class.html#update,Method Push.Actions.SelectionDisplayComponent.update()=Push.Actions.SelectionDisplayComponent-class.html#update,Method Push.AutoArmComponent.AutoArmComponent.update()=Push.AutoArmComponent.AutoArmComponent-class.html#update,Method Push.AutoArmComponent.AutoArmRestoreBehaviour.update()=Push.AutoArmComponent.AutoArmRestoreBehaviour-class.html#update,Method Push.BackgroundComponent.BackgroundComponent.update()=Push.BackgroundComponent.BackgroundComponent-class.html#update,Method Push.BrowserComponent.BrowserComponent.update()=Push.BrowserComponent.BrowserComponent-class.html#update,Method Push.ClipControlComponent.AudioClipSettingsComponent.update()=Push.ClipControlComponent.AudioClipSettingsComponent-class.html#update,Method Push.ClipControlComponent.ClipControlComponent.update()=Push.ClipControlComponent.ClipControlComponent-class.html#update,Method Push.ClipControlComponent.ClipNameComponent.update()=Push.ClipControlComponent.ClipNameComponent-class.html#update,Method Push.ClipControlComponent.LoopSettingsComponent.update()=Push.ClipControlComponent.LoopSettingsComponent-class.html#update,Method Push.ClipControlComponent.MidiClipSettingsComponent.update()=Push.ClipControlComponent.MidiClipSettingsComponent-class.html#update,Method Push.ClipControlComponent.NoClipSettingsComponent.update()=Push.ClipControlComponent.NoClipSettingsComponent-class.html#update,Method Push.DeviceNavigationComponent.DeviceNavigationComponent.update()=Push.DeviceNavigationComponent.DeviceNavigationComponent-class.html#update,Method Push.DrumGroupComponent.DrumGroupComponent.update()=Push.DrumGroupComponent.DrumGroupComponent-class.html#update,Method Push.HandshakeComponent.HandshakeComponent.update()=Push.HandshakeComponent.HandshakeComponent-class.html#update,Method Push.InstrumentComponent.InstrumentComponent.update()=Push.InstrumentComponent.InstrumentComponent-class.html#update,Method Push.InstrumentComponent.InstrumentScalesComponent.update()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#update,Method Push.InstrumentComponent.ScalesInfoComponent.update()=Push.InstrumentComponent.ScalesInfoComponent-class.html#update,Method Push.LoopSelectorComponent.LoopSelectorComponent.update()=Push.LoopSelectorComponent.LoopSelectorComponent-class.html#update,Method Push.M4LInterfaceComponent.M4LInterfaceComponent.update()=Push.M4LInterfaceComponent.M4LInterfaceComponent-class.html#update,Method Push.MessageBoxComponent.DialogComponent.update()=Push.MessageBoxComponent.DialogComponent-class.html#update,Method Push.MessageBoxComponent.MessageBoxComponent.update()=Push.MessageBoxComponent.MessageBoxComponent-class.html#update,Method Push.MessageBoxComponent.NotificationComponent.update()=Push.MessageBoxComponent.NotificationComponent-class.html#update,Method Push.NoteEditorComponent.NoteEditorComponent.update()=Push.NoteEditorComponent.NoteEditorComponent-class.html#update,Method Push.PadSensitivity.PadSensitivity.update()=Push.PadSensitivity.PadSensitivity-class.html#update,Method Push.Push.Push.update()=Push.Push.Push-class.html#update,Method Push.ScrollableList.ListComponent.update()=Push.ScrollableList.ListComponent-class.html#update,Method Push.ScrollableListComponent.ScrollableListComponent.update()=Push.ScrollableListComponent.ScrollableListComponent-class.html#update,Method Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update()=Push.ScrollableListComponent.ScrollableListWithTogglesComponent-class.html#update,Method Push.SessionRecordingComponent.SessionRecordingComponent.update()=Push.SessionRecordingComponent.SessionRecordingComponent-class.html#update,Method Push.SpecialSessionComponent.DuplicateSceneComponent.update()=Push.SpecialSessionComponent.DuplicateSceneComponent-class.html#update,Method Push.SpecialTransportComponent.QuantizationSettingsComponent.update()=Push.SpecialTransportComponent.QuantizationSettingsComponent-class.html#update,Method Push.SpecialTransportComponent.SpecialTransportComponent.update()=Push.SpecialTransportComponent.SpecialTransportComponent-class.html#update,Method Push.StepSeqComponent.StepSeqComponent.update()=Push.StepSeqComponent.StepSeqComponent-class.html#update,Method Push.TouchStripController.TouchStripControllerComponent.update()=Push.TouchStripController.TouchStripControllerComponent-class.html#update,Method Push.TouchStripController.TouchStripEncoderConnection.update()=Push.TouchStripController.TouchStripEncoderConnection-class.html#update,Method Push.UserSettingsComponent.UserComponent.update()=Push.UserSettingsComponent.UserComponent-class.html#update,Method Push.UserSettingsComponent.UserSettingsComponent.update()=Push.UserSettingsComponent.UserSettingsComponent-class.html#update,Method Push.ValueComponent.ValueComponentBase.update()=Push.ValueComponent.ValueComponentBase-class.html#update,Method Push.ValueComponent.ValueDisplayComponentBase.update()=Push.ValueComponent.ValueDisplayComponentBase-class.html#update,Method Push.ViewControlComponent.ViewControlComponent.update()=Push.ViewControlComponent.ViewControlComponent-class.html#update"><a title="Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update
+Push.ActionWithOptionsComponent.OptionsComponent.update
+Push.Actions.CreateDefaultTrackComponent.update
+Push.Actions.CreateDeviceComponent.update
+Push.Actions.CreateInstrumentTrackComponent.update
+Push.Actions.DeleteComponent.update
+Push.Actions.SelectComponent.update
+Push.Actions.SelectionDisplayComponent.update
+Push.AutoArmComponent.AutoArmComponent.update
+Push.AutoArmComponent.AutoArmRestoreBehaviour.update
+Push.BackgroundComponent.BackgroundComponent.update
+Push.BrowserComponent.BrowserComponent.update
+Push.ClipControlComponent.AudioClipSettingsComponent.update
+Push.ClipControlComponent.ClipControlComponent.update
+Push.ClipControlComponent.ClipNameComponent.update
+Push.ClipControlComponent.LoopSettingsComponent.update
+Push.ClipControlComponent.MidiClipSettingsComponent.update
+Push.ClipControlComponent.NoClipSettingsComponent.update
+Push.DeviceNavigationComponent.DeviceNavigationComponent.update
+Push.DrumGroupComponent.DrumGroupComponent.update
+Push.HandshakeComponent.HandshakeComponent.update
+Push.InstrumentComponent.InstrumentComponent.update
+Push.InstrumentComponent.InstrumentScalesComponent.update
+Push.InstrumentComponent.ScalesInfoComponent.update
+Push.LoopSelectorComponent.LoopSelectorComponent.update
+Push.M4LInterfaceComponent.M4LInterfaceComponent.update
+Push.MessageBoxComponent.DialogComponent.update
+Push.MessageBoxComponent.MessageBoxComponent.update
+Push.MessageBoxComponent.NotificationComponent.update
+Push.NoteEditorComponent.NoteEditorComponent.update
+Push.PadSensitivity.PadSensitivity.update
+Push.Push.Push.update
+Push.ScrollableList.ListComponent.update
+Push.ScrollableListComponent.ScrollableListComponent.update
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update
+Push.SessionRecordingComponent.SessionRecordingComponent.update
+Push.SpecialSessionComponent.DuplicateSceneComponent.update
+Push.SpecialTransportComponent.QuantizationSettingsComponent.update
+Push.SpecialTransportComponent.SpecialTransportComponent.update
+Push.StepSeqComponent.StepSeqComponent.update
+Push.TouchStripController.TouchStripControllerComponent.update
+Push.TouchStripController.TouchStripEncoderConnection.update
+Push.UserSettingsComponent.UserComponent.update
+Push.UserSettingsComponent.UserSettingsComponent.update
+Push.ValueComponent.ValueComponentBase.update
+Push.ValueComponent.ValueDisplayComponentBase.update
+Push.ViewControlComponent.ViewControlComponent.update" class="py-name" href="#" onclick="return doclink('link-66', 'update', 'link-66');">update</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponent"></a><div id="ValueComponent-def"><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt> <a class="py-toggle" href="#" id="ValueComponent-toggle" onclick="return toggle('ValueComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponent-class.html">ValueComponent</a><tt class="py-op">(</tt><tt class="py-base-class">ValueComponentBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ValueComponent-expanded"><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring">    Component to control one continuous property with a infinite</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">    touch-sensitive encoder. You can optionally give it a display and</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring">    a button such that the value will be displayed while its pressed.</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">    <tt id="link-67" class="py-name" targets="Variable Push.ValueComponent.ValueComponent.encoder_factor=Push.ValueComponent.ValueComponent-class.html#encoder_factor"><a title="Push.ValueComponent.ValueComponent.encoder_factor" class="py-name" href="#" onclick="return doclink('link-67', 'encoder_factor', 'link-67');">encoder_factor</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponent.create_display_component"></a><div id="ValueComponent.create_display_component-def"><a name="L154"></a><tt class="py-lineno">154</tt> <a class="py-toggle" href="#" id="ValueComponent.create_display_component-toggle" onclick="return toggle('ValueComponent.create_display_component');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponent-class.html#create_display_component">create_display_component</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponent.create_display_component-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponent.create_display_component-expanded"><a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-68" class="py-name"><a title="Push.ValueComponent.ValueDisplayComponent" class="py-name" href="#" onclick="return doclink('link-68', 'ValueDisplayComponent', 'link-48');">ValueDisplayComponent</a></tt><tt class="py-op">(</tt><tt class="py-name">property_name</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_property_name</tt><tt class="py-op">,</tt> <tt class="py-name">subject</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_subject</tt><tt class="py-op">,</tt> <tt class="py-name">display_format</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_format</tt><tt class="py-op">,</tt> <tt id="link-69" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-69', 'view_transform', 'link-50');">view_transform</a></tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-keyword">lambda</tt> <tt class="py-name">x</tt><tt class="py-op">:</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-70', 'view_transform', 'link-50');">view_transform</a></tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-71" class="py-name"><a title="Push.ValueComponent.ValueComponent.graphic_transform
+Push.ValueComponent.ValueDisplayComponent.graphic_transform" class="py-name" href="#" onclick="return doclink('link-71', 'graphic_transform', 'link-53');">graphic_transform</a></tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-keyword">lambda</tt> <tt class="py-name">x</tt><tt class="py-op">:</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="Push.ValueComponent.ValueComponent.graphic_transform
+Push.ValueComponent.ValueDisplayComponent.graphic_transform" class="py-name" href="#" onclick="return doclink('link-72', 'graphic_transform', 'link-53');">graphic_transform</a></tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponent.__init__"></a><div id="ValueComponent.__init__-def"><a name="L157"></a><tt class="py-lineno">157</tt> <a class="py-toggle" href="#" id="ValueComponent.__init__-toggle" onclick="return toggle('ValueComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">property_name</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">subject</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">display_format</tt> <tt class="py-op">=</tt> <tt class="py-string">'%f'</tt><tt class="py-op">,</tt> <tt class="py-param">model_transform</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">view_transform</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">graphic_transform</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">encoder_factor</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponent.__init__-expanded"><a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_property_name</tt> <tt class="py-op">=</tt> <tt class="py-name">property_name</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_subject</tt> <tt class="py-op">=</tt> <tt class="py-name">subject</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_format</tt> <tt class="py-op">=</tt> <tt class="py-name">display_format</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_encoder</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-73" class="py-name" targets="Module Push.ValueComponent=Push.ValueComponent-module.html,Class Push.ValueComponent.ValueComponent=Push.ValueComponent.ValueComponent-class.html"><a title="Push.ValueComponent
+Push.ValueComponent.ValueComponent" class="py-name" href="#" onclick="return doclink('link-73', 'ValueComponent', 'link-73');">ValueComponent</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-74', '__init__', 'link-16');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-75" class="py-name" targets="Method Push.ValueComponent.ValueComponent.model_transform()=Push.ValueComponent.ValueComponent-class.html#model_transform"><a title="Push.ValueComponent.ValueComponent.model_transform" class="py-name" href="#" onclick="return doclink('link-75', 'model_transform', 'link-75');">model_transform</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name"><a title="Push.ValueComponent.ValueComponent.model_transform" class="py-name" href="#" onclick="return doclink('link-76', 'model_transform', 'link-75');">model_transform</a></tt> <tt class="py-op">=</tt> <tt id="link-77" class="py-name"><a title="Push.ValueComponent.ValueComponent.model_transform" class="py-name" href="#" onclick="return doclink('link-77', 'model_transform', 'link-75');">model_transform</a></tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-78" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-78', 'view_transform', 'link-50');">view_transform</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-79" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-79', 'view_transform', 'link-50');">view_transform</a></tt> <tt class="py-op">=</tt> <tt id="link-80" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-80', 'view_transform', 'link-50');">view_transform</a></tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-81" class="py-name"><a title="Push.ValueComponent.ValueComponent.graphic_transform
+Push.ValueComponent.ValueDisplayComponent.graphic_transform" class="py-name" href="#" onclick="return doclink('link-81', 'graphic_transform', 'link-53');">graphic_transform</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name"><a title="Push.ValueComponent.ValueComponent.graphic_transform
+Push.ValueComponent.ValueDisplayComponent.graphic_transform" class="py-name" href="#" onclick="return doclink('link-82', 'graphic_transform', 'link-53');">graphic_transform</a></tt> <tt class="py-op">=</tt> <tt id="link-83" class="py-name"><a title="Push.ValueComponent.ValueComponent.graphic_transform
+Push.ValueComponent.ValueDisplayComponent.graphic_transform" class="py-name" href="#" onclick="return doclink('link-83', 'graphic_transform', 'link-53');">graphic_transform</a></tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-84" class="py-name"><a title="Push.ValueComponent.ValueComponent.encoder_factor" class="py-name" href="#" onclick="return doclink('link-84', 'encoder_factor', 'link-67');">encoder_factor</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name"><a title="Push.ValueComponent.ValueComponent.encoder_factor" class="py-name" href="#" onclick="return doclink('link-85', 'encoder_factor', 'link-67');">encoder_factor</a></tt> <tt class="py-op">=</tt> <tt id="link-86" class="py-name"><a title="Push.ValueComponent.ValueComponent.encoder_factor" class="py-name" href="#" onclick="return doclink('link-86', 'encoder_factor', 'link-67');">encoder_factor</a></tt> </tt>
+</div><a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponent.model_transform"></a><div id="ValueComponent.model_transform-def"><a name="L172"></a><tt class="py-lineno">172</tt> <a class="py-toggle" href="#" id="ValueComponent.model_transform-toggle" onclick="return toggle('ValueComponent.model_transform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponent-class.html#model_transform">model_transform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponent.model_transform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponent.model_transform-expanded"><a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">        Tranform a value 'x' from the view domain to the domain as</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">        stored in the subject.</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">x</tt> </tt>
+</div><a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponent.view_transform"></a><div id="ValueComponent.view_transform-def"><a name="L179"></a><tt class="py-lineno">179</tt> <a class="py-toggle" href="#" id="ValueComponent.view_transform-toggle" onclick="return toggle('ValueComponent.view_transform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponent-class.html#view_transform">view_transform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponent.view_transform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponent.view_transform-expanded"><a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-docstring">        Transform a value 'x' from the model domain to the view domain</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-docstring">        as represented to the user.</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">x</tt> </tt>
+</div><a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponent.graphic_transform"></a><div id="ValueComponent.graphic_transform-def"><a name="L186"></a><tt class="py-lineno">186</tt> <a class="py-toggle" href="#" id="ValueComponent.graphic_transform-toggle" onclick="return toggle('ValueComponent.graphic_transform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponent-class.html#graphic_transform">graphic_transform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponent.graphic_transform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponent.graphic_transform-expanded"><a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-docstring">        Transform a value 'x' from the model domain to [0..1] range to</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-docstring">        be used in the slider-representation of the value.</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-87', 'view_transform', 'link-50');">view_transform</a></tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-88" class="py-name"><a title="Push.ValueComponent.ValueComponent.encoder_factor" class="py-name" href="#" onclick="return doclink('link-88', 'encoder_factor', 'link-67');">encoder_factor</a></tt> </tt>
+</div><a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"> </tt>
+<a name="ValueComponent.set_encoder"></a><div id="ValueComponent.set_encoder-def"><a name="L193"></a><tt class="py-lineno">193</tt> <a class="py-toggle" href="#" id="ValueComponent.set_encoder-toggle" onclick="return toggle('ValueComponent.set_encoder');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponent-class.html#set_encoder">set_encoder</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">encoder</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponent.set_encoder-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponent.set_encoder-expanded"><a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_encoder</tt> <tt class="py-op">=</tt> <tt class="py-name">encoder</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-89" class="py-name" targets="Method Push.ScrollableList.ListComponent._on_encoder_value()=Push.ScrollableList.ListComponent-class.html#_on_encoder_value,Method Push.UserSettingsComponent.UserSettingsComponent._on_encoder_value()=Push.UserSettingsComponent.UserSettingsComponent-class.html#_on_encoder_value,Method Push.ValueComponent.ValueComponent._on_encoder_value()=Push.ValueComponent.ValueComponent-class.html#_on_encoder_value"><a title="Push.ScrollableList.ListComponent._on_encoder_value
+Push.UserSettingsComponent.UserSettingsComponent._on_encoder_value
+Push.ValueComponent.ValueComponent._on_encoder_value" class="py-name" href="#" onclick="return doclink('link-89', '_on_encoder_value', 'link-89');">_on_encoder_value</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt> <tt class="py-op">=</tt> <tt class="py-name">encoder</tt> </tt>
+</div><a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">subject_slot</tt><tt class="py-op">(</tt><tt class="py-string">'normalized_value'</tt><tt class="py-op">)</tt> </tt>
+<a name="ValueComponent._on_encoder_value"></a><div id="ValueComponent._on_encoder_value-def"><a name="L198"></a><tt class="py-lineno">198</tt> <a class="py-toggle" href="#" id="ValueComponent._on_encoder_value-toggle" onclick="return toggle('ValueComponent._on_encoder_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ValueComponent-class.html#_on_encoder_value">_on_encoder_value</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ValueComponent._on_encoder_value-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ValueComponent._on_encoder_value-expanded"><a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">        <tt id="link-90" class="py-name"><a title="Push.Setting.Setting.value" class="py-name" href="#" onclick="return doclink('link-90', 'value', 'link-5');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-91" class="py-name"><a title="Push.ValueComponent.ValueComponent.view_transform
+Push.ValueComponent.ValueDisplayComponent.view_transform" class="py-name" href="#" onclick="return doclink('link-91', 'view_transform', 'link-50');">view_transform</a></tt><tt class="py-op">(</tt><tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_subject</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_property_name</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt id="link-92" class="py-name"><a title="Push.Setting.Setting.value" class="py-name" href="#" onclick="return doclink('link-92', 'value', 'link-5');">value</a></tt> <tt class="py-op">*</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-93" class="py-name"><a title="Push.ValueComponent.ValueComponent.encoder_factor" class="py-name" href="#" onclick="return doclink('link-93', 'encoder_factor', 'link-67');">encoder_factor</a></tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">        <tt class="py-name">setattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_subject</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_property_name</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-94" class="py-name"><a title="Push.ValueComponent.ValueComponent.model_transform" class="py-name" href="#" onclick="return doclink('link-94', 'model_transform', 'link-75');">model_transform</a></tt><tt class="py-op">(</tt><tt id="link-95" class="py-name"><a title="Push.Setting.Setting.value" class="py-name" href="#" onclick="return doclink('link-95', 'value', 'link-5');">value</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"> </tt>
+<a name="ParameterValueDisplayComponent"></a><div id="ParameterValueDisplayComponent-def"><a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt> <a class="py-toggle" href="#" id="ParameterValueDisplayComponent-toggle" onclick="return toggle('ParameterValueDisplayComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ValueComponent.ParameterValueDisplayComponent-class.html">ParameterValueDisplayComponent</a><tt class="py-op">(</tt><tt class="py-base-class">ValueDisplayComponentBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParameterValueDisplayComponent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ParameterValueDisplayComponent-expanded"><a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-docstring">    Display for values from device parameters.</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"> </tt>
+<a name="ParameterValueDisplayComponent.__init__"></a><div id="ParameterValueDisplayComponent.__init__-def"><a name="L208"></a><tt class="py-lineno">208</tt> <a class="py-toggle" href="#" id="ParameterValueDisplayComponent.__init__-toggle" onclick="return toggle('ParameterValueDisplayComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ParameterValueDisplayComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">device_parameter</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParameterValueDisplayComponent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ParameterValueDisplayComponent.__init__-expanded"><a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-96" class="py-name" targets="Class Push.ValueComponent.ParameterValueDisplayComponent=Push.ValueComponent.ParameterValueDisplayComponent-class.html"><a title="Push.ValueComponent.ParameterValueDisplayComponent" class="py-name" href="#" onclick="return doclink('link-96', 'ParameterValueDisplayComponent', 'link-96');">ParameterValueDisplayComponent</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-97" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-97', '__init__', 'link-16');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-98" class="py-name"><a title="Push.ValueComponent.ParameterValueDisplayComponent._on_value_changed
+Push.ValueComponent.ValueDisplayComponent._on_value_changed" class="py-name" href="#" onclick="return doclink('link-98', '_on_value_changed', 'link-56');">_on_value_changed</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt> <tt class="py-op">=</tt> <tt class="py-name">device_parameter</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-99" class="py-name"><a title="Push.ValueComponent.ParameterValueDisplayComponent._on_value_changed
+Push.ValueComponent.ValueDisplayComponent._on_value_changed" class="py-name" href="#" onclick="return doclink('link-99', '_on_value_changed', 'link-56');">_on_value_changed</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"> </tt>
+<a name="ParameterValueDisplayComponent.get_value_string"></a><div id="ParameterValueDisplayComponent.get_value_string-def"><a name="L213"></a><tt class="py-lineno">213</tt> <a class="py-toggle" href="#" id="ParameterValueDisplayComponent.get_value_string-toggle" onclick="return toggle('ParameterValueDisplayComponent.get_value_string');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ParameterValueDisplayComponent-class.html#get_value_string">get_value_string</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParameterValueDisplayComponent.get_value_string-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ParameterValueDisplayComponent.get_value_string-expanded"><a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-100" class="py-name"><a title="Push.ValueComponent.ParameterValueDisplayComponent._on_value_changed
+Push.ValueComponent.ValueDisplayComponent._on_value_changed" class="py-name" href="#" onclick="return doclink('link-100', '_on_value_changed', 'link-56');">_on_value_changed</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"> </tt>
+<a name="ParameterValueDisplayComponent.get_graphic_string"></a><div id="ParameterValueDisplayComponent.get_graphic_string-def"><a name="L216"></a><tt class="py-lineno">216</tt> <a class="py-toggle" href="#" id="ParameterValueDisplayComponent.get_graphic_string-toggle" onclick="return toggle('ParameterValueDisplayComponent.get_graphic_string');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ParameterValueDisplayComponent-class.html#get_graphic_string">get_graphic_string</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParameterValueDisplayComponent.get_graphic_string-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ParameterValueDisplayComponent.get_graphic_string-expanded"><a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-101" class="py-name"><a title="Push.DisplayingDeviceComponent.convert_parameter_value_to_graphic" class="py-name" href="#" onclick="return doclink('link-101', 'convert_parameter_value_to_graphic', 'link-1');">convert_parameter_value_to_graphic</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-102" class="py-name"><a title="Push.ValueComponent.ParameterValueDisplayComponent._on_value_changed
+Push.ValueComponent.ValueDisplayComponent._on_value_changed" class="py-name" href="#" onclick="return doclink('link-102', '_on_value_changed', 'link-56');">_on_value_changed</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">subject_slot</tt><tt class="py-op">(</tt><tt class="py-string">'value'</tt><tt class="py-op">)</tt> </tt>
+<a name="ParameterValueDisplayComponent._on_value_changed"></a><div id="ParameterValueDisplayComponent._on_value_changed-def"><a name="L220"></a><tt class="py-lineno">220</tt> <a class="py-toggle" href="#" id="ParameterValueDisplayComponent._on_value_changed-toggle" onclick="return toggle('ParameterValueDisplayComponent._on_value_changed');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ParameterValueDisplayComponent-class.html#_on_value_changed">_on_value_changed</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParameterValueDisplayComponent._on_value_changed-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ParameterValueDisplayComponent._on_value_changed-expanded"><a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-103" class="py-name"><a title="Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update
+Push.ActionWithOptionsComponent.OptionsComponent.update
+Push.Actions.CreateDefaultTrackComponent.update
+Push.Actions.CreateDeviceComponent.update
+Push.Actions.CreateInstrumentTrackComponent.update
+Push.Actions.DeleteComponent.update
+Push.Actions.SelectComponent.update
+Push.Actions.SelectionDisplayComponent.update
+Push.AutoArmComponent.AutoArmComponent.update
+Push.AutoArmComponent.AutoArmRestoreBehaviour.update
+Push.BackgroundComponent.BackgroundComponent.update
+Push.BrowserComponent.BrowserComponent.update
+Push.ClipControlComponent.AudioClipSettingsComponent.update
+Push.ClipControlComponent.ClipControlComponent.update
+Push.ClipControlComponent.ClipNameComponent.update
+Push.ClipControlComponent.LoopSettingsComponent.update
+Push.ClipControlComponent.MidiClipSettingsComponent.update
+Push.ClipControlComponent.NoClipSettingsComponent.update
+Push.DeviceNavigationComponent.DeviceNavigationComponent.update
+Push.DrumGroupComponent.DrumGroupComponent.update
+Push.HandshakeComponent.HandshakeComponent.update
+Push.InstrumentComponent.InstrumentComponent.update
+Push.InstrumentComponent.InstrumentScalesComponent.update
+Push.InstrumentComponent.ScalesInfoComponent.update
+Push.LoopSelectorComponent.LoopSelectorComponent.update
+Push.M4LInterfaceComponent.M4LInterfaceComponent.update
+Push.MessageBoxComponent.DialogComponent.update
+Push.MessageBoxComponent.MessageBoxComponent.update
+Push.MessageBoxComponent.NotificationComponent.update
+Push.NoteEditorComponent.NoteEditorComponent.update
+Push.PadSensitivity.PadSensitivity.update
+Push.Push.Push.update
+Push.ScrollableList.ListComponent.update
+Push.ScrollableListComponent.ScrollableListComponent.update
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update
+Push.SessionRecordingComponent.SessionRecordingComponent.update
+Push.SpecialSessionComponent.DuplicateSceneComponent.update
+Push.SpecialTransportComponent.QuantizationSettingsComponent.update
+Push.SpecialTransportComponent.SpecialTransportComponent.update
+Push.StepSeqComponent.StepSeqComponent.update
+Push.TouchStripController.TouchStripControllerComponent.update
+Push.TouchStripController.TouchStripEncoderConnection.update
+Push.UserSettingsComponent.UserComponent.update
+Push.UserSettingsComponent.UserSettingsComponent.update
+Push.ValueComponent.ValueComponentBase.update
+Push.ValueComponent.ValueDisplayComponentBase.update
+Push.ViewControlComponent.ViewControlComponent.update" class="py-name" href="#" onclick="return doclink('link-103', 'update', 'link-66');">update</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"> </tt>
+<a name="ParameterValueComponent"></a><div id="ParameterValueComponent-def"><a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt> <a class="py-toggle" href="#" id="ParameterValueComponent-toggle" onclick="return toggle('ParameterValueComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ValueComponent.ParameterValueComponent-class.html">ParameterValueComponent</a><tt class="py-op">(</tt><tt class="py-base-class">ValueComponentBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParameterValueComponent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ParameterValueComponent-expanded"><a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"><tt class="py-docstring">    Component to control a device parameter with a infinite</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"><tt class="py-docstring">    touch-sensitive encoder. You can optionally give it a display and</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"><tt class="py-docstring">    a button such that the value will be displayed while its pressed.</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line"> </tt>
+<a name="ParameterValueComponent.create_display_component"></a><div id="ParameterValueComponent.create_display_component-def"><a name="L231"></a><tt class="py-lineno">231</tt> <a class="py-toggle" href="#" id="ParameterValueComponent.create_display_component-toggle" onclick="return toggle('ParameterValueComponent.create_display_component');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ParameterValueComponent-class.html#create_display_component">create_display_component</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParameterValueComponent.create_display_component-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ParameterValueComponent.create_display_component-expanded"><a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-104" class="py-name"><a title="Push.ValueComponent.ParameterValueDisplayComponent" class="py-name" href="#" onclick="return doclink('link-104', 'ParameterValueDisplayComponent', 'link-96');">ParameterValueDisplayComponent</a></tt><tt class="py-op">(</tt><tt class="py-name">device_parameter</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_parameter_slot</tt><tt class="py-op">.</tt><tt class="py-name">parameter</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"> </tt>
+<a name="ParameterValueComponent.__init__"></a><div id="ParameterValueComponent.__init__-def"><a name="L234"></a><tt class="py-lineno">234</tt> <a class="py-toggle" href="#" id="ParameterValueComponent.__init__-toggle" onclick="return toggle('ParameterValueComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ParameterValueComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">device_parameter</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParameterValueComponent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ParameterValueComponent.__init__-expanded"><a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_parameter_slot</tt> <tt class="py-op">=</tt> <tt class="py-name">ParameterSlot</tt><tt class="py-op">(</tt><tt class="py-name">device_parameter</tt><tt class="py-op">)</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-105" class="py-name" targets="Class Push.ValueComponent.ParameterValueComponent=Push.ValueComponent.ParameterValueComponent-class.html"><a title="Push.ValueComponent.ParameterValueComponent" class="py-name" href="#" onclick="return doclink('link-105', 'ParameterValueComponent', 'link-105');">ParameterValueComponent</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-106" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-106', '__init__', 'link-16');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_disconnectable</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_parameter_slot</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line"> </tt>
+<a name="ParameterValueComponent.set_encoder"></a><div id="ParameterValueComponent.set_encoder-def"><a name="L239"></a><tt class="py-lineno">239</tt> <a class="py-toggle" href="#" id="ParameterValueComponent.set_encoder-toggle" onclick="return toggle('ParameterValueComponent.set_encoder');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ValueComponent.ParameterValueComponent-class.html#set_encoder">set_encoder</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">encoder</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParameterValueComponent.set_encoder-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ParameterValueComponent.set_encoder-expanded"><a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_parameter_slot</tt><tt class="py-op">.</tt><tt class="py-name">control</tt> <tt class="py-op">=</tt> <tt class="py-name">encoder</tt> </tt>
+</div></div><a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 19:32:48 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

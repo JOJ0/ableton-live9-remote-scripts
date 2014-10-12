@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>_Framework.ControlElement</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="_Framework-module.html">Package&nbsp;_Framework</a> ::
+        Module&nbsp;ControlElement
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="_Framework.ControlElement-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="_Framework.ControlElement-module.html">Module _Framework.ControlElement</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/_Framework/ControlElement.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module _Framework.Resource=_Framework.Resource-module.html,Class _Framework.Resource.Resource=_Framework.Resource.Resource-class.html"><a title="_Framework.Resource
+_Framework.Resource.Resource" class="py-name" href="#" onclick="return doclink('link-0', 'Resource', 'link-0');">Resource</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class _Framework.Resource.StackingResource=_Framework.Resource.StackingResource-class.html"><a title="_Framework.Resource.StackingResource" class="py-name" href="#" onclick="return doclink('link-1', 'StackingResource', 'link-1');">StackingResource</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module _Framework.Util=_Framework.Util-module.html"><a title="_Framework.Util" class="py-name" href="#" onclick="return doclink('link-2', 'Util', 'link-2');">Util</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class _Framework.Util.lazy_attribute=_Framework.Util.lazy_attribute-class.html"><a title="_Framework.Util.lazy_attribute" class="py-name" href="#" onclick="return doclink('link-3', 'lazy_attribute', 'link-3');">lazy_attribute</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name" targets="Module _Framework.Disconnectable=_Framework.Disconnectable-module.html,Class _Framework.Disconnectable.Disconnectable=_Framework.Disconnectable.Disconnectable-class.html"><a title="_Framework.Disconnectable
+_Framework.Disconnectable.Disconnectable" class="py-name" href="#" onclick="return doclink('link-4', 'Disconnectable', 'link-4');">Disconnectable</a></tt> <tt class="py-keyword">import</tt> <tt id="link-5" class="py-name"><a title="_Framework.Disconnectable
+_Framework.Disconnectable.Disconnectable" class="py-name" href="#" onclick="return doclink('link-5', 'Disconnectable', 'link-4');">Disconnectable</a></tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-6" class="py-name" targets="Module _Framework.Dependency=_Framework.Dependency-module.html"><a title="_Framework.Dependency" class="py-name" href="#" onclick="return doclink('link-6', 'Dependency', 'link-6');">Dependency</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Function _Framework.Dependency.depends()=_Framework.Dependency-module.html#depends"><a title="_Framework.Dependency.depends" class="py-name" href="#" onclick="return doclink('link-7', 'depends', 'link-7');">depends</a></tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-8" class="py-name" targets="Module _Framework.Task=_Framework.Task-module.html,Class _Framework.Task.Task=_Framework.Task.Task-class.html"><a title="_Framework.Task
+_Framework.Task.Task" class="py-name" href="#" onclick="return doclink('link-8', 'Task', 'link-8');">Task</a></tt> </tt>
+<a name="ControlElement"></a><div id="ControlElement-def"><a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt> <a class="py-toggle" href="#" id="ControlElement-toggle" onclick="return toggle('ControlElement');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html">ControlElement</a><tt class="py-op">(</tt><tt class="py-base-class">Disconnectable</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ControlElement-expanded"><a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">    Base class for all classes representing control elements on a</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">    control surface</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">    <tt id="link-9" class="py-name" targets="Variable _Framework.ControlElement.ControlElement.canonical_parent=_Framework.ControlElement.ControlElement-class.html#canonical_parent,Variable _Framework.ControlSurfaceComponent.ControlSurfaceComponent.canonical_parent=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#canonical_parent"><a title="_Framework.ControlElement.ControlElement.canonical_parent
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.canonical_parent" class="py-name" href="#" onclick="return doclink('link-9', 'canonical_parent', 'link-9');">canonical_parent</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt id="link-10" class="py-name" targets="Variable _Framework.ControlElement.ControlElement.name=_Framework.ControlElement.ControlElement-class.html#name,Variable _Framework.ControlSurfaceComponent.ControlSurfaceComponent.name=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#name,Variable _Framework.SubjectSlot.SubjectEvent.name=_Framework.SubjectSlot.SubjectEvent-class.html#name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-10', 'name', 'link-10');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Variable _Framework.ControlElement.ControlElement.optimized_send_midi=_Framework.ControlElement.ControlElement-class.html#optimized_send_midi"><a title="_Framework.ControlElement.ControlElement.optimized_send_midi" class="py-name" href="#" onclick="return doclink('link-11', 'optimized_send_midi', 'link-11');">optimized_send_midi</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt id="link-12" class="py-name" targets="Variable _Framework.ControlElement.ControlElement._has_resource=_Framework.ControlElement.ControlElement-class.html#_has_resource"><a title="_Framework.ControlElement.ControlElement._has_resource" class="py-name" href="#" onclick="return doclink('link-12', '_has_resource', 'link-12');">_has_resource</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-name">_resource_type</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="_Framework.Resource.StackingResource" class="py-name" href="#" onclick="return doclink('link-13', 'StackingResource', 'link-1');">StackingResource</a></tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">    <tt id="link-14" class="py-name" targets="Variable _Framework.ControlElement.ControlElement._has_task_group=_Framework.ControlElement.ControlElement-class.html#_has_task_group,Variable _Framework.ControlSurfaceComponent.ControlSurfaceComponent._has_task_group=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_has_task_group"><a title="_Framework.ControlElement.ControlElement._has_task_group
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent._has_task_group" class="py-name" href="#" onclick="return doclink('link-14', '_has_task_group', 'link-14');">_has_task_group</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">depends</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name" targets="Method _Framework.ControlElement.ControlElement.send_midi()=_Framework.ControlElement.ControlElement-class.html#send_midi,Method _Framework.PhysicalDisplayElement.PhysicalDisplayElement.send_midi()=_Framework.PhysicalDisplayElement.PhysicalDisplayElement-class.html#send_midi"><a title="_Framework.ControlElement.ControlElement.send_midi
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.send_midi" class="py-name" href="#" onclick="return doclink('link-15', 'send_midi', 'link-15');">send_midi</a></tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">register_control</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="ControlElement.__init__"></a><div id="ControlElement.__init__-def"><a name="L21"></a><tt class="py-lineno">21</tt> <a class="py-toggle" href="#" id="ControlElement.__init__-toggle" onclick="return toggle('ControlElement.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt><tt class="py-op">,</tt> <tt class="py-param">resource_type</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">optimized_send_midi</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">send_midi</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">register_control</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement.__init__-expanded"><a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-16" class="py-name" targets="Module _Framework.ControlElement=_Framework.ControlElement-module.html,Class _Framework.ControlElement.ControlElement=_Framework.ControlElement.ControlElement-class.html"><a title="_Framework.ControlElement
+_Framework.ControlElement.ControlElement" class="py-name" href="#" onclick="return doclink('link-16', 'ControlElement', 'link-16');">ControlElement</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method _Framework.ButtonElement.ButtonElement.__init__()=_Framework.ButtonElement.ButtonElement-class.html#__init__,Method _Framework.ButtonMatrixElement.ButtonMatrixElement.__init__()=_Framework.ButtonMatrixElement.ButtonMatrixElement-class.html#__init__,Method _Framework.ButtonSliderElement.ButtonSliderElement.__init__()=_Framework.ButtonSliderElement.ButtonSliderElement-class.html#__init__,Method _Framework.ChannelStripComponent.ChannelStripComponent.__init__()=_Framework.ChannelStripComponent.ChannelStripComponent-class.html#__init__,Method _Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__()=_Framework.ChannelTranslationSelector.ChannelTranslationSelector-class.html#__init__,Method _Framework.ClipSlotComponent.ClipSlotComponent.__init__()=_Framework.ClipSlotComponent.ClipSlotComponent-class.html#__init__,Method _Framework.CompoundComponent.CompoundComponent.__init__()=_Framework.CompoundComponent.CompoundComponent-class.html#__init__,Method _Framework.CompoundElement.CompoundElement.__init__()=_Framework.CompoundElement.CompoundElement-class.html#__init__,Method _Framework.ControlElement.ControlElement.__init__()=_Framework.ControlElement.ControlElement-class.html#__init__,Method _Framework.ControlSurface.ControlSurface.__init__()=_Framework.ControlSurface.ControlSurface-class.html#__init__,Method _Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__()=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#__init__,Method _Framework.Dependency.InjectionFactory.__init__()=_Framework.Dependency.InjectionFactory-class.html#__init__,Method _Framework.Dependency.InjectionRegistry.__init__()=_Framework.Dependency.InjectionRegistry-class.html#__init__,Method _Framework.Dependency.RegistryInjector.__init__()=_Framework.Dependency.RegistryInjector-class.html#__init__,Method _Framework.Dependency.dependency.__init__()=_Framework.Dependency.dependency-class.html#__init__,Method _Framework.DeviceBankRegistry.DeviceBankRegistry.__init__()=_Framework.DeviceBankRegistry.DeviceBankRegistry-class.html#__init__,Method _Framework.DeviceComponent.DeviceComponent.__init__()=_Framework.DeviceComponent.DeviceComponent-class.html#__init__,Method _Framework.Disconnectable.CompoundDisconnectable.__init__()=_Framework.Disconnectable.CompoundDisconnectable-class.html#__init__,Method _Framework.Disconnectable.disconnectable.__init__()=_Framework.Disconnectable.disconnectable-class.html#__init__,Method _Framework.DisplayDataSource.DisplayDataSource.__init__()=_Framework.DisplayDataSource.DisplayDataSource-class.html#__init__,Method _Framework.EncoderElement.EncoderElement.__init__()=_Framework.EncoderElement.EncoderElement-class.html#__init__,Method _Framework.InputControlElement.InputControlElement.__init__()=_Framework.InputControlElement.InputControlElement-class.html#__init__,Method _Framework.InputControlElement.InputSignal.__init__()=_Framework.InputControlElement.InputSignal-class.html#__init__,Method _Framework.InputControlElement.ParameterSlot.__init__()=_Framework.InputControlElement.ParameterSlot-class.html#__init__,Method _Framework.Layer.Layer.__init__()=_Framework.Layer.Layer-class.html#__init__,Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#__init__,Method _Framework.MixerComponent.MixerComponent.__init__()=_Framework.MixerComponent.MixerComponent-class.html#__init__,Method _Framework.ModeSelectorComponent.ModeSelectorComponent.__init__()=_Framework.ModeSelectorComponent.ModeSelectorComponent-class.html#__init__,Method _Framework.ModesComponent.AddLayerMode.__init__()=_Framework.ModesComponent.AddLayerMode-class.html#__init__,Method _Framework.ModesComponent.AlternativeBehaviour.__init__()=_Framework.ModesComponent.AlternativeBehaviour-class.html#__init__,Method _Framework.ModesComponent.ComponentMode.__init__()=_Framework.ModesComponent.ComponentMode-class.html#__init__,Method _Framework.ModesComponent.CompoundMode.__init__()=_Framework.ModesComponent.CompoundMode-class.html#__init__,Method _Framework.ModesComponent.ContextManagerMode.__init__()=_Framework.ModesComponent.ContextManagerMode-class.html#__init__,Method _Framework.ModesComponent.DisableMode.__init__()=_Framework.ModesComponent.DisableMode-class.html#__init__,Method _Framework.ModesComponent.DisplayingModesComponent.__init__()=_Framework.ModesComponent.DisplayingModesComponent-class.html#__init__,Method _Framework.ModesComponent.DynamicBehaviourMixin.__init__()=_Framework.ModesComponent.DynamicBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.ExcludingBehaviourMixin.__init__()=_Framework.ModesComponent.ExcludingBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.LayerMode.__init__()=_Framework.ModesComponent.LayerMode-class.html#__init__,Method _Framework.ModesComponent.ModesComponent.__init__()=_Framework.ModesComponent.ModesComponent-class.html#__init__,Method _Framework.ModesComponent.MultiEntryMode.__init__()=_Framework.ModesComponent.MultiEntryMode-class.html#__init__,Method _Framework.ModesComponent.ReenterBehaviour.__init__()=_Framework.ModesComponent.ReenterBehaviour-class.html#__init__,Method _Framework.ModesComponent.SetAttributeMode.__init__()=_Framework.ModesComponent.SetAttributeMode-class.html#__init__,Method _Framework.MomentaryModeObserver.MomentaryModeObserver.__init__()=_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#__init__,Method _Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__()=_Framework.PhysicalDisplayElement.PhysicalDisplayElement-class.html#__init__,Method _Framework.Resource.CompoundResource.__init__()=_Framework.Resource.CompoundResource-class.html#__init__,Method _Framework.Resource.ExclusiveResource.__init__()=_Framework.Resource.ExclusiveResource-class.html#__init__,Method _Framework.Resource.PrioritizedResource.__init__()=_Framework.Resource.PrioritizedResource-class.html#__init__,Method _Framework.Resource.SharedResource.__init__()=_Framework.Resource.SharedResource-class.html#__init__,Method _Framework.Resource.StackingResource.__init__()=_Framework.Resource.StackingResource-class.html#__init__,Method _Framework.SceneComponent.SceneComponent.__init__()=_Framework.SceneComponent.SceneComponent-class.html#__init__,Method _Framework.ScrollComponent.ScrollComponent.__init__()=_Framework.ScrollComponent.ScrollComponent-class.html#__init__,Method _Framework.SessionComponent.SessionComponent.__init__()=_Framework.SessionComponent.SessionComponent-class.html#__init__,Method _Framework.SessionZoomingComponent.SessionZoomingComponent.__init__()=_Framework.SessionZoomingComponent.SessionZoomingComponent-class.html#__init__,Method _Framework.Signal.IdentifyingSlot.__init__()=_Framework.Signal.IdentifyingSlot-class.html#__init__,Method _Framework.Signal.Signal.__init__()=_Framework.Signal.Signal-class.html#__init__,Method _Framework.Signal.Slot.__init__()=_Framework.Signal.Slot-class.html#__init__,Method _Framework.SliderElement.SliderElement.__init__()=_Framework.SliderElement.SliderElement-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlot.__init__()=_Framework.SubjectSlot.SubjectSlot-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlotGroup.__init__()=_Framework.SubjectSlot.SubjectSlotGroup-class.html#__init__,Method _Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__()=_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent-class.html#__init__,Method _Framework.SysexValueControl.SysexValueControl.__init__()=_Framework.SysexValueControl.SysexValueControl-class.html#__init__,Method _Framework.Task.DelayTask.__init__()=_Framework.Task.DelayTask-class.html#__init__,Method _Framework.Task.FadeTask.__init__()=_Framework.Task.FadeTask-class.html#__init__,Method _Framework.Task.FuncTask.__init__()=_Framework.Task.FuncTask-class.html#__init__,Method _Framework.Task.GeneratorTask.__init__()=_Framework.Task.GeneratorTask-class.html#__init__,Method _Framework.Task.SequenceTask.__init__()=_Framework.Task.SequenceTask-class.html#__init__,Method _Framework.Task.Task.__init__()=_Framework.Task.Task-class.html#__init__,Method _Framework.Task.TaskGroup.__init__()=_Framework.Task.TaskGroup-class.html#__init__,Method _Framework.Task.WaitTask.__init__()=_Framework.Task.WaitTask-class.html#__init__,Method _Framework.Task.WrapperTask.__init__()=_Framework.Task.WrapperTask-class.html#__init__,Method _Framework.ToggleComponent.ToggleComponent.__init__()=_Framework.ToggleComponent.ToggleComponent-class.html#__init__,Method _Framework.TrackEQComponent.TrackEQComponent.__init__()=_Framework.TrackEQComponent.TrackEQComponent-class.html#__init__,Method _Framework.TrackFilterComponent.TrackFilterComponent.__init__()=_Framework.TrackFilterComponent.TrackFilterComponent-class.html#__init__,Method _Framework.TransportComponent.TransportComponent.__init__()=_Framework.TransportComponent.TransportComponent-class.html#__init__,Method _Framework.Util.BooleanContext.Manager.__init__()=_Framework.Util.BooleanContext.Manager-class.html#__init__,Method _Framework.Util.BooleanContext.__init__()=_Framework.Util.BooleanContext-class.html#__init__,Method _Framework.Util.CallCounter.__init__()=_Framework.Util.CallCounter-class.html#__init__,Method _Framework.Util.NamedTuple.__init__()=_Framework.Util.NamedTuple-class.html#__init__,Method _Framework.Util.lazy_attribute.__init__()=_Framework.Util.lazy_attribute-class.html#__init__,Method _Framework.Util.memoize.__init__()=_Framework.Util.memoize-class.html#__init__"><a title="_Framework.ButtonElement.ButtonElement.__init__
+_Framework.ButtonMatrixElement.ButtonMatrixElement.__init__
+_Framework.ButtonSliderElement.ButtonSliderElement.__init__
+_Framework.ChannelStripComponent.ChannelStripComponent.__init__
+_Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__
+_Framework.ClipSlotComponent.ClipSlotComponent.__init__
+_Framework.CompoundComponent.CompoundComponent.__init__
+_Framework.CompoundElement.CompoundElement.__init__
+_Framework.ControlElement.ControlElement.__init__
+_Framework.ControlSurface.ControlSurface.__init__
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__
+_Framework.Dependency.InjectionFactory.__init__
+_Framework.Dependency.InjectionRegistry.__init__
+_Framework.Dependency.RegistryInjector.__init__
+_Framework.Dependency.dependency.__init__
+_Framework.DeviceBankRegistry.DeviceBankRegistry.__init__
+_Framework.DeviceComponent.DeviceComponent.__init__
+_Framework.Disconnectable.CompoundDisconnectable.__init__
+_Framework.Disconnectable.disconnectable.__init__
+_Framework.DisplayDataSource.DisplayDataSource.__init__
+_Framework.EncoderElement.EncoderElement.__init__
+_Framework.InputControlElement.InputControlElement.__init__
+_Framework.InputControlElement.InputSignal.__init__
+_Framework.InputControlElement.ParameterSlot.__init__
+_Framework.Layer.Layer.__init__
+_Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__
+_Framework.MixerComponent.MixerComponent.__init__
+_Framework.ModeSelectorComponent.ModeSelectorComponent.__init__
+_Framework.ModesComponent.AddLayerMode.__init__
+_Framework.ModesComponent.AlternativeBehaviour.__init__
+_Framework.ModesComponent.ComponentMode.__init__
+_Framework.ModesComponent.CompoundMode.__init__
+_Framework.ModesComponent.ContextManagerMode.__init__
+_Framework.ModesComponent.DisableMode.__init__
+_Framework.ModesComponent.DisplayingModesComponent.__init__
+_Framework.ModesComponent.DynamicBehaviourMixin.__init__
+_Framework.ModesComponent.ExcludingBehaviourMixin.__init__
+_Framework.ModesComponent.LayerMode.__init__
+_Framework.ModesComponent.ModesComponent.__init__
+_Framework.ModesComponent.MultiEntryMode.__init__
+_Framework.ModesComponent.ReenterBehaviour.__init__
+_Framework.ModesComponent.SetAttributeMode.__init__
+_Framework.MomentaryModeObserver.MomentaryModeObserver.__init__
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__
+_Framework.Resource.CompoundResource.__init__
+_Framework.Resource.ExclusiveResource.__init__
+_Framework.Resource.PrioritizedResource.__init__
+_Framework.Resource.SharedResource.__init__
+_Framework.Resource.StackingResource.__init__
+_Framework.SceneComponent.SceneComponent.__init__
+_Framework.ScrollComponent.ScrollComponent.__init__
+_Framework.SessionComponent.SessionComponent.__init__
+_Framework.SessionZoomingComponent.SessionZoomingComponent.__init__
+_Framework.Signal.IdentifyingSlot.__init__
+_Framework.Signal.Signal.__init__
+_Framework.Signal.Slot.__init__
+_Framework.SliderElement.SliderElement.__init__
+_Framework.SubjectSlot.SubjectSlot.__init__
+_Framework.SubjectSlot.SubjectSlotGroup.__init__
+_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__
+_Framework.SysexValueControl.SysexValueControl.__init__
+_Framework.Task.DelayTask.__init__
+_Framework.Task.FadeTask.__init__
+_Framework.Task.FuncTask.__init__
+_Framework.Task.GeneratorTask.__init__
+_Framework.Task.SequenceTask.__init__
+_Framework.Task.Task.__init__
+_Framework.Task.TaskGroup.__init__
+_Framework.Task.WaitTask.__init__
+_Framework.Task.WrapperTask.__init__
+_Framework.ToggleComponent.ToggleComponent.__init__
+_Framework.TrackEQComponent.TrackEQComponent.__init__
+_Framework.TrackFilterComponent.TrackFilterComponent.__init__
+_Framework.TransportComponent.TransportComponent.__init__
+_Framework.Util.BooleanContext.Manager.__init__
+_Framework.Util.BooleanContext.__init__
+_Framework.Util.CallCounter.__init__
+_Framework.Util.NamedTuple.__init__
+_Framework.Util.lazy_attribute.__init__
+_Framework.Util.memoize.__init__" class="py-name" href="#" onclick="return doclink('link-17', '__init__', 'link-17');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method _Framework.ControlSurface.ControlSurface._send_midi()=_Framework.ControlSurface.ControlSurface-class.html#_send_midi"><a title="_Framework.ControlSurface.ControlSurface._send_midi" class="py-name" href="#" onclick="return doclink('link-18', '_send_midi', 'link-18');">_send_midi</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="_Framework.ControlElement.ControlElement.send_midi
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.send_midi" class="py-name" href="#" onclick="return doclink('link-19', 'send_midi', 'link-15');">send_midi</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-20', 'name', 'link-10');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-21" class="py-name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-21', 'name', 'link-10');">name</a></tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">resource_type</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_resource_type</tt> <tt class="py-op">=</tt> <tt class="py-name">resource_type</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-22" class="py-name"><a title="_Framework.ControlElement.ControlElement.optimized_send_midi" class="py-name" href="#" onclick="return doclink('link-22', 'optimized_send_midi', 'link-11');">optimized_send_midi</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="_Framework.ControlElement.ControlElement.optimized_send_midi" class="py-name" href="#" onclick="return doclink('link-23', 'optimized_send_midi', 'link-11');">optimized_send_midi</a></tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="_Framework.ControlElement.ControlElement.optimized_send_midi" class="py-name" href="#" onclick="return doclink('link-24', 'optimized_send_midi', 'link-11');">optimized_send_midi</a></tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt class="py-name">register_control</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
+<a name="ControlElement.disconnect"></a><div id="ControlElement.disconnect-def"><a name="L31"></a><tt class="py-lineno">31</tt> <a class="py-toggle" href="#" id="ControlElement.disconnect-toggle" onclick="return toggle('ControlElement.disconnect');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#disconnect">disconnect</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement.disconnect-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement.disconnect-expanded"><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Method _Framework.ButtonMatrixElement.ButtonMatrixElement.reset()=_Framework.ButtonMatrixElement.ButtonMatrixElement-class.html#reset,Method _Framework.CompoundElement.CompoundElement.reset()=_Framework.CompoundElement.CompoundElement-class.html#reset,Method _Framework.ControlElement.ControlElement.reset()=_Framework.ControlElement.ControlElement-class.html#reset,Method _Framework.InputControlElement.InputControlElement.reset()=_Framework.InputControlElement.InputControlElement-class.html#reset,Method _Framework.PhysicalDisplayElement.PhysicalDisplayElement.reset()=_Framework.PhysicalDisplayElement.PhysicalDisplayElement-class.html#reset,Method _Framework.SysexValueControl.SysexValueControl.reset()=_Framework.SysexValueControl.SysexValueControl-class.html#reset"><a title="_Framework.ButtonMatrixElement.ButtonMatrixElement.reset
+_Framework.CompoundElement.CompoundElement.reset
+_Framework.ControlElement.ControlElement.reset
+_Framework.InputControlElement.InputControlElement.reset
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.reset
+_Framework.SysexValueControl.SysexValueControl.reset" class="py-name" href="#" onclick="return doclink('link-25', 'reset', 'link-25');">reset</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-26" class="py-name"><a title="_Framework.ControlElement
+_Framework.ControlElement.ControlElement" class="py-name" href="#" onclick="return doclink('link-26', 'ControlElement', 'link-16');">ControlElement</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method _Framework.ButtonSliderElement.ButtonSliderElement.disconnect()=_Framework.ButtonSliderElement.ButtonSliderElement-class.html#disconnect,Method _Framework.ChannelStripComponent.ChannelStripComponent.disconnect()=_Framework.ChannelStripComponent.ChannelStripComponent-class.html#disconnect,Method _Framework.ChannelTranslationSelector.ChannelTranslationSelector.disconnect()=_Framework.ChannelTranslationSelector.ChannelTranslationSelector-class.html#disconnect,Method _Framework.ControlElement.ControlElement.disconnect()=_Framework.ControlElement.ControlElement-class.html#disconnect,Method _Framework.ControlSurface.ControlSurface.disconnect()=_Framework.ControlSurface.ControlSurface-class.html#disconnect,Method _Framework.ControlSurfaceComponent.ControlSurfaceComponent.disconnect()=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#disconnect,Method _Framework.DeviceComponent.DeviceComponent.disconnect()=_Framework.DeviceComponent.DeviceComponent-class.html#disconnect,Method _Framework.Disconnectable.CompoundDisconnectable.disconnect()=_Framework.Disconnectable.CompoundDisconnectable-class.html#disconnect,Method _Framework.Disconnectable.Disconnectable.disconnect()=_Framework.Disconnectable.Disconnectable-class.html#disconnect,Method _Framework.InputControlElement.InputSignal.disconnect()=_Framework.InputControlElement.InputSignal-class.html#disconnect,Method _Framework.InputControlElement.ParameterSlot.disconnect()=_Framework.InputControlElement.ParameterSlot-class.html#disconnect,Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.disconnect()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#disconnect,Method _Framework.MixerComponent.MixerComponent.disconnect()=_Framework.MixerComponent.MixerComponent-class.html#disconnect,Method _Framework.ModeSelectorComponent.ModeSelectorComponent.disconnect()=_Framework.ModeSelectorComponent.ModeSelectorComponent-class.html#disconnect,Method _Framework.ModesComponent.ModesComponent.disconnect()=_Framework.ModesComponent.ModesComponent-class.html#disconnect,Method _Framework.MomentaryModeObserver.MomentaryModeObserver.disconnect()=_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#disconnect,Method _Framework.PhysicalDisplayElement.PhysicalDisplayElement.disconnect()=_Framework.PhysicalDisplayElement.PhysicalDisplayElement-class.html#disconnect,Method _Framework.SceneComponent.SceneComponent.disconnect()=_Framework.SceneComponent.SceneComponent-class.html#disconnect,Method _Framework.SessionComponent.SessionComponent.disconnect()=_Framework.SessionComponent.SessionComponent-class.html#disconnect,Method _Framework.Signal.Signal.disconnect()=_Framework.Signal.Signal-class.html#disconnect,Method _Framework.SubjectSlot.SubjectSlot.disconnect()=_Framework.SubjectSlot.SubjectSlot-class.html#disconnect,Method _Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.disconnect()=_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent-class.html#disconnect,Method _Framework.TrackEQComponent.TrackEQComponent.disconnect()=_Framework.TrackEQComponent.TrackEQComponent-class.html#disconnect,Method _Framework.TrackFilterComponent.TrackFilterComponent.disconnect()=_Framework.TrackFilterComponent.TrackFilterComponent-class.html#disconnect"><a title="_Framework.ButtonSliderElement.ButtonSliderElement.disconnect
+_Framework.ChannelStripComponent.ChannelStripComponent.disconnect
+_Framework.ChannelTranslationSelector.ChannelTranslationSelector.disconnect
+_Framework.ControlElement.ControlElement.disconnect
+_Framework.ControlSurface.ControlSurface.disconnect
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.disconnect
+_Framework.DeviceComponent.DeviceComponent.disconnect
+_Framework.Disconnectable.CompoundDisconnectable.disconnect
+_Framework.Disconnectable.Disconnectable.disconnect
+_Framework.InputControlElement.InputSignal.disconnect
+_Framework.InputControlElement.ParameterSlot.disconnect
+_Framework.LogicalDisplaySegment.LogicalDisplaySegment.disconnect
+_Framework.MixerComponent.MixerComponent.disconnect
+_Framework.ModeSelectorComponent.ModeSelectorComponent.disconnect
+_Framework.ModesComponent.ModesComponent.disconnect
+_Framework.MomentaryModeObserver.MomentaryModeObserver.disconnect
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.disconnect
+_Framework.SceneComponent.SceneComponent.disconnect
+_Framework.SessionComponent.SessionComponent.disconnect
+_Framework.Signal.Signal.disconnect
+_Framework.SubjectSlot.SubjectSlot.disconnect
+_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.disconnect
+_Framework.TrackEQComponent.TrackEQComponent.disconnect
+_Framework.TrackFilterComponent.TrackFilterComponent.disconnect" class="py-name" href="#" onclick="return doclink('link-27', 'disconnect', 'link-27');">disconnect</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt>
+<a name="ControlElement.send_midi"></a><div id="ControlElement.send_midi-def"><a name="L35"></a><tt class="py-lineno">35</tt> <a class="py-toggle" href="#" id="ControlElement.send_midi-toggle" onclick="return toggle('ControlElement.send_midi');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#send_midi">send_midi</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">message</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement.send_midi-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement.send_midi-expanded"><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">message</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="_Framework.ControlSurface.ControlSurface._send_midi" class="py-name" href="#" onclick="return doclink('link-28', '_send_midi', 'link-18');">_send_midi</a></tt><tt class="py-op">(</tt><tt class="py-name">message</tt><tt class="py-op">,</tt> <tt class="py-name">optimized</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="_Framework.ControlElement.ControlElement.optimized_send_midi" class="py-name" href="#" onclick="return doclink('link-29', 'optimized_send_midi', 'link-11');">optimized_send_midi</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"> </tt>
+<a name="ControlElement.clear_send_cache"></a><div id="ControlElement.clear_send_cache-def"><a name="L39"></a><tt class="py-lineno">39</tt> <a class="py-toggle" href="#" id="ControlElement.clear_send_cache-toggle" onclick="return toggle('ControlElement.clear_send_cache');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#clear_send_cache">clear_send_cache</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement.clear_send_cache-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement.clear_send_cache-expanded"><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="ControlElement.reset"></a><div id="ControlElement.reset-def"><a name="L42"></a><tt class="py-lineno">42</tt> <a class="py-toggle" href="#" id="ControlElement.reset-toggle" onclick="return toggle('ControlElement.reset');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#reset">reset</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement.reset-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement.reset-expanded"><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">property</tt> </tt>
+<a name="ControlElement.resource"></a><div id="ControlElement.resource-def"><a name="L46"></a><tt class="py-lineno">46</tt> <a class="py-toggle" href="#" id="ControlElement.resource-toggle" onclick="return toggle('ControlElement.resource');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#resource">resource</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement.resource-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement.resource-expanded"><a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method _Framework.ControlElement.ControlElement._resource()=_Framework.ControlElement.ControlElement-class.html#_resource"><a title="_Framework.ControlElement.ControlElement._resource" class="py-name" href="#" onclick="return doclink('link-30', '_resource', 'link-30');">_resource</a></tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lazy_attribute</tt> </tt>
+<a name="ControlElement._resource"></a><div id="ControlElement._resource-def"><a name="L50"></a><tt class="py-lineno">50</tt> <a class="py-toggle" href="#" id="ControlElement._resource-toggle" onclick="return toggle('ControlElement._resource');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#_resource">_resource</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement._resource-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement._resource-expanded"><a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="_Framework.ControlElement.ControlElement._has_resource" class="py-name" href="#" onclick="return doclink('link-31', '_has_resource', 'link-12');">_has_resource</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_resource_type</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Method _Framework.CompoundElement.CompoundElement._on_grab_resource()=_Framework.CompoundElement.CompoundElement-class.html#_on_grab_resource,Method _Framework.ControlElement.ControlElement._on_grab_resource()=_Framework.ControlElement.ControlElement-class.html#_on_grab_resource"><a title="_Framework.CompoundElement.CompoundElement._on_grab_resource
+_Framework.ControlElement.ControlElement._on_grab_resource" class="py-name" href="#" onclick="return doclink('link-32', '_on_grab_resource', 'link-32');">_on_grab_resource</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Method _Framework.CompoundElement.CompoundElement._on_release_resource()=_Framework.CompoundElement.CompoundElement-class.html#_on_release_resource,Method _Framework.ControlElement.ControlElement._on_release_resource()=_Framework.ControlElement.ControlElement-class.html#_on_release_resource"><a title="_Framework.CompoundElement.CompoundElement._on_release_resource
+_Framework.ControlElement.ControlElement._on_release_resource" class="py-name" href="#" onclick="return doclink('link-33', '_on_release_resource', 'link-33');">_on_release_resource</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">lazy_attribute</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">depends</tt><tt class="py-op">(</tt><tt class="py-name">parent_task_group</tt><tt class="py-op">=</tt><tt id="link-34" class="py-name"><a title="_Framework.Task
+_Framework.Task.Task" class="py-name" href="#" onclick="return doclink('link-34', 'Task', 'link-8');">Task</a></tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Class _Framework.Task.TaskGroup=_Framework.Task.TaskGroup-class.html"><a title="_Framework.Task.TaskGroup" class="py-name" href="#" onclick="return doclink('link-35', 'TaskGroup', 'link-35');">TaskGroup</a></tt><tt class="py-op">)</tt> </tt>
+<a name="ControlElement._tasks"></a><div id="ControlElement._tasks-def"><a name="L56"></a><tt class="py-lineno">56</tt> <a class="py-toggle" href="#" id="ControlElement._tasks-toggle" onclick="return toggle('ControlElement._tasks');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#_tasks">_tasks</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">parent_task_group</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement._tasks-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement._tasks-expanded"><a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-name">tasks</tt> <tt class="py-op">=</tt> <tt class="py-name">parent_task_group</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Method _Framework.Task.TaskGroup.add()=_Framework.Task.TaskGroup-class.html#add"><a title="_Framework.Task.TaskGroup.add" class="py-name" href="#" onclick="return doclink('link-36', 'add', 'link-36');">add</a></tt><tt class="py-op">(</tt><tt id="link-37" class="py-name"><a title="_Framework.Task
+_Framework.Task.Task" class="py-name" href="#" onclick="return doclink('link-37', 'Task', 'link-8');">Task</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="_Framework.Task.TaskGroup" class="py-name" href="#" onclick="return doclink('link-38', 'TaskGroup', 'link-35');">TaskGroup</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="_Framework.ControlElement.ControlElement._has_task_group
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent._has_task_group" class="py-name" href="#" onclick="return doclink('link-39', '_has_task_group', 'link-14');">_has_task_group</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">tasks</tt> </tt>
+</div><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"> </tt>
+<a name="ControlElement._on_grab_resource"></a><div id="ControlElement._on_grab_resource-def"><a name="L61"></a><tt class="py-lineno">61</tt> <a class="py-toggle" href="#" id="ControlElement._on_grab_resource-toggle" onclick="return toggle('ControlElement._on_grab_resource');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#_on_grab_resource">_on_grab_resource</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">client</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement._on_grab_resource-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement._on_grab_resource-expanded"><a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt class="py-name">client</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method _Framework.CompoundElement.CompoundElement.set_control_element()=_Framework.CompoundElement.CompoundElement-class.html#set_control_element,Method _Framework.Layer.Layer.set_control_element()=_Framework.Layer.Layer-class.html#set_control_element"><a title="_Framework.CompoundElement.CompoundElement.set_control_element
+_Framework.Layer.Layer.set_control_element" class="py-name" href="#" onclick="return doclink('link-40', 'set_control_element', 'link-40');">set_control_element</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"> </tt>
+<a name="ControlElement._on_release_resource"></a><div id="ControlElement._on_release_resource-def"><a name="L64"></a><tt class="py-lineno">64</tt> <a class="py-toggle" href="#" id="ControlElement._on_release_resource-toggle" onclick="return toggle('ControlElement._on_release_resource');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ControlElement.ControlElement-class.html#_on_release_resource">_on_release_resource</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">client</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ControlElement._on_release_resource-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ControlElement._on_release_resource-expanded"><a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt class="py-name">client</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="_Framework.CompoundElement.CompoundElement.set_control_element
+_Framework.Layer.Layer.set_control_element" class="py-name" href="#" onclick="return doclink('link-41', 'set_control_element', 'link-40');">set_control_element</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 18:53:34 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

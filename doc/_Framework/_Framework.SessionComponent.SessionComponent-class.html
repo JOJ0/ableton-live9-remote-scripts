@@ -1,0 +1,1692 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>_Framework.SessionComponent.SessionComponent</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="_Framework-module.html">Package&nbsp;_Framework</a> ::
+        <a href="_Framework.SessionComponent-module.html">Module&nbsp;SessionComponent</a> ::
+        Class&nbsp;SessionComponent
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="_Framework.SessionComponent.SessionComponent-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SessionComponent</h1><p class="nomargin-top"><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+                         object --+                    
+                                  |                    
+      <a href="_Framework.Disconnectable.Disconnectable-class.html">Disconnectable.Disconnectable</a> --+                
+                                      |                
+  <a href="_Framework.Disconnectable.CompoundDisconnectable-class.html">Disconnectable.CompoundDisconnectable</a> --+            
+                                          |            
+                    <a href="_Framework.SubjectSlot.SlotManager-class.html">SubjectSlot.SlotManager</a> --+        
+                                              |        
+                             object --+       |        
+                                      |       |        
+          <a href="_Framework.Disconnectable.Disconnectable-class.html">Disconnectable.Disconnectable</a> --+   |        
+                                          |   |        
+                        <a href="_Framework.SubjectSlot.Subject-class.html">SubjectSlot.Subject</a> --+        
+                                              |        
+<a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a> --+    
+                                                  |    
+                <a href="_Framework.CompoundComponent.CompoundComponent-class.html">CompoundComponent.CompoundComponent</a> --+
+                                                      |
+                                                     <strong class="uidshort">SessionComponent</strong>
+</pre>
+
+<hr />
+<p>Class encompassing several scene to cover a defined section of Live's 
+  session.  It controls the session ring and the set of tracks controlled 
+  by a given mixer.</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.SubjectSlot.Subject-class.html">SubjectSlot.Subject</a></code></b>:
+      <code><a href="_Framework.SubjectSlot.SubjectMeta-class.html">__metaclass__</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">num_tracks</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">num_scenes</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">*a</span>,
+        <span class="summary-sig-arg">**k</span>)</span><br />
+      x.__init__(...) initializes x; see help(type(x)) for signature</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_end_initialisation"></a><span class="summary-sig-name">_end_initialisation</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._end_initialisation">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_create_scene"></a><span class="summary-sig-name">_create_scene</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._create_scene">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#disconnect" class="summary-sig-name">disconnect</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.disconnect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_highlighting_callback"></a><span class="summary-sig-name">set_highlighting_callback</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">callback</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_highlighting_callback">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="scene"></a><span class="summary-sig-name">scene</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">index</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.scene">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="selected_scene"></a><span class="summary-sig-name">selected_scene</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.selected_scene">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_scene_bank_buttons"></a><span class="summary-sig-name">set_scene_bank_buttons</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">down_button</span>,
+        <span class="summary-sig-arg">up_button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_scene_bank_buttons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_scene_bank_up_button"></a><span class="summary-sig-name">set_scene_bank_up_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_scene_bank_up_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_scene_bank_down_button"></a><span class="summary-sig-name">set_scene_bank_down_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_scene_bank_down_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_track_bank_buttons"></a><span class="summary-sig-name">set_track_bank_buttons</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">right_button</span>,
+        <span class="summary-sig-arg">left_button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_track_bank_buttons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_track_bank_left_button"></a><span class="summary-sig-name">set_track_bank_left_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_track_bank_left_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_track_bank_right_button"></a><span class="summary-sig-name">set_track_bank_right_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_track_bank_right_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_stop_all_clips_button"></a><span class="summary-sig-name">set_stop_all_clips_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_stop_all_clips_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_stop_track_clip_buttons"></a><span class="summary-sig-name">set_stop_track_clip_buttons</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">buttons</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_stop_track_clip_buttons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_track_banking_increment"></a><span class="summary-sig-name">set_track_banking_increment</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">increment</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_track_banking_increment">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_stop_track_clip_value"></a><span class="summary-sig-name">set_stop_track_clip_value</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_stop_track_clip_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_select_buttons"></a><span class="summary-sig-name">set_select_buttons</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">next_button</span>,
+        <span class="summary-sig-arg">prev_button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_select_buttons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_select_next_button"></a><span class="summary-sig-name">set_select_next_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">next_button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_select_next_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_select_prev_button"></a><span class="summary-sig-name">set_select_prev_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">prev_button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_select_prev_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_clip_launch_buttons"></a><span class="summary-sig-name">set_clip_launch_buttons</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">buttons</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_clip_launch_buttons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_scene_launch_buttons"></a><span class="summary-sig-name">set_scene_launch_buttons</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">buttons</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_scene_launch_buttons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_mixer"></a><span class="summary-sig-name">set_mixer</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mixer</span>)</span><br />
+      Sets the MixerComponent to be controlled by this session</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_mixer">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_offsets"></a><span class="summary-sig-name">set_offsets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">track_offset</span>,
+        <span class="summary-sig-arg">scene_offset</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_offsets">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_show_highlight"></a><span class="summary-sig-name">set_show_highlight</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">show_highlight</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.set_show_highlight">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#on_enabled_changed" class="summary-sig-name">on_enabled_changed</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.on_enabled_changed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#update" class="summary-sig-name">update</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.update">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_update_stop_track_clip_buttons"></a><span class="summary-sig-name">_update_stop_track_clip_buttons</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._update_stop_track_clip_buttons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#on_scene_list_changed" class="summary-sig-name">on_scene_list_changed</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Called by the control surface if scenes are added/removed, to be 
+      overridden</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.on_scene_list_changed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#on_track_list_changed" class="summary-sig-name">on_track_list_changed</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Called by the control surface if tracks are added/removed, to be 
+      overridden</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.on_track_list_changed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#on_selected_scene_changed" class="summary-sig-name">on_selected_scene_changed</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Called by the control surface when a scene is selected, to be 
+      overridden</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.on_selected_scene_changed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="width"></a><span class="summary-sig-name">width</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.width">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="height"></a><span class="summary-sig-name">height</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.height">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="track_offset"></a><span class="summary-sig-name">track_offset</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.track_offset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="scene_offset"></a><span class="summary-sig-name">scene_offset</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.scene_offset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="tracks_to_use"></a><span class="summary-sig-name">tracks_to_use</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.tracks_to_use">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_minimal_track_offset"></a><span class="summary-sig-name">_get_minimal_track_offset</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._get_minimal_track_offset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_minimal_scene_offset"></a><span class="summary-sig-name">_get_minimal_scene_offset</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._get_minimal_scene_offset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_can_bank_down"></a><span class="summary-sig-name">_can_bank_down</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._can_bank_down">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_can_bank_up"></a><span class="summary-sig-name">_can_bank_up</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._can_bank_up">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_can_bank_right"></a><span class="summary-sig-name">_can_bank_right</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._can_bank_right">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_can_bank_left"></a><span class="summary-sig-name">_can_bank_left</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._can_bank_left">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_bank_up"></a><span class="summary-sig-name">_bank_up</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._bank_up">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_bank_down"></a><span class="summary-sig-name">_bank_down</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._bank_down">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_bank_right"></a><span class="summary-sig-name">_bank_right</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._bank_right">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_bank_left"></a><span class="summary-sig-name">_bank_left</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._bank_left">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_update_stop_all_clips_button"></a><span class="summary-sig-name">_update_stop_all_clips_button</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._update_stop_all_clips_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_update_select_buttons"></a><span class="summary-sig-name">_update_select_buttons</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._update_select_buttons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_update_scene_offset"></a><span class="summary-sig-name">_update_scene_offset</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._update_scene_offset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_change_offsets"></a><span class="summary-sig-name">_change_offsets</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">track_increment</span>,
+        <span class="summary-sig-arg">scene_increment</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._change_offsets">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_reassign_scenes"></a><span class="summary-sig-name">_reassign_scenes</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._reassign_scenes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_reassign_tracks"></a><span class="summary-sig-name">_reassign_tracks</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._reassign_tracks">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#_on_stop_all_value" class="summary-sig-name" onclick="show_private();">_on_stop_all_value</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._on_stop_all_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_stop_all_value"></a><span class="summary-sig-name">_stop_all_value</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._stop_all_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#_on_next_scene_value" class="summary-sig-name" onclick="show_private();">_on_next_scene_value</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._on_next_scene_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#_on_prev_scene_value" class="summary-sig-name" onclick="show_private();">_on_prev_scene_value</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._on_prev_scene_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SessionComponent.SessionComponent-class.html#_on_stop_track_value" class="summary-sig-name" onclick="show_private();">_on_stop_track_value</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">sender</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._on_stop_track_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_do_show_highlight"></a><span class="summary-sig-name">_do_show_highlight</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._do_show_highlight">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_on_fired_slot_index_changed"></a><span class="summary-sig-name">_on_fired_slot_index_changed</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">index</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._on_fired_slot_index_changed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_is_linked"></a><span class="summary-sig-name">_is_linked</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._is_linked">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_link"></a><span class="summary-sig-name">_link</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._link">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_unlink"></a><span class="summary-sig-name">_unlink</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._unlink">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html">CompoundComponent.CompoundComponent</a></code></b>:
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#has_component">has_component</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#register_component">register_component</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#register_components">register_components</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#set_allow_update">set_allow_update</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#set_enabled">set_enabled</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#update_all">update_all</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html">CompoundComponent.CompoundComponent</a></code></b> (private):
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#_set_enabled_recursive" onclick="show_private();">_set_enabled_recursive</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b>:
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#application">application</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#is_enabled">is_enabled</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_selected_track_changed">on_selected_track_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#song">song</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b> (private):
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_get_layer" onclick="show_private();">_get_layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_internal_on_enabled_changed" onclick="show_private();">_internal_on_enabled_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_register_timer_callback" onclick="show_private();">_register_timer_callback</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_set_layer" onclick="show_private();">_set_layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_tasks" onclick="show_private();">_tasks</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_unregister_timer_callback" onclick="show_private();">_unregister_timer_callback</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_update_is_enabled" onclick="show_private();">_update_is_enabled</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.SubjectSlot.SlotManager-class.html">SubjectSlot.SlotManager</a></code></b>:
+      <code><a href="_Framework.SubjectSlot.SlotManager-class.html#register_slot">register_slot</a></code>,
+      <code><a href="_Framework.SubjectSlot.SlotManager-class.html#register_slot_manager">register_slot_manager</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html">Disconnectable.CompoundDisconnectable</a></code></b>:
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#disconnect_disconnectable">disconnect_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#find_disconnectable">find_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#has_disconnectable">has_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#register_disconnectable">register_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#unregister_disconnectable">unregister_disconnectable</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_perform_offset_change"></a><span class="summary-sig-name">_perform_offset_change</span>(<span class="summary-sig-arg">track_increment</span>,
+        <span class="summary-sig-arg">scene_increment</span>)</span><br />
+      Performs the given offset changes on all linked instances</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._perform_offset_change">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__subject_events__"></a><span class="summary-name">__subject_events__</span> = <code title="'offset',">'offset',</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_linked_session_instances"></a><span class="summary-name">_linked_session_instances</span> = <code title="[]">[]</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_minimal_track_offset"></a><span class="summary-name">_minimal_track_offset</span> = <code title="-1">-1</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_minimal_scene_offset"></a><span class="summary-name">_minimal_scene_offset</span> = <code title="-1">-1</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_highlighting_callback"></a><span class="summary-name">_highlighting_callback</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_session_component_ends_initialisation"></a><span class="summary-name">_session_component_ends_initialisation</span> = <code title="True">True</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="scene_component_type"></a><span class="summary-name">scene_component_type</span> = <code title="SceneComponent">SceneComponent</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b>:
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#canonical_parent">canonical_parent</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#is_private">is_private</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#layer">layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#name">name</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b> (private):
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_has_task_group" onclick="show_private();">_has_task_group</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_layer" onclick="show_private();">_layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_show_msg_callback" onclick="show_private();">_show_msg_callback</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">num_tracks</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">num_scenes</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">*a</span>,
+        <span class="sig-arg">**k</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="disconnect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">disconnect</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.disconnect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.Disconnectable.Disconnectable-class.html#disconnect">Disconnectable.Disconnectable.disconnect</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="on_enabled_changed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">on_enabled_changed</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.on_enabled_changed">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_enabled_changed">ControlSurfaceComponent.ControlSurfaceComponent.on_enabled_changed</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="update"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.update">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#update">ControlSurfaceComponent.ControlSurfaceComponent.update</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="on_scene_list_changed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">on_scene_list_changed</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.on_scene_list_changed">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Called by the control surface if scenes are added/removed, to be 
+  overridden</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_scene_list_changed">ControlSurfaceComponent.ControlSurfaceComponent.on_scene_list_changed</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="on_track_list_changed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">on_track_list_changed</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.on_track_list_changed">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Called by the control surface if tracks are added/removed, to be 
+  overridden</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_track_list_changed">ControlSurfaceComponent.ControlSurfaceComponent.on_track_list_changed</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="on_selected_scene_changed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">on_selected_scene_changed</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent.on_selected_scene_changed">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Called by the control surface when a scene is selected, to be 
+  overridden</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_selected_scene_changed">ControlSurfaceComponent.ControlSurfaceComponent.on_selected_scene_changed</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_on_stop_all_value"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_on_stop_all_value</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._on_stop_all_value">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@subject_slot('value')</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_on_next_scene_value"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_on_next_scene_value</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._on_next_scene_value">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@subject_slot('value')</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_on_prev_scene_value"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_on_prev_scene_value</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._on_prev_scene_value">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@subject_slot('value')</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_on_stop_track_value"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_on_stop_track_value</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>,
+        <span class="sig-arg">sender</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SessionComponent-pysrc.html#SessionComponent._on_stop_track_value">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@subject_slot('value')</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 18:53:32 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

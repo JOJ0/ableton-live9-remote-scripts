@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Push.Colors</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="Push-module.html">Package&nbsp;Push</a> ::
+        Module&nbsp;Colors
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="Push.Colors-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="Push.Colors-module.html">Module Push.Colors</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/Push/Colors.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">Module for the color interfaces defining all posible ways of turning</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">on buttons in the L9C.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module Push.consts=Push.consts-module.html"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-0', 'consts', 'link-0');">consts</a></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">itertools</tt> <tt class="py-keyword">import</tt> <tt class="py-name">izip</tt><tt class="py-op">,</tt> <tt class="py-name">repeat</tt> </tt>
+<a name="NotDrawableError"></a><div id="NotDrawableError-def"><a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt> <a class="py-toggle" href="#" id="NotDrawableError-toggle" onclick="return toggle('NotDrawableError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.NotDrawableError-class.html">NotDrawableError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotDrawableError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="NotDrawableError-expanded"><a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"> </tt>
+<a name="Color"></a><div id="Color-def"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt> <a class="py-toggle" href="#" id="Color-toggle" onclick="return toggle('Color');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.Color-class.html">Color</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Color-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Color-expanded"><a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">    Basic interface for the different color types.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt id="link-1" class="py-name" targets="Method Push.Colors.AnimatedColor.midi_value()=Push.Colors.AnimatedColor-class.html#midi_value,Variable Push.Colors.Color.midi_value=Push.Colors.Color-class.html#midi_value"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-1', 'midi_value', 'link-1');">midi_value</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="Color.__init__"></a><div id="Color.__init__-def"><a name="L19"></a><tt class="py-lineno"> 19</tt> <a class="py-toggle" href="#" id="Color.__init__-toggle" onclick="return toggle('Color.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.Color-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">midi_value</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Color.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Color.__init__-expanded"><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-2" class="py-name" targets="Class Push.Colors.Color=Push.Colors.Color-class.html"><a title="Push.Colors.Color" class="py-name" href="#" onclick="return doclink('link-2', 'Color', 'link-2');">Color</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method Push.AccentComponent.AccentComponent.__init__()=Push.AccentComponent.AccentComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithOptionsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithSettingsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.OptionsComponent.__init__()=Push.ActionWithOptionsComponent.OptionsComponent-class.html#__init__,Method Push.Actions.CreateDefaultTrackComponent.__init__()=Push.Actions.CreateDefaultTrackComponent-class.html#__init__,Method Push.Actions.CreateDeviceComponent.__init__()=Push.Actions.CreateDeviceComponent-class.html#__init__,Method Push.Actions.CreateInstrumentTrackComponent.__init__()=Push.Actions.CreateInstrumentTrackComponent-class.html#__init__,Method Push.Actions.DeleteComponent.__init__()=Push.Actions.DeleteComponent-class.html#__init__,Method Push.Actions.DuplicateLoopComponent.__init__()=Push.Actions.DuplicateLoopComponent-class.html#__init__,Method Push.Actions.SelectComponent.__init__()=Push.Actions.SelectComponent-class.html#__init__,Method Push.Actions.SelectionDisplayComponent.__init__()=Push.Actions.SelectionDisplayComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmComponent.__init__()=Push.AutoArmComponent.AutoArmComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__()=Push.AutoArmComponent.AutoArmRestoreBehaviour-class.html#__init__,Method Push.BackgroundComponent.BackgroundComponent.__init__()=Push.BackgroundComponent.BackgroundComponent-class.html#__init__,Method Push.BackgroundComponent.ModifierBackgroundComponent.__init__()=Push.BackgroundComponent.ModifierBackgroundComponent-class.html#__init__,Method Push.BrowserComponent.BrowserComponent.__init__()=Push.BrowserComponent.BrowserComponent-class.html#__init__,Method Push.BrowserComponent.BrowserList.__init__()=Push.BrowserComponent.BrowserList-class.html#__init__,Method Push.BrowserComponent.BrowserModel.__init__()=Push.BrowserComponent.BrowserModel-class.html#__init__,Method Push.BrowserComponent.BrowserQuery.__init__()=Push.BrowserComponent.BrowserQuery-class.html#__init__,Method Push.BrowserComponent.FullBrowserModel.__init__()=Push.BrowserComponent.FullBrowserModel-class.html#__init__,Method Push.BrowserComponent.PathBrowserQuery.__init__()=Push.BrowserComponent.PathBrowserQuery-class.html#__init__,Method Push.BrowserComponent.QueryingBrowserModel.__init__()=Push.BrowserComponent.QueryingBrowserModel-class.html#__init__,Method Push.BrowserComponent.SourceBrowserQuery.__init__()=Push.BrowserComponent.SourceBrowserQuery-class.html#__init__,Method Push.BrowserComponent.TagBrowserQuery.__init__()=Push.BrowserComponent.TagBrowserQuery-class.html#__init__,Method Push.BrowserComponent.VirtualBrowserItem.__init__()=Push.BrowserComponent.VirtualBrowserItem-class.html#__init__,Method Push.BrowserModes.BrowserAddEffectMode.__init__()=Push.BrowserModes.BrowserAddEffectMode-class.html#__init__,Method Push.BrowserModes.BrowserHotswapMode.__init__()=Push.BrowserModes.BrowserHotswapMode-class.html#__init__,Method Push.ClipControlComponent.AudioClipSettingsComponent.__init__()=Push.ClipControlComponent.AudioClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.ClipControlComponent.__init__()=Push.ClipControlComponent.ClipControlComponent-class.html#__init__,Method Push.ClipControlComponent.ClipNameComponent.__init__()=Push.ClipControlComponent.ClipNameComponent-class.html#__init__,Method Push.ClipControlComponent.LoopSettingsComponent.__init__()=Push.ClipControlComponent.LoopSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.MidiClipSettingsComponent.__init__()=Push.ClipControlComponent.MidiClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.NoClipSettingsComponent.__init__()=Push.ClipControlComponent.NoClipSettingsComponent-class.html#__init__,Method Push.ClipCreator.ClipCreator.__init__()=Push.ClipCreator.ClipCreator-class.html#__init__,Method Push.Colors.AnimatedColor.__init__()=Push.Colors.AnimatedColor-class.html#__init__,Method Push.Colors.Blink.__init__()=Push.Colors.Blink-class.html#__init__,Method Push.Colors.Color.__init__()=Push.Colors.Color-class.html#__init__,Method Push.Colors.FallbackColor.__init__()=Push.Colors.FallbackColor-class.html#__init__,Method Push.Colors.Pulse.__init__()=Push.Colors.Pulse-class.html#__init__,Method Push.Colors.RgbColor.__init__()=Push.Colors.RgbColor-class.html#__init__,Method Push.ComboElement.ComboElement.__init__()=Push.ComboElement.ComboElement-class.html#__init__,Method Push.ComboElement.WrapperElement.__init__()=Push.ComboElement.WrapperElement-class.html#__init__,Method Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#__init__,Method Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__()=Push.DeviceNavigationComponent.DeviceNavigationComponent-class.html#__init__,Method Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__()=Push.DisplayingDeviceComponent.DisplayingDeviceComponent-class.html#__init__,Method Push.DrumGroupComponent.DrumGroupComponent.__init__()=Push.DrumGroupComponent.DrumGroupComponent-class.html#__init__,Method Push.HandshakeComponent.HandshakeComponent.__init__()=Push.HandshakeComponent.HandshakeComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentComponent.__init__()=Push.InstrumentComponent.InstrumentComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentPresetsComponent.__init__()=Push.InstrumentComponent.InstrumentPresetsComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentScalesComponent.__init__()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#__init__,Method Push.InstrumentComponent.ScalesInfoComponent.__init__()=Push.InstrumentComponent.ScalesInfoComponent-class.html#__init__,Method Push.LoopSelectorComponent.LoopSelectorComponent.__init__()=Push.LoopSelectorComponent.LoopSelectorComponent-class.html#__init__,Method Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__()=Push.M4LInterfaceComponent.M4LInterfaceComponent-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.NoteInfo.__init__()=Push.MelodicComponent.MelodicPattern.NoteInfo-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.__init__()=Push.MelodicComponent.MelodicPattern-class.html#__init__,Method Push.MelodicComponent.Modus.__init__()=Push.MelodicComponent.Modus-class.html#__init__,Method Push.MelodicComponent.Scale.__init__()=Push.MelodicComponent.Scale-class.html#__init__,Method Push.MessageBoxComponent.DialogComponent.__init__()=Push.MessageBoxComponent.DialogComponent-class.html#__init__,Method Push.MessageBoxComponent.MessageBoxComponent.__init__()=Push.MessageBoxComponent.MessageBoxComponent-class.html#__init__,Method Push.MessageBoxComponent.NotificationComponent.__init__()=Push.MessageBoxComponent.NotificationComponent-class.html#__init__,Method Push.MessageBoxComponent._CallbackControl.__init__()=Push.MessageBoxComponent._CallbackControl-class.html#__init__,Method Push.NavigationNode.ChainNode.__init__()=Push.NavigationNode.ChainNode-class.html#__init__,Method Push.NavigationNode.ModelNode.__init__()=Push.NavigationNode.ModelNode-class.html#__init__,Method Push.NavigationNode.RackNode.__init__()=Push.NavigationNode.RackNode-class.html#__init__,Method Push.NavigationNode.SimpleDeviceNode.__init__()=Push.NavigationNode.SimpleDeviceNode-class.html#__init__,Method Push.NavigationNode.SongNode.__init__()=Push.NavigationNode.SongNode-class.html#__init__,Method Push.NoteEditorComponent.NoteEditorComponent.__init__()=Push.NoteEditorComponent.NoteEditorComponent-class.html#__init__,Method Push.NoteEditorComponent.TimeStep.__init__()=Push.NoteEditorComponent.TimeStep-class.html#__init__,Method Push.NoteRepeatComponent.NoteRepeatComponent.__init__()=Push.NoteRepeatComponent.NoteRepeatComponent-class.html#__init__,Method Push.OptionalElement.OptionalElement.__init__()=Push.OptionalElement.OptionalElement-class.html#__init__,Method Push.PadSensitivity.PadSensitivity.__init__()=Push.PadSensitivity.PadSensitivity-class.html#__init__,Method Push.Push.Push.__init__()=Push.Push.Push-class.html#__init__,Method Push.ScrollableList.ListComponent.__init__()=Push.ScrollableList.ListComponent-class.html#__init__,Method Push.ScrollableList.ScrollableList.__init__()=Push.ScrollableList.ScrollableList-class.html#__init__,Method Push.ScrollableList.ScrollableListItem.__init__()=Push.ScrollableList.ScrollableListItem-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListComponent.__init__()=Push.ScrollableListComponent.ScrollableListComponent-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__()=Push.ScrollableListComponent.ScrollableListWithTogglesComponent-class.html#__init__,Method Push.Selection.L9CSelection.__init__()=Push.Selection.L9CSelection-class.html#__init__,Method Push.SessionRecordingComponent.SessionRecordingComponent.__init__()=Push.SessionRecordingComponent.SessionRecordingComponent-class.html#__init__,Method Push.Setting.EnumerableSetting.__init__()=Push.Setting.EnumerableSetting-class.html#__init__,Method Push.Setting.OnOffSetting.__init__()=Push.Setting.OnOffSetting-class.html#__init__,Method Push.Setting.Setting.__init__()=Push.Setting.Setting-class.html#__init__,Method Push.Skin.Skin.__init__()=Push.Skin.Skin-class.html#__init__,Method Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__()=Push.SpecialChanStripComponent.SpecialChanStripComponent-class.html#__init__,Method Push.SpecialMixerComponent.SpecialMixerComponent.__init__()=Push.SpecialMixerComponent.SpecialMixerComponent-class.html#__init__,Method Push.SpecialSessionComponent.DuplicateSceneComponent.__init__()=Push.SpecialSessionComponent.DuplicateSceneComponent-class.html#__init__,Method Push.SpecialSessionComponent.SpecialSessionComponent.__init__()=Push.SpecialSessionComponent.SpecialSessionComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationComponent.__init__()=Push.SpecialTransportComponent.QuantizationComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__()=Push.SpecialTransportComponent.QuantizationSettingsComponent-class.html#__init__,Method Push.SpecialTransportComponent.SpecialTransportComponent.__init__()=Push.SpecialTransportComponent.SpecialTransportComponent-class.html#__init__,Method Push.StepSeqComponent.StepSeqComponent.__init__()=Push.StepSeqComponent.StepSeqComponent-class.html#__init__,Method Push.TouchEncoderElement.TouchEncoderElement.__init__()=Push.TouchEncoderElement.TouchEncoderElement-class.html#__init__,Method Push.TouchStripController.TouchStripControllerComponent.__init__()=Push.TouchStripController.TouchStripControllerComponent-class.html#__init__,Method Push.TouchStripController.TouchStripEncoderConnection.__init__()=Push.TouchStripController.TouchStripEncoderConnection-class.html#__init__,Method Push.TouchStripElement.TouchStripElement.__init__()=Push.TouchStripElement.TouchStripElement-class.html#__init__,Method Push.UserSettingsComponent.UserComponent.__init__()=Push.UserSettingsComponent.UserComponent-class.html#__init__,Method Push.UserSettingsComponent.UserSettingsComponent.__init__()=Push.UserSettingsComponent.UserSettingsComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueComponent.__init__()=Push.ValueComponent.ParameterValueComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueDisplayComponent.__init__()=Push.ValueComponent.ParameterValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueComponent.__init__()=Push.ValueComponent.ValueComponent-class.html#__init__,Method Push.ValueComponent.ValueComponentBase.__init__()=Push.ValueComponent.ValueComponentBase-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponent.__init__()=Push.ValueComponent.ValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponentBase.__init__()=Push.ValueComponent.ValueDisplayComponentBase-class.html#__init__,Method Push.ViewControlComponent.ViewControlComponent.__init__()=Push.ViewControlComponent.ViewControlComponent-class.html#__init__,Method Push.ViewControlComponent._DeltaSongScroller.__init__()=Push.ViewControlComponent._DeltaSongScroller-class.html#__init__"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-3', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-4" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-4', 'midi_value', 'link-1');">midi_value</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-5', 'midi_value', 'link-1');">midi_value</a></tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-6', 'midi_value', 'link-1');">midi_value</a></tt> </tt>
+</div><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="Color.draw"></a><div id="Color.draw-def"><a name="L24"></a><tt class="py-lineno"> 24</tt> <a class="py-toggle" href="#" id="Color.draw-toggle" onclick="return toggle('Color.draw');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.Color-class.html#draw">draw</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">interface</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Color.draw-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Color.draw-expanded"><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">        Draws the color into the interface.  Depending on the color</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">        type, interface might be required special capabilities.</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-name">interface</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method Push.ComboElement.WrapperElement.send_value()=Push.ComboElement.WrapperElement-class.html#send_value"><a title="Push.ComboElement.WrapperElement.send_value" class="py-name" href="#" onclick="return doclink('link-7', 'send_value', 'link-7');">send_value</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-8', 'midi_value', 'link-1');">midi_value</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="Color.__int__"></a><div id="Color.__int__-def"><a name="L31"></a><tt class="py-lineno"> 31</tt> <a class="py-toggle" href="#" id="Color.__int__-toggle" onclick="return toggle('Color.__int__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.Color-class.html#__int__">__int__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Color.__int__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Color.__int__-expanded"><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-9', 'midi_value', 'link-1');">midi_value</a></tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="Color.__eq__"></a><div id="Color.__eq__-def"><a name="L34"></a><tt class="py-lineno"> 34</tt> <a class="py-toggle" href="#" id="Color.__eq__-toggle" onclick="return toggle('Color.__eq__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.Color-class.html#__eq__">__eq__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">other</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Color.__eq__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Color.__eq__-expanded"><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">id</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">id</tt><tt class="py-op">(</tt><tt class="py-name">other</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-10', 'midi_value', 'link-1');">midi_value</a></tt> <tt class="py-op">==</tt> <tt class="py-name">other</tt> </tt>
+</div></div><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="RgbColor"></a><div id="RgbColor-def"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="RgbColor-toggle" onclick="return toggle('RgbColor');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.RgbColor-class.html">RgbColor</a><tt class="py-op">(</tt><tt class="py-base-class">Color</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RgbColor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="RgbColor-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">    An a RGB color drawable in RGB pads represented.</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Variable Push.Colors.RgbColor._rgb_value=Push.Colors.RgbColor-class.html#_rgb_value"><a title="Push.Colors.RgbColor._rgb_value" class="py-name" href="#" onclick="return doclink('link-11', '_rgb_value', 'link-11');">_rgb_value</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="RgbColor.__init__"></a><div id="RgbColor.__init__-def"><a name="L44"></a><tt class="py-lineno"> 44</tt> <a class="py-toggle" href="#" id="RgbColor.__init__-toggle" onclick="return toggle('RgbColor.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.RgbColor-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">midi_value</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">rgb_value</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RgbColor.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RgbColor.__init__-expanded"><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-12" class="py-name" targets="Class Push.Colors.RgbColor=Push.Colors.RgbColor-class.html"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-12', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-13', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt id="link-14" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-14', 'midi_value', 'link-1');">midi_value</a></tt><tt class="py-op">=</tt><tt id="link-15" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-15', 'midi_value', 'link-1');">midi_value</a></tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">rgb_value</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="Push.Colors.RgbColor._rgb_value" class="py-name" href="#" onclick="return doclink('link-16', '_rgb_value', 'link-11');">_rgb_value</a></tt> <tt class="py-op">=</tt> <tt class="py-name">rgb_value</tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="RgbColor.shade"></a><div id="RgbColor.shade-def"><a name="L49"></a><tt class="py-lineno"> 49</tt> <a class="py-toggle" href="#" id="RgbColor.shade-toggle" onclick="return toggle('RgbColor.shade');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.RgbColor-class.html#shade">shade</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">shade_level</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RgbColor.shade-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RgbColor.shade-expanded"><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">        Generate a new shaded RGB from this color.</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">shade_level</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt> <tt class="py-keyword">and</tt> <tt class="py-name">shade_level</tt> <tt class="py-op">&lt;=</tt> <tt class="py-number">2</tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-name">shade_factor</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt> <tt class="py-op">/</tt> <tt class="py-number">2.0</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-number">2</tt> <tt class="py-op">-</tt> <tt class="py-name">shade_level</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-17" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-17', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-18', 'midi_value', 'link-1');">midi_value</a></tt> <tt class="py-op">+</tt> <tt class="py-name">shade_level</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt> <tt class="py-name">a</tt> <tt class="py-op">*</tt> <tt class="py-name">b</tt> <tt class="py-keyword">for</tt> <tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-name">b</tt> <tt class="py-keyword">in</tt> <tt class="py-name">izip</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="Push.Colors.RgbColor._rgb_value" class="py-name" href="#" onclick="return doclink('link-19', '_rgb_value', 'link-11');">_rgb_value</a></tt><tt class="py-op">,</tt> <tt class="py-name">repeat</tt><tt class="py-op">(</tt><tt class="py-name">shade_factor</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="RgbColor.highlight"></a><div id="RgbColor.highlight-def"><a name="L57"></a><tt class="py-lineno"> 57</tt> <a class="py-toggle" href="#" id="RgbColor.highlight-toggle" onclick="return toggle('RgbColor.highlight');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.RgbColor-class.html#highlight">highlight</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RgbColor.highlight-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RgbColor.highlight-expanded"><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">        Generate a new highlighted RGB from this color.</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-20" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-20', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-21', 'midi_value', 'link-1');">midi_value</a></tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt> <tt class="py-name">a</tt> <tt class="py-op">*</tt> <tt class="py-name">b</tt> <tt class="py-keyword">for</tt> <tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-name">b</tt> <tt class="py-keyword">in</tt> <tt class="py-name">izip</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="Push.Colors.RgbColor._rgb_value" class="py-name" href="#" onclick="return doclink('link-22', '_rgb_value', 'link-11');">_rgb_value</a></tt><tt class="py-op">,</tt> <tt class="py-name">repeat</tt><tt class="py-op">(</tt><tt class="py-number">1.5</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="RgbColor.draw"></a><div id="RgbColor.draw-def"><a name="L63"></a><tt class="py-lineno"> 63</tt> <a class="py-toggle" href="#" id="RgbColor.draw-toggle" onclick="return toggle('RgbColor.draw');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.RgbColor-class.html#draw">draw</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">interface</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RgbColor.draw-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RgbColor.draw-expanded"><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">interface</tt><tt class="py-op">.</tt><tt class="py-name">is_rgb</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">            <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-23" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-23', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method Push.Colors.AnimatedColor.draw()=Push.Colors.AnimatedColor-class.html#draw,Method Push.Colors.Color.draw()=Push.Colors.Color-class.html#draw,Method Push.Colors.FallbackColor.draw()=Push.Colors.FallbackColor-class.html#draw,Method Push.Colors.RgbColor.draw()=Push.Colors.RgbColor-class.html#draw"><a title="Push.Colors.AnimatedColor.draw
+Push.Colors.Color.draw
+Push.Colors.FallbackColor.draw
+Push.Colors.RgbColor.draw" class="py-name" href="#" onclick="return doclink('link-24', 'draw', 'link-24');">draw</a></tt><tt class="py-op">(</tt><tt class="py-name">interface</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-25" class="py-name" targets="Class Push.Colors.NotDrawableError=Push.Colors.NotDrawableError-class.html"><a title="Push.Colors.NotDrawableError" class="py-name" href="#" onclick="return doclink('link-25', 'NotDrawableError', 'link-25');">NotDrawableError</a></tt><tt class="py-op">,</tt> <tt class="py-string">'Rgb color '</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="Push.Colors.RgbColor._rgb_value" class="py-name" href="#" onclick="return doclink('link-26', '_rgb_value', 'link-11');">_rgb_value</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">' not drawable in '</tt> <tt class="py-op">+</tt> <tt class="py-name">interface</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Variable Push.PadSensitivity.PadParameters.name=Push.PadSensitivity.PadParameters-class.html#name"><a title="Push.PadSensitivity.PadParameters.name" class="py-name" href="#" onclick="return doclink('link-27', 'name', 'link-27');">name</a></tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="RgbColor.__iter__"></a><div id="RgbColor.__iter__-def"><a name="L69"></a><tt class="py-lineno"> 69</tt> <a class="py-toggle" href="#" id="RgbColor.__iter__-toggle" onclick="return toggle('RgbColor.__iter__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.RgbColor-class.html#__iter__">__iter__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RgbColor.__iter__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RgbColor.__iter__-expanded"><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">iter</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="Push.Colors.RgbColor._rgb_value" class="py-name" href="#" onclick="return doclink('link-28', '_rgb_value', 'link-11');">_rgb_value</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="RgbColor.__getitem__"></a><div id="RgbColor.__getitem__-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="RgbColor.__getitem__-toggle" onclick="return toggle('RgbColor.__getitem__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.RgbColor-class.html#__getitem__">__getitem__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">index_or_slice</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RgbColor.__getitem__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RgbColor.__getitem__-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="Push.Colors.RgbColor._rgb_value" class="py-name" href="#" onclick="return doclink('link-29', '_rgb_value', 'link-11');">_rgb_value</a></tt><tt class="py-op">[</tt><tt class="py-name">index_or_slice</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="FallbackColor"></a><div id="FallbackColor-def"><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="FallbackColor-toggle" onclick="return toggle('FallbackColor');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.FallbackColor-class.html">FallbackColor</a><tt class="py-op">(</tt><tt class="py-base-class">Color</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FallbackColor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="FallbackColor-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    Tries to draw the color with a default color object but uses the own midi value if</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">    it fails. This can be used to define a color that can be either used by a bi-led</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">    or rgb button.</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="FallbackColor.__init__"></a><div id="FallbackColor.__init__-def"><a name="L83"></a><tt class="py-lineno"> 83</tt> <a class="py-toggle" href="#" id="FallbackColor.__init__-toggle" onclick="return toggle('FallbackColor.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.FallbackColor-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">default_color</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FallbackColor.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="FallbackColor.__init__-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-30" class="py-name" targets="Class Push.Colors.FallbackColor=Push.Colors.FallbackColor-class.html"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-30', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-31', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">default_color</tt> <tt class="py-op">=</tt> <tt class="py-name">default_color</tt> </tt>
+</div><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="FallbackColor.draw"></a><div id="FallbackColor.draw-def"><a name="L87"></a><tt class="py-lineno"> 87</tt> <a class="py-toggle" href="#" id="FallbackColor.draw-toggle" onclick="return toggle('FallbackColor.draw');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.FallbackColor-class.html#draw">draw</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">interface</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FallbackColor.draw-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="FallbackColor.draw-expanded"><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-32" class="py-name"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-32', 'consts', 'link-0');">consts</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Variable Push.consts.CUKE_MODE=Push.consts-module.html#CUKE_MODE"><a title="Push.consts.CUKE_MODE" class="py-name" href="#" onclick="return doclink('link-33', 'CUKE_MODE', 'link-33');">CUKE_MODE</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt id="link-34" class="py-name"><a title="Push.Colors.NotDrawableError" class="py-name" href="#" onclick="return doclink('link-34', 'NotDrawableError', 'link-25');">NotDrawableError</a></tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">default_color</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="Push.Colors.AnimatedColor.draw
+Push.Colors.Color.draw
+Push.Colors.FallbackColor.draw
+Push.Colors.RgbColor.draw" class="py-name" href="#" onclick="return doclink('link-35', 'draw', 'link-24');">draw</a></tt><tt class="py-op">(</tt><tt class="py-name">interface</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt id="link-36" class="py-name"><a title="Push.Colors.NotDrawableError" class="py-name" href="#" onclick="return doclink('link-36', 'NotDrawableError', 'link-25');">NotDrawableError</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-37" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-37', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="Push.Colors.AnimatedColor.draw
+Push.Colors.Color.draw
+Push.Colors.FallbackColor.draw
+Push.Colors.RgbColor.draw" class="py-name" href="#" onclick="return doclink('link-38', 'draw', 'link-24');">draw</a></tt><tt class="py-op">(</tt><tt class="py-name">interface</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="AnimatedColor"></a><div id="AnimatedColor-def"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt> <a class="py-toggle" href="#" id="AnimatedColor-toggle" onclick="return toggle('AnimatedColor');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.AnimatedColor-class.html">AnimatedColor</a><tt class="py-op">(</tt><tt class="py-base-class">Color</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AnimatedColor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="AnimatedColor-expanded"><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">    Creates an animation between two RGB colors.</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">    The animation is defined by the channel2.</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">property</tt> </tt>
+<a name="AnimatedColor.midi_value"></a><div id="AnimatedColor.midi_value-def"><a name="L103"></a><tt class="py-lineno">103</tt> <a class="py-toggle" href="#" id="AnimatedColor.midi_value-toggle" onclick="return toggle('AnimatedColor.midi_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.AnimatedColor-class.html#midi_value">midi_value</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AnimatedColor.midi_value-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AnimatedColor.midi_value-expanded"><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-39" class="py-name"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-39', 'consts', 'link-0');">consts</a></tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="Push.consts.CUKE_MODE" class="py-name" href="#" onclick="return doclink('link-40', 'CUKE_MODE', 'link-33');">CUKE_MODE</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">color1</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-41', 'midi_value', 'link-1');">midi_value</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">channel2</tt><tt class="py-op">)</tt> <tt class="py-op">%</tt> <tt class="py-number">128</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt><tt class="py-op">,</tt> <tt class="py-string">'Animations can be serialized in cuke mode only'</tt> </tt>
+</div><a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="AnimatedColor.__init__"></a><div id="AnimatedColor.__init__-def"><a name="L108"></a><tt class="py-lineno">108</tt> <a class="py-toggle" href="#" id="AnimatedColor.__init__-toggle" onclick="return toggle('AnimatedColor.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.AnimatedColor-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">color1</tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-42', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-param">color2</tt> <tt class="py-op">=</tt> <tt id="link-43" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-43', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-param">channel2</tt> <tt class="py-op">=</tt> <tt class="py-number">7</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AnimatedColor.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AnimatedColor.__init__-expanded"><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-44" class="py-name" targets="Class Push.Colors.AnimatedColor=Push.Colors.AnimatedColor-class.html"><a title="Push.Colors.AnimatedColor" class="py-name" href="#" onclick="return doclink('link-44', 'AnimatedColor', 'link-44');">AnimatedColor</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-45', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">color1</tt> <tt class="py-op">=</tt> <tt class="py-name">color1</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">color2</tt> <tt class="py-op">=</tt> <tt class="py-name">color2</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">channel2</tt> <tt class="py-op">=</tt> <tt class="py-name">channel2</tt> </tt>
+</div><a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="AnimatedColor.draw"></a><div id="AnimatedColor.draw-def"><a name="L114"></a><tt class="py-lineno">114</tt> <a class="py-toggle" href="#" id="AnimatedColor.draw-toggle" onclick="return toggle('AnimatedColor.draw');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.AnimatedColor-class.html#draw">draw</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">interface</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AnimatedColor.draw-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AnimatedColor.draw-expanded"><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-op">(</tt><tt id="link-46" class="py-name"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-46', 'consts', 'link-0');">consts</a></tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="Push.consts.CUKE_MODE" class="py-name" href="#" onclick="return doclink('link-47', 'CUKE_MODE', 'link-33');">CUKE_MODE</a></tt> <tt class="py-keyword">or</tt> <tt class="py-name">interface</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Variable Push.ConfigurableButtonElement.ConfigurableButtonElement.num_delayed_messages=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#num_delayed_messages"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.num_delayed_messages" class="py-name" href="#" onclick="return doclink('link-48', 'num_delayed_messages', 'link-48');">num_delayed_messages</a></tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">            <tt class="py-name">interface</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="Push.ComboElement.WrapperElement.send_value" class="py-name" href="#" onclick="return doclink('link-49', 'send_value', 'link-7');">send_value</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">color1</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-50', 'midi_value', 'link-1');">midi_value</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">            <tt class="py-name">interface</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="Push.ComboElement.WrapperElement.send_value" class="py-name" href="#" onclick="return doclink('link-51', 'send_value', 'link-7');">send_value</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">color2</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="Push.Colors.AnimatedColor.midi_value
+Push.Colors.Color.midi_value" class="py-name" href="#" onclick="return doclink('link-52', 'midi_value', 'link-1');">midi_value</a></tt><tt class="py-op">,</tt> <tt class="py-name">channel</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">channel2</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">            <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-53" class="py-name"><a title="Push.Colors.AnimatedColor" class="py-name" href="#" onclick="return doclink('link-53', 'AnimatedColor', 'link-44');">AnimatedColor</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="Push.Colors.AnimatedColor.draw
+Push.Colors.Color.draw
+Push.Colors.FallbackColor.draw
+Push.Colors.RgbColor.draw" class="py-name" href="#" onclick="return doclink('link-54', 'draw', 'link-24');">draw</a></tt><tt class="py-op">(</tt><tt class="py-name">interface</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"> </tt>
+<a name="Pulse"></a><div id="Pulse-def"><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt> <a class="py-toggle" href="#" id="Pulse-toggle" onclick="return toggle('Pulse');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.Pulse-class.html">Pulse</a><tt class="py-op">(</tt><tt class="py-base-class">AnimatedColor</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Pulse-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Pulse-expanded"><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring">    Smoothly pulsates between two colors.</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="Pulse.__init__"></a><div id="Pulse.__init__-def"><a name="L128"></a><tt class="py-lineno">128</tt> <a class="py-toggle" href="#" id="Pulse.__init__-toggle" onclick="return toggle('Pulse.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.Pulse-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">color1</tt> <tt class="py-op">=</tt> <tt id="link-55" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-55', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-param">color2</tt> <tt class="py-op">=</tt> <tt id="link-56" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-56', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-param">speed</tt> <tt class="py-op">=</tt> <tt class="py-number">6</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Pulse.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Pulse.__init__-expanded"><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-name">channel2</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">,</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">         <tt class="py-number">6</tt><tt class="py-op">,</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">         <tt class="py-number">12</tt><tt class="py-op">,</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">         <tt class="py-number">24</tt><tt class="py-op">,</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">         <tt class="py-number">48</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name" targets="Method Push.ScrollableList.ScrollableListItem.index()=Push.ScrollableList.ScrollableListItem-class.html#index"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-57', 'index', 'link-57');">index</a></tt><tt class="py-op">(</tt><tt class="py-name">speed</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-number">6</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-58" class="py-name" targets="Class Push.Colors.Pulse=Push.Colors.Pulse-class.html"><a title="Push.Colors.Pulse" class="py-name" href="#" onclick="return doclink('link-58', 'Pulse', 'link-58');">Pulse</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-59', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">color1</tt><tt class="py-op">=</tt><tt class="py-name">color1</tt><tt class="py-op">,</tt> <tt class="py-name">color2</tt><tt class="py-op">=</tt><tt class="py-name">color2</tt><tt class="py-op">,</tt> <tt class="py-name">channel2</tt><tt class="py-op">=</tt><tt class="py-name">channel2</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"> </tt>
+<a name="Blink"></a><div id="Blink-def"><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt> <a class="py-toggle" href="#" id="Blink-toggle" onclick="return toggle('Blink');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.Blink-class.html">Blink</a><tt class="py-op">(</tt><tt class="py-base-class">AnimatedColor</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Blink-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Blink-expanded"><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">    Blinks jumping between two colors.</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"> </tt>
+<a name="Blink.__init__"></a><div id="Blink.__init__-def"><a name="L142"></a><tt class="py-lineno">142</tt> <a class="py-toggle" href="#" id="Blink.__init__-toggle" onclick="return toggle('Blink.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Colors.Blink-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">color1</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">color2</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">speed</tt> <tt class="py-op">=</tt> <tt class="py-number">6</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Blink.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Blink.__init__-expanded"><a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-name">channel2</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">,</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">         <tt class="py-number">6</tt><tt class="py-op">,</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">         <tt class="py-number">12</tt><tt class="py-op">,</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">         <tt class="py-number">24</tt><tt class="py-op">,</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">         <tt class="py-number">48</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-60', 'index', 'link-57');">index</a></tt><tt class="py-op">(</tt><tt class="py-name">speed</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-number">11</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-61" class="py-name" targets="Class Push.Colors.Blink=Push.Colors.Blink-class.html"><a title="Push.Colors.Blink" class="py-name" href="#" onclick="return doclink('link-61', 'Blink', 'link-61');">Blink</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-62', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">color1</tt><tt class="py-op">=</tt><tt class="py-name">color1</tt><tt class="py-op">,</tt> <tt class="py-name">color2</tt><tt class="py-op">=</tt><tt class="py-name">color2</tt><tt class="py-op">,</tt> <tt class="py-name">channel2</tt><tt class="py-op">=</tt><tt class="py-name">channel2</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"> </tt>
+<a name="Basic"></a><div id="Basic-def"><a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt> <a class="py-toggle" href="#" id="Basic-toggle" onclick="return toggle('Basic');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.Basic-class.html">Basic</a><tt class="py-op">:</tt> </tt>
+</div><div id="Basic-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Basic-expanded"><a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-docstring">    Table of basic colors for side buttons.</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">    <tt id="link-63" class="py-name" targets="Variable Push.Colors.Basic.HALF=Push.Colors.Basic-class.html#HALF"><a title="Push.Colors.Basic.HALF" class="py-name" href="#" onclick="return doclink('link-63', 'HALF', 'link-63');">HALF</a></tt> <tt class="py-op">=</tt> <tt id="link-64" class="py-name"><a title="Push.Colors.Color" class="py-name" href="#" onclick="return doclink('link-64', 'Color', 'link-2');">Color</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">    <tt id="link-65" class="py-name" targets="Variable Push.Colors.Basic.HALF_BLINK_SLOW=Push.Colors.Basic-class.html#HALF_BLINK_SLOW"><a title="Push.Colors.Basic.HALF_BLINK_SLOW" class="py-name" href="#" onclick="return doclink('link-65', 'HALF_BLINK_SLOW', 'link-65');">HALF_BLINK_SLOW</a></tt> <tt class="py-op">=</tt> <tt id="link-66" class="py-name"><a title="Push.Colors.Color" class="py-name" href="#" onclick="return doclink('link-66', 'Color', 'link-2');">Color</a></tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">    <tt id="link-67" class="py-name" targets="Variable Push.Colors.Basic.HALF_BLINK_FAST=Push.Colors.Basic-class.html#HALF_BLINK_FAST"><a title="Push.Colors.Basic.HALF_BLINK_FAST" class="py-name" href="#" onclick="return doclink('link-67', 'HALF_BLINK_FAST', 'link-67');">HALF_BLINK_FAST</a></tt> <tt class="py-op">=</tt> <tt id="link-68" class="py-name"><a title="Push.Colors.Color" class="py-name" href="#" onclick="return doclink('link-68', 'Color', 'link-2');">Color</a></tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">)</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">    <tt id="link-69" class="py-name" targets="Variable Push.Colors.Basic.FULL=Push.Colors.Basic-class.html#FULL"><a title="Push.Colors.Basic.FULL" class="py-name" href="#" onclick="return doclink('link-69', 'FULL', 'link-69');">FULL</a></tt> <tt class="py-op">=</tt> <tt id="link-70" class="py-name"><a title="Push.Colors.Color" class="py-name" href="#" onclick="return doclink('link-70', 'Color', 'link-2');">Color</a></tt><tt class="py-op">(</tt><tt class="py-number">4</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">    <tt id="link-71" class="py-name" targets="Variable Push.Colors.Basic.FULL_BLINK_SLOW=Push.Colors.Basic-class.html#FULL_BLINK_SLOW"><a title="Push.Colors.Basic.FULL_BLINK_SLOW" class="py-name" href="#" onclick="return doclink('link-71', 'FULL_BLINK_SLOW', 'link-71');">FULL_BLINK_SLOW</a></tt> <tt class="py-op">=</tt> <tt id="link-72" class="py-name"><a title="Push.Colors.Color" class="py-name" href="#" onclick="return doclink('link-72', 'Color', 'link-2');">Color</a></tt><tt class="py-op">(</tt><tt class="py-number">5</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">    <tt id="link-73" class="py-name" targets="Variable Push.Colors.Basic.FULL_BLINK_FAST=Push.Colors.Basic-class.html#FULL_BLINK_FAST"><a title="Push.Colors.Basic.FULL_BLINK_FAST" class="py-name" href="#" onclick="return doclink('link-73', 'FULL_BLINK_FAST', 'link-73');">FULL_BLINK_FAST</a></tt> <tt class="py-op">=</tt> <tt id="link-74" class="py-name"><a title="Push.Colors.Color" class="py-name" href="#" onclick="return doclink('link-74', 'Color', 'link-2');">Color</a></tt><tt class="py-op">(</tt><tt class="py-number">6</tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">    <tt id="link-75" class="py-name" targets="Variable Push.Colors.Basic.OFF=Push.Colors.Basic-class.html#OFF,Variable Push.Colors.BiLed.OFF=Push.Colors.BiLed-class.html#OFF"><a title="Push.Colors.Basic.OFF
+Push.Colors.BiLed.OFF" class="py-name" href="#" onclick="return doclink('link-75', 'OFF', 'link-75');">OFF</a></tt> <tt class="py-op">=</tt> <tt id="link-76" class="py-name"><a title="Push.Colors.Color" class="py-name" href="#" onclick="return doclink('link-76', 'Color', 'link-2');">Color</a></tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">    <tt id="link-77" class="py-name" targets="Variable Push.Colors.Basic.ON=Push.Colors.Basic-class.html#ON,Variable Push.Colors.BiLed.ON=Push.Colors.BiLed-class.html#ON"><a title="Push.Colors.Basic.ON
+Push.Colors.BiLed.ON" class="py-name" href="#" onclick="return doclink('link-77', 'ON', 'link-77');">ON</a></tt> <tt class="py-op">=</tt> <tt id="link-78" class="py-name"><a title="Push.Colors.Color" class="py-name" href="#" onclick="return doclink('link-78', 'Color', 'link-2');">Color</a></tt><tt class="py-op">(</tt><tt class="py-number">127</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"> </tt>
+<a name="Rgb"></a><div id="Rgb-def"><a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt> <a class="py-toggle" href="#" id="Rgb-toggle" onclick="return toggle('Rgb');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.Rgb-class.html">Rgb</a><tt class="py-op">:</tt> </tt>
+</div><div id="Rgb-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Rgb-expanded"><a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">    Table of RgbColors for main matrix.</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">    <tt id="link-79" class="py-name" targets="Variable Push.Colors.Rgb.BLACK=Push.Colors.Rgb-class.html#BLACK"><a title="Push.Colors.Rgb.BLACK" class="py-name" href="#" onclick="return doclink('link-79', 'BLACK', 'link-79');">BLACK</a></tt> <tt class="py-op">=</tt> <tt id="link-80" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-80', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">    <tt id="link-81" class="py-name" targets="Variable Push.Colors.Rgb.DARK_GREY=Push.Colors.Rgb-class.html#DARK_GREY"><a title="Push.Colors.Rgb.DARK_GREY" class="py-name" href="#" onclick="return doclink('link-81', 'DARK_GREY', 'link-81');">DARK_GREY</a></tt> <tt class="py-op">=</tt> <tt id="link-82" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-82', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">    <tt id="link-83" class="py-name" targets="Variable Push.Colors.Rgb.GREY=Push.Colors.Rgb-class.html#GREY"><a title="Push.Colors.Rgb.GREY" class="py-name" href="#" onclick="return doclink('link-83', 'GREY', 'link-83');">GREY</a></tt> <tt class="py-op">=</tt> <tt id="link-84" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-84', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">    <tt id="link-85" class="py-name" targets="Variable Push.Colors.Rgb.WHITE=Push.Colors.Rgb-class.html#WHITE"><a title="Push.Colors.Rgb.WHITE" class="py-name" href="#" onclick="return doclink('link-85', 'WHITE', 'link-85');">WHITE</a></tt> <tt class="py-op">=</tt> <tt id="link-86" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-86', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">)</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">    <tt id="link-87" class="py-name" targets="Variable Push.Colors.BiLed.RED=Push.Colors.BiLed-class.html#RED,Variable Push.Colors.Rgb.RED=Push.Colors.Rgb-class.html#RED"><a title="Push.Colors.BiLed.RED
+Push.Colors.Rgb.RED" class="py-name" href="#" onclick="return doclink('link-87', 'RED', 'link-87');">RED</a></tt> <tt class="py-op">=</tt> <tt id="link-88" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-88', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">5</tt><tt class="py-op">)</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">    <tt id="link-89" class="py-name" targets="Variable Push.Colors.BiLed.AMBER=Push.Colors.BiLed-class.html#AMBER,Variable Push.Colors.Rgb.AMBER=Push.Colors.Rgb-class.html#AMBER"><a title="Push.Colors.BiLed.AMBER
+Push.Colors.Rgb.AMBER" class="py-name" href="#" onclick="return doclink('link-89', 'AMBER', 'link-89');">AMBER</a></tt> <tt class="py-op">=</tt> <tt id="link-90" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-90', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">9</tt><tt class="py-op">)</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">    <tt id="link-91" class="py-name" targets="Variable Push.Colors.BiLed.YELLOW=Push.Colors.BiLed-class.html#YELLOW,Variable Push.Colors.Rgb.YELLOW=Push.Colors.Rgb-class.html#YELLOW"><a title="Push.Colors.BiLed.YELLOW
+Push.Colors.Rgb.YELLOW" class="py-name" href="#" onclick="return doclink('link-91', 'YELLOW', 'link-91');">YELLOW</a></tt> <tt class="py-op">=</tt> <tt id="link-92" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-92', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">13</tt><tt class="py-op">)</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">    <tt id="link-93" class="py-name" targets="Variable Push.Colors.Rgb.LIME=Push.Colors.Rgb-class.html#LIME"><a title="Push.Colors.Rgb.LIME" class="py-name" href="#" onclick="return doclink('link-93', 'LIME', 'link-93');">LIME</a></tt> <tt class="py-op">=</tt> <tt id="link-94" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-94', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">17</tt><tt class="py-op">)</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">    <tt id="link-95" class="py-name" targets="Variable Push.Colors.BiLed.GREEN=Push.Colors.BiLed-class.html#GREEN,Variable Push.Colors.Rgb.GREEN=Push.Colors.Rgb-class.html#GREEN"><a title="Push.Colors.BiLed.GREEN
+Push.Colors.Rgb.GREEN" class="py-name" href="#" onclick="return doclink('link-95', 'GREEN', 'link-95');">GREEN</a></tt> <tt class="py-op">=</tt> <tt id="link-96" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-96', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">21</tt><tt class="py-op">)</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">    <tt id="link-97" class="py-name" targets="Variable Push.Colors.Rgb.SPRING=Push.Colors.Rgb-class.html#SPRING"><a title="Push.Colors.Rgb.SPRING" class="py-name" href="#" onclick="return doclink('link-97', 'SPRING', 'link-97');">SPRING</a></tt> <tt class="py-op">=</tt> <tt id="link-98" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-98', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">25</tt><tt class="py-op">)</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">    <tt id="link-99" class="py-name" targets="Variable Push.Colors.Rgb.TURQUOISE=Push.Colors.Rgb-class.html#TURQUOISE"><a title="Push.Colors.Rgb.TURQUOISE" class="py-name" href="#" onclick="return doclink('link-99', 'TURQUOISE', 'link-99');">TURQUOISE</a></tt> <tt class="py-op">=</tt> <tt id="link-100" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-100', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">29</tt><tt class="py-op">)</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">    <tt id="link-101" class="py-name" targets="Variable Push.Colors.Rgb.CYAN=Push.Colors.Rgb-class.html#CYAN"><a title="Push.Colors.Rgb.CYAN" class="py-name" href="#" onclick="return doclink('link-101', 'CYAN', 'link-101');">CYAN</a></tt> <tt class="py-op">=</tt> <tt id="link-102" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-102', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">33</tt><tt class="py-op">)</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">    <tt id="link-103" class="py-name" targets="Variable Push.Colors.Rgb.SKY=Push.Colors.Rgb-class.html#SKY"><a title="Push.Colors.Rgb.SKY" class="py-name" href="#" onclick="return doclink('link-103', 'SKY', 'link-103');">SKY</a></tt> <tt class="py-op">=</tt> <tt id="link-104" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-104', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">37</tt><tt class="py-op">)</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">    <tt id="link-105" class="py-name" targets="Variable Push.Colors.Rgb.OCEAN=Push.Colors.Rgb-class.html#OCEAN"><a title="Push.Colors.Rgb.OCEAN" class="py-name" href="#" onclick="return doclink('link-105', 'OCEAN', 'link-105');">OCEAN</a></tt> <tt class="py-op">=</tt> <tt id="link-106" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-106', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">41</tt><tt class="py-op">)</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">    <tt id="link-107" class="py-name" targets="Variable Push.Colors.Rgb.BLUE=Push.Colors.Rgb-class.html#BLUE"><a title="Push.Colors.Rgb.BLUE" class="py-name" href="#" onclick="return doclink('link-107', 'BLUE', 'link-107');">BLUE</a></tt> <tt class="py-op">=</tt> <tt id="link-108" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-108', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">45</tt><tt class="py-op">)</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">    <tt id="link-109" class="py-name" targets="Variable Push.Colors.Rgb.ORCHID=Push.Colors.Rgb-class.html#ORCHID"><a title="Push.Colors.Rgb.ORCHID" class="py-name" href="#" onclick="return doclink('link-109', 'ORCHID', 'link-109');">ORCHID</a></tt> <tt class="py-op">=</tt> <tt id="link-110" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-110', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">49</tt><tt class="py-op">)</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">    <tt id="link-111" class="py-name" targets="Variable Push.Colors.Rgb.MAGENTA=Push.Colors.Rgb-class.html#MAGENTA"><a title="Push.Colors.Rgb.MAGENTA" class="py-name" href="#" onclick="return doclink('link-111', 'MAGENTA', 'link-111');">MAGENTA</a></tt> <tt class="py-op">=</tt> <tt id="link-112" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-112', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">53</tt><tt class="py-op">)</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">    <tt id="link-113" class="py-name" targets="Variable Push.Colors.Rgb.PINK=Push.Colors.Rgb-class.html#PINK"><a title="Push.Colors.Rgb.PINK" class="py-name" href="#" onclick="return doclink('link-113', 'PINK', 'link-113');">PINK</a></tt> <tt class="py-op">=</tt> <tt id="link-114" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-114', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">57</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"> </tt>
+<a name="BiLed"></a><div id="BiLed-def"><a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt> <a class="py-toggle" href="#" id="BiLed-toggle" onclick="return toggle('BiLed');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.Colors.BiLed-class.html">BiLed</a><tt class="py-op">:</tt> </tt>
+</div><div id="BiLed-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="BiLed-expanded"><a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-docstring">    Table of colors for scene launch buttons.</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">    <tt id="link-115" class="py-name"><a title="Push.Colors.BiLed.GREEN
+Push.Colors.Rgb.GREEN" class="py-name" href="#" onclick="return doclink('link-115', 'GREEN', 'link-95');">GREEN</a></tt> <tt class="py-op">=</tt> <tt id="link-116" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-116', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-117" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-117', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">122</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">22</tt><tt class="py-op">)</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">    <tt id="link-118" class="py-name" targets="Variable Push.Colors.BiLed.GREEN_HALF=Push.Colors.BiLed-class.html#GREEN_HALF"><a title="Push.Colors.BiLed.GREEN_HALF" class="py-name" href="#" onclick="return doclink('link-118', 'GREEN_HALF', 'link-118');">GREEN_HALF</a></tt> <tt class="py-op">=</tt> <tt id="link-119" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-119', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-120" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-120', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">123</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">19</tt><tt class="py-op">)</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">    <tt id="link-121" class="py-name" targets="Variable Push.Colors.BiLed.GREEN_BLINK=Push.Colors.BiLed-class.html#GREEN_BLINK"><a title="Push.Colors.BiLed.GREEN_BLINK" class="py-name" href="#" onclick="return doclink('link-121', 'GREEN_BLINK', 'link-121');">GREEN_BLINK</a></tt> <tt class="py-op">=</tt> <tt id="link-122" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-122', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-123" class="py-name"><a title="Push.Colors.Blink" class="py-name" href="#" onclick="return doclink('link-123', 'Blink', 'link-61');">Blink</a></tt><tt class="py-op">(</tt><tt id="link-124" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-124', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">122</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-125" class="py-name" targets="Class Push.Colors.Rgb=Push.Colors.Rgb-class.html"><a title="Push.Colors.Rgb" class="py-name" href="#" onclick="return doclink('link-125', 'Rgb', 'link-125');">Rgb</a></tt><tt class="py-op">.</tt><tt id="link-126" class="py-name"><a title="Push.Colors.Rgb.BLACK" class="py-name" href="#" onclick="return doclink('link-126', 'BLACK', 'link-79');">BLACK</a></tt><tt class="py-op">,</tt> <tt class="py-number">4</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">23</tt><tt class="py-op">)</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">    <tt id="link-127" class="py-name"><a title="Push.Colors.BiLed.RED
+Push.Colors.Rgb.RED" class="py-name" href="#" onclick="return doclink('link-127', 'RED', 'link-87');">RED</a></tt> <tt class="py-op">=</tt> <tt id="link-128" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-128', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-129" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-129', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">120</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">4</tt><tt class="py-op">)</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">    <tt id="link-130" class="py-name" targets="Variable Push.Colors.BiLed.RED_HALF=Push.Colors.BiLed-class.html#RED_HALF"><a title="Push.Colors.BiLed.RED_HALF" class="py-name" href="#" onclick="return doclink('link-130', 'RED_HALF', 'link-130');">RED_HALF</a></tt> <tt class="py-op">=</tt> <tt id="link-131" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-131', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-132" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-132', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">121</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">    <tt id="link-133" class="py-name" targets="Variable Push.Colors.BiLed.RED_BLINK=Push.Colors.BiLed-class.html#RED_BLINK"><a title="Push.Colors.BiLed.RED_BLINK" class="py-name" href="#" onclick="return doclink('link-133', 'RED_BLINK', 'link-133');">RED_BLINK</a></tt> <tt class="py-op">=</tt> <tt id="link-134" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-134', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-135" class="py-name"><a title="Push.Colors.Blink" class="py-name" href="#" onclick="return doclink('link-135', 'Blink', 'link-61');">Blink</a></tt><tt class="py-op">(</tt><tt id="link-136" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-136', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">120</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-137" class="py-name"><a title="Push.Colors.Rgb" class="py-name" href="#" onclick="return doclink('link-137', 'Rgb', 'link-125');">Rgb</a></tt><tt class="py-op">.</tt><tt id="link-138" class="py-name"><a title="Push.Colors.Rgb.BLACK" class="py-name" href="#" onclick="return doclink('link-138', 'BLACK', 'link-79');">BLACK</a></tt><tt class="py-op">,</tt> <tt class="py-number">4</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">5</tt><tt class="py-op">)</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">    <tt id="link-139" class="py-name"><a title="Push.Colors.BiLed.YELLOW
+Push.Colors.Rgb.YELLOW" class="py-name" href="#" onclick="return doclink('link-139', 'YELLOW', 'link-91');">YELLOW</a></tt> <tt class="py-op">=</tt> <tt id="link-140" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-140', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-141" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-141', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">124</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">16</tt><tt class="py-op">)</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">    <tt id="link-142" class="py-name" targets="Variable Push.Colors.BiLed.YELLOW_HALF=Push.Colors.BiLed-class.html#YELLOW_HALF"><a title="Push.Colors.BiLed.YELLOW_HALF" class="py-name" href="#" onclick="return doclink('link-142', 'YELLOW_HALF', 'link-142');">YELLOW_HALF</a></tt> <tt class="py-op">=</tt> <tt id="link-143" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-143', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-144" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-144', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">125</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">13</tt><tt class="py-op">)</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">    <tt id="link-145" class="py-name" targets="Variable Push.Colors.BiLed.YELLOW_BLINK=Push.Colors.BiLed-class.html#YELLOW_BLINK"><a title="Push.Colors.BiLed.YELLOW_BLINK" class="py-name" href="#" onclick="return doclink('link-145', 'YELLOW_BLINK', 'link-145');">YELLOW_BLINK</a></tt> <tt class="py-op">=</tt> <tt id="link-146" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-146', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-147" class="py-name"><a title="Push.Colors.Blink" class="py-name" href="#" onclick="return doclink('link-147', 'Blink', 'link-61');">Blink</a></tt><tt class="py-op">(</tt><tt id="link-148" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-148', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">124</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-149" class="py-name"><a title="Push.Colors.Rgb" class="py-name" href="#" onclick="return doclink('link-149', 'Rgb', 'link-125');">Rgb</a></tt><tt class="py-op">.</tt><tt id="link-150" class="py-name"><a title="Push.Colors.Rgb.BLACK" class="py-name" href="#" onclick="return doclink('link-150', 'BLACK', 'link-79');">BLACK</a></tt><tt class="py-op">,</tt> <tt class="py-number">4</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">17</tt><tt class="py-op">)</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">    <tt id="link-151" class="py-name"><a title="Push.Colors.BiLed.AMBER
+Push.Colors.Rgb.AMBER" class="py-name" href="#" onclick="return doclink('link-151', 'AMBER', 'link-89');">AMBER</a></tt> <tt class="py-op">=</tt> <tt id="link-152" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-152', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-153" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-153', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">126</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">    <tt id="link-154" class="py-name" targets="Variable Push.Colors.BiLed.AMBER_HALF=Push.Colors.BiLed-class.html#AMBER_HALF"><a title="Push.Colors.BiLed.AMBER_HALF" class="py-name" href="#" onclick="return doclink('link-154', 'AMBER_HALF', 'link-154');">AMBER_HALF</a></tt> <tt class="py-op">=</tt> <tt id="link-155" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-155', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-156" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-156', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">127</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">7</tt><tt class="py-op">)</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">    <tt id="link-157" class="py-name" targets="Variable Push.Colors.BiLed.AMBER_BLINK=Push.Colors.BiLed-class.html#AMBER_BLINK"><a title="Push.Colors.BiLed.AMBER_BLINK" class="py-name" href="#" onclick="return doclink('link-157', 'AMBER_BLINK', 'link-157');">AMBER_BLINK</a></tt> <tt class="py-op">=</tt> <tt id="link-158" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-158', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-159" class="py-name"><a title="Push.Colors.Blink" class="py-name" href="#" onclick="return doclink('link-159', 'Blink', 'link-61');">Blink</a></tt><tt class="py-op">(</tt><tt id="link-160" class="py-name"><a title="Push.Colors.RgbColor" class="py-name" href="#" onclick="return doclink('link-160', 'RgbColor', 'link-12');">RgbColor</a></tt><tt class="py-op">(</tt><tt class="py-number">126</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-161" class="py-name"><a title="Push.Colors.Rgb" class="py-name" href="#" onclick="return doclink('link-161', 'Rgb', 'link-125');">Rgb</a></tt><tt class="py-op">.</tt><tt id="link-162" class="py-name"><a title="Push.Colors.Rgb.BLACK" class="py-name" href="#" onclick="return doclink('link-162', 'BLACK', 'link-79');">BLACK</a></tt><tt class="py-op">,</tt> <tt class="py-number">4</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">11</tt><tt class="py-op">)</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">    <tt id="link-163" class="py-name"><a title="Push.Colors.Basic.OFF
+Push.Colors.BiLed.OFF" class="py-name" href="#" onclick="return doclink('link-163', 'OFF', 'link-75');">OFF</a></tt> <tt class="py-op">=</tt> <tt id="link-164" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-164', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-165" class="py-name"><a title="Push.Colors.Rgb" class="py-name" href="#" onclick="return doclink('link-165', 'Rgb', 'link-125');">Rgb</a></tt><tt class="py-op">.</tt><tt id="link-166" class="py-name"><a title="Push.Colors.Rgb.BLACK" class="py-name" href="#" onclick="return doclink('link-166', 'BLACK', 'link-79');">BLACK</a></tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">    <tt id="link-167" class="py-name"><a title="Push.Colors.Basic.ON
+Push.Colors.BiLed.ON" class="py-name" href="#" onclick="return doclink('link-167', 'ON', 'link-77');">ON</a></tt> <tt class="py-op">=</tt> <tt id="link-168" class="py-name"><a title="Push.Colors.FallbackColor" class="py-name" href="#" onclick="return doclink('link-168', 'FallbackColor', 'link-30');">FallbackColor</a></tt><tt class="py-op">(</tt><tt id="link-169" class="py-name"><a title="Push.Colors.Rgb" class="py-name" href="#" onclick="return doclink('link-169', 'Rgb', 'link-125');">Rgb</a></tt><tt class="py-op">.</tt><tt id="link-170" class="py-name"><a title="Push.Colors.Rgb.WHITE" class="py-name" href="#" onclick="return doclink('link-170', 'WHITE', 'link-85');">WHITE</a></tt><tt class="py-op">,</tt> <tt class="py-number">127</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt id="link-171" class="py-name" targets="Variable Push.Colors.CLIP_COLOR_TABLE=Push.Colors-module.html#CLIP_COLOR_TABLE"><a title="Push.Colors.CLIP_COLOR_TABLE" class="py-name" href="#" onclick="return doclink('link-171', 'CLIP_COLOR_TABLE', 'link-171');">CLIP_COLOR_TABLE</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-number">15549221</tt><tt class="py-op">:</tt> <tt class="py-number">60</tt><tt class="py-op">,</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"> <tt class="py-number">12411136</tt><tt class="py-op">:</tt> <tt class="py-number">61</tt><tt class="py-op">,</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"> <tt class="py-number">11569920</tt><tt class="py-op">:</tt> <tt class="py-number">62</tt><tt class="py-op">,</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"> <tt class="py-number">8754719</tt><tt class="py-op">:</tt> <tt class="py-number">63</tt><tt class="py-op">,</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"> <tt class="py-number">5480241</tt><tt class="py-op">:</tt> <tt class="py-number">64</tt><tt class="py-op">,</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"> <tt class="py-number">695438</tt><tt class="py-op">:</tt> <tt class="py-number">65</tt><tt class="py-op">,</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"> <tt class="py-number">31421</tt><tt class="py-op">:</tt> <tt class="py-number">66</tt><tt class="py-op">,</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"> <tt class="py-number">197631</tt><tt class="py-op">:</tt> <tt class="py-number">67</tt><tt class="py-op">,</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"> <tt class="py-number">3101346</tt><tt class="py-op">:</tt> <tt class="py-number">68</tt><tt class="py-op">,</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"> <tt class="py-number">6441901</tt><tt class="py-op">:</tt> <tt class="py-number">69</tt><tt class="py-op">,</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"> <tt class="py-number">8092539</tt><tt class="py-op">:</tt> <tt class="py-number">70</tt><tt class="py-op">,</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"> <tt class="py-number">3947580</tt><tt class="py-op">:</tt> <tt class="py-number">71</tt><tt class="py-op">,</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"> <tt class="py-number">16712965</tt><tt class="py-op">:</tt> <tt class="py-number">72</tt><tt class="py-op">,</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"> <tt class="py-number">12565097</tt><tt class="py-op">:</tt> <tt class="py-number">73</tt><tt class="py-op">,</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"> <tt class="py-number">10927616</tt><tt class="py-op">:</tt> <tt class="py-number">74</tt><tt class="py-op">,</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"> <tt class="py-number">8046132</tt><tt class="py-op">:</tt> <tt class="py-number">75</tt><tt class="py-op">,</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"> <tt class="py-number">4047616</tt><tt class="py-op">:</tt> <tt class="py-number">76</tt><tt class="py-op">,</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"> <tt class="py-number">49071</tt><tt class="py-op">:</tt> <tt class="py-number">77</tt><tt class="py-op">,</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"> <tt class="py-number">1090798</tt><tt class="py-op">:</tt> <tt class="py-number">78</tt><tt class="py-op">,</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> <tt class="py-number">5538020</tt><tt class="py-op">:</tt> <tt class="py-number">79</tt><tt class="py-op">,</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"> <tt class="py-number">8940772</tt><tt class="py-op">:</tt> <tt class="py-number">80</tt><tt class="py-op">,</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line"> <tt class="py-number">10701741</tt><tt class="py-op">:</tt> <tt class="py-number">81</tt><tt class="py-op">,</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"> <tt class="py-number">12008809</tt><tt class="py-op">:</tt> <tt class="py-number">82</tt><tt class="py-op">,</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"> <tt class="py-number">9852725</tt><tt class="py-op">:</tt> <tt class="py-number">83</tt><tt class="py-op">,</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"> <tt class="py-number">16149507</tt><tt class="py-op">:</tt> <tt class="py-number">84</tt><tt class="py-op">,</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line"> <tt class="py-number">12581632</tt><tt class="py-op">:</tt> <tt class="py-number">85</tt><tt class="py-op">,</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line"> <tt class="py-number">8912743</tt><tt class="py-op">:</tt> <tt class="py-number">86</tt><tt class="py-op">,</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line"> <tt class="py-number">1769263</tt><tt class="py-op">:</tt> <tt class="py-number">87</tt><tt class="py-op">,</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line"> <tt class="py-number">2490280</tt><tt class="py-op">:</tt> <tt class="py-number">88</tt><tt class="py-op">,</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line"> <tt class="py-number">6094824</tt><tt class="py-op">:</tt> <tt class="py-number">89</tt><tt class="py-op">,</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"> <tt class="py-number">1698303</tt><tt class="py-op">:</tt> <tt class="py-number">90</tt><tt class="py-op">,</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"> <tt class="py-number">9160191</tt><tt class="py-op">:</tt> <tt class="py-number">91</tt><tt class="py-op">,</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"> <tt class="py-number">9611263</tt><tt class="py-op">:</tt> <tt class="py-number">92</tt><tt class="py-op">,</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line"> <tt class="py-number">12094975</tt><tt class="py-op">:</tt> <tt class="py-number">93</tt><tt class="py-op">,</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"> <tt class="py-number">14183652</tt><tt class="py-op">:</tt> <tt class="py-number">94</tt><tt class="py-op">,</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line"> <tt class="py-number">16726484</tt><tt class="py-op">:</tt> <tt class="py-number">95</tt><tt class="py-op">,</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line"> <tt class="py-number">16753961</tt><tt class="py-op">:</tt> <tt class="py-number">96</tt><tt class="py-op">,</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"> <tt class="py-number">16773172</tt><tt class="py-op">:</tt> <tt class="py-number">97</tt><tt class="py-op">,</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line"> <tt class="py-number">14939139</tt><tt class="py-op">:</tt> <tt class="py-number">98</tt><tt class="py-op">,</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line"> <tt class="py-number">14402304</tt><tt class="py-op">:</tt> <tt class="py-number">99</tt><tt class="py-op">,</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line"> <tt class="py-number">12492131</tt><tt class="py-op">:</tt> <tt class="py-number">100</tt><tt class="py-op">,</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line"> <tt class="py-number">9024637</tt><tt class="py-op">:</tt> <tt class="py-number">101</tt><tt class="py-op">,</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line"> <tt class="py-number">8962746</tt><tt class="py-op">:</tt> <tt class="py-number">102</tt><tt class="py-op">,</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line"> <tt class="py-number">10204100</tt><tt class="py-op">:</tt> <tt class="py-number">103</tt><tt class="py-op">,</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line"> <tt class="py-number">8758722</tt><tt class="py-op">:</tt> <tt class="py-number">104</tt><tt class="py-op">,</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line"> <tt class="py-number">13011836</tt><tt class="py-op">:</tt> <tt class="py-number">105</tt><tt class="py-op">,</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"> <tt class="py-number">15810688</tt><tt class="py-op">:</tt> <tt class="py-number">106</tt><tt class="py-op">,</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line"> <tt class="py-number">16749734</tt><tt class="py-op">:</tt> <tt class="py-number">107</tt><tt class="py-op">,</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"> <tt class="py-number">16753524</tt><tt class="py-op">:</tt> <tt class="py-number">108</tt><tt class="py-op">,</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line"> <tt class="py-number">16772767</tt><tt class="py-op">:</tt> <tt class="py-number">109</tt><tt class="py-op">,</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line"> <tt class="py-number">13821080</tt><tt class="py-op">:</tt> <tt class="py-number">110</tt><tt class="py-op">,</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line"> <tt class="py-number">12243060</tt><tt class="py-op">:</tt> <tt class="py-number">111</tt><tt class="py-op">,</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line"> <tt class="py-number">11119017</tt><tt class="py-op">:</tt> <tt class="py-number">112</tt><tt class="py-op">,</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"> <tt class="py-number">13958625</tt><tt class="py-op">:</tt> <tt class="py-number">113</tt><tt class="py-op">,</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"> <tt class="py-number">13496824</tt><tt class="py-op">:</tt> <tt class="py-number">114</tt><tt class="py-op">,</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"> <tt class="py-number">12173795</tt><tt class="py-op">:</tt> <tt class="py-number">115</tt><tt class="py-op">,</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line"> <tt class="py-number">13482980</tt><tt class="py-op">:</tt> <tt class="py-number">116</tt><tt class="py-op">,</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line"> <tt class="py-number">13684944</tt><tt class="py-op">:</tt> <tt class="py-number">117</tt><tt class="py-op">,</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line"> <tt class="py-number">14673637</tt><tt class="py-op">:</tt> <tt class="py-number">118</tt><tt class="py-op">,</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line"> <tt class="py-number">16777215</tt><tt class="py-op">:</tt> <tt class="py-number">119</tt><tt class="py-op">}</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line"><tt id="link-172" class="py-name" targets="Variable Push.Colors.RGB_COLOR_TABLE=Push.Colors-module.html#RGB_COLOR_TABLE"><a title="Push.Colors.RGB_COLOR_TABLE" class="py-name" href="#" onclick="return doclink('link-172', 'RGB_COLOR_TABLE', 'link-172');">RGB_COLOR_TABLE</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">1973790</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-number">8355711</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">,</tt> <tt class="py-number">16777215</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">4</tt><tt class="py-op">,</tt> <tt class="py-number">16731212</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">5</tt><tt class="py-op">,</tt> <tt class="py-number">16711680</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">6</tt><tt class="py-op">,</tt> <tt class="py-number">5832704</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">7</tt><tt class="py-op">,</tt> <tt class="py-number">1638400</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">8</tt><tt class="py-op">,</tt> <tt class="py-number">16760172</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">9</tt><tt class="py-op">,</tt> <tt class="py-number">16733184</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-number">5840128</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">11</tt><tt class="py-op">,</tt> <tt class="py-number">2562816</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">12</tt><tt class="py-op">,</tt> <tt class="py-number">16777036</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">13</tt><tt class="py-op">,</tt> <tt class="py-number">16776960</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">14</tt><tt class="py-op">,</tt> <tt class="py-number">5855488</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">15</tt><tt class="py-op">,</tt> <tt class="py-number">1644800</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">16</tt><tt class="py-op">,</tt> <tt class="py-number">8978252</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">17</tt><tt class="py-op">,</tt> <tt class="py-number">5570304</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">18</tt><tt class="py-op">,</tt> <tt class="py-number">1923328</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">19</tt><tt class="py-op">,</tt> <tt class="py-number">1321728</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">20</tt><tt class="py-op">,</tt> <tt class="py-number">5046092</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">21</tt><tt class="py-op">,</tt> <tt class="py-number">65280</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">22</tt><tt class="py-op">,</tt> <tt class="py-number">22784</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">23</tt><tt class="py-op">,</tt> <tt class="py-number">6400</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">24</tt><tt class="py-op">,</tt> <tt class="py-number">5046110</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">25</tt><tt class="py-op">,</tt> <tt class="py-number">65305</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">26</tt><tt class="py-op">,</tt> <tt class="py-number">22797</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">27</tt><tt class="py-op">,</tt> <tt class="py-number">6402</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">28</tt><tt class="py-op">,</tt> <tt class="py-number">5046152</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">29</tt><tt class="py-op">,</tt> <tt class="py-number">65365</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">30</tt><tt class="py-op">,</tt> <tt class="py-number">22813</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">31</tt><tt class="py-op">,</tt> <tt class="py-number">7954</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">32</tt><tt class="py-op">,</tt> <tt class="py-number">5046199</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">33</tt><tt class="py-op">,</tt> <tt class="py-number">65433</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">34</tt><tt class="py-op">,</tt> <tt class="py-number">22837</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">35</tt><tt class="py-op">,</tt> <tt class="py-number">6418</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">36</tt><tt class="py-op">,</tt> <tt class="py-number">5030911</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">37</tt><tt class="py-op">,</tt> <tt class="py-number">43519</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">38</tt><tt class="py-op">,</tt> <tt class="py-number">16722</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">39</tt><tt class="py-op">,</tt> <tt class="py-number">4121</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">40</tt><tt class="py-op">,</tt> <tt class="py-number">5015807</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">41</tt><tt class="py-op">,</tt> <tt class="py-number">22015</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">42</tt><tt class="py-op">,</tt> <tt class="py-number">7513</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">43</tt><tt class="py-op">,</tt> <tt class="py-number">2073</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">44</tt><tt class="py-op">,</tt> <tt class="py-number">5000447</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">45</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">46</tt><tt class="py-op">,</tt> <tt class="py-number">89</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">47</tt><tt class="py-op">,</tt> <tt class="py-number">25</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">48</tt><tt class="py-op">,</tt> <tt class="py-number">8867071</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">49</tt><tt class="py-op">,</tt> <tt class="py-number">5505279</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">50</tt><tt class="py-op">,</tt> <tt class="py-number">1638500</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">51</tt><tt class="py-op">,</tt> <tt class="py-number">983088</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">52</tt><tt class="py-op">,</tt> <tt class="py-number">16731391</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">53</tt><tt class="py-op">,</tt> <tt class="py-number">16711935</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">54</tt><tt class="py-op">,</tt> <tt class="py-number">5832793</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">55</tt><tt class="py-op">,</tt> <tt class="py-number">1638425</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">56</tt><tt class="py-op">,</tt> <tt class="py-number">16731271</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">57</tt><tt class="py-op">,</tt> <tt class="py-number">16711764</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">58</tt><tt class="py-op">,</tt> <tt class="py-number">5832733</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">59</tt><tt class="py-op">,</tt> <tt class="py-number">2228243</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">60</tt><tt class="py-op">,</tt> <tt class="py-number">16717056</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">61</tt><tt class="py-op">,</tt> <tt class="py-number">10040576</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">62</tt><tt class="py-op">,</tt> <tt class="py-number">7950592</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">63</tt><tt class="py-op">,</tt> <tt class="py-number">4416512</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">64</tt><tt class="py-op">,</tt> <tt class="py-number">211200</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">65</tt><tt class="py-op">,</tt> <tt class="py-number">22325</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">66</tt><tt class="py-op">,</tt> <tt class="py-number">21631</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">67</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">68</tt><tt class="py-op">,</tt> <tt class="py-number">17743</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">69</tt><tt class="py-op">,</tt> <tt class="py-number">2425036</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">70</tt><tt class="py-op">,</tt> <tt class="py-number">8355711</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">71</tt><tt class="py-op">,</tt> <tt class="py-number">2105376</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">72</tt><tt class="py-op">,</tt> <tt class="py-number">16711680</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">73</tt><tt class="py-op">,</tt> <tt class="py-number">12451629</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">74</tt><tt class="py-op">,</tt> <tt class="py-number">11529478</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">75</tt><tt class="py-op">,</tt> <tt class="py-number">6618889</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">76</tt><tt class="py-op">,</tt> <tt class="py-number">1084160</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">77</tt><tt class="py-op">,</tt> <tt class="py-number">65415</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">78</tt><tt class="py-op">,</tt> <tt class="py-number">43519</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">79</tt><tt class="py-op">,</tt> <tt class="py-number">11007</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">,</tt> <tt class="py-number">4129023</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L350"></a><tt class="py-lineno">350</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">81</tt><tt class="py-op">,</tt> <tt class="py-number">7995647</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">82</tt><tt class="py-op">,</tt> <tt class="py-number">11672189</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">83</tt><tt class="py-op">,</tt> <tt class="py-number">4202752</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">84</tt><tt class="py-op">,</tt> <tt class="py-number">16730624</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">85</tt><tt class="py-op">,</tt> <tt class="py-number">8970502</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">86</tt><tt class="py-op">,</tt> <tt class="py-number">7536405</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">87</tt><tt class="py-op">,</tt> <tt class="py-number">65280</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L357"></a><tt class="py-lineno">357</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">88</tt><tt class="py-op">,</tt> <tt class="py-number">3931942</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L358"></a><tt class="py-lineno">358</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">89</tt><tt class="py-op">,</tt> <tt class="py-number">5898097</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">90</tt><tt class="py-op">,</tt> <tt class="py-number">3735500</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L360"></a><tt class="py-lineno">360</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">91</tt><tt class="py-op">,</tt> <tt class="py-number">5999359</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">92</tt><tt class="py-op">,</tt> <tt class="py-number">3232198</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L362"></a><tt class="py-lineno">362</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">93</tt><tt class="py-op">,</tt> <tt class="py-number">8880105</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">94</tt><tt class="py-op">,</tt> <tt class="py-number">13835775</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L364"></a><tt class="py-lineno">364</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">95</tt><tt class="py-op">,</tt> <tt class="py-number">16711773</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">96</tt><tt class="py-op">,</tt> <tt class="py-number">16744192</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">97</tt><tt class="py-op">,</tt> <tt class="py-number">12169216</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L367"></a><tt class="py-lineno">367</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">98</tt><tt class="py-op">,</tt> <tt class="py-number">9502464</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L368"></a><tt class="py-lineno">368</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">99</tt><tt class="py-op">,</tt> <tt class="py-number">8609031</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L369"></a><tt class="py-lineno">369</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">100</tt><tt class="py-op">,</tt> <tt class="py-number">3746560</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L370"></a><tt class="py-lineno">370</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">101</tt><tt class="py-op">,</tt> <tt class="py-number">1330192</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L371"></a><tt class="py-lineno">371</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">102</tt><tt class="py-op">,</tt> <tt class="py-number">872504</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L372"></a><tt class="py-lineno">372</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">103</tt><tt class="py-op">,</tt> <tt class="py-number">1381674</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L373"></a><tt class="py-lineno">373</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">104</tt><tt class="py-op">,</tt> <tt class="py-number">1450074</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L374"></a><tt class="py-lineno">374</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">105</tt><tt class="py-op">,</tt> <tt class="py-number">6896668</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L375"></a><tt class="py-lineno">375</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">106</tt><tt class="py-op">,</tt> <tt class="py-number">11010058</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L376"></a><tt class="py-lineno">376</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">107</tt><tt class="py-op">,</tt> <tt class="py-number">14569789</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L377"></a><tt class="py-lineno">377</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">108</tt><tt class="py-op">,</tt> <tt class="py-number">14182940</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L378"></a><tt class="py-lineno">378</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">109</tt><tt class="py-op">,</tt> <tt class="py-number">16769318</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L379"></a><tt class="py-lineno">379</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">110</tt><tt class="py-op">,</tt> <tt class="py-number">10412335</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L380"></a><tt class="py-lineno">380</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">111</tt><tt class="py-op">,</tt> <tt class="py-number">6796559</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L381"></a><tt class="py-lineno">381</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">112</tt><tt class="py-op">,</tt> <tt class="py-number">1973808</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L382"></a><tt class="py-lineno">382</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">113</tt><tt class="py-op">,</tt> <tt class="py-number">14483307</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L383"></a><tt class="py-lineno">383</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">114</tt><tt class="py-op">,</tt> <tt class="py-number">8454077</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L384"></a><tt class="py-lineno">384</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">115</tt><tt class="py-op">,</tt> <tt class="py-number">10131967</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L385"></a><tt class="py-lineno">385</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">116</tt><tt class="py-op">,</tt> <tt class="py-number">9332479</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L386"></a><tt class="py-lineno">386</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">117</tt><tt class="py-op">,</tt> <tt class="py-number">4210752</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L387"></a><tt class="py-lineno">387</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">118</tt><tt class="py-op">,</tt> <tt class="py-number">7697781</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L388"></a><tt class="py-lineno">388</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">119</tt><tt class="py-op">,</tt> <tt class="py-number">14745599</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L389"></a><tt class="py-lineno">389</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">120</tt><tt class="py-op">,</tt> <tt class="py-number">10485760</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L390"></a><tt class="py-lineno">390</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">121</tt><tt class="py-op">,</tt> <tt class="py-number">3473408</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L391"></a><tt class="py-lineno">391</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">122</tt><tt class="py-op">,</tt> <tt class="py-number">1757184</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L392"></a><tt class="py-lineno">392</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">123</tt><tt class="py-op">,</tt> <tt class="py-number">475648</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L393"></a><tt class="py-lineno">393</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">124</tt><tt class="py-op">,</tt> <tt class="py-number">12169216</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L394"></a><tt class="py-lineno">394</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">125</tt><tt class="py-op">,</tt> <tt class="py-number">4141312</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L395"></a><tt class="py-lineno">395</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">126</tt><tt class="py-op">,</tt> <tt class="py-number">11755264</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L396"></a><tt class="py-lineno">396</tt>  <tt class="py-line"> <tt class="py-op">(</tt><tt class="py-number">127</tt><tt class="py-op">,</tt> <tt class="py-number">4920578</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L397"></a><tt class="py-lineno">397</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 19:32:48 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

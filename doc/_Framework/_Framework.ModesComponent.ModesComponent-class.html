@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>_Framework.ModesComponent.ModesComponent</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="_Framework-module.html">Package&nbsp;_Framework</a> ::
+        <a href="_Framework.ModesComponent-module.html">Module&nbsp;ModesComponent</a> ::
+        Class&nbsp;ModesComponent
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="_Framework.ModesComponent.ModesComponent-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ModesComponent</h1><p class="nomargin-top"><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+                         object --+                    
+                                  |                    
+      <a href="_Framework.Disconnectable.Disconnectable-class.html">Disconnectable.Disconnectable</a> --+                
+                                      |                
+  <a href="_Framework.Disconnectable.CompoundDisconnectable-class.html">Disconnectable.CompoundDisconnectable</a> --+            
+                                          |            
+                    <a href="_Framework.SubjectSlot.SlotManager-class.html">SubjectSlot.SlotManager</a> --+        
+                                              |        
+                             object --+       |        
+                                      |       |        
+          <a href="_Framework.Disconnectable.Disconnectable-class.html">Disconnectable.Disconnectable</a> --+   |        
+                                          |   |        
+                        <a href="_Framework.SubjectSlot.Subject-class.html">SubjectSlot.Subject</a> --+        
+                                              |        
+<a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a> --+    
+                                                  |    
+                <a href="_Framework.CompoundComponent.CompoundComponent-class.html">CompoundComponent.CompoundComponent</a> --+
+                                                      |
+                                                     <strong class="uidshort">ModesComponent</strong>
+</pre>
+
+<hr />
+<pre class="literalblock">
+
+A ModesComponent handles the selection of different modes of the
+component. It improves the ModeSelectorComponent in several ways:
+
+- A mode is an object with two methods for entering and exiting
+  the mode.  You do not need to know about all the modes
+  registered.
+
+- Any object convertible by 'tomode' can be passed as mode.
+
+- Modes are identified by strings.
+
+- The component will dynamically generate methods of the form:
+
+      set_[mode-name]_button(button)
+
+  for setting the mode button.  Thanks to this, you can pass the mode
+  buttons in a layer.
+
+The modes component behaves like a stack.  Several modes can be
+active at the same time, but the component will make sure that
+only the one at the top (aka 'selected_mode') will be entered at a
+given time.  This allows you to implement modes that can be
+'cancelled' or 'mode latch' (i.e. go to the previous mode under
+certain conditions).
+
+</pre>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.SubjectSlot.Subject-class.html">SubjectSlot.Subject</a></code></b>:
+      <code><a href="_Framework.SubjectSlot.SubjectMeta-class.html">__metaclass__</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*a</span>,
+        <span class="summary-sig-arg">**k</span>)</span><br />
+      x.__init__(...) initializes x; see help(type(x)) for signature</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#disconnect" class="summary-sig-name">disconnect</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.disconnect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_shift_button"></a><span class="summary-sig-name">set_shift_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.set_shift_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_do_enter_mode"></a><span class="summary-sig-name">_do_enter_mode</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._do_enter_mode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_do_leave_mode"></a><span class="summary-sig-name">_do_leave_mode</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._do_leave_mode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#_get_selected_mode" class="summary-sig-name" onclick="show_private();">_get_selected_mode</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Mode that is currently the top of the mode stack.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._get_selected_mode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_set_selected_mode"></a><span class="summary-sig-name">_set_selected_mode</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mode</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._set_selected_mode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#selected_groups" class="summary-sig-name">selected_groups</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.selected_groups">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#active_modes" class="summary-sig-name">active_modes</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.active_modes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="push_mode"></a><span class="summary-sig-name">push_mode</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mode</span>)</span><br />
+      Selects the current 'mode', leaving the rest of the modes in the mode
+      stack.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.push_mode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#pop_mode" class="summary-sig-name">pop_mode</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mode</span>)</span><br />
+      Takes 'mode' away from the mode stack.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.pop_mode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="pop_groups"></a><span class="summary-sig-name">pop_groups</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groups</span>)</span><br />
+      Pops every mode in groups.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.pop_groups">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="pop_unselected_modes"></a><span class="summary-sig-name">pop_unselected_modes</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Pops from the mode stack all the modes that are not the currently 
+      selected one.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.pop_unselected_modes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#on_enabled_changed" class="summary-sig-name">on_enabled_changed</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.on_enabled_changed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#update" class="summary-sig-name">update</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.update">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#add_mode" class="summary-sig-name">add_mode</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">mode_or_component</span>,
+        <span class="summary-sig-arg">toggle_value</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">groups</span>=<span class="summary-sig-default">set()</span>,
+        <span class="summary-sig-arg">behaviour</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Adds a mode of the given name into the component.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.add_mode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_mode_behaviour"></a><span class="summary-sig-name">_get_mode_behaviour</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._get_mode_behaviour">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_mode"></a><span class="summary-sig-name">get_mode</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.get_mode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_mode_groups"></a><span class="summary-sig-name">get_mode_groups</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.get_mode_groups">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_toggle_button"></a><span class="summary-sig-name">set_toggle_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.set_toggle_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_mode_button"></a><span class="summary-sig-name">set_mode_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.set_mode_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_mode_button"></a><span class="summary-sig-name">get_mode_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.get_mode_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_update_buttons"></a><span class="summary-sig-name">_update_buttons</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">selected</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._update_buttons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_on_mode_button_value"></a><span class="summary-sig-name">_on_mode_button_value</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">sender</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._on_mode_button_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.ModesComponent.ModesComponent-class.html#_on_toggle_value" class="summary-sig-name" onclick="show_private();">_on_toggle_value</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._on_toggle_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_cycle_mode"></a><span class="summary-sig-name">_cycle_mode</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">delta</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._cycle_mode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html">CompoundComponent.CompoundComponent</a></code></b>:
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#has_component">has_component</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#register_component">register_component</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#register_components">register_components</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#set_allow_update">set_allow_update</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#set_enabled">set_enabled</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#update_all">update_all</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html">CompoundComponent.CompoundComponent</a></code></b> (private):
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#_set_enabled_recursive" onclick="show_private();">_set_enabled_recursive</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b>:
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#application">application</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#is_enabled">is_enabled</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_scene_list_changed">on_scene_list_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_selected_scene_changed">on_selected_scene_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_selected_track_changed">on_selected_track_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_track_list_changed">on_track_list_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#song">song</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b> (private):
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_get_layer" onclick="show_private();">_get_layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_internal_on_enabled_changed" onclick="show_private();">_internal_on_enabled_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_register_timer_callback" onclick="show_private();">_register_timer_callback</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_set_layer" onclick="show_private();">_set_layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_tasks" onclick="show_private();">_tasks</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_unregister_timer_callback" onclick="show_private();">_unregister_timer_callback</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_update_is_enabled" onclick="show_private();">_update_is_enabled</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.SubjectSlot.SlotManager-class.html">SubjectSlot.SlotManager</a></code></b>:
+      <code><a href="_Framework.SubjectSlot.SlotManager-class.html#register_slot">register_slot</a></code>,
+      <code><a href="_Framework.SubjectSlot.SlotManager-class.html#register_slot_manager">register_slot_manager</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html">Disconnectable.CompoundDisconnectable</a></code></b>:
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#disconnect_disconnectable">disconnect_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#find_disconnectable">find_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#has_disconnectable">has_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#register_disconnectable">register_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#unregister_disconnectable">unregister_disconnectable</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__subject_events__"></a><span class="summary-name">__subject_events__</span> = <code title="'selected_mode',">'selected_mode',</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="momentary_toggle"></a><span class="summary-name">momentary_toggle</span> = <code title="False">False</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="default_behaviour"></a><span class="summary-name">default_behaviour</span> = <code title="LatchingBehaviour()">LatchingBehaviour()</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="selected_mode"></a><span class="summary-name">selected_mode</span> = <code title="property(_get_selected_mode, _set_selected_mode)">property(_get_selected_mode, _set_selected_mode)</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b>:
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#canonical_parent">canonical_parent</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#is_private">is_private</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#layer">layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#name">name</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b> (private):
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_has_task_group" onclick="show_private();">_has_task_group</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_layer" onclick="show_private();">_layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_show_msg_callback" onclick="show_private();">_show_msg_callback</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*a</span>,
+        <span class="sig-arg">**k</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="disconnect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">disconnect</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.disconnect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.Disconnectable.Disconnectable-class.html#disconnect">Disconnectable.Disconnectable.disconnect</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_get_selected_mode"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_get_selected_mode</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._get_selected_mode">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Mode that is currently the top of the mode stack. Setting the selected
+  mode explictly will also cleanup the mode stack.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="selected_groups"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">selected_groups</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.selected_groups">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="active_modes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">active_modes</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.active_modes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="pop_mode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">pop_mode</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mode</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.pop_mode">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Takes 'mode' away from the mode stack.  If the mode was the currently 
+  selected one, the last pushed mode will be selected.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="on_enabled_changed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">on_enabled_changed</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.on_enabled_changed">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_enabled_changed">ControlSurfaceComponent.ControlSurfaceComponent.on_enabled_changed</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="update"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.update">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#update">ControlSurfaceComponent.ControlSurfaceComponent.update</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="add_mode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add_mode</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">mode_or_component</span>,
+        <span class="sig-arg">toggle_value</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">groups</span>=<span class="sig-default">set()</span>,
+        <span class="sig-arg">behaviour</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent.add_mode">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+Adds a mode of the given name into the component.  The mode
+object should be a Mode or ControlSurfaceComponent instance.
+
+The 'toggle_value' is the light value the toggle_botton will
+be set to when the component is on this mode.
+
+If 'group' is not None, the mode will be put in the group
+identified by the passed object.  When several modes are grouped:
+
+  * All the buttons in the group will light up when any of the
+    modes withing the group is selected.
+
+  * Any of the group buttons will cancel the current mode when
+    the current mode belongs to the group.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_on_toggle_value"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_on_toggle_value</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.ModesComponent-pysrc.html#ModesComponent._on_toggle_value">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@subject_slot('value')</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 18:53:32 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
