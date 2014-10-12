@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>_Framework.LogicalDisplaySegment</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="_Framework-module.html">Package&nbsp;_Framework</a> ::
+        Module&nbsp;LogicalDisplaySegment
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="_Framework.LogicalDisplaySegment-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="_Framework.LogicalDisplaySegment-module.html">Module _Framework.LogicalDisplaySegment</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/_Framework/LogicalDisplaySegment.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="adjust_string"></a><div id="adjust_string-def"><a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="adjust_string-toggle" onclick="return toggle('adjust_string');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment-module.html#adjust_string">adjust_string</a><tt class="py-op">(</tt><tt class="py-param">original</tt><tt class="py-op">,</tt> <tt class="py-param">length</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="adjust_string-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="adjust_string-expanded"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    Brings the string to the given length by either removing</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    characters or adding spaces. The algorithm is adopted from ede's</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    old implementation for the Mackie.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">length</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-name">resulting_string</tt> <tt class="py-op">=</tt> <tt class="py-name">original</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">resulting_string</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">length</tt><tt class="py-op">:</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">resulting_string</tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt><tt class="py-string">'dB'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">                <tt class="py-name">unit_db</tt> <tt class="py-op">=</tt> <tt class="py-name">resulting_string</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Method _Framework.Task.TaskGroup.find()=_Framework.Task.TaskGroup-class.html#find"><a title="_Framework.Task.TaskGroup.find" class="py-name" href="#" onclick="return doclink('link-0', 'find', 'link-0');">find</a></tt><tt class="py-op">(</tt><tt class="py-string">'.'</tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">                <tt class="py-name">resulting_string</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">resulting_string</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">length</tt> <tt class="py-keyword">and</tt> <tt class="py-name">unit_db</tt> <tt class="py-keyword">and</tt> <tt class="py-name">resulting_string</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">resulting_string</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">length</tt><tt class="py-op">:</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">char</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">' '</tt><tt class="py-op">,</tt> <tt class="py-string">'_'</tt><tt class="py-op">,</tt> <tt class="py-string">'i'</tt><tt class="py-op">,</tt> <tt class="py-string">'o'</tt><tt class="py-op">,</tt> <tt class="py-string">'u'</tt><tt class="py-op">,</tt> <tt class="py-string">'e'</tt><tt class="py-op">,</tt> <tt class="py-string">'a'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">                    <tt class="py-name">offset</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> <tt class="py-keyword">if</tt> <tt class="py-name">char</tt> <tt class="py-op">==</tt> <tt class="py-string">' '</tt> <tt class="py-keyword">else</tt> <tt class="py-number">1</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">                    <tt class="py-keyword">while</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">resulting_string</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">length</tt> <tt class="py-keyword">and</tt> <tt class="py-name">resulting_string</tt><tt class="py-op">.</tt><tt class="py-name">rfind</tt><tt class="py-op">(</tt><tt class="py-name">char</tt><tt class="py-op">,</tt> <tt class="py-name">offset</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">                        <tt class="py-name">char_pos</tt> <tt class="py-op">=</tt> <tt class="py-name">resulting_string</tt><tt class="py-op">.</tt><tt class="py-name">rfind</tt><tt class="py-op">(</tt><tt class="py-name">char</tt><tt class="py-op">,</tt> <tt class="py-name">offset</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">                        <tt class="py-name">resulting_string</tt> <tt class="py-op">=</tt> <tt class="py-name">resulting_string</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-name">char_pos</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">resulting_string</tt><tt class="py-op">[</tt><tt class="py-name">char_pos</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">                <tt class="py-name">resulting_string</tt> <tt class="py-op">=</tt> <tt class="py-name">resulting_string</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-name">length</tt><tt class="py-op">]</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt class="py-name">resulting_string</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">resulting_string</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">length</tt> <tt class="py-keyword">and</tt> <tt class="py-name">resulting_string</tt><tt class="py-op">.</tt><tt class="py-name">ljust</tt><tt class="py-op">(</tt><tt class="py-name">length</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">resulting_string</tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
+<a name="LogicalDisplaySegment"></a><div id="LogicalDisplaySegment-def"><a name="L29"></a><tt class="py-lineno">29</tt> <a class="py-toggle" href="#" id="LogicalDisplaySegment-toggle" onclick="return toggle('LogicalDisplaySegment');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html">LogicalDisplaySegment</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LogicalDisplaySegment-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="LogicalDisplaySegment-expanded"><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing a specific segment of a display on the controller</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"> </tt>
+<a name="LogicalDisplaySegment.__init__"></a><div id="LogicalDisplaySegment.__init__-def"><a name="L34"></a><tt class="py-lineno">34</tt> <a class="py-toggle" href="#" id="LogicalDisplaySegment.__init__-toggle" onclick="return toggle('LogicalDisplaySegment.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">width</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">update_callback</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LogicalDisplaySegment.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="LogicalDisplaySegment.__init__-expanded"><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-1" class="py-name" targets="Module _Framework.LogicalDisplaySegment=_Framework.LogicalDisplaySegment-module.html,Class _Framework.LogicalDisplaySegment.LogicalDisplaySegment=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html"><a title="_Framework.LogicalDisplaySegment
+_Framework.LogicalDisplaySegment.LogicalDisplaySegment" class="py-name" href="#" onclick="return doclink('link-1', 'LogicalDisplaySegment', 'link-1');">LogicalDisplaySegment</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method _Framework.ButtonElement.ButtonElement.__init__()=_Framework.ButtonElement.ButtonElement-class.html#__init__,Method _Framework.ButtonMatrixElement.ButtonMatrixElement.__init__()=_Framework.ButtonMatrixElement.ButtonMatrixElement-class.html#__init__,Method _Framework.ButtonSliderElement.ButtonSliderElement.__init__()=_Framework.ButtonSliderElement.ButtonSliderElement-class.html#__init__,Method _Framework.ChannelStripComponent.ChannelStripComponent.__init__()=_Framework.ChannelStripComponent.ChannelStripComponent-class.html#__init__,Method _Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__()=_Framework.ChannelTranslationSelector.ChannelTranslationSelector-class.html#__init__,Method _Framework.ClipSlotComponent.ClipSlotComponent.__init__()=_Framework.ClipSlotComponent.ClipSlotComponent-class.html#__init__,Method _Framework.CompoundComponent.CompoundComponent.__init__()=_Framework.CompoundComponent.CompoundComponent-class.html#__init__,Method _Framework.CompoundElement.CompoundElement.__init__()=_Framework.CompoundElement.CompoundElement-class.html#__init__,Method _Framework.ControlElement.ControlElement.__init__()=_Framework.ControlElement.ControlElement-class.html#__init__,Method _Framework.ControlSurface.ControlSurface.__init__()=_Framework.ControlSurface.ControlSurface-class.html#__init__,Method _Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__()=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#__init__,Method _Framework.Dependency.InjectionFactory.__init__()=_Framework.Dependency.InjectionFactory-class.html#__init__,Method _Framework.Dependency.InjectionRegistry.__init__()=_Framework.Dependency.InjectionRegistry-class.html#__init__,Method _Framework.Dependency.RegistryInjector.__init__()=_Framework.Dependency.RegistryInjector-class.html#__init__,Method _Framework.Dependency.dependency.__init__()=_Framework.Dependency.dependency-class.html#__init__,Method _Framework.DeviceBankRegistry.DeviceBankRegistry.__init__()=_Framework.DeviceBankRegistry.DeviceBankRegistry-class.html#__init__,Method _Framework.DeviceComponent.DeviceComponent.__init__()=_Framework.DeviceComponent.DeviceComponent-class.html#__init__,Method _Framework.Disconnectable.CompoundDisconnectable.__init__()=_Framework.Disconnectable.CompoundDisconnectable-class.html#__init__,Method _Framework.Disconnectable.disconnectable.__init__()=_Framework.Disconnectable.disconnectable-class.html#__init__,Method _Framework.DisplayDataSource.DisplayDataSource.__init__()=_Framework.DisplayDataSource.DisplayDataSource-class.html#__init__,Method _Framework.EncoderElement.EncoderElement.__init__()=_Framework.EncoderElement.EncoderElement-class.html#__init__,Method _Framework.InputControlElement.InputControlElement.__init__()=_Framework.InputControlElement.InputControlElement-class.html#__init__,Method _Framework.InputControlElement.InputSignal.__init__()=_Framework.InputControlElement.InputSignal-class.html#__init__,Method _Framework.InputControlElement.ParameterSlot.__init__()=_Framework.InputControlElement.ParameterSlot-class.html#__init__,Method _Framework.Layer.Layer.__init__()=_Framework.Layer.Layer-class.html#__init__,Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#__init__,Method _Framework.MixerComponent.MixerComponent.__init__()=_Framework.MixerComponent.MixerComponent-class.html#__init__,Method _Framework.ModeSelectorComponent.ModeSelectorComponent.__init__()=_Framework.ModeSelectorComponent.ModeSelectorComponent-class.html#__init__,Method _Framework.ModesComponent.AddLayerMode.__init__()=_Framework.ModesComponent.AddLayerMode-class.html#__init__,Method _Framework.ModesComponent.AlternativeBehaviour.__init__()=_Framework.ModesComponent.AlternativeBehaviour-class.html#__init__,Method _Framework.ModesComponent.ComponentMode.__init__()=_Framework.ModesComponent.ComponentMode-class.html#__init__,Method _Framework.ModesComponent.CompoundMode.__init__()=_Framework.ModesComponent.CompoundMode-class.html#__init__,Method _Framework.ModesComponent.ContextManagerMode.__init__()=_Framework.ModesComponent.ContextManagerMode-class.html#__init__,Method _Framework.ModesComponent.DisableMode.__init__()=_Framework.ModesComponent.DisableMode-class.html#__init__,Method _Framework.ModesComponent.DisplayingModesComponent.__init__()=_Framework.ModesComponent.DisplayingModesComponent-class.html#__init__,Method _Framework.ModesComponent.DynamicBehaviourMixin.__init__()=_Framework.ModesComponent.DynamicBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.ExcludingBehaviourMixin.__init__()=_Framework.ModesComponent.ExcludingBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.LayerMode.__init__()=_Framework.ModesComponent.LayerMode-class.html#__init__,Method _Framework.ModesComponent.ModesComponent.__init__()=_Framework.ModesComponent.ModesComponent-class.html#__init__,Method _Framework.ModesComponent.MultiEntryMode.__init__()=_Framework.ModesComponent.MultiEntryMode-class.html#__init__,Method _Framework.ModesComponent.ReenterBehaviour.__init__()=_Framework.ModesComponent.ReenterBehaviour-class.html#__init__,Method _Framework.ModesComponent.SetAttributeMode.__init__()=_Framework.ModesComponent.SetAttributeMode-class.html#__init__,Method _Framework.MomentaryModeObserver.MomentaryModeObserver.__init__()=_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#__init__,Method _Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__()=_Framework.PhysicalDisplayElement.PhysicalDisplayElement-class.html#__init__,Method _Framework.Resource.CompoundResource.__init__()=_Framework.Resource.CompoundResource-class.html#__init__,Method _Framework.Resource.ExclusiveResource.__init__()=_Framework.Resource.ExclusiveResource-class.html#__init__,Method _Framework.Resource.PrioritizedResource.__init__()=_Framework.Resource.PrioritizedResource-class.html#__init__,Method _Framework.Resource.SharedResource.__init__()=_Framework.Resource.SharedResource-class.html#__init__,Method _Framework.Resource.StackingResource.__init__()=_Framework.Resource.StackingResource-class.html#__init__,Method _Framework.SceneComponent.SceneComponent.__init__()=_Framework.SceneComponent.SceneComponent-class.html#__init__,Method _Framework.ScrollComponent.ScrollComponent.__init__()=_Framework.ScrollComponent.ScrollComponent-class.html#__init__,Method _Framework.SessionComponent.SessionComponent.__init__()=_Framework.SessionComponent.SessionComponent-class.html#__init__,Method _Framework.SessionZoomingComponent.SessionZoomingComponent.__init__()=_Framework.SessionZoomingComponent.SessionZoomingComponent-class.html#__init__,Method _Framework.Signal.IdentifyingSlot.__init__()=_Framework.Signal.IdentifyingSlot-class.html#__init__,Method _Framework.Signal.Signal.__init__()=_Framework.Signal.Signal-class.html#__init__,Method _Framework.Signal.Slot.__init__()=_Framework.Signal.Slot-class.html#__init__,Method _Framework.SliderElement.SliderElement.__init__()=_Framework.SliderElement.SliderElement-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlot.__init__()=_Framework.SubjectSlot.SubjectSlot-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlotGroup.__init__()=_Framework.SubjectSlot.SubjectSlotGroup-class.html#__init__,Method _Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__()=_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent-class.html#__init__,Method _Framework.SysexValueControl.SysexValueControl.__init__()=_Framework.SysexValueControl.SysexValueControl-class.html#__init__,Method _Framework.Task.DelayTask.__init__()=_Framework.Task.DelayTask-class.html#__init__,Method _Framework.Task.FadeTask.__init__()=_Framework.Task.FadeTask-class.html#__init__,Method _Framework.Task.FuncTask.__init__()=_Framework.Task.FuncTask-class.html#__init__,Method _Framework.Task.GeneratorTask.__init__()=_Framework.Task.GeneratorTask-class.html#__init__,Method _Framework.Task.SequenceTask.__init__()=_Framework.Task.SequenceTask-class.html#__init__,Method _Framework.Task.Task.__init__()=_Framework.Task.Task-class.html#__init__,Method _Framework.Task.TaskGroup.__init__()=_Framework.Task.TaskGroup-class.html#__init__,Method _Framework.Task.WaitTask.__init__()=_Framework.Task.WaitTask-class.html#__init__,Method _Framework.Task.WrapperTask.__init__()=_Framework.Task.WrapperTask-class.html#__init__,Method _Framework.ToggleComponent.ToggleComponent.__init__()=_Framework.ToggleComponent.ToggleComponent-class.html#__init__,Method _Framework.TrackEQComponent.TrackEQComponent.__init__()=_Framework.TrackEQComponent.TrackEQComponent-class.html#__init__,Method _Framework.TrackFilterComponent.TrackFilterComponent.__init__()=_Framework.TrackFilterComponent.TrackFilterComponent-class.html#__init__,Method _Framework.TransportComponent.TransportComponent.__init__()=_Framework.TransportComponent.TransportComponent-class.html#__init__,Method _Framework.Util.BooleanContext.Manager.__init__()=_Framework.Util.BooleanContext.Manager-class.html#__init__,Method _Framework.Util.BooleanContext.__init__()=_Framework.Util.BooleanContext-class.html#__init__,Method _Framework.Util.CallCounter.__init__()=_Framework.Util.CallCounter-class.html#__init__,Method _Framework.Util.NamedTuple.__init__()=_Framework.Util.NamedTuple-class.html#__init__,Method _Framework.Util.lazy_attribute.__init__()=_Framework.Util.lazy_attribute-class.html#__init__,Method _Framework.Util.memoize.__init__()=_Framework.Util.memoize-class.html#__init__"><a title="_Framework.ButtonElement.ButtonElement.__init__
+_Framework.ButtonMatrixElement.ButtonMatrixElement.__init__
+_Framework.ButtonSliderElement.ButtonSliderElement.__init__
+_Framework.ChannelStripComponent.ChannelStripComponent.__init__
+_Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__
+_Framework.ClipSlotComponent.ClipSlotComponent.__init__
+_Framework.CompoundComponent.CompoundComponent.__init__
+_Framework.CompoundElement.CompoundElement.__init__
+_Framework.ControlElement.ControlElement.__init__
+_Framework.ControlSurface.ControlSurface.__init__
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__
+_Framework.Dependency.InjectionFactory.__init__
+_Framework.Dependency.InjectionRegistry.__init__
+_Framework.Dependency.RegistryInjector.__init__
+_Framework.Dependency.dependency.__init__
+_Framework.DeviceBankRegistry.DeviceBankRegistry.__init__
+_Framework.DeviceComponent.DeviceComponent.__init__
+_Framework.Disconnectable.CompoundDisconnectable.__init__
+_Framework.Disconnectable.disconnectable.__init__
+_Framework.DisplayDataSource.DisplayDataSource.__init__
+_Framework.EncoderElement.EncoderElement.__init__
+_Framework.InputControlElement.InputControlElement.__init__
+_Framework.InputControlElement.InputSignal.__init__
+_Framework.InputControlElement.ParameterSlot.__init__
+_Framework.Layer.Layer.__init__
+_Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__
+_Framework.MixerComponent.MixerComponent.__init__
+_Framework.ModeSelectorComponent.ModeSelectorComponent.__init__
+_Framework.ModesComponent.AddLayerMode.__init__
+_Framework.ModesComponent.AlternativeBehaviour.__init__
+_Framework.ModesComponent.ComponentMode.__init__
+_Framework.ModesComponent.CompoundMode.__init__
+_Framework.ModesComponent.ContextManagerMode.__init__
+_Framework.ModesComponent.DisableMode.__init__
+_Framework.ModesComponent.DisplayingModesComponent.__init__
+_Framework.ModesComponent.DynamicBehaviourMixin.__init__
+_Framework.ModesComponent.ExcludingBehaviourMixin.__init__
+_Framework.ModesComponent.LayerMode.__init__
+_Framework.ModesComponent.ModesComponent.__init__
+_Framework.ModesComponent.MultiEntryMode.__init__
+_Framework.ModesComponent.ReenterBehaviour.__init__
+_Framework.ModesComponent.SetAttributeMode.__init__
+_Framework.MomentaryModeObserver.MomentaryModeObserver.__init__
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__
+_Framework.Resource.CompoundResource.__init__
+_Framework.Resource.ExclusiveResource.__init__
+_Framework.Resource.PrioritizedResource.__init__
+_Framework.Resource.SharedResource.__init__
+_Framework.Resource.StackingResource.__init__
+_Framework.SceneComponent.SceneComponent.__init__
+_Framework.ScrollComponent.ScrollComponent.__init__
+_Framework.SessionComponent.SessionComponent.__init__
+_Framework.SessionZoomingComponent.SessionZoomingComponent.__init__
+_Framework.Signal.IdentifyingSlot.__init__
+_Framework.Signal.Signal.__init__
+_Framework.Signal.Slot.__init__
+_Framework.SliderElement.SliderElement.__init__
+_Framework.SubjectSlot.SubjectSlot.__init__
+_Framework.SubjectSlot.SubjectSlotGroup.__init__
+_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__
+_Framework.SysexValueControl.SysexValueControl.__init__
+_Framework.Task.DelayTask.__init__
+_Framework.Task.FadeTask.__init__
+_Framework.Task.FuncTask.__init__
+_Framework.Task.GeneratorTask.__init__
+_Framework.Task.SequenceTask.__init__
+_Framework.Task.Task.__init__
+_Framework.Task.TaskGroup.__init__
+_Framework.Task.WaitTask.__init__
+_Framework.Task.WrapperTask.__init__
+_Framework.ToggleComponent.ToggleComponent.__init__
+_Framework.TrackEQComponent.TrackEQComponent.__init__
+_Framework.TrackFilterComponent.TrackFilterComponent.__init__
+_Framework.TransportComponent.TransportComponent.__init__
+_Framework.Util.BooleanContext.Manager.__init__
+_Framework.Util.BooleanContext.__init__
+_Framework.Util.CallCounter.__init__
+_Framework.Util.NamedTuple.__init__
+_Framework.Util.lazy_attribute.__init__
+_Framework.Util.memoize.__init__" class="py-name" href="#" onclick="return doclink('link-2', '__init__', 'link-2');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt id="link-3" class="py-name" targets="Method _Framework.ButtonMatrixElement.ButtonMatrixElement.width()=_Framework.ButtonMatrixElement.ButtonMatrixElement-class.html#width,Method _Framework.SessionComponent.SessionComponent.width()=_Framework.SessionComponent.SessionComponent-class.html#width"><a title="_Framework.ButtonMatrixElement.ButtonMatrixElement.width
+_Framework.SessionComponent.SessionComponent.width" class="py-name" href="#" onclick="return doclink('link-3', 'width', 'link-3');">width</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">callable</tt><tt class="py-op">(</tt><tt class="py-name">update_callback</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_update_callback</tt> <tt class="py-op">=</tt> <tt class="py-name">update_callback</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_width</tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="_Framework.ButtonMatrixElement.ButtonMatrixElement.width
+_Framework.SessionComponent.SessionComponent.width" class="py-name" href="#" onclick="return doclink('link-4', 'width', 'link-3');">width</a></tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_position_identifier</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
+<a name="LogicalDisplaySegment.disconnect"></a><div id="LogicalDisplaySegment.disconnect-def"><a name="L43"></a><tt class="py-lineno">43</tt> <a class="py-toggle" href="#" id="LogicalDisplaySegment.disconnect-toggle" onclick="return toggle('LogicalDisplaySegment.disconnect');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#disconnect">disconnect</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LogicalDisplaySegment.disconnect-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="LogicalDisplaySegment.disconnect-expanded"><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_update_callback</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_position_identifier</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method _Framework.DisplayDataSource.DisplayDataSource.set_update_callback()=_Framework.DisplayDataSource.DisplayDataSource-class.html#set_update_callback"><a title="_Framework.DisplayDataSource.DisplayDataSource.set_update_callback" class="py-name" href="#" onclick="return doclink('link-5', 'set_update_callback', 'link-5');">set_update_callback</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"> </tt>
+<a name="LogicalDisplaySegment.set_data_source"></a><div id="LogicalDisplaySegment.set_data_source-def"><a name="L50"></a><tt class="py-lineno">50</tt> <a class="py-toggle" href="#" id="LogicalDisplaySegment.set_data_source-toggle" onclick="return toggle('LogicalDisplaySegment.set_data_source');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#set_data_source">set_data_source</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">data_source</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LogicalDisplaySegment.set_data_source-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="LogicalDisplaySegment.set_data_source-expanded"><a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="_Framework.DisplayDataSource.DisplayDataSource.set_update_callback" class="py-name" href="#" onclick="return doclink('link-6', 'set_update_callback', 'link-5');">set_update_callback</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt> <tt class="py-op">=</tt> <tt id="link-7" class="py-name" targets="Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.data_source()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#data_source"><a title="_Framework.LogicalDisplaySegment.LogicalDisplaySegment.data_source" class="py-name" href="#" onclick="return doclink('link-7', 'data_source', 'link-7');">data_source</a></tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="_Framework.DisplayDataSource.DisplayDataSource.set_update_callback" class="py-name" href="#" onclick="return doclink('link-8', 'set_update_callback', 'link-5');">set_update_callback</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method _Framework.ChannelStripComponent.ChannelStripComponent.update()=_Framework.ChannelStripComponent.ChannelStripComponent-class.html#update,Method _Framework.ChannelTranslationSelector.ChannelTranslationSelector.update()=_Framework.ChannelTranslationSelector.ChannelTranslationSelector-class.html#update,Method _Framework.ClipSlotComponent.ClipSlotComponent.update()=_Framework.ClipSlotComponent.ClipSlotComponent-class.html#update,Method _Framework.ControlSurface.ControlSurface.update()=_Framework.ControlSurface.ControlSurface-class.html#update,Method _Framework.ControlSurfaceComponent.ControlSurfaceComponent.update()=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#update,Method _Framework.DeviceComponent.DeviceComponent.update()=_Framework.DeviceComponent.DeviceComponent-class.html#update,Method _Framework.DisplayDataSource.DisplayDataSource.update()=_Framework.DisplayDataSource.DisplayDataSource-class.html#update,Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.update()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#update,Method _Framework.MixerComponent.MixerComponent.update()=_Framework.MixerComponent.MixerComponent-class.html#update,Method _Framework.ModeSelectorComponent.ModeSelectorComponent.update()=_Framework.ModeSelectorComponent.ModeSelectorComponent-class.html#update,Method _Framework.ModesComponent.DisplayingModesComponent.update()=_Framework.ModesComponent.DisplayingModesComponent-class.html#update,Method _Framework.ModesComponent.ModesComponent.update()=_Framework.ModesComponent.ModesComponent-class.html#update,Method _Framework.PhysicalDisplayElement.PhysicalDisplayElement.update()=_Framework.PhysicalDisplayElement.PhysicalDisplayElement-class.html#update,Method _Framework.SceneComponent.SceneComponent.update()=_Framework.SceneComponent.SceneComponent-class.html#update,Method _Framework.ScrollComponent.ScrollComponent.update()=_Framework.ScrollComponent.ScrollComponent-class.html#update,Method _Framework.SessionComponent.SessionComponent.update()=_Framework.SessionComponent.SessionComponent-class.html#update,Method _Framework.SessionZoomingComponent.SessionZoomingComponent.update()=_Framework.SessionZoomingComponent.SessionZoomingComponent-class.html#update,Method _Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.update()=_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent-class.html#update,Method _Framework.Task.Task.update()=_Framework.Task.Task-class.html#update,Method _Framework.Task.WrapperTask.update()=_Framework.Task.WrapperTask-class.html#update,Method _Framework.ToggleComponent.ToggleComponent.update()=_Framework.ToggleComponent.ToggleComponent-class.html#update,Method _Framework.TrackEQComponent.TrackEQComponent.update()=_Framework.TrackEQComponent.TrackEQComponent-class.html#update,Method _Framework.TrackFilterComponent.TrackFilterComponent.update()=_Framework.TrackFilterComponent.TrackFilterComponent-class.html#update,Method _Framework.TransportComponent.TransportComponent.update()=_Framework.TransportComponent.TransportComponent-class.html#update"><a title="_Framework.ChannelStripComponent.ChannelStripComponent.update
+_Framework.ChannelTranslationSelector.ChannelTranslationSelector.update
+_Framework.ClipSlotComponent.ClipSlotComponent.update
+_Framework.ControlSurface.ControlSurface.update
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.update
+_Framework.DeviceComponent.DeviceComponent.update
+_Framework.DisplayDataSource.DisplayDataSource.update
+_Framework.LogicalDisplaySegment.LogicalDisplaySegment.update
+_Framework.MixerComponent.MixerComponent.update
+_Framework.ModeSelectorComponent.ModeSelectorComponent.update
+_Framework.ModesComponent.DisplayingModesComponent.update
+_Framework.ModesComponent.ModesComponent.update
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.update
+_Framework.SceneComponent.SceneComponent.update
+_Framework.ScrollComponent.ScrollComponent.update
+_Framework.SessionComponent.SessionComponent.update
+_Framework.SessionZoomingComponent.SessionZoomingComponent.update
+_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.update
+_Framework.Task.Task.update
+_Framework.Task.WrapperTask.update
+_Framework.ToggleComponent.ToggleComponent.update
+_Framework.TrackEQComponent.TrackEQComponent.update
+_Framework.TrackFilterComponent.TrackFilterComponent.update
+_Framework.TransportComponent.TransportComponent.update" class="py-name" href="#" onclick="return doclink('link-9', 'update', 'link-9');">update</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"> </tt>
+<a name="LogicalDisplaySegment.data_source"></a><div id="LogicalDisplaySegment.data_source-def"><a name="L57"></a><tt class="py-lineno">57</tt> <a class="py-toggle" href="#" id="LogicalDisplaySegment.data_source-toggle" onclick="return toggle('LogicalDisplaySegment.data_source');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#data_source">data_source</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LogicalDisplaySegment.data_source-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="LogicalDisplaySegment.data_source-expanded"><a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"> </tt>
+<a name="LogicalDisplaySegment.set_position_identifier"></a><div id="LogicalDisplaySegment.set_position_identifier-def"><a name="L60"></a><tt class="py-lineno">60</tt> <a class="py-toggle" href="#" id="LogicalDisplaySegment.set_position_identifier-toggle" onclick="return toggle('LogicalDisplaySegment.set_position_identifier');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#set_position_identifier">set_position_identifier</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position_identifier</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LogicalDisplaySegment.set_position_identifier-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="LogicalDisplaySegment.set_position_identifier-expanded"><a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-docstring">        Sets position identifier as a tuple of HW related data.</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_position_identifier</tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name" targets="Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.position_identifier()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#position_identifier"><a title="_Framework.LogicalDisplaySegment.LogicalDisplaySegment.position_identifier" class="py-name" href="#" onclick="return doclink('link-10', 'position_identifier', 'link-10');">position_identifier</a></tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"> </tt>
+<a name="LogicalDisplaySegment.position_identifier"></a><div id="LogicalDisplaySegment.position_identifier-def"><a name="L66"></a><tt class="py-lineno">66</tt> <a class="py-toggle" href="#" id="LogicalDisplaySegment.position_identifier-toggle" onclick="return toggle('LogicalDisplaySegment.position_identifier');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#position_identifier">position_identifier</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LogicalDisplaySegment.position_identifier-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="LogicalDisplaySegment.position_identifier-expanded"><a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_position_identifier</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"> </tt>
+<a name="LogicalDisplaySegment.update"></a><div id="LogicalDisplaySegment.update-def"><a name="L69"></a><tt class="py-lineno">69</tt> <a class="py-toggle" href="#" id="LogicalDisplaySegment.update-toggle" onclick="return toggle('LogicalDisplaySegment.update');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#update">update</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LogicalDisplaySegment.update-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="LogicalDisplaySegment.update-expanded"><a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_update_callback</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"> </tt>
+<a name="LogicalDisplaySegment.display_string"></a><div id="LogicalDisplaySegment.display_string-def"><a name="L72"></a><tt class="py-lineno">72</tt> <a class="py-toggle" href="#" id="LogicalDisplaySegment.display_string-toggle" onclick="return toggle('LogicalDisplaySegment.display_string');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#display_string">display_string</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LogicalDisplaySegment.display_string-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="LogicalDisplaySegment.display_string-expanded"><a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">        <tt id="link-11" class="py-name" targets="Variable _Framework.DisplayDataSource.DisplayDataSource.separator=_Framework.DisplayDataSource.DisplayDataSource-class.html#separator"><a title="_Framework.DisplayDataSource.DisplayDataSource.separator" class="py-name" href="#" onclick="return doclink('link-11', 'separator', 'link-11');">separator</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="_Framework.DisplayDataSource.DisplayDataSource.separator" class="py-name" href="#" onclick="return doclink('link-12', 'separator', 'link-11');">separator</a></tt> <tt class="py-keyword">or</tt> <tt class="py-string">''</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">        <tt id="link-13" class="py-name"><a title="_Framework.ButtonMatrixElement.ButtonMatrixElement.width
+_Framework.SessionComponent.SessionComponent.width" class="py-name" href="#" onclick="return doclink('link-13', 'width', 'link-3');">width</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_width</tt> <tt class="py-op">-</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-14" class="py-name"><a title="_Framework.DisplayDataSource.DisplayDataSource.separator" class="py-name" href="#" onclick="return doclink('link-14', 'separator', 'link-11');">separator</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-15" class="py-name"><a title="_Framework.ButtonMatrixElement.ButtonMatrixElement.width
+_Framework.SessionComponent.SessionComponent.width" class="py-name" href="#" onclick="return doclink('link-15', 'width', 'link-3');">width</a></tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">            <tt class="py-name">resulting_string</tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name" targets="Function _Framework.LogicalDisplaySegment.adjust_string()=_Framework.LogicalDisplaySegment-module.html#adjust_string"><a title="_Framework.LogicalDisplaySegment.adjust_string" class="py-name" href="#" onclick="return doclink('link-16', 'adjust_string', 'link-16');">adjust_string</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_data_source</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method _Framework.DisplayDataSource.DisplayDataSource.display_string()=_Framework.DisplayDataSource.DisplayDataSource-class.html#display_string,Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.display_string()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#display_string"><a title="_Framework.DisplayDataSource.DisplayDataSource.display_string
+_Framework.LogicalDisplaySegment.LogicalDisplaySegment.display_string" class="py-name" href="#" onclick="return doclink('link-17', 'display_string', 'link-17');">display_string</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-18" class="py-name"><a title="_Framework.ButtonMatrixElement.ButtonMatrixElement.width
+_Framework.SessionComponent.SessionComponent.width" class="py-name" href="#" onclick="return doclink('link-18', 'width', 'link-3');">width</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt id="link-19" class="py-name"><a title="_Framework.DisplayDataSource.DisplayDataSource.separator" class="py-name" href="#" onclick="return doclink('link-19', 'separator', 'link-11');">separator</a></tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line">            <tt class="py-name">resulting_string</tt> <tt class="py-op">=</tt> <tt class="py-string">' '</tt> <tt class="py-op">*</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_width</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">resulting_string</tt> </tt>
+</div></div><a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 18:53:33 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

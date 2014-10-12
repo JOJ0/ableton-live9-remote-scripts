@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>_Framework.NotifyingControlElement</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="_Framework-module.html">Package&nbsp;_Framework</a> ::
+        Module&nbsp;NotifyingControlElement
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="_Framework.NotifyingControlElement-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="_Framework.NotifyingControlElement-module.html">Module _Framework.NotifyingControlElement</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/_Framework/NotifyingControlElement.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module _Framework.SubjectSlot=_Framework.SubjectSlot-module.html,Class _Framework.SubjectSlot.SubjectSlot=_Framework.SubjectSlot.SubjectSlot-class.html"><a title="_Framework.SubjectSlot
+_Framework.SubjectSlot.SubjectSlot" class="py-name" href="#" onclick="return doclink('link-0', 'SubjectSlot', 'link-0');">SubjectSlot</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class _Framework.SubjectSlot.Subject=_Framework.SubjectSlot.Subject-class.html"><a title="_Framework.SubjectSlot.Subject" class="py-name" href="#" onclick="return doclink('link-1', 'Subject', 'link-1');">Subject</a></tt><tt class="py-op">,</tt> <tt id="link-2" class="py-name" targets="Class _Framework.SubjectSlot.SubjectEvent=_Framework.SubjectSlot.SubjectEvent-class.html"><a title="_Framework.SubjectSlot.SubjectEvent" class="py-name" href="#" onclick="return doclink('link-2', 'SubjectEvent', 'link-2');">SubjectEvent</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-3" class="py-name" targets="Module _Framework.ControlElement=_Framework.ControlElement-module.html,Class _Framework.ControlElement.ControlElement=_Framework.ControlElement.ControlElement-class.html"><a title="_Framework.ControlElement
+_Framework.ControlElement.ControlElement" class="py-name" href="#" onclick="return doclink('link-3', 'ControlElement', 'link-3');">ControlElement</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name"><a title="_Framework.ControlElement
+_Framework.ControlElement.ControlElement" class="py-name" href="#" onclick="return doclink('link-4', 'ControlElement', 'link-3');">ControlElement</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="NotifyingControlElement"></a><div id="NotifyingControlElement-def"><a name="L5"></a><tt class="py-lineno"> 5</tt> <a class="py-toggle" href="#" id="NotifyingControlElement-toggle" onclick="return toggle('NotifyingControlElement');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.NotifyingControlElement.NotifyingControlElement-class.html">NotifyingControlElement</a><tt class="py-op">(</tt><tt class="py-base-class">Subject</tt><tt class="py-op">,</tt> <tt class="py-base-class">ControlElement</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotifyingControlElement-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="NotifyingControlElement-expanded"><a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing control elements that can send values</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable _Framework.DeviceBankRegistry.DeviceBankRegistry.__subject_events__=_Framework.DeviceBankRegistry.DeviceBankRegistry-class.html#__subject_events__,Variable _Framework.EncoderElement.EncoderElement.__subject_events__=_Framework.EncoderElement.EncoderElement-class.html#__subject_events__,Variable _Framework.InputControlElement.InputControlElement.__subject_events__=_Framework.InputControlElement.InputControlElement-class.html#__subject_events__,Variable _Framework.ModesComponent.ModesComponent.__subject_events__=_Framework.ModesComponent.ModesComponent-class.html#__subject_events__,Variable _Framework.NotifyingControlElement.NotifyingControlElement.__subject_events__=_Framework.NotifyingControlElement.NotifyingControlElement-class.html#__subject_events__,Variable _Framework.SessionComponent.SessionComponent.__subject_events__=_Framework.SessionComponent.SessionComponent-class.html#__subject_events__"><a title="_Framework.DeviceBankRegistry.DeviceBankRegistry.__subject_events__
+_Framework.EncoderElement.EncoderElement.__subject_events__
+_Framework.InputControlElement.InputControlElement.__subject_events__
+_Framework.ModesComponent.ModesComponent.__subject_events__
+_Framework.NotifyingControlElement.NotifyingControlElement.__subject_events__
+_Framework.SessionComponent.SessionComponent.__subject_events__" class="py-name" href="#" onclick="return doclink('link-5', '__subject_events__', 'link-5');">__subject_events__</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="_Framework.SubjectSlot.SubjectEvent" class="py-name" href="#" onclick="return doclink('link-6', 'SubjectEvent', 'link-2');">SubjectEvent</a></tt><tt class="py-op">(</tt><tt id="link-7" class="py-name" targets="Variable _Framework.ControlElement.ControlElement.name=_Framework.ControlElement.ControlElement-class.html#name,Variable _Framework.ControlSurfaceComponent.ControlSurfaceComponent.name=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#name,Variable _Framework.SubjectSlot.SubjectEvent.name=_Framework.SubjectSlot.SubjectEvent-class.html#name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-7', 'name', 'link-7');">name</a></tt><tt class="py-op">=</tt><tt class="py-string">'value'</tt><tt class="py-op">,</tt> <tt id="link-8" class="py-name" targets="Variable _Framework.SubjectSlot.SubjectEvent.doc=_Framework.SubjectSlot.SubjectEvent-class.html#doc"><a title="_Framework.SubjectSlot.SubjectEvent.doc" class="py-name" href="#" onclick="return doclink('link-8', 'doc', 'link-8');">doc</a></tt><tt class="py-op">=</tt><tt class="py-string">' Called when the control element receives a MIDI value\n                             from the hardware '</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 18:53:33 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

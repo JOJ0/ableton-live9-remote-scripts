@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Push.MelodicComponent</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="Push-module.html">Package&nbsp;Push</a> ::
+        Module&nbsp;MelodicComponent
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="Push.MelodicComponent-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="Push.MelodicComponent-module.html">Module Push.MelodicComponent</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/Push/MelodicComponent.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable Push.MelodicComponent.NOTE_NAMES=Push.MelodicComponent-module.html#NOTE_NAMES"><a title="Push.MelodicComponent.NOTE_NAMES" class="py-name" href="#" onclick="return doclink('link-0', 'NOTE_NAMES', 'link-0');">NOTE_NAMES</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'C'</tt><tt class="py-op">,</tt> <tt class="py-string">'D\x1b'</tt><tt class="py-op">,</tt> <tt class="py-string">'D'</tt><tt class="py-op">,</tt> <tt class="py-string">'E\x1b'</tt><tt class="py-op">,</tt> <tt class="py-string">'E'</tt><tt class="py-op">,</tt> <tt class="py-string">'F'</tt><tt class="py-op">,</tt> <tt class="py-string">'G\x1b'</tt><tt class="py-op">,</tt> <tt class="py-string">'G'</tt><tt class="py-op">,</tt> <tt class="py-string">'A\x1b'</tt><tt class="py-op">,</tt> <tt class="py-string">'A'</tt><tt class="py-op">,</tt> <tt class="py-string">'B\x1b'</tt><tt class="py-op">,</tt> <tt class="py-string">'B'</tt><tt class="py-op">)</tt> </tt>
+<a name="pitch_index_to_string"></a><div id="pitch_index_to_string-def"><a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="pitch_index_to_string-toggle" onclick="return toggle('pitch_index_to_string');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent-module.html#pitch_index_to_string">pitch_index_to_string</a><tt class="py-op">(</tt><tt class="py-param">index</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pitch_index_to_string-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="pitch_index_to_string-expanded"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-1" class="py-name"><a title="Push.MelodicComponent.NOTE_NAMES" class="py-name" href="#" onclick="return doclink('link-1', 'NOTE_NAMES', 'link-0');">NOTE_NAMES</a></tt><tt class="py-op">[</tt><tt id="link-2" class="py-name" targets="Method Push.ScrollableList.ScrollableListItem.index()=Push.ScrollableList.ScrollableListItem-class.html#index"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-2', 'index', 'link-2');">index</a></tt> <tt class="py-op">%</tt> <tt class="py-number">12</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-3" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-3', 'index', 'link-2');">index</a></tt> <tt class="py-op">/</tt> <tt class="py-number">12</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"> </tt>
+<a name="Scale"></a><div id="Scale-def"><a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt> <a class="py-toggle" href="#" id="Scale-toggle" onclick="return toggle('Scale');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MelodicComponent.Scale-class.html">Scale</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Scale-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Scale-expanded"><a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"> </tt>
+<a name="Scale.__init__"></a><div id="Scale.__init__-def"><a name="L10"></a><tt class="py-lineno">10</tt> <a class="py-toggle" href="#" id="Scale.__init__-toggle" onclick="return toggle('Scale.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.Scale-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">notes</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Scale.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Scale.__init__-expanded"><a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-4" class="py-name" targets="Class Push.MelodicComponent.Scale=Push.MelodicComponent.Scale-class.html"><a title="Push.MelodicComponent.Scale" class="py-name" href="#" onclick="return doclink('link-4', 'Scale', 'link-4');">Scale</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method Push.AccentComponent.AccentComponent.__init__()=Push.AccentComponent.AccentComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithOptionsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithSettingsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.OptionsComponent.__init__()=Push.ActionWithOptionsComponent.OptionsComponent-class.html#__init__,Method Push.Actions.CreateDefaultTrackComponent.__init__()=Push.Actions.CreateDefaultTrackComponent-class.html#__init__,Method Push.Actions.CreateDeviceComponent.__init__()=Push.Actions.CreateDeviceComponent-class.html#__init__,Method Push.Actions.CreateInstrumentTrackComponent.__init__()=Push.Actions.CreateInstrumentTrackComponent-class.html#__init__,Method Push.Actions.DeleteComponent.__init__()=Push.Actions.DeleteComponent-class.html#__init__,Method Push.Actions.DuplicateLoopComponent.__init__()=Push.Actions.DuplicateLoopComponent-class.html#__init__,Method Push.Actions.SelectComponent.__init__()=Push.Actions.SelectComponent-class.html#__init__,Method Push.Actions.SelectionDisplayComponent.__init__()=Push.Actions.SelectionDisplayComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmComponent.__init__()=Push.AutoArmComponent.AutoArmComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__()=Push.AutoArmComponent.AutoArmRestoreBehaviour-class.html#__init__,Method Push.BackgroundComponent.BackgroundComponent.__init__()=Push.BackgroundComponent.BackgroundComponent-class.html#__init__,Method Push.BackgroundComponent.ModifierBackgroundComponent.__init__()=Push.BackgroundComponent.ModifierBackgroundComponent-class.html#__init__,Method Push.BrowserComponent.BrowserComponent.__init__()=Push.BrowserComponent.BrowserComponent-class.html#__init__,Method Push.BrowserComponent.BrowserList.__init__()=Push.BrowserComponent.BrowserList-class.html#__init__,Method Push.BrowserComponent.BrowserModel.__init__()=Push.BrowserComponent.BrowserModel-class.html#__init__,Method Push.BrowserComponent.BrowserQuery.__init__()=Push.BrowserComponent.BrowserQuery-class.html#__init__,Method Push.BrowserComponent.FullBrowserModel.__init__()=Push.BrowserComponent.FullBrowserModel-class.html#__init__,Method Push.BrowserComponent.PathBrowserQuery.__init__()=Push.BrowserComponent.PathBrowserQuery-class.html#__init__,Method Push.BrowserComponent.QueryingBrowserModel.__init__()=Push.BrowserComponent.QueryingBrowserModel-class.html#__init__,Method Push.BrowserComponent.SourceBrowserQuery.__init__()=Push.BrowserComponent.SourceBrowserQuery-class.html#__init__,Method Push.BrowserComponent.TagBrowserQuery.__init__()=Push.BrowserComponent.TagBrowserQuery-class.html#__init__,Method Push.BrowserComponent.VirtualBrowserItem.__init__()=Push.BrowserComponent.VirtualBrowserItem-class.html#__init__,Method Push.BrowserModes.BrowserAddEffectMode.__init__()=Push.BrowserModes.BrowserAddEffectMode-class.html#__init__,Method Push.BrowserModes.BrowserHotswapMode.__init__()=Push.BrowserModes.BrowserHotswapMode-class.html#__init__,Method Push.ClipControlComponent.AudioClipSettingsComponent.__init__()=Push.ClipControlComponent.AudioClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.ClipControlComponent.__init__()=Push.ClipControlComponent.ClipControlComponent-class.html#__init__,Method Push.ClipControlComponent.ClipNameComponent.__init__()=Push.ClipControlComponent.ClipNameComponent-class.html#__init__,Method Push.ClipControlComponent.LoopSettingsComponent.__init__()=Push.ClipControlComponent.LoopSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.MidiClipSettingsComponent.__init__()=Push.ClipControlComponent.MidiClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.NoClipSettingsComponent.__init__()=Push.ClipControlComponent.NoClipSettingsComponent-class.html#__init__,Method Push.ClipCreator.ClipCreator.__init__()=Push.ClipCreator.ClipCreator-class.html#__init__,Method Push.Colors.AnimatedColor.__init__()=Push.Colors.AnimatedColor-class.html#__init__,Method Push.Colors.Blink.__init__()=Push.Colors.Blink-class.html#__init__,Method Push.Colors.Color.__init__()=Push.Colors.Color-class.html#__init__,Method Push.Colors.FallbackColor.__init__()=Push.Colors.FallbackColor-class.html#__init__,Method Push.Colors.Pulse.__init__()=Push.Colors.Pulse-class.html#__init__,Method Push.Colors.RgbColor.__init__()=Push.Colors.RgbColor-class.html#__init__,Method Push.ComboElement.ComboElement.__init__()=Push.ComboElement.ComboElement-class.html#__init__,Method Push.ComboElement.WrapperElement.__init__()=Push.ComboElement.WrapperElement-class.html#__init__,Method Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#__init__,Method Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__()=Push.DeviceNavigationComponent.DeviceNavigationComponent-class.html#__init__,Method Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__()=Push.DisplayingDeviceComponent.DisplayingDeviceComponent-class.html#__init__,Method Push.DrumGroupComponent.DrumGroupComponent.__init__()=Push.DrumGroupComponent.DrumGroupComponent-class.html#__init__,Method Push.HandshakeComponent.HandshakeComponent.__init__()=Push.HandshakeComponent.HandshakeComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentComponent.__init__()=Push.InstrumentComponent.InstrumentComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentPresetsComponent.__init__()=Push.InstrumentComponent.InstrumentPresetsComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentScalesComponent.__init__()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#__init__,Method Push.InstrumentComponent.ScalesInfoComponent.__init__()=Push.InstrumentComponent.ScalesInfoComponent-class.html#__init__,Method Push.LoopSelectorComponent.LoopSelectorComponent.__init__()=Push.LoopSelectorComponent.LoopSelectorComponent-class.html#__init__,Method Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__()=Push.M4LInterfaceComponent.M4LInterfaceComponent-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.NoteInfo.__init__()=Push.MelodicComponent.MelodicPattern.NoteInfo-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.__init__()=Push.MelodicComponent.MelodicPattern-class.html#__init__,Method Push.MelodicComponent.Modus.__init__()=Push.MelodicComponent.Modus-class.html#__init__,Method Push.MelodicComponent.Scale.__init__()=Push.MelodicComponent.Scale-class.html#__init__,Method Push.MessageBoxComponent.DialogComponent.__init__()=Push.MessageBoxComponent.DialogComponent-class.html#__init__,Method Push.MessageBoxComponent.MessageBoxComponent.__init__()=Push.MessageBoxComponent.MessageBoxComponent-class.html#__init__,Method Push.MessageBoxComponent.NotificationComponent.__init__()=Push.MessageBoxComponent.NotificationComponent-class.html#__init__,Method Push.MessageBoxComponent._CallbackControl.__init__()=Push.MessageBoxComponent._CallbackControl-class.html#__init__,Method Push.NavigationNode.ChainNode.__init__()=Push.NavigationNode.ChainNode-class.html#__init__,Method Push.NavigationNode.ModelNode.__init__()=Push.NavigationNode.ModelNode-class.html#__init__,Method Push.NavigationNode.RackNode.__init__()=Push.NavigationNode.RackNode-class.html#__init__,Method Push.NavigationNode.SimpleDeviceNode.__init__()=Push.NavigationNode.SimpleDeviceNode-class.html#__init__,Method Push.NavigationNode.SongNode.__init__()=Push.NavigationNode.SongNode-class.html#__init__,Method Push.NoteEditorComponent.NoteEditorComponent.__init__()=Push.NoteEditorComponent.NoteEditorComponent-class.html#__init__,Method Push.NoteEditorComponent.TimeStep.__init__()=Push.NoteEditorComponent.TimeStep-class.html#__init__,Method Push.NoteRepeatComponent.NoteRepeatComponent.__init__()=Push.NoteRepeatComponent.NoteRepeatComponent-class.html#__init__,Method Push.OptionalElement.OptionalElement.__init__()=Push.OptionalElement.OptionalElement-class.html#__init__,Method Push.PadSensitivity.PadSensitivity.__init__()=Push.PadSensitivity.PadSensitivity-class.html#__init__,Method Push.Push.Push.__init__()=Push.Push.Push-class.html#__init__,Method Push.ScrollableList.ListComponent.__init__()=Push.ScrollableList.ListComponent-class.html#__init__,Method Push.ScrollableList.ScrollableList.__init__()=Push.ScrollableList.ScrollableList-class.html#__init__,Method Push.ScrollableList.ScrollableListItem.__init__()=Push.ScrollableList.ScrollableListItem-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListComponent.__init__()=Push.ScrollableListComponent.ScrollableListComponent-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__()=Push.ScrollableListComponent.ScrollableListWithTogglesComponent-class.html#__init__,Method Push.Selection.L9CSelection.__init__()=Push.Selection.L9CSelection-class.html#__init__,Method Push.SessionRecordingComponent.SessionRecordingComponent.__init__()=Push.SessionRecordingComponent.SessionRecordingComponent-class.html#__init__,Method Push.Setting.EnumerableSetting.__init__()=Push.Setting.EnumerableSetting-class.html#__init__,Method Push.Setting.OnOffSetting.__init__()=Push.Setting.OnOffSetting-class.html#__init__,Method Push.Setting.Setting.__init__()=Push.Setting.Setting-class.html#__init__,Method Push.Skin.Skin.__init__()=Push.Skin.Skin-class.html#__init__,Method Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__()=Push.SpecialChanStripComponent.SpecialChanStripComponent-class.html#__init__,Method Push.SpecialMixerComponent.SpecialMixerComponent.__init__()=Push.SpecialMixerComponent.SpecialMixerComponent-class.html#__init__,Method Push.SpecialSessionComponent.DuplicateSceneComponent.__init__()=Push.SpecialSessionComponent.DuplicateSceneComponent-class.html#__init__,Method Push.SpecialSessionComponent.SpecialSessionComponent.__init__()=Push.SpecialSessionComponent.SpecialSessionComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationComponent.__init__()=Push.SpecialTransportComponent.QuantizationComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__()=Push.SpecialTransportComponent.QuantizationSettingsComponent-class.html#__init__,Method Push.SpecialTransportComponent.SpecialTransportComponent.__init__()=Push.SpecialTransportComponent.SpecialTransportComponent-class.html#__init__,Method Push.StepSeqComponent.StepSeqComponent.__init__()=Push.StepSeqComponent.StepSeqComponent-class.html#__init__,Method Push.TouchEncoderElement.TouchEncoderElement.__init__()=Push.TouchEncoderElement.TouchEncoderElement-class.html#__init__,Method Push.TouchStripController.TouchStripControllerComponent.__init__()=Push.TouchStripController.TouchStripControllerComponent-class.html#__init__,Method Push.TouchStripController.TouchStripEncoderConnection.__init__()=Push.TouchStripController.TouchStripEncoderConnection-class.html#__init__,Method Push.TouchStripElement.TouchStripElement.__init__()=Push.TouchStripElement.TouchStripElement-class.html#__init__,Method Push.UserSettingsComponent.UserComponent.__init__()=Push.UserSettingsComponent.UserComponent-class.html#__init__,Method Push.UserSettingsComponent.UserSettingsComponent.__init__()=Push.UserSettingsComponent.UserSettingsComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueComponent.__init__()=Push.ValueComponent.ParameterValueComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueDisplayComponent.__init__()=Push.ValueComponent.ParameterValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueComponent.__init__()=Push.ValueComponent.ValueComponent-class.html#__init__,Method Push.ValueComponent.ValueComponentBase.__init__()=Push.ValueComponent.ValueComponentBase-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponent.__init__()=Push.ValueComponent.ValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponentBase.__init__()=Push.ValueComponent.ValueDisplayComponentBase-class.html#__init__,Method Push.ViewControlComponent.ViewControlComponent.__init__()=Push.ViewControlComponent.ViewControlComponent-class.html#__init__,Method Push.ViewControlComponent._DeltaSongScroller.__init__()=Push.ViewControlComponent._DeltaSongScroller-class.html#__init__"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-5', '__init__', 'link-5');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Variable Push.PadSensitivity.PadParameters.name=Push.PadSensitivity.PadParameters-class.html#name"><a title="Push.PadSensitivity.PadParameters.name" class="py-name" href="#" onclick="return doclink('link-6', 'name', 'link-6');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-7" class="py-name"><a title="Push.PadSensitivity.PadParameters.name" class="py-name" href="#" onclick="return doclink('link-7', 'name', 'link-6');">name</a></tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method Push.InstrumentComponent.InstrumentScalesComponent.notes()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#notes"><a title="Push.InstrumentComponent.InstrumentScalesComponent.notes" class="py-name" href="#" onclick="return doclink('link-8', 'notes', 'link-8');">notes</a></tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name"><a title="Push.InstrumentComponent.InstrumentScalesComponent.notes" class="py-name" href="#" onclick="return doclink('link-9', 'notes', 'link-8');">notes</a></tt> </tt>
+</div></div><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"> </tt>
+<a name="Modus"></a><div id="Modus-def"><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt> <a class="py-toggle" href="#" id="Modus-toggle" onclick="return toggle('Modus');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MelodicComponent.Modus-class.html">Modus</a><tt class="py-op">(</tt><tt class="py-base-class">Scale</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Modus-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Modus-expanded"><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
+<a name="Modus.__init__"></a><div id="Modus.__init__-def"><a name="L18"></a><tt class="py-lineno">18</tt> <a class="py-toggle" href="#" id="Modus.__init__-toggle" onclick="return toggle('Modus.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.Modus-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Modus.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Modus.__init__-expanded"><a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-10" class="py-name" targets="Class Push.MelodicComponent.Modus=Push.MelodicComponent.Modus-class.html"><a title="Push.MelodicComponent.Modus" class="py-name" href="#" onclick="return doclink('link-10', 'Modus', 'link-10');">Modus</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-11', '__init__', 'link-5');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="Modus.scale"></a><div id="Modus.scale-def"><a name="L21"></a><tt class="py-lineno">21</tt> <a class="py-toggle" href="#" id="Modus.scale-toggle" onclick="return toggle('Modus.scale');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.Modus-class.html#scale">scale</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">base_note</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Modus.scale-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Modus.scale-expanded"><a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-12" class="py-name"><a title="Push.MelodicComponent.Scale" class="py-name" href="#" onclick="return doclink('link-12', 'Scale', 'link-4');">Scale</a></tt><tt class="py-op">(</tt><tt id="link-13" class="py-name"><a title="Push.MelodicComponent.NOTE_NAMES" class="py-name" href="#" onclick="return doclink('link-13', 'NOTE_NAMES', 'link-0');">NOTE_NAMES</a></tt><tt class="py-op">[</tt><tt class="py-name">base_note</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt> <tt class="py-name">base_note</tt> <tt class="py-op">+</tt> <tt class="py-name">x</tt> <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="Push.InstrumentComponent.InstrumentScalesComponent.notes" class="py-name" href="#" onclick="return doclink('link-14', 'notes', 'link-8');">notes</a></tt> <tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
+<a name="Modus.scales"></a><div id="Modus.scales-def"><a name="L24"></a><tt class="py-lineno">24</tt> <a class="py-toggle" href="#" id="Modus.scales-toggle" onclick="return toggle('Modus.scales');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.Modus-class.html#scales">scales</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">base_notes</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Modus.scales-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Modus.scales-expanded"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">[</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method Push.MelodicComponent.Modus.scale()=Push.MelodicComponent.Modus-class.html#scale"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-15', 'scale', 'link-15');">scale</a></tt><tt class="py-op">(</tt><tt class="py-name">b</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">b</tt> <tt class="py-keyword">in</tt> <tt class="py-name">base_notes</tt> <tt class="py-op">]</tt> </tt>
+</div></div><a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="MelodicPattern"></a><div id="MelodicPattern-def"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt> <a class="py-toggle" href="#" id="MelodicPattern-toggle" onclick="return toggle('MelodicPattern');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MelodicComponent.MelodicPattern-class.html">MelodicPattern</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MelodicPattern-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="MelodicPattern-expanded"><a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="MelodicPattern.__init__"></a><div id="MelodicPattern.__init__-def"><a name="L30"></a><tt class="py-lineno">30</tt> <a class="py-toggle" href="#" id="MelodicPattern.__init__-toggle" onclick="return toggle('MelodicPattern.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.MelodicPattern-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">steps</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-param">scale</tt> <tt class="py-op">=</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">12</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-param">base_note</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">origin</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-param">valid_notes</tt> <tt class="py-op">=</tt> <tt class="py-name">xrange</tt><tt class="py-op">(</tt><tt class="py-number">128</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-param">base_note_color</tt> <tt class="py-op">=</tt> <tt class="py-string">'Instrument.NoteBase'</tt><tt class="py-op">,</tt> <tt class="py-param">scale_note_color</tt> <tt class="py-op">=</tt> <tt class="py-string">'Instrument.NoteScale'</tt><tt class="py-op">,</tt> <tt class="py-param">foreign_note_color</tt> <tt class="py-op">=</tt> <tt class="py-string">'Instrument.NoteOff'</tt><tt class="py-op">,</tt> <tt class="py-param">invalid_note_color</tt> <tt class="py-op">=</tt> <tt class="py-string">'Instrument.NoteInactive'</tt><tt class="py-op">,</tt> <tt class="py-param">chromatic_mode</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MelodicPattern.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MelodicPattern.__init__-expanded"><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-16" class="py-name" targets="Class Push.MelodicComponent.MelodicPattern=Push.MelodicComponent.MelodicPattern-class.html"><a title="Push.MelodicComponent.MelodicPattern" class="py-name" href="#" onclick="return doclink('link-16', 'MelodicPattern', 'link-16');">MelodicPattern</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-17', '__init__', 'link-5');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">steps</tt> <tt class="py-op">=</tt> <tt class="py-name">steps</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-18', 'scale', 'link-15');">scale</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-19', 'scale', 'link-15');">scale</a></tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">base_note</tt> <tt class="py-op">=</tt> <tt class="py-name">base_note</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">origin</tt> <tt class="py-op">=</tt> <tt class="py-name">origin</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">valid_notes</tt> <tt class="py-op">=</tt> <tt class="py-name">valid_notes</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">base_note_color</tt> <tt class="py-op">=</tt> <tt class="py-name">base_note_color</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">scale_note_color</tt> <tt class="py-op">=</tt> <tt class="py-name">scale_note_color</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">foreign_note_color</tt> <tt class="py-op">=</tt> <tt class="py-name">foreign_note_color</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">invalid_note_color</tt> <tt class="py-op">=</tt> <tt class="py-name">invalid_note_color</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">chromatic_mode</tt> <tt class="py-op">=</tt> <tt class="py-name">chromatic_mode</tt> </tt>
+</div><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
+<a name="MelodicPattern.NoteInfo"></a><div id="MelodicPattern.NoteInfo-def"><a name="L43"></a><tt class="py-lineno">43</tt> <a class="py-toggle" href="#" id="MelodicPattern.NoteInfo-toggle" onclick="return toggle('MelodicPattern.NoteInfo');">-</a><tt class="py-line">    <tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MelodicComponent.MelodicPattern.NoteInfo-class.html">NoteInfo</a><tt class="py-op">:</tt> </tt>
+</div><div id="MelodicPattern.NoteInfo-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MelodicPattern.NoteInfo-expanded"><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"> </tt>
+<a name="MelodicPattern.NoteInfo.__init__"></a><div id="MelodicPattern.NoteInfo.__init__-def"><a name="L45"></a><tt class="py-lineno">45</tt> <a class="py-toggle" href="#" id="MelodicPattern.NoteInfo.__init__-toggle" onclick="return toggle('MelodicPattern.NoteInfo.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.MelodicPattern.NoteInfo-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">index</tt><tt class="py-op">,</tt> <tt class="py-param">channel</tt><tt class="py-op">,</tt> <tt class="py-param">color</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MelodicPattern.NoteInfo.__init__-collapsed" style="display:none;" pad="++" indent="++++++++++++++++"></div><div id="MelodicPattern.NoteInfo.__init__-expanded"><a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-20', 'index', 'link-2');">index</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">channel</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">color</tt> <tt class="py-op">=</tt> <tt id="link-21" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-21', 'index', 'link-2');">index</a></tt><tt class="py-op">,</tt> <tt class="py-name">channel</tt><tt class="py-op">,</tt> <tt class="py-name">color</tt> </tt>
+</div></div><a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">property</tt> </tt>
+<a name="MelodicPattern._extended_scale"></a><div id="MelodicPattern._extended_scale-def"><a name="L49"></a><tt class="py-lineno">49</tt> <a class="py-toggle" href="#" id="MelodicPattern._extended_scale-toggle" onclick="return toggle('MelodicPattern._extended_scale');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.MelodicPattern-class.html#_extended_scale">_extended_scale</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MelodicPattern._extended_scale-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MelodicPattern._extended_scale-expanded"><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">chromatic_mode</tt><tt class="py-op">:</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">            <tt class="py-name">first_note</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-22', 'scale', 'link-15');">scale</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">first_note</tt><tt class="py-op">,</tt> <tt class="py-name">first_note</tt> <tt class="py-op">+</tt> <tt class="py-number">12</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-23', 'scale', 'link-15');">scale</a></tt> </tt>
+</div><a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"> </tt>
+<a name="MelodicPattern._octave_and_note"></a><div id="MelodicPattern._octave_and_note-def"><a name="L56"></a><tt class="py-lineno">56</tt> <a class="py-toggle" href="#" id="MelodicPattern._octave_and_note-toggle" onclick="return toggle('MelodicPattern._octave_and_note');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.MelodicPattern-class.html#_octave_and_note">_octave_and_note</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MelodicPattern._octave_and_note-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MelodicPattern._octave_and_note-expanded"><a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt id="link-24" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-24', 'index', 'link-2');">index</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">steps</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">origin</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">x</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">steps</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">origin</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">y</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt id="link-25" class="py-name"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-25', 'scale', 'link-15');">scale</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method Push.MelodicComponent.MelodicPattern._extended_scale()=Push.MelodicComponent.MelodicPattern-class.html#_extended_scale"><a title="Push.MelodicComponent.MelodicPattern._extended_scale" class="py-name" href="#" onclick="return doclink('link-26', '_extended_scale', 'link-26');">_extended_scale</a></tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-name">scale_size</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-27" class="py-name"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-27', 'scale', 'link-15');">scale</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-name">octave</tt> <tt class="py-op">=</tt> <tt id="link-28" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-28', 'index', 'link-2');">index</a></tt> <tt class="py-op">/</tt> <tt class="py-name">scale_size</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt id="link-29" class="py-name" targets="Method Push.MelodicComponent.MelodicPattern.note()=Push.MelodicComponent.MelodicPattern-class.html#note"><a title="Push.MelodicComponent.MelodicPattern.note" class="py-name" href="#" onclick="return doclink('link-29', 'note', 'link-29');">note</a></tt> <tt class="py-op">=</tt> <tt id="link-30" class="py-name"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-30', 'scale', 'link-15');">scale</a></tt><tt class="py-op">[</tt><tt id="link-31" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-31', 'index', 'link-2');">index</a></tt> <tt class="py-op">%</tt> <tt class="py-name">scale_size</tt><tt class="py-op">]</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">octave</tt><tt class="py-op">,</tt> <tt id="link-32" class="py-name"><a title="Push.MelodicComponent.MelodicPattern.note" class="py-name" href="#" onclick="return doclink('link-32', 'note', 'link-29');">note</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"> </tt>
+<a name="MelodicPattern._color_for_note"></a><div id="MelodicPattern._color_for_note-def"><a name="L64"></a><tt class="py-lineno">64</tt> <a class="py-toggle" href="#" id="MelodicPattern._color_for_note-toggle" onclick="return toggle('MelodicPattern._color_for_note');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.MelodicPattern-class.html#_color_for_note">_color_for_note</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">note</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MelodicPattern._color_for_note-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MelodicPattern._color_for_note-expanded"><a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-33" class="py-name"><a title="Push.MelodicComponent.MelodicPattern.note" class="py-name" href="#" onclick="return doclink('link-33', 'note', 'link-29');">note</a></tt> <tt class="py-op">==</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-34', 'scale', 'link-15');">scale</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">base_note_color</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt id="link-35" class="py-name"><a title="Push.MelodicComponent.MelodicPattern.note" class="py-name" href="#" onclick="return doclink('link-35', 'note', 'link-29');">note</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="Push.MelodicComponent.Modus.scale" class="py-name" href="#" onclick="return doclink('link-36', 'scale', 'link-15');">scale</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">scale_note_color</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">foreign_note_color</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"> </tt>
+<a name="MelodicPattern.note"></a><div id="MelodicPattern.note-def"><a name="L72"></a><tt class="py-lineno">72</tt> <a class="py-toggle" href="#" id="MelodicPattern.note-toggle" onclick="return toggle('MelodicPattern.note');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MelodicComponent.MelodicPattern-class.html#note">note</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MelodicPattern.note-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MelodicPattern.note-expanded"><a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">        <tt class="py-name">octave</tt><tt class="py-op">,</tt> <tt id="link-37" class="py-name"><a title="Push.MelodicComponent.MelodicPattern.note" class="py-name" href="#" onclick="return doclink('link-37', 'note', 'link-29');">note</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Method Push.MelodicComponent.MelodicPattern._octave_and_note()=Push.MelodicComponent.MelodicPattern-class.html#_octave_and_note"><a title="Push.MelodicComponent.MelodicPattern._octave_and_note" class="py-name" href="#" onclick="return doclink('link-38', '_octave_and_note', 'link-38');">_octave_and_note</a></tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">,</tt> <tt class="py-name">y</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">        <tt id="link-39" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-39', 'index', 'link-2');">index</a></tt> <tt class="py-op">=</tt> <tt class="py-number">12</tt> <tt class="py-op">*</tt> <tt class="py-name">octave</tt> <tt class="py-op">+</tt> <tt id="link-40" class="py-name"><a title="Push.MelodicComponent.MelodicPattern.note" class="py-name" href="#" onclick="return doclink('link-40', 'note', 'link-29');">note</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">base_note</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-41" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-41', 'index', 'link-2');">index</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">valid_notes</tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Class Push.MelodicComponent.MelodicPattern.NoteInfo=Push.MelodicComponent.MelodicPattern.NoteInfo-class.html"><a title="Push.MelodicComponent.MelodicPattern.NoteInfo" class="py-name" href="#" onclick="return doclink('link-42', 'NoteInfo', 'link-42');">NoteInfo</a></tt><tt class="py-op">(</tt><tt id="link-43" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-43', 'index', 'link-2');">index</a></tt><tt class="py-op">,</tt> <tt class="py-name">x</tt> <tt class="py-op">+</tt> <tt class="py-number">5</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Method Push.MelodicComponent.MelodicPattern._color_for_note()=Push.MelodicComponent.MelodicPattern-class.html#_color_for_note"><a title="Push.MelodicComponent.MelodicPattern._color_for_note" class="py-name" href="#" onclick="return doclink('link-44', '_color_for_note', 'link-44');">_color_for_note</a></tt><tt class="py-op">(</tt><tt id="link-45" class="py-name"><a title="Push.MelodicComponent.MelodicPattern.note" class="py-name" href="#" onclick="return doclink('link-45', 'note', 'link-29');">note</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="Push.MelodicComponent.MelodicPattern.NoteInfo" class="py-name" href="#" onclick="return doclink('link-46', 'NoteInfo', 'link-42');">NoteInfo</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">x</tt> <tt class="py-op">+</tt> <tt class="py-number">5</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">invalid_note_color</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 19:32:48 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

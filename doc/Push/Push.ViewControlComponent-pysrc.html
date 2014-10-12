@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Push.ViewControlComponent</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="Push-module.html">Package&nbsp;Push</a> ::
+        Module&nbsp;ViewControlComponent
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="Push.ViewControlComponent-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="Push.ViewControlComponent-module.html">Module Push.ViewControlComponent</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/Push/ViewControlComponent.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">Live</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable Push.ViewControlComponent.NavDirection=Push.ViewControlComponent-module.html#NavDirection"><a title="Push.ViewControlComponent.NavDirection" class="py-name" href="#" onclick="return doclink('link-0', 'NavDirection', 'link-0');">NavDirection</a></tt> <tt class="py-op">=</tt> <tt class="py-name">Live</tt><tt class="py-op">.</tt><tt class="py-name">Application</tt><tt class="py-op">.</tt><tt class="py-name">Application</tt><tt class="py-op">.</tt><tt class="py-name">View</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name"><a title="Push.ViewControlComponent.NavDirection" class="py-name" href="#" onclick="return doclink('link-1', 'NavDirection', 'link-0');">NavDirection</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">CompoundComponent</tt> <tt class="py-keyword">import</tt> <tt class="py-name">CompoundComponent</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">Dependency</tt> <tt class="py-keyword">import</tt> <tt class="py-name">depends</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">ScrollComponent</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ScrollComponent</tt><tt class="py-op">,</tt> <tt class="py-name">Scrollable</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">Util</tt> <tt class="py-keyword">import</tt> <tt class="py-name">in_range</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module Push.SpecialMixerComponent=Push.SpecialMixerComponent-module.html,Class Push.SpecialMixerComponent.SpecialMixerComponent=Push.SpecialMixerComponent.SpecialMixerComponent-class.html"><a title="Push.SpecialMixerComponent
+Push.SpecialMixerComponent.SpecialMixerComponent" class="py-name" href="#" onclick="return doclink('link-2', 'SpecialMixerComponent', 'link-2');">SpecialMixerComponent</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Function Push.SpecialMixerComponent.tracks_to_use_from_song()=Push.SpecialMixerComponent-module.html#tracks_to_use_from_song"><a title="Push.SpecialMixerComponent.tracks_to_use_from_song" class="py-name" href="#" onclick="return doclink('link-3', 'tracks_to_use_from_song', 'link-3');">tracks_to_use_from_song</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt id="link-4" class="py-name" targets="Variable Push.ViewControlComponent.VIEWS=Push.ViewControlComponent-module.html#VIEWS"><a title="Push.ViewControlComponent.VIEWS" class="py-name" href="#" onclick="return doclink('link-4', 'VIEWS', 'link-4');">VIEWS</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'Browser'</tt><tt class="py-op">,</tt> <tt class="py-string">'Arranger'</tt><tt class="py-op">,</tt> <tt class="py-string">'Session'</tt><tt class="py-op">,</tt> <tt class="py-string">'Detail'</tt><tt class="py-op">,</tt> <tt class="py-string">'Detail/Clip'</tt><tt class="py-op">,</tt> <tt class="py-string">'Detail/DeviceChain'</tt><tt class="py-op">)</tt> </tt>
+<a name="_DeltaSongScroller"></a><div id="_DeltaSongScroller-def"><a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt> <a class="py-toggle" href="#" id="_DeltaSongScroller-toggle" onclick="return toggle('_DeltaSongScroller');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ViewControlComponent._DeltaSongScroller-class.html">_DeltaSongScroller</a><tt class="py-op">(</tt><tt class="py-base-class">Scrollable</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_DeltaSongScroller-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_DeltaSongScroller-expanded"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">depends</tt><tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="_DeltaSongScroller.__init__"></a><div id="_DeltaSongScroller.__init__-def"><a name="L14"></a><tt class="py-lineno"> 14</tt> <a class="py-toggle" href="#" id="_DeltaSongScroller.__init__-toggle" onclick="return toggle('_DeltaSongScroller.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent._DeltaSongScroller-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">song</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_DeltaSongScroller.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_DeltaSongScroller.__init__-expanded"><a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-5" class="py-name" targets="Class Push.ViewControlComponent._DeltaSongScroller=Push.ViewControlComponent._DeltaSongScroller-class.html"><a title="Push.ViewControlComponent._DeltaSongScroller" class="py-name" href="#" onclick="return doclink('link-5', '_DeltaSongScroller', 'link-5');">_DeltaSongScroller</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method Push.AccentComponent.AccentComponent.__init__()=Push.AccentComponent.AccentComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithOptionsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithSettingsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.OptionsComponent.__init__()=Push.ActionWithOptionsComponent.OptionsComponent-class.html#__init__,Method Push.Actions.CreateDefaultTrackComponent.__init__()=Push.Actions.CreateDefaultTrackComponent-class.html#__init__,Method Push.Actions.CreateDeviceComponent.__init__()=Push.Actions.CreateDeviceComponent-class.html#__init__,Method Push.Actions.CreateInstrumentTrackComponent.__init__()=Push.Actions.CreateInstrumentTrackComponent-class.html#__init__,Method Push.Actions.DeleteComponent.__init__()=Push.Actions.DeleteComponent-class.html#__init__,Method Push.Actions.DuplicateLoopComponent.__init__()=Push.Actions.DuplicateLoopComponent-class.html#__init__,Method Push.Actions.SelectComponent.__init__()=Push.Actions.SelectComponent-class.html#__init__,Method Push.Actions.SelectionDisplayComponent.__init__()=Push.Actions.SelectionDisplayComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmComponent.__init__()=Push.AutoArmComponent.AutoArmComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__()=Push.AutoArmComponent.AutoArmRestoreBehaviour-class.html#__init__,Method Push.BackgroundComponent.BackgroundComponent.__init__()=Push.BackgroundComponent.BackgroundComponent-class.html#__init__,Method Push.BackgroundComponent.ModifierBackgroundComponent.__init__()=Push.BackgroundComponent.ModifierBackgroundComponent-class.html#__init__,Method Push.BrowserComponent.BrowserComponent.__init__()=Push.BrowserComponent.BrowserComponent-class.html#__init__,Method Push.BrowserComponent.BrowserList.__init__()=Push.BrowserComponent.BrowserList-class.html#__init__,Method Push.BrowserComponent.BrowserModel.__init__()=Push.BrowserComponent.BrowserModel-class.html#__init__,Method Push.BrowserComponent.BrowserQuery.__init__()=Push.BrowserComponent.BrowserQuery-class.html#__init__,Method Push.BrowserComponent.FullBrowserModel.__init__()=Push.BrowserComponent.FullBrowserModel-class.html#__init__,Method Push.BrowserComponent.PathBrowserQuery.__init__()=Push.BrowserComponent.PathBrowserQuery-class.html#__init__,Method Push.BrowserComponent.QueryingBrowserModel.__init__()=Push.BrowserComponent.QueryingBrowserModel-class.html#__init__,Method Push.BrowserComponent.SourceBrowserQuery.__init__()=Push.BrowserComponent.SourceBrowserQuery-class.html#__init__,Method Push.BrowserComponent.TagBrowserQuery.__init__()=Push.BrowserComponent.TagBrowserQuery-class.html#__init__,Method Push.BrowserComponent.VirtualBrowserItem.__init__()=Push.BrowserComponent.VirtualBrowserItem-class.html#__init__,Method Push.BrowserModes.BrowserAddEffectMode.__init__()=Push.BrowserModes.BrowserAddEffectMode-class.html#__init__,Method Push.BrowserModes.BrowserHotswapMode.__init__()=Push.BrowserModes.BrowserHotswapMode-class.html#__init__,Method Push.ClipControlComponent.AudioClipSettingsComponent.__init__()=Push.ClipControlComponent.AudioClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.ClipControlComponent.__init__()=Push.ClipControlComponent.ClipControlComponent-class.html#__init__,Method Push.ClipControlComponent.ClipNameComponent.__init__()=Push.ClipControlComponent.ClipNameComponent-class.html#__init__,Method Push.ClipControlComponent.LoopSettingsComponent.__init__()=Push.ClipControlComponent.LoopSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.MidiClipSettingsComponent.__init__()=Push.ClipControlComponent.MidiClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.NoClipSettingsComponent.__init__()=Push.ClipControlComponent.NoClipSettingsComponent-class.html#__init__,Method Push.ClipCreator.ClipCreator.__init__()=Push.ClipCreator.ClipCreator-class.html#__init__,Method Push.Colors.AnimatedColor.__init__()=Push.Colors.AnimatedColor-class.html#__init__,Method Push.Colors.Blink.__init__()=Push.Colors.Blink-class.html#__init__,Method Push.Colors.Color.__init__()=Push.Colors.Color-class.html#__init__,Method Push.Colors.FallbackColor.__init__()=Push.Colors.FallbackColor-class.html#__init__,Method Push.Colors.Pulse.__init__()=Push.Colors.Pulse-class.html#__init__,Method Push.Colors.RgbColor.__init__()=Push.Colors.RgbColor-class.html#__init__,Method Push.ComboElement.ComboElement.__init__()=Push.ComboElement.ComboElement-class.html#__init__,Method Push.ComboElement.WrapperElement.__init__()=Push.ComboElement.WrapperElement-class.html#__init__,Method Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#__init__,Method Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__()=Push.DeviceNavigationComponent.DeviceNavigationComponent-class.html#__init__,Method Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__()=Push.DisplayingDeviceComponent.DisplayingDeviceComponent-class.html#__init__,Method Push.DrumGroupComponent.DrumGroupComponent.__init__()=Push.DrumGroupComponent.DrumGroupComponent-class.html#__init__,Method Push.HandshakeComponent.HandshakeComponent.__init__()=Push.HandshakeComponent.HandshakeComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentComponent.__init__()=Push.InstrumentComponent.InstrumentComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentPresetsComponent.__init__()=Push.InstrumentComponent.InstrumentPresetsComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentScalesComponent.__init__()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#__init__,Method Push.InstrumentComponent.ScalesInfoComponent.__init__()=Push.InstrumentComponent.ScalesInfoComponent-class.html#__init__,Method Push.LoopSelectorComponent.LoopSelectorComponent.__init__()=Push.LoopSelectorComponent.LoopSelectorComponent-class.html#__init__,Method Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__()=Push.M4LInterfaceComponent.M4LInterfaceComponent-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.NoteInfo.__init__()=Push.MelodicComponent.MelodicPattern.NoteInfo-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.__init__()=Push.MelodicComponent.MelodicPattern-class.html#__init__,Method Push.MelodicComponent.Modus.__init__()=Push.MelodicComponent.Modus-class.html#__init__,Method Push.MelodicComponent.Scale.__init__()=Push.MelodicComponent.Scale-class.html#__init__,Method Push.MessageBoxComponent.DialogComponent.__init__()=Push.MessageBoxComponent.DialogComponent-class.html#__init__,Method Push.MessageBoxComponent.MessageBoxComponent.__init__()=Push.MessageBoxComponent.MessageBoxComponent-class.html#__init__,Method Push.MessageBoxComponent.NotificationComponent.__init__()=Push.MessageBoxComponent.NotificationComponent-class.html#__init__,Method Push.MessageBoxComponent._CallbackControl.__init__()=Push.MessageBoxComponent._CallbackControl-class.html#__init__,Method Push.NavigationNode.ChainNode.__init__()=Push.NavigationNode.ChainNode-class.html#__init__,Method Push.NavigationNode.ModelNode.__init__()=Push.NavigationNode.ModelNode-class.html#__init__,Method Push.NavigationNode.RackNode.__init__()=Push.NavigationNode.RackNode-class.html#__init__,Method Push.NavigationNode.SimpleDeviceNode.__init__()=Push.NavigationNode.SimpleDeviceNode-class.html#__init__,Method Push.NavigationNode.SongNode.__init__()=Push.NavigationNode.SongNode-class.html#__init__,Method Push.NoteEditorComponent.NoteEditorComponent.__init__()=Push.NoteEditorComponent.NoteEditorComponent-class.html#__init__,Method Push.NoteEditorComponent.TimeStep.__init__()=Push.NoteEditorComponent.TimeStep-class.html#__init__,Method Push.NoteRepeatComponent.NoteRepeatComponent.__init__()=Push.NoteRepeatComponent.NoteRepeatComponent-class.html#__init__,Method Push.OptionalElement.OptionalElement.__init__()=Push.OptionalElement.OptionalElement-class.html#__init__,Method Push.PadSensitivity.PadSensitivity.__init__()=Push.PadSensitivity.PadSensitivity-class.html#__init__,Method Push.Push.Push.__init__()=Push.Push.Push-class.html#__init__,Method Push.ScrollableList.ListComponent.__init__()=Push.ScrollableList.ListComponent-class.html#__init__,Method Push.ScrollableList.ScrollableList.__init__()=Push.ScrollableList.ScrollableList-class.html#__init__,Method Push.ScrollableList.ScrollableListItem.__init__()=Push.ScrollableList.ScrollableListItem-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListComponent.__init__()=Push.ScrollableListComponent.ScrollableListComponent-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__()=Push.ScrollableListComponent.ScrollableListWithTogglesComponent-class.html#__init__,Method Push.Selection.L9CSelection.__init__()=Push.Selection.L9CSelection-class.html#__init__,Method Push.SessionRecordingComponent.SessionRecordingComponent.__init__()=Push.SessionRecordingComponent.SessionRecordingComponent-class.html#__init__,Method Push.Setting.EnumerableSetting.__init__()=Push.Setting.EnumerableSetting-class.html#__init__,Method Push.Setting.OnOffSetting.__init__()=Push.Setting.OnOffSetting-class.html#__init__,Method Push.Setting.Setting.__init__()=Push.Setting.Setting-class.html#__init__,Method Push.Skin.Skin.__init__()=Push.Skin.Skin-class.html#__init__,Method Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__()=Push.SpecialChanStripComponent.SpecialChanStripComponent-class.html#__init__,Method Push.SpecialMixerComponent.SpecialMixerComponent.__init__()=Push.SpecialMixerComponent.SpecialMixerComponent-class.html#__init__,Method Push.SpecialSessionComponent.DuplicateSceneComponent.__init__()=Push.SpecialSessionComponent.DuplicateSceneComponent-class.html#__init__,Method Push.SpecialSessionComponent.SpecialSessionComponent.__init__()=Push.SpecialSessionComponent.SpecialSessionComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationComponent.__init__()=Push.SpecialTransportComponent.QuantizationComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__()=Push.SpecialTransportComponent.QuantizationSettingsComponent-class.html#__init__,Method Push.SpecialTransportComponent.SpecialTransportComponent.__init__()=Push.SpecialTransportComponent.SpecialTransportComponent-class.html#__init__,Method Push.StepSeqComponent.StepSeqComponent.__init__()=Push.StepSeqComponent.StepSeqComponent-class.html#__init__,Method Push.TouchEncoderElement.TouchEncoderElement.__init__()=Push.TouchEncoderElement.TouchEncoderElement-class.html#__init__,Method Push.TouchStripController.TouchStripControllerComponent.__init__()=Push.TouchStripController.TouchStripControllerComponent-class.html#__init__,Method Push.TouchStripController.TouchStripEncoderConnection.__init__()=Push.TouchStripController.TouchStripEncoderConnection-class.html#__init__,Method Push.TouchStripElement.TouchStripElement.__init__()=Push.TouchStripElement.TouchStripElement-class.html#__init__,Method Push.UserSettingsComponent.UserComponent.__init__()=Push.UserSettingsComponent.UserComponent-class.html#__init__,Method Push.UserSettingsComponent.UserSettingsComponent.__init__()=Push.UserSettingsComponent.UserSettingsComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueComponent.__init__()=Push.ValueComponent.ParameterValueComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueDisplayComponent.__init__()=Push.ValueComponent.ParameterValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueComponent.__init__()=Push.ValueComponent.ValueComponent-class.html#__init__,Method Push.ValueComponent.ValueComponentBase.__init__()=Push.ValueComponent.ValueComponentBase-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponent.__init__()=Push.ValueComponent.ValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponentBase.__init__()=Push.ValueComponent.ValueDisplayComponentBase-class.html#__init__,Method Push.ViewControlComponent.ViewControlComponent.__init__()=Push.ViewControlComponent.ViewControlComponent-class.html#__init__,Method Push.ViewControlComponent._DeltaSongScroller.__init__()=Push.ViewControlComponent._DeltaSongScroller-class.html#__init__"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-6', '__init__', 'link-6');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt> <tt class="py-op">=</tt> <tt class="py-name">song</tt> </tt>
+</div><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">    <tt id="link-7" class="py-name" targets="Method Push.ViewControlComponent.BasicSceneScroller._do_scroll()=Push.ViewControlComponent.BasicSceneScroller-class.html#_do_scroll,Method Push.ViewControlComponent.SceneListScroller._do_scroll()=Push.ViewControlComponent.SceneListScroller-class.html#_do_scroll,Method Push.ViewControlComponent.SceneScroller._do_scroll()=Push.ViewControlComponent.SceneScroller-class.html#_do_scroll,Method Push.ViewControlComponent.TrackScroller._do_scroll()=Push.ViewControlComponent.TrackScroller-class.html#_do_scroll,Variable Push.ViewControlComponent._DeltaSongScroller._do_scroll=Push.ViewControlComponent._DeltaSongScroller-class.html#_do_scroll"><a title="Push.ViewControlComponent.BasicSceneScroller._do_scroll
+Push.ViewControlComponent.SceneListScroller._do_scroll
+Push.ViewControlComponent.SceneScroller._do_scroll
+Push.ViewControlComponent.TrackScroller._do_scroll
+Push.ViewControlComponent._DeltaSongScroller._do_scroll" class="py-name" href="#" onclick="return doclink('link-7', '_do_scroll', 'link-7');">_do_scroll</a></tt> <tt class="py-op">=</tt> <tt class="py-name">NotImplemented</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Method Push.ViewControlComponent.BasicSceneScroller._can_scroll()=Push.ViewControlComponent.BasicSceneScroller-class.html#_can_scroll,Method Push.ViewControlComponent.TrackScroller._can_scroll()=Push.ViewControlComponent.TrackScroller-class.html#_can_scroll,Variable Push.ViewControlComponent._DeltaSongScroller._can_scroll=Push.ViewControlComponent._DeltaSongScroller-class.html#_can_scroll"><a title="Push.ViewControlComponent.BasicSceneScroller._can_scroll
+Push.ViewControlComponent.TrackScroller._can_scroll
+Push.ViewControlComponent._DeltaSongScroller._can_scroll" class="py-name" href="#" onclick="return doclink('link-8', '_can_scroll', 'link-8');">_can_scroll</a></tt> <tt class="py-op">=</tt> <tt class="py-name">NotImplemented</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="_DeltaSongScroller.scroll_up"></a><div id="_DeltaSongScroller.scroll_up-def"><a name="L21"></a><tt class="py-lineno"> 21</tt> <a class="py-toggle" href="#" id="_DeltaSongScroller.scroll_up-toggle" onclick="return toggle('_DeltaSongScroller.scroll_up');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent._DeltaSongScroller-class.html#scroll_up">scroll_up</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_DeltaSongScroller.scroll_up-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_DeltaSongScroller.scroll_up-expanded"><a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method Push.DrumGroupComponent.DrumGroupComponent.can_scroll_up()=Push.DrumGroupComponent.DrumGroupComponent-class.html#can_scroll_up,Method Push.InstrumentComponent.InstrumentScalesComponent.can_scroll_up()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#can_scroll_up,Method Push.ScrollableList.ScrollableList.can_scroll_up()=Push.ScrollableList.ScrollableList-class.html#can_scroll_up,Method Push.ViewControlComponent._DeltaSongScroller.can_scroll_up()=Push.ViewControlComponent._DeltaSongScroller-class.html#can_scroll_up"><a title="Push.DrumGroupComponent.DrumGroupComponent.can_scroll_up
+Push.InstrumentComponent.InstrumentScalesComponent.can_scroll_up
+Push.ScrollableList.ScrollableList.can_scroll_up
+Push.ViewControlComponent._DeltaSongScroller.can_scroll_up" class="py-name" href="#" onclick="return doclink('link-9', 'can_scroll_up', 'link-9');">can_scroll_up</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="Push.ViewControlComponent.BasicSceneScroller._do_scroll
+Push.ViewControlComponent.SceneListScroller._do_scroll
+Push.ViewControlComponent.SceneScroller._do_scroll
+Push.ViewControlComponent.TrackScroller._do_scroll
+Push.ViewControlComponent._DeltaSongScroller._do_scroll" class="py-name" href="#" onclick="return doclink('link-10', '_do_scroll', 'link-7');">_do_scroll</a></tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="_DeltaSongScroller.scroll_down"></a><div id="_DeltaSongScroller.scroll_down-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="_DeltaSongScroller.scroll_down-toggle" onclick="return toggle('_DeltaSongScroller.scroll_down');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent._DeltaSongScroller-class.html#scroll_down">scroll_down</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_DeltaSongScroller.scroll_down-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_DeltaSongScroller.scroll_down-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method Push.DrumGroupComponent.DrumGroupComponent.can_scroll_down()=Push.DrumGroupComponent.DrumGroupComponent-class.html#can_scroll_down,Method Push.InstrumentComponent.InstrumentScalesComponent.can_scroll_down()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#can_scroll_down,Method Push.ScrollableList.ScrollableList.can_scroll_down()=Push.ScrollableList.ScrollableList-class.html#can_scroll_down,Method Push.ViewControlComponent._DeltaSongScroller.can_scroll_down()=Push.ViewControlComponent._DeltaSongScroller-class.html#can_scroll_down"><a title="Push.DrumGroupComponent.DrumGroupComponent.can_scroll_down
+Push.InstrumentComponent.InstrumentScalesComponent.can_scroll_down
+Push.ScrollableList.ScrollableList.can_scroll_down
+Push.ViewControlComponent._DeltaSongScroller.can_scroll_down" class="py-name" href="#" onclick="return doclink('link-11', 'can_scroll_down', 'link-11');">can_scroll_down</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="Push.ViewControlComponent.BasicSceneScroller._do_scroll
+Push.ViewControlComponent.SceneListScroller._do_scroll
+Push.ViewControlComponent.SceneScroller._do_scroll
+Push.ViewControlComponent.TrackScroller._do_scroll
+Push.ViewControlComponent._DeltaSongScroller._do_scroll" class="py-name" href="#" onclick="return doclink('link-12', '_do_scroll', 'link-7');">_do_scroll</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="_DeltaSongScroller.can_scroll_up"></a><div id="_DeltaSongScroller.can_scroll_up-def"><a name="L29"></a><tt class="py-lineno"> 29</tt> <a class="py-toggle" href="#" id="_DeltaSongScroller.can_scroll_up-toggle" onclick="return toggle('_DeltaSongScroller.can_scroll_up');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent._DeltaSongScroller-class.html#can_scroll_up">can_scroll_up</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_DeltaSongScroller.can_scroll_up-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_DeltaSongScroller.can_scroll_up-expanded"><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="Push.ViewControlComponent.BasicSceneScroller._can_scroll
+Push.ViewControlComponent.TrackScroller._can_scroll
+Push.ViewControlComponent._DeltaSongScroller._can_scroll" class="py-name" href="#" onclick="return doclink('link-13', '_can_scroll', 'link-8');">_can_scroll</a></tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"> </tt>
+<a name="_DeltaSongScroller.can_scroll_down"></a><div id="_DeltaSongScroller.can_scroll_down-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="_DeltaSongScroller.can_scroll_down-toggle" onclick="return toggle('_DeltaSongScroller.can_scroll_down');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent._DeltaSongScroller-class.html#can_scroll_down">can_scroll_down</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_DeltaSongScroller.can_scroll_down-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_DeltaSongScroller.can_scroll_down-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="Push.ViewControlComponent.BasicSceneScroller._can_scroll
+Push.ViewControlComponent.TrackScroller._can_scroll
+Push.ViewControlComponent._DeltaSongScroller._can_scroll" class="py-name" href="#" onclick="return doclink('link-14', '_can_scroll', 'link-8');">_can_scroll</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="tracks_to_use"></a><div id="tracks_to_use-def"><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="tracks_to_use-toggle" onclick="return toggle('tracks_to_use');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent-module.html#tracks_to_use">tracks_to_use</a><tt class="py-op">(</tt><tt class="py-param">song</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="tracks_to_use-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="tracks_to_use-expanded"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name"><a title="Push.SpecialMixerComponent.tracks_to_use_from_song" class="py-name" href="#" onclick="return doclink('link-15', 'tracks_to_use_from_song', 'link-3');">tracks_to_use_from_song</a></tt><tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">.</tt><tt class="py-name">master_track</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="next_item"></a><div id="next_item-def"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="next_item-toggle" onclick="return toggle('next_item');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent-module.html#next_item">next_item</a><tt class="py-op">(</tt><tt class="py-param">seq</tt><tt class="py-op">,</tt> <tt class="py-param">item</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="next_item-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="next_item-expanded"><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">seq</tt><tt class="py-op">[</tt><tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">seq</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method Push.ScrollableList.ScrollableListItem.index()=Push.ScrollableList.ScrollableListItem-class.html#index"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-16', 'index', 'link-16');">index</a></tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-name">delta</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="has_next_item"></a><div id="has_next_item-def"><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt> <a class="py-toggle" href="#" id="has_next_item-toggle" onclick="return toggle('has_next_item');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent-module.html#has_next_item">has_next_item</a><tt class="py-op">(</tt><tt class="py-param">seq</tt><tt class="py-op">,</tt> <tt class="py-param">item</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="has_next_item-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="has_next_item-expanded"><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">in_range</tt><tt class="py-op">(</tt><tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">seq</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="Push.ScrollableList.ScrollableListItem.index" class="py-name" href="#" onclick="return doclink('link-17', 'index', 'link-16');">index</a></tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-name">delta</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">seq</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="TrackScroller"></a><div id="TrackScroller-def"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt> <a class="py-toggle" href="#" id="TrackScroller-toggle" onclick="return toggle('TrackScroller');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ViewControlComponent.TrackScroller-class.html">TrackScroller</a><tt class="py-op">(</tt><tt class="py-base-class">_DeltaSongScroller</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TrackScroller-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TrackScroller-expanded"><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"> </tt>
+<a name="TrackScroller._do_scroll"></a><div id="TrackScroller._do_scroll-def"><a name="L50"></a><tt class="py-lineno"> 50</tt> <a class="py-toggle" href="#" id="TrackScroller._do_scroll-toggle" onclick="return toggle('TrackScroller._do_scroll');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.TrackScroller-class.html#_do_scroll">_do_scroll</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TrackScroller._do_scroll-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TrackScroller._do_scroll-expanded"><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">song</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-name">tracks</tt> <tt class="py-op">=</tt> <tt id="link-18" class="py-name" targets="Method Push.SpecialMixerComponent.SpecialMixerComponent.tracks_to_use()=Push.SpecialMixerComponent.SpecialMixerComponent-class.html#tracks_to_use,Function Push.ViewControlComponent.tracks_to_use()=Push.ViewControlComponent-module.html#tracks_to_use"><a title="Push.SpecialMixerComponent.SpecialMixerComponent.tracks_to_use
+Push.ViewControlComponent.tracks_to_use" class="py-name" href="#" onclick="return doclink('link-18', 'tracks_to_use', 'link-18');">tracks_to_use</a></tt><tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-name">track</tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name" targets="Method Push.ScrollableList.ListComponent.next_item()=Push.ScrollableList.ListComponent-class.html#next_item,Function Push.ViewControlComponent.next_item()=Push.ViewControlComponent-module.html#next_item"><a title="Push.ScrollableList.ListComponent.next_item
+Push.ViewControlComponent.next_item" class="py-name" href="#" onclick="return doclink('link-19', 'next_item', 'link-19');">next_item</a></tt><tt class="py-op">(</tt><tt class="py-name">tracks</tt><tt class="py-op">,</tt> <tt class="py-name">song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method Push.Selection.L9CSelection.selected_track()=Push.Selection.L9CSelection-class.html#selected_track,Method Push.Selection.Selection.selected_track()=Push.Selection.Selection-class.html#selected_track"><a title="Push.Selection.L9CSelection.selected_track
+Push.Selection.Selection.selected_track" class="py-name" href="#" onclick="return doclink('link-20', 'selected_track', 'link-20');">selected_track</a></tt><tt class="py-op">,</tt> <tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-name">song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="Push.Selection.L9CSelection.selected_track
+Push.Selection.Selection.selected_track" class="py-name" href="#" onclick="return doclink('link-21', 'selected_track', 'link-20');">selected_track</a></tt> <tt class="py-op">=</tt> <tt class="py-name">track</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">track</tt><tt class="py-op">.</tt><tt class="py-name">can_be_armed</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">            <tt class="py-name">playing_slot_index</tt> <tt class="py-op">=</tt> <tt class="py-name">track</tt><tt class="py-op">.</tt><tt class="py-name">playing_slot_index</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">playing_slot_index</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">0</tt> <tt class="py-keyword">and</tt> <tt class="py-name">track</tt><tt class="py-op">.</tt><tt class="py-name">clip_slots</tt><tt class="py-op">[</tt><tt class="py-name">playing_slot_index</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Variable Push.ClipControlComponent.AudioClipSettingsComponent.clip=Push.ClipControlComponent.AudioClipSettingsComponent-class.html#clip,Variable Push.ClipControlComponent.ClipNameComponent.clip=Push.ClipControlComponent.ClipNameComponent-class.html#clip,Variable Push.ClipControlComponent.LoopSettingsComponent.clip=Push.ClipControlComponent.LoopSettingsComponent-class.html#clip,Variable Push.ClipControlComponent.MidiClipSettingsComponent.clip=Push.ClipControlComponent.MidiClipSettingsComponent-class.html#clip"><a title="Push.ClipControlComponent.AudioClipSettingsComponent.clip
+Push.ClipControlComponent.ClipNameComponent.clip
+Push.ClipControlComponent.LoopSettingsComponent.clip
+Push.ClipControlComponent.MidiClipSettingsComponent.clip" class="py-name" href="#" onclick="return doclink('link-22', 'clip', 'link-22');">clip</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                <tt class="py-name">song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">.</tt><tt class="py-name">highlighted_clip_slot</tt> <tt class="py-op">=</tt> <tt class="py-name">track</tt><tt class="py-op">.</tt><tt class="py-name">clip_slots</tt><tt class="py-op">[</tt><tt class="py-name">playing_slot_index</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="TrackScroller._can_scroll"></a><div id="TrackScroller._can_scroll-def"><a name="L60"></a><tt class="py-lineno"> 60</tt> <a class="py-toggle" href="#" id="TrackScroller._can_scroll-toggle" onclick="return toggle('TrackScroller._can_scroll');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.TrackScroller-class.html#_can_scroll">_can_scroll</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TrackScroller._can_scroll-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TrackScroller._can_scroll-expanded"><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">tracks</tt> <tt class="py-op">=</tt> <tt id="link-23" class="py-name"><a title="Push.SpecialMixerComponent.SpecialMixerComponent.tracks_to_use
+Push.ViewControlComponent.tracks_to_use" class="py-name" href="#" onclick="return doclink('link-23', 'tracks_to_use', 'link-18');">tracks_to_use</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-24" class="py-name" targets="Function Push.ViewControlComponent.has_next_item()=Push.ViewControlComponent-module.html#has_next_item"><a title="Push.ViewControlComponent.has_next_item" class="py-name" href="#" onclick="return doclink('link-24', 'has_next_item', 'link-24');">has_next_item</a></tt><tt class="py-op">(</tt><tt class="py-name">tracks</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="Push.Selection.L9CSelection.selected_track
+Push.Selection.Selection.selected_track" class="py-name" href="#" onclick="return doclink('link-25', 'selected_track', 'link-20');">selected_track</a></tt><tt class="py-op">,</tt> <tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">ValueError</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+</div></div><a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="BasicSceneScroller"></a><div id="BasicSceneScroller-def"><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="BasicSceneScroller-toggle" onclick="return toggle('BasicSceneScroller');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ViewControlComponent.BasicSceneScroller-class.html">BasicSceneScroller</a><tt class="py-op">(</tt><tt class="py-base-class">_DeltaSongScroller</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="BasicSceneScroller-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="BasicSceneScroller-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"> </tt>
+<a name="BasicSceneScroller._do_scroll"></a><div id="BasicSceneScroller._do_scroll-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="BasicSceneScroller._do_scroll-toggle" onclick="return toggle('BasicSceneScroller._do_scroll');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.BasicSceneScroller-class.html#_do_scroll">_do_scroll</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="BasicSceneScroller._do_scroll-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="BasicSceneScroller._do_scroll-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">song</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-name">view</tt> <tt class="py-op">=</tt> <tt class="py-name">song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-name">view</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method Push.Selection.Selection.selected_scene()=Push.Selection.Selection-class.html#selected_scene"><a title="Push.Selection.Selection.selected_scene" class="py-name" href="#" onclick="return doclink('link-26', 'selected_scene', 'link-26');">selected_scene</a></tt> <tt class="py-op">=</tt> <tt id="link-27" class="py-name"><a title="Push.ScrollableList.ListComponent.next_item
+Push.ViewControlComponent.next_item" class="py-name" href="#" onclick="return doclink('link-27', 'next_item', 'link-19');">next_item</a></tt><tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">.</tt><tt class="py-name">scenes</tt><tt class="py-op">,</tt> <tt class="py-name">view</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="Push.Selection.Selection.selected_scene" class="py-name" href="#" onclick="return doclink('link-28', 'selected_scene', 'link-26');">selected_scene</a></tt><tt class="py-op">,</tt> <tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="BasicSceneScroller._can_scroll"></a><div id="BasicSceneScroller._can_scroll-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="BasicSceneScroller._can_scroll-toggle" onclick="return toggle('BasicSceneScroller._can_scroll');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.BasicSceneScroller-class.html#_can_scroll">_can_scroll</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="BasicSceneScroller._can_scroll-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="BasicSceneScroller._can_scroll-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-name">song</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">view</tt> <tt class="py-op">=</tt> <tt class="py-name">song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-29" class="py-name"><a title="Push.ViewControlComponent.has_next_item" class="py-name" href="#" onclick="return doclink('link-29', 'has_next_item', 'link-24');">has_next_item</a></tt><tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">.</tt><tt class="py-name">scenes</tt><tt class="py-op">,</tt> <tt class="py-name">view</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="Push.Selection.Selection.selected_scene" class="py-name" href="#" onclick="return doclink('link-30', 'selected_scene', 'link-26');">selected_scene</a></tt><tt class="py-op">,</tt> <tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"> </tt>
+<a name="SceneScroller"></a><div id="SceneScroller-def"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt> <a class="py-toggle" href="#" id="SceneScroller-toggle" onclick="return toggle('SceneScroller');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ViewControlComponent.SceneScroller-class.html">SceneScroller</a><tt class="py-op">(</tt><tt class="py-base-class">BasicSceneScroller</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SceneScroller-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SceneScroller-expanded"><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="SceneScroller._do_scroll"></a><div id="SceneScroller._do_scroll-def"><a name="L83"></a><tt class="py-lineno"> 83</tt> <a class="py-toggle" href="#" id="SceneScroller._do_scroll-toggle" onclick="return toggle('SceneScroller._do_scroll');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.SceneScroller-class.html#_do_scroll">_do_scroll</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SceneScroller._do_scroll-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SceneScroller._do_scroll-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-31" class="py-name" targets="Class Push.ViewControlComponent.SceneScroller=Push.ViewControlComponent.SceneScroller-class.html"><a title="Push.ViewControlComponent.SceneScroller" class="py-name" href="#" onclick="return doclink('link-31', 'SceneScroller', 'link-31');">SceneScroller</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="Push.ViewControlComponent.BasicSceneScroller._do_scroll
+Push.ViewControlComponent.SceneListScroller._do_scroll
+Push.ViewControlComponent.SceneScroller._do_scroll
+Push.ViewControlComponent.TrackScroller._do_scroll
+Push.ViewControlComponent._DeltaSongScroller._do_scroll" class="py-name" href="#" onclick="return doclink('link-32', '_do_scroll', 'link-7');">_do_scroll</a></tt><tt class="py-op">(</tt><tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">.</tt><tt class="py-name">highlighted_clip_slot</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">.</tt><tt class="py-name">highlighted_clip_slot</tt><tt class="py-op">.</tt><tt class="py-name">has_clip</tt><tt class="py-op">:</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">.</tt><tt class="py-name">highlighted_clip_slot</tt><tt class="py-op">.</tt><tt class="py-name">fire</tt><tt class="py-op">(</tt><tt class="py-name">force_legato</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">launch_quantization</tt><tt class="py-op">=</tt><tt class="py-name">Live</tt><tt class="py-op">.</tt><tt class="py-name">Song</tt><tt class="py-op">.</tt><tt class="py-name">Quantization</tt><tt class="py-op">.</tt><tt class="py-name">q_no_q</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="Push.Selection.L9CSelection.selected_track
+Push.Selection.Selection.selected_track" class="py-name" href="#" onclick="return doclink('link-33', 'selected_track', 'link-20');">selected_track</a></tt><tt class="py-op">.</tt><tt class="py-name">stop_all_clips</tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="SceneListScroller"></a><div id="SceneListScroller-def"><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt> <a class="py-toggle" href="#" id="SceneListScroller-toggle" onclick="return toggle('SceneListScroller');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ViewControlComponent.SceneListScroller-class.html">SceneListScroller</a><tt class="py-op">(</tt><tt class="py-base-class">BasicSceneScroller</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SceneListScroller-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SceneListScroller-expanded"><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="SceneListScroller._do_scroll"></a><div id="SceneListScroller._do_scroll-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="SceneListScroller._do_scroll-toggle" onclick="return toggle('SceneListScroller._do_scroll');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.SceneListScroller-class.html#_do_scroll">_do_scroll</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SceneListScroller._do_scroll-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SceneListScroller._do_scroll-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-34" class="py-name" targets="Class Push.ViewControlComponent.SceneListScroller=Push.ViewControlComponent.SceneListScroller-class.html"><a title="Push.ViewControlComponent.SceneListScroller" class="py-name" href="#" onclick="return doclink('link-34', 'SceneListScroller', 'link-34');">SceneListScroller</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="Push.ViewControlComponent.BasicSceneScroller._do_scroll
+Push.ViewControlComponent.SceneListScroller._do_scroll
+Push.ViewControlComponent.SceneScroller._do_scroll
+Push.ViewControlComponent.TrackScroller._do_scroll
+Push.ViewControlComponent._DeltaSongScroller._do_scroll" class="py-name" href="#" onclick="return doclink('link-35', '_do_scroll', 'link-7');">_do_scroll</a></tt><tt class="py-op">(</tt><tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="Push.Selection.Selection.selected_scene" class="py-name" href="#" onclick="return doclink('link-36', 'selected_scene', 'link-26');">selected_scene</a></tt><tt class="py-op">.</tt><tt class="py-name">fire</tt><tt class="py-op">(</tt><tt class="py-name">force_legato</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">can_select_scene_on_launch</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent"></a><div id="ViewControlComponent-def"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt> <a class="py-toggle" href="#" id="ViewControlComponent-toggle" onclick="return toggle('ViewControlComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html">ViewControlComponent</a><tt class="py-op">(</tt><tt class="py-base-class">CompoundComponent</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ViewControlComponent-expanded"><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">    Component that can toggle the device chain- and clip view of the</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">    selected track</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.__init__"></a><div id="ViewControlComponent.__init__-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="ViewControlComponent.__init__-toggle" onclick="return toggle('ViewControlComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.__init__-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-37" class="py-name" targets="Module Push.ViewControlComponent=Push.ViewControlComponent-module.html,Class Push.ViewControlComponent.ViewControlComponent=Push.ViewControlComponent.ViewControlComponent-class.html"><a title="Push.ViewControlComponent
+Push.ViewControlComponent.ViewControlComponent" class="py-name" href="#" onclick="return doclink('link-37', 'ViewControlComponent', 'link-37');">ViewControlComponent</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-38', '__init__', 'link-6');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_tracks</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scene_list</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scenes</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_components</tt><tt class="py-op">(</tt><tt class="py-name">ScrollComponent</tt><tt class="py-op">(</tt><tt id="link-39" class="py-name" targets="Class Push.ViewControlComponent.TrackScroller=Push.ViewControlComponent.TrackScroller-class.html"><a title="Push.ViewControlComponent.TrackScroller" class="py-name" href="#" onclick="return doclink('link-39', 'TrackScroller', 'link-39');">TrackScroller</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">ScrollComponent</tt><tt class="py-op">(</tt><tt id="link-40" class="py-name"><a title="Push.ViewControlComponent.SceneListScroller" class="py-name" href="#" onclick="return doclink('link-40', 'SceneListScroller', 'link-34');">SceneListScroller</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">ScrollComponent</tt><tt class="py-op">(</tt><tt id="link-41" class="py-name"><a title="Push.ViewControlComponent.SceneScroller" class="py-name" href="#" onclick="return doclink('link-41', 'SceneScroller', 'link-31');">SceneScroller</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">song</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">song</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-name">view</tt> <tt class="py-op">=</tt> <tt class="py-name">song</tt><tt class="py-op">.</tt><tt class="py-name">view</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_slot</tt><tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_tracks</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update()=Push.ActionWithOptionsComponent.ActionWithSettingsComponent-class.html#update,Method Push.ActionWithOptionsComponent.OptionsComponent.update()=Push.ActionWithOptionsComponent.OptionsComponent-class.html#update,Method Push.Actions.CreateDefaultTrackComponent.update()=Push.Actions.CreateDefaultTrackComponent-class.html#update,Method Push.Actions.CreateDeviceComponent.update()=Push.Actions.CreateDeviceComponent-class.html#update,Method Push.Actions.CreateInstrumentTrackComponent.update()=Push.Actions.CreateInstrumentTrackComponent-class.html#update,Method Push.Actions.DeleteComponent.update()=Push.Actions.DeleteComponent-class.html#update,Method Push.Actions.SelectComponent.update()=Push.Actions.SelectComponent-class.html#update,Method Push.Actions.SelectionDisplayComponent.update()=Push.Actions.SelectionDisplayComponent-class.html#update,Method Push.AutoArmComponent.AutoArmComponent.update()=Push.AutoArmComponent.AutoArmComponent-class.html#update,Method Push.AutoArmComponent.AutoArmRestoreBehaviour.update()=Push.AutoArmComponent.AutoArmRestoreBehaviour-class.html#update,Method Push.BackgroundComponent.BackgroundComponent.update()=Push.BackgroundComponent.BackgroundComponent-class.html#update,Method Push.BrowserComponent.BrowserComponent.update()=Push.BrowserComponent.BrowserComponent-class.html#update,Method Push.ClipControlComponent.AudioClipSettingsComponent.update()=Push.ClipControlComponent.AudioClipSettingsComponent-class.html#update,Method Push.ClipControlComponent.ClipControlComponent.update()=Push.ClipControlComponent.ClipControlComponent-class.html#update,Method Push.ClipControlComponent.ClipNameComponent.update()=Push.ClipControlComponent.ClipNameComponent-class.html#update,Method Push.ClipControlComponent.LoopSettingsComponent.update()=Push.ClipControlComponent.LoopSettingsComponent-class.html#update,Method Push.ClipControlComponent.MidiClipSettingsComponent.update()=Push.ClipControlComponent.MidiClipSettingsComponent-class.html#update,Method Push.ClipControlComponent.NoClipSettingsComponent.update()=Push.ClipControlComponent.NoClipSettingsComponent-class.html#update,Method Push.DeviceNavigationComponent.DeviceNavigationComponent.update()=Push.DeviceNavigationComponent.DeviceNavigationComponent-class.html#update,Method Push.DrumGroupComponent.DrumGroupComponent.update()=Push.DrumGroupComponent.DrumGroupComponent-class.html#update,Method Push.HandshakeComponent.HandshakeComponent.update()=Push.HandshakeComponent.HandshakeComponent-class.html#update,Method Push.InstrumentComponent.InstrumentComponent.update()=Push.InstrumentComponent.InstrumentComponent-class.html#update,Method Push.InstrumentComponent.InstrumentScalesComponent.update()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#update,Method Push.InstrumentComponent.ScalesInfoComponent.update()=Push.InstrumentComponent.ScalesInfoComponent-class.html#update,Method Push.LoopSelectorComponent.LoopSelectorComponent.update()=Push.LoopSelectorComponent.LoopSelectorComponent-class.html#update,Method Push.M4LInterfaceComponent.M4LInterfaceComponent.update()=Push.M4LInterfaceComponent.M4LInterfaceComponent-class.html#update,Method Push.MessageBoxComponent.DialogComponent.update()=Push.MessageBoxComponent.DialogComponent-class.html#update,Method Push.MessageBoxComponent.MessageBoxComponent.update()=Push.MessageBoxComponent.MessageBoxComponent-class.html#update,Method Push.MessageBoxComponent.NotificationComponent.update()=Push.MessageBoxComponent.NotificationComponent-class.html#update,Method Push.NoteEditorComponent.NoteEditorComponent.update()=Push.NoteEditorComponent.NoteEditorComponent-class.html#update,Method Push.PadSensitivity.PadSensitivity.update()=Push.PadSensitivity.PadSensitivity-class.html#update,Method Push.Push.Push.update()=Push.Push.Push-class.html#update,Method Push.ScrollableList.ListComponent.update()=Push.ScrollableList.ListComponent-class.html#update,Method Push.ScrollableListComponent.ScrollableListComponent.update()=Push.ScrollableListComponent.ScrollableListComponent-class.html#update,Method Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update()=Push.ScrollableListComponent.ScrollableListWithTogglesComponent-class.html#update,Method Push.SessionRecordingComponent.SessionRecordingComponent.update()=Push.SessionRecordingComponent.SessionRecordingComponent-class.html#update,Method Push.SpecialSessionComponent.DuplicateSceneComponent.update()=Push.SpecialSessionComponent.DuplicateSceneComponent-class.html#update,Method Push.SpecialTransportComponent.QuantizationSettingsComponent.update()=Push.SpecialTransportComponent.QuantizationSettingsComponent-class.html#update,Method Push.SpecialTransportComponent.SpecialTransportComponent.update()=Push.SpecialTransportComponent.SpecialTransportComponent-class.html#update,Method Push.StepSeqComponent.StepSeqComponent.update()=Push.StepSeqComponent.StepSeqComponent-class.html#update,Method Push.TouchStripController.TouchStripControllerComponent.update()=Push.TouchStripController.TouchStripControllerComponent-class.html#update,Method Push.TouchStripController.TouchStripEncoderConnection.update()=Push.TouchStripController.TouchStripEncoderConnection-class.html#update,Method Push.UserSettingsComponent.UserComponent.update()=Push.UserSettingsComponent.UserComponent-class.html#update,Method Push.UserSettingsComponent.UserSettingsComponent.update()=Push.UserSettingsComponent.UserSettingsComponent-class.html#update,Method Push.ValueComponent.ValueComponentBase.update()=Push.ValueComponent.ValueComponentBase-class.html#update,Method Push.ValueComponent.ValueDisplayComponentBase.update()=Push.ValueComponent.ValueDisplayComponentBase-class.html#update,Method Push.ViewControlComponent.ViewControlComponent.update()=Push.ViewControlComponent.ViewControlComponent-class.html#update"><a title="Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update
+Push.ActionWithOptionsComponent.OptionsComponent.update
+Push.Actions.CreateDefaultTrackComponent.update
+Push.Actions.CreateDeviceComponent.update
+Push.Actions.CreateInstrumentTrackComponent.update
+Push.Actions.DeleteComponent.update
+Push.Actions.SelectComponent.update
+Push.Actions.SelectionDisplayComponent.update
+Push.AutoArmComponent.AutoArmComponent.update
+Push.AutoArmComponent.AutoArmRestoreBehaviour.update
+Push.BackgroundComponent.BackgroundComponent.update
+Push.BrowserComponent.BrowserComponent.update
+Push.ClipControlComponent.AudioClipSettingsComponent.update
+Push.ClipControlComponent.ClipControlComponent.update
+Push.ClipControlComponent.ClipNameComponent.update
+Push.ClipControlComponent.LoopSettingsComponent.update
+Push.ClipControlComponent.MidiClipSettingsComponent.update
+Push.ClipControlComponent.NoClipSettingsComponent.update
+Push.DeviceNavigationComponent.DeviceNavigationComponent.update
+Push.DrumGroupComponent.DrumGroupComponent.update
+Push.HandshakeComponent.HandshakeComponent.update
+Push.InstrumentComponent.InstrumentComponent.update
+Push.InstrumentComponent.InstrumentScalesComponent.update
+Push.InstrumentComponent.ScalesInfoComponent.update
+Push.LoopSelectorComponent.LoopSelectorComponent.update
+Push.M4LInterfaceComponent.M4LInterfaceComponent.update
+Push.MessageBoxComponent.DialogComponent.update
+Push.MessageBoxComponent.MessageBoxComponent.update
+Push.MessageBoxComponent.NotificationComponent.update
+Push.NoteEditorComponent.NoteEditorComponent.update
+Push.PadSensitivity.PadSensitivity.update
+Push.Push.Push.update
+Push.ScrollableList.ListComponent.update
+Push.ScrollableListComponent.ScrollableListComponent.update
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update
+Push.SessionRecordingComponent.SessionRecordingComponent.update
+Push.SpecialSessionComponent.DuplicateSceneComponent.update
+Push.SpecialTransportComponent.QuantizationSettingsComponent.update
+Push.SpecialTransportComponent.SpecialTransportComponent.update
+Push.StepSeqComponent.StepSeqComponent.update
+Push.TouchStripController.TouchStripControllerComponent.update
+Push.TouchStripController.TouchStripEncoderConnection.update
+Push.UserSettingsComponent.UserComponent.update
+Push.UserSettingsComponent.UserSettingsComponent.update
+Push.ValueComponent.ValueComponentBase.update
+Push.ValueComponent.ValueDisplayComponentBase.update
+Push.ViewControlComponent.ViewControlComponent.update" class="py-name" href="#" onclick="return doclink('link-42', 'update', 'link-42');">update</a></tt><tt class="py-op">,</tt> <tt class="py-string">'visible_tracks'</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_slot</tt><tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_tracks</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update
+Push.ActionWithOptionsComponent.OptionsComponent.update
+Push.Actions.CreateDefaultTrackComponent.update
+Push.Actions.CreateDeviceComponent.update
+Push.Actions.CreateInstrumentTrackComponent.update
+Push.Actions.DeleteComponent.update
+Push.Actions.SelectComponent.update
+Push.Actions.SelectionDisplayComponent.update
+Push.AutoArmComponent.AutoArmComponent.update
+Push.AutoArmComponent.AutoArmRestoreBehaviour.update
+Push.BackgroundComponent.BackgroundComponent.update
+Push.BrowserComponent.BrowserComponent.update
+Push.ClipControlComponent.AudioClipSettingsComponent.update
+Push.ClipControlComponent.ClipControlComponent.update
+Push.ClipControlComponent.ClipNameComponent.update
+Push.ClipControlComponent.LoopSettingsComponent.update
+Push.ClipControlComponent.MidiClipSettingsComponent.update
+Push.ClipControlComponent.NoClipSettingsComponent.update
+Push.DeviceNavigationComponent.DeviceNavigationComponent.update
+Push.DrumGroupComponent.DrumGroupComponent.update
+Push.HandshakeComponent.HandshakeComponent.update
+Push.InstrumentComponent.InstrumentComponent.update
+Push.InstrumentComponent.InstrumentScalesComponent.update
+Push.InstrumentComponent.ScalesInfoComponent.update
+Push.LoopSelectorComponent.LoopSelectorComponent.update
+Push.M4LInterfaceComponent.M4LInterfaceComponent.update
+Push.MessageBoxComponent.DialogComponent.update
+Push.MessageBoxComponent.MessageBoxComponent.update
+Push.MessageBoxComponent.NotificationComponent.update
+Push.NoteEditorComponent.NoteEditorComponent.update
+Push.PadSensitivity.PadSensitivity.update
+Push.Push.Push.update
+Push.ScrollableList.ListComponent.update
+Push.ScrollableListComponent.ScrollableListComponent.update
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update
+Push.SessionRecordingComponent.SessionRecordingComponent.update
+Push.SpecialSessionComponent.DuplicateSceneComponent.update
+Push.SpecialTransportComponent.QuantizationSettingsComponent.update
+Push.SpecialTransportComponent.SpecialTransportComponent.update
+Push.StepSeqComponent.StepSeqComponent.update
+Push.TouchStripController.TouchStripControllerComponent.update
+Push.TouchStripController.TouchStripEncoderConnection.update
+Push.UserSettingsComponent.UserComponent.update
+Push.UserSettingsComponent.UserSettingsComponent.update
+Push.ValueComponent.ValueComponentBase.update
+Push.ValueComponent.ValueDisplayComponentBase.update
+Push.ViewControlComponent.ViewControlComponent.update" class="py-name" href="#" onclick="return doclink('link-43', 'update', 'link-42');">update</a></tt><tt class="py-op">,</tt> <tt class="py-string">'return_tracks'</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_slot</tt><tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scenes</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update
+Push.ActionWithOptionsComponent.OptionsComponent.update
+Push.Actions.CreateDefaultTrackComponent.update
+Push.Actions.CreateDeviceComponent.update
+Push.Actions.CreateInstrumentTrackComponent.update
+Push.Actions.DeleteComponent.update
+Push.Actions.SelectComponent.update
+Push.Actions.SelectionDisplayComponent.update
+Push.AutoArmComponent.AutoArmComponent.update
+Push.AutoArmComponent.AutoArmRestoreBehaviour.update
+Push.BackgroundComponent.BackgroundComponent.update
+Push.BrowserComponent.BrowserComponent.update
+Push.ClipControlComponent.AudioClipSettingsComponent.update
+Push.ClipControlComponent.ClipControlComponent.update
+Push.ClipControlComponent.ClipNameComponent.update
+Push.ClipControlComponent.LoopSettingsComponent.update
+Push.ClipControlComponent.MidiClipSettingsComponent.update
+Push.ClipControlComponent.NoClipSettingsComponent.update
+Push.DeviceNavigationComponent.DeviceNavigationComponent.update
+Push.DrumGroupComponent.DrumGroupComponent.update
+Push.HandshakeComponent.HandshakeComponent.update
+Push.InstrumentComponent.InstrumentComponent.update
+Push.InstrumentComponent.InstrumentScalesComponent.update
+Push.InstrumentComponent.ScalesInfoComponent.update
+Push.LoopSelectorComponent.LoopSelectorComponent.update
+Push.M4LInterfaceComponent.M4LInterfaceComponent.update
+Push.MessageBoxComponent.DialogComponent.update
+Push.MessageBoxComponent.MessageBoxComponent.update
+Push.MessageBoxComponent.NotificationComponent.update
+Push.NoteEditorComponent.NoteEditorComponent.update
+Push.PadSensitivity.PadSensitivity.update
+Push.Push.Push.update
+Push.ScrollableList.ListComponent.update
+Push.ScrollableListComponent.ScrollableListComponent.update
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update
+Push.SessionRecordingComponent.SessionRecordingComponent.update
+Push.SpecialSessionComponent.DuplicateSceneComponent.update
+Push.SpecialTransportComponent.QuantizationSettingsComponent.update
+Push.SpecialTransportComponent.SpecialTransportComponent.update
+Push.StepSeqComponent.StepSeqComponent.update
+Push.TouchStripController.TouchStripControllerComponent.update
+Push.TouchStripController.TouchStripEncoderConnection.update
+Push.UserSettingsComponent.UserComponent.update
+Push.UserSettingsComponent.UserSettingsComponent.update
+Push.ValueComponent.ValueComponentBase.update
+Push.ValueComponent.ValueDisplayComponentBase.update
+Push.ViewControlComponent.ViewControlComponent.update" class="py-name" href="#" onclick="return doclink('link-44', 'update', 'link-42');">update</a></tt><tt class="py-op">,</tt> <tt class="py-string">'scenes'</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_slot</tt><tt class="py-op">(</tt><tt class="py-name">song</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scene_list</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update
+Push.ActionWithOptionsComponent.OptionsComponent.update
+Push.Actions.CreateDefaultTrackComponent.update
+Push.Actions.CreateDeviceComponent.update
+Push.Actions.CreateInstrumentTrackComponent.update
+Push.Actions.DeleteComponent.update
+Push.Actions.SelectComponent.update
+Push.Actions.SelectionDisplayComponent.update
+Push.AutoArmComponent.AutoArmComponent.update
+Push.AutoArmComponent.AutoArmRestoreBehaviour.update
+Push.BackgroundComponent.BackgroundComponent.update
+Push.BrowserComponent.BrowserComponent.update
+Push.ClipControlComponent.AudioClipSettingsComponent.update
+Push.ClipControlComponent.ClipControlComponent.update
+Push.ClipControlComponent.ClipNameComponent.update
+Push.ClipControlComponent.LoopSettingsComponent.update
+Push.ClipControlComponent.MidiClipSettingsComponent.update
+Push.ClipControlComponent.NoClipSettingsComponent.update
+Push.DeviceNavigationComponent.DeviceNavigationComponent.update
+Push.DrumGroupComponent.DrumGroupComponent.update
+Push.HandshakeComponent.HandshakeComponent.update
+Push.InstrumentComponent.InstrumentComponent.update
+Push.InstrumentComponent.InstrumentScalesComponent.update
+Push.InstrumentComponent.ScalesInfoComponent.update
+Push.LoopSelectorComponent.LoopSelectorComponent.update
+Push.M4LInterfaceComponent.M4LInterfaceComponent.update
+Push.MessageBoxComponent.DialogComponent.update
+Push.MessageBoxComponent.MessageBoxComponent.update
+Push.MessageBoxComponent.NotificationComponent.update
+Push.NoteEditorComponent.NoteEditorComponent.update
+Push.PadSensitivity.PadSensitivity.update
+Push.Push.Push.update
+Push.ScrollableList.ListComponent.update
+Push.ScrollableListComponent.ScrollableListComponent.update
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update
+Push.SessionRecordingComponent.SessionRecordingComponent.update
+Push.SpecialSessionComponent.DuplicateSceneComponent.update
+Push.SpecialTransportComponent.QuantizationSettingsComponent.update
+Push.SpecialTransportComponent.SpecialTransportComponent.update
+Push.StepSeqComponent.StepSeqComponent.update
+Push.TouchStripController.TouchStripControllerComponent.update
+Push.TouchStripController.TouchStripEncoderConnection.update
+Push.UserSettingsComponent.UserComponent.update
+Push.UserSettingsComponent.UserSettingsComponent.update
+Push.ValueComponent.ValueComponentBase.update
+Push.ValueComponent.ValueDisplayComponentBase.update
+Push.ViewControlComponent.ViewControlComponent.update" class="py-name" href="#" onclick="return doclink('link-45', 'update', 'link-42');">update</a></tt><tt class="py-op">,</tt> <tt class="py-string">'scenes'</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_slot</tt><tt class="py-op">(</tt><tt class="py-name">view</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_tracks</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update
+Push.ActionWithOptionsComponent.OptionsComponent.update
+Push.Actions.CreateDefaultTrackComponent.update
+Push.Actions.CreateDeviceComponent.update
+Push.Actions.CreateInstrumentTrackComponent.update
+Push.Actions.DeleteComponent.update
+Push.Actions.SelectComponent.update
+Push.Actions.SelectionDisplayComponent.update
+Push.AutoArmComponent.AutoArmComponent.update
+Push.AutoArmComponent.AutoArmRestoreBehaviour.update
+Push.BackgroundComponent.BackgroundComponent.update
+Push.BrowserComponent.BrowserComponent.update
+Push.ClipControlComponent.AudioClipSettingsComponent.update
+Push.ClipControlComponent.ClipControlComponent.update
+Push.ClipControlComponent.ClipNameComponent.update
+Push.ClipControlComponent.LoopSettingsComponent.update
+Push.ClipControlComponent.MidiClipSettingsComponent.update
+Push.ClipControlComponent.NoClipSettingsComponent.update
+Push.DeviceNavigationComponent.DeviceNavigationComponent.update
+Push.DrumGroupComponent.DrumGroupComponent.update
+Push.HandshakeComponent.HandshakeComponent.update
+Push.InstrumentComponent.InstrumentComponent.update
+Push.InstrumentComponent.InstrumentScalesComponent.update
+Push.InstrumentComponent.ScalesInfoComponent.update
+Push.LoopSelectorComponent.LoopSelectorComponent.update
+Push.M4LInterfaceComponent.M4LInterfaceComponent.update
+Push.MessageBoxComponent.DialogComponent.update
+Push.MessageBoxComponent.MessageBoxComponent.update
+Push.MessageBoxComponent.NotificationComponent.update
+Push.NoteEditorComponent.NoteEditorComponent.update
+Push.PadSensitivity.PadSensitivity.update
+Push.Push.Push.update
+Push.ScrollableList.ListComponent.update
+Push.ScrollableListComponent.ScrollableListComponent.update
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update
+Push.SessionRecordingComponent.SessionRecordingComponent.update
+Push.SpecialSessionComponent.DuplicateSceneComponent.update
+Push.SpecialTransportComponent.QuantizationSettingsComponent.update
+Push.SpecialTransportComponent.SpecialTransportComponent.update
+Push.StepSeqComponent.StepSeqComponent.update
+Push.TouchStripController.TouchStripControllerComponent.update
+Push.TouchStripController.TouchStripEncoderConnection.update
+Push.UserSettingsComponent.UserComponent.update
+Push.UserSettingsComponent.UserSettingsComponent.update
+Push.ValueComponent.ValueComponentBase.update
+Push.ValueComponent.ValueDisplayComponentBase.update
+Push.ViewControlComponent.ViewControlComponent.update" class="py-name" href="#" onclick="return doclink('link-46', 'update', 'link-42');">update</a></tt><tt class="py-op">,</tt> <tt class="py-string">'selected_track'</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_slot</tt><tt class="py-op">(</tt><tt class="py-name">view</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scenes</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update
+Push.ActionWithOptionsComponent.OptionsComponent.update
+Push.Actions.CreateDefaultTrackComponent.update
+Push.Actions.CreateDeviceComponent.update
+Push.Actions.CreateInstrumentTrackComponent.update
+Push.Actions.DeleteComponent.update
+Push.Actions.SelectComponent.update
+Push.Actions.SelectionDisplayComponent.update
+Push.AutoArmComponent.AutoArmComponent.update
+Push.AutoArmComponent.AutoArmRestoreBehaviour.update
+Push.BackgroundComponent.BackgroundComponent.update
+Push.BrowserComponent.BrowserComponent.update
+Push.ClipControlComponent.AudioClipSettingsComponent.update
+Push.ClipControlComponent.ClipControlComponent.update
+Push.ClipControlComponent.ClipNameComponent.update
+Push.ClipControlComponent.LoopSettingsComponent.update
+Push.ClipControlComponent.MidiClipSettingsComponent.update
+Push.ClipControlComponent.NoClipSettingsComponent.update
+Push.DeviceNavigationComponent.DeviceNavigationComponent.update
+Push.DrumGroupComponent.DrumGroupComponent.update
+Push.HandshakeComponent.HandshakeComponent.update
+Push.InstrumentComponent.InstrumentComponent.update
+Push.InstrumentComponent.InstrumentScalesComponent.update
+Push.InstrumentComponent.ScalesInfoComponent.update
+Push.LoopSelectorComponent.LoopSelectorComponent.update
+Push.M4LInterfaceComponent.M4LInterfaceComponent.update
+Push.MessageBoxComponent.DialogComponent.update
+Push.MessageBoxComponent.MessageBoxComponent.update
+Push.MessageBoxComponent.NotificationComponent.update
+Push.NoteEditorComponent.NoteEditorComponent.update
+Push.PadSensitivity.PadSensitivity.update
+Push.Push.Push.update
+Push.ScrollableList.ListComponent.update
+Push.ScrollableListComponent.ScrollableListComponent.update
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update
+Push.SessionRecordingComponent.SessionRecordingComponent.update
+Push.SpecialSessionComponent.DuplicateSceneComponent.update
+Push.SpecialTransportComponent.QuantizationSettingsComponent.update
+Push.SpecialTransportComponent.SpecialTransportComponent.update
+Push.StepSeqComponent.StepSeqComponent.update
+Push.TouchStripController.TouchStripControllerComponent.update
+Push.TouchStripController.TouchStripEncoderConnection.update
+Push.UserSettingsComponent.UserComponent.update
+Push.UserSettingsComponent.UserSettingsComponent.update
+Push.ValueComponent.ValueComponentBase.update
+Push.ValueComponent.ValueDisplayComponentBase.update
+Push.ViewControlComponent.ViewControlComponent.update" class="py-name" href="#" onclick="return doclink('link-47', 'update', 'link-42');">update</a></tt><tt class="py-op">,</tt> <tt class="py-string">'selected_scene'</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_slot</tt><tt class="py-op">(</tt><tt class="py-name">view</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scene_list</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="Push.ActionWithOptionsComponent.ActionWithSettingsComponent.update
+Push.ActionWithOptionsComponent.OptionsComponent.update
+Push.Actions.CreateDefaultTrackComponent.update
+Push.Actions.CreateDeviceComponent.update
+Push.Actions.CreateInstrumentTrackComponent.update
+Push.Actions.DeleteComponent.update
+Push.Actions.SelectComponent.update
+Push.Actions.SelectionDisplayComponent.update
+Push.AutoArmComponent.AutoArmComponent.update
+Push.AutoArmComponent.AutoArmRestoreBehaviour.update
+Push.BackgroundComponent.BackgroundComponent.update
+Push.BrowserComponent.BrowserComponent.update
+Push.ClipControlComponent.AudioClipSettingsComponent.update
+Push.ClipControlComponent.ClipControlComponent.update
+Push.ClipControlComponent.ClipNameComponent.update
+Push.ClipControlComponent.LoopSettingsComponent.update
+Push.ClipControlComponent.MidiClipSettingsComponent.update
+Push.ClipControlComponent.NoClipSettingsComponent.update
+Push.DeviceNavigationComponent.DeviceNavigationComponent.update
+Push.DrumGroupComponent.DrumGroupComponent.update
+Push.HandshakeComponent.HandshakeComponent.update
+Push.InstrumentComponent.InstrumentComponent.update
+Push.InstrumentComponent.InstrumentScalesComponent.update
+Push.InstrumentComponent.ScalesInfoComponent.update
+Push.LoopSelectorComponent.LoopSelectorComponent.update
+Push.M4LInterfaceComponent.M4LInterfaceComponent.update
+Push.MessageBoxComponent.DialogComponent.update
+Push.MessageBoxComponent.MessageBoxComponent.update
+Push.MessageBoxComponent.NotificationComponent.update
+Push.NoteEditorComponent.NoteEditorComponent.update
+Push.PadSensitivity.PadSensitivity.update
+Push.Push.Push.update
+Push.ScrollableList.ListComponent.update
+Push.ScrollableListComponent.ScrollableListComponent.update
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.update
+Push.SessionRecordingComponent.SessionRecordingComponent.update
+Push.SpecialSessionComponent.DuplicateSceneComponent.update
+Push.SpecialTransportComponent.QuantizationSettingsComponent.update
+Push.SpecialTransportComponent.SpecialTransportComponent.update
+Push.StepSeqComponent.StepSeqComponent.update
+Push.TouchStripController.TouchStripControllerComponent.update
+Push.TouchStripController.TouchStripEncoderConnection.update
+Push.UserSettingsComponent.UserComponent.update
+Push.UserSettingsComponent.UserSettingsComponent.update
+Push.ValueComponent.ValueComponentBase.update
+Push.ValueComponent.ValueDisplayComponentBase.update
+Push.ViewControlComponent.ViewControlComponent.update" class="py-name" href="#" onclick="return doclink('link-48', 'update', 'link-42');">update</a></tt><tt class="py-op">,</tt> <tt class="py-string">'selected_scene'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.set_next_track_button"></a><div id="ViewControlComponent.set_next_track_button-def"><a name="L118"></a><tt class="py-lineno">118</tt> <a class="py-toggle" href="#" id="ViewControlComponent.set_next_track_button-toggle" onclick="return toggle('ViewControlComponent.set_next_track_button');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#set_next_track_button">set_next_track_button</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">button</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.set_next_track_button-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.set_next_track_button-expanded"><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_tracks</tt><tt class="py-op">.</tt><tt class="py-name">set_scroll_down_button</tt><tt class="py-op">(</tt><tt class="py-name">button</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.set_prev_track_button"></a><div id="ViewControlComponent.set_prev_track_button-def"><a name="L121"></a><tt class="py-lineno">121</tt> <a class="py-toggle" href="#" id="ViewControlComponent.set_prev_track_button-toggle" onclick="return toggle('ViewControlComponent.set_prev_track_button');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#set_prev_track_button">set_prev_track_button</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">button</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.set_prev_track_button-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.set_prev_track_button-expanded"><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_tracks</tt><tt class="py-op">.</tt><tt class="py-name">set_scroll_up_button</tt><tt class="py-op">(</tt><tt class="py-name">button</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.set_next_scene_button"></a><div id="ViewControlComponent.set_next_scene_button-def"><a name="L124"></a><tt class="py-lineno">124</tt> <a class="py-toggle" href="#" id="ViewControlComponent.set_next_scene_button-toggle" onclick="return toggle('ViewControlComponent.set_next_scene_button');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#set_next_scene_button">set_next_scene_button</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">button</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.set_next_scene_button-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.set_next_scene_button-expanded"><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scenes</tt><tt class="py-op">.</tt><tt class="py-name">set_scroll_down_button</tt><tt class="py-op">(</tt><tt class="py-name">button</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.set_prev_scene_button"></a><div id="ViewControlComponent.set_prev_scene_button-def"><a name="L127"></a><tt class="py-lineno">127</tt> <a class="py-toggle" href="#" id="ViewControlComponent.set_prev_scene_button-toggle" onclick="return toggle('ViewControlComponent.set_prev_scene_button');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#set_prev_scene_button">set_prev_scene_button</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">button</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.set_prev_scene_button-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.set_prev_scene_button-expanded"><a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scenes</tt><tt class="py-op">.</tt><tt class="py-name">set_scroll_up_button</tt><tt class="py-op">(</tt><tt class="py-name">button</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.set_next_scene_list_button"></a><div id="ViewControlComponent.set_next_scene_list_button-def"><a name="L130"></a><tt class="py-lineno">130</tt> <a class="py-toggle" href="#" id="ViewControlComponent.set_next_scene_list_button-toggle" onclick="return toggle('ViewControlComponent.set_next_scene_list_button');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#set_next_scene_list_button">set_next_scene_list_button</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">button</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.set_next_scene_list_button-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.set_next_scene_list_button-expanded"><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scene_list</tt><tt class="py-op">.</tt><tt class="py-name">set_scroll_down_button</tt><tt class="py-op">(</tt><tt class="py-name">button</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.set_prev_scene_list_button"></a><div id="ViewControlComponent.set_prev_scene_list_button-def"><a name="L133"></a><tt class="py-lineno">133</tt> <a class="py-toggle" href="#" id="ViewControlComponent.set_prev_scene_list_button-toggle" onclick="return toggle('ViewControlComponent.set_prev_scene_list_button');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#set_prev_scene_list_button">set_prev_scene_list_button</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">button</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.set_prev_scene_list_button-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.set_prev_scene_list_button-expanded"><a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_scroll_scene_list</tt><tt class="py-op">.</tt><tt class="py-name">set_scroll_up_button</tt><tt class="py-op">(</tt><tt class="py-name">button</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.show_view"></a><div id="ViewControlComponent.show_view-def"><a name="L136"></a><tt class="py-lineno">136</tt> <a class="py-toggle" href="#" id="ViewControlComponent.show_view-toggle" onclick="return toggle('ViewControlComponent.show_view');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#show_view">show_view</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">view</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.show_view-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.show_view-expanded"><a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">view</tt> <tt class="py-keyword">in</tt> <tt id="link-49" class="py-name"><a title="Push.ViewControlComponent.VIEWS" class="py-name" href="#" onclick="return doclink('link-49', 'VIEWS', 'link-4');">VIEWS</a></tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-name">app_view</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">application</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">view</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">view</tt> <tt class="py-op">==</tt> <tt class="py-string">'Detail/DeviceChain'</tt> <tt class="py-keyword">or</tt> <tt class="py-string">'Detail/Clip'</tt><tt class="py-op">:</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">app_view</tt><tt class="py-op">.</tt><tt class="py-name">is_view_visible</tt><tt class="py-op">(</tt><tt class="py-string">'Detail'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                    <tt class="py-name">app_view</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Method Push.ViewControlComponent.ViewControlComponent.show_view()=Push.ViewControlComponent.ViewControlComponent-class.html#show_view"><a title="Push.ViewControlComponent.ViewControlComponent.show_view" class="py-name" href="#" onclick="return doclink('link-50', 'show_view', 'link-50');">show_view</a></tt><tt class="py-op">(</tt><tt class="py-string">'Detail'</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">app_view</tt><tt class="py-op">.</tt><tt class="py-name">is_view_visible</tt><tt class="py-op">(</tt><tt class="py-name">view</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">                <tt class="py-name">app_view</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="Push.ViewControlComponent.ViewControlComponent.show_view" class="py-name" href="#" onclick="return doclink('link-51', 'show_view', 'link-50');">show_view</a></tt><tt class="py-op">(</tt><tt class="py-name">view</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.focus_view"></a><div id="ViewControlComponent.focus_view-def"><a name="L148"></a><tt class="py-lineno">148</tt> <a class="py-toggle" href="#" id="ViewControlComponent.focus_view-toggle" onclick="return toggle('ViewControlComponent.focus_view');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#focus_view">focus_view</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">view</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.focus_view-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.focus_view-expanded"><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">view</tt> <tt class="py-keyword">in</tt> <tt id="link-52" class="py-name"><a title="Push.ViewControlComponent.VIEWS" class="py-name" href="#" onclick="return doclink('link-52', 'VIEWS', 'link-4');">VIEWS</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">            <tt class="py-name">app_view</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">application</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">view</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">view</tt> <tt class="py-op">==</tt> <tt class="py-string">'Detail/DeviceChain'</tt> <tt class="py-keyword">or</tt> <tt class="py-string">'Detail/Clip'</tt><tt class="py-op">:</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">app_view</tt><tt class="py-op">.</tt><tt class="py-name">is_view_visible</tt><tt class="py-op">(</tt><tt class="py-string">'Detail'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">                    <tt class="py-name">app_view</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="Push.ViewControlComponent.ViewControlComponent.show_view" class="py-name" href="#" onclick="return doclink('link-53', 'show_view', 'link-50');">show_view</a></tt><tt class="py-op">(</tt><tt class="py-string">'Detail'</tt><tt class="py-op">)</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">            <tt class="py-name">app_view</tt><tt class="py-op">.</tt><tt class="py-name">is_view_visible</tt><tt class="py-op">(</tt><tt class="py-name">view</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">app_view</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Method Push.ViewControlComponent.ViewControlComponent.focus_view()=Push.ViewControlComponent.ViewControlComponent-class.html#focus_view"><a title="Push.ViewControlComponent.ViewControlComponent.focus_view" class="py-name" href="#" onclick="return doclink('link-54', 'focus_view', 'link-54');">focus_view</a></tt><tt class="py-op">(</tt><tt class="py-name">view</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"> </tt>
+<a name="ViewControlComponent.update"></a><div id="ViewControlComponent.update-def"><a name="L157"></a><tt class="py-lineno">157</tt> <a class="py-toggle" href="#" id="ViewControlComponent.update-toggle" onclick="return toggle('ViewControlComponent.update');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.ViewControlComponent.ViewControlComponent-class.html#update">update</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ViewControlComponent.update-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ViewControlComponent.update-expanded"><a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 19:32:49 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

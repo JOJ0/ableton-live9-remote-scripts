@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>_Framework.SceneComponent.SceneComponent</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="_Framework-module.html">Package&nbsp;_Framework</a> ::
+        <a href="_Framework.SceneComponent-module.html">Module&nbsp;SceneComponent</a> ::
+        Class&nbsp;SceneComponent
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="_Framework.SceneComponent.SceneComponent-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SceneComponent</h1><p class="nomargin-top"><span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+                         object --+                    
+                                  |                    
+      <a href="_Framework.Disconnectable.Disconnectable-class.html">Disconnectable.Disconnectable</a> --+                
+                                      |                
+  <a href="_Framework.Disconnectable.CompoundDisconnectable-class.html">Disconnectable.CompoundDisconnectable</a> --+            
+                                          |            
+                    <a href="_Framework.SubjectSlot.SlotManager-class.html">SubjectSlot.SlotManager</a> --+        
+                                              |        
+                             object --+       |        
+                                      |       |        
+          <a href="_Framework.Disconnectable.Disconnectable-class.html">Disconnectable.Disconnectable</a> --+   |        
+                                          |   |        
+                        <a href="_Framework.SubjectSlot.Subject-class.html">SubjectSlot.Subject</a> --+        
+                                              |        
+<a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a> --+    
+                                                  |    
+                <a href="_Framework.CompoundComponent.CompoundComponent-class.html">CompoundComponent.CompoundComponent</a> --+
+                                                      |
+                                                     <strong class="uidshort">SceneComponent</strong>
+</pre>
+
+<hr />
+<p>Class representing a scene in Live</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.SubjectSlot.Subject-class.html">SubjectSlot.Subject</a></code></b>:
+      <code><a href="_Framework.SubjectSlot.SubjectMeta-class.html">__metaclass__</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SceneComponent.SceneComponent-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">num_slots</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">tracks_to_use_callback</span>=<span class="summary-sig-default">nop</span>,
+        <span class="summary-sig-arg">*a</span>,
+        <span class="summary-sig-arg">**k</span>)</span><br />
+      x.__init__(...) initializes x; see help(type(x)) for signature</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SceneComponent.SceneComponent-class.html#disconnect" class="summary-sig-name">disconnect</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.disconnect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SceneComponent.SceneComponent-class.html#on_track_list_changed" class="summary-sig-name">on_track_list_changed</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Called by the control surface if tracks are added/removed, to be 
+      overridden</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.on_track_list_changed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_scene"></a><span class="summary-sig-name">set_scene</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scene</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.set_scene">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_launch_button"></a><span class="summary-sig-name">set_launch_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.set_launch_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_select_button"></a><span class="summary-sig-name">set_select_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.set_select_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_delete_button"></a><span class="summary-sig-name">set_delete_button</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">button</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.set_delete_button">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_track_offset"></a><span class="summary-sig-name">set_track_offset</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">offset</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.set_track_offset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_triggered_value"></a><span class="summary-sig-name">set_triggered_value</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.set_triggered_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="clip_slot"></a><span class="summary-sig-name">clip_slot</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">index</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.clip_slot">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="_Framework.SceneComponent.SceneComponent-class.html#update" class="summary-sig-name">update</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.update">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_launch_value"></a><span class="summary-sig-name">_launch_value</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent._launch_value">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_do_select_scene"></a><span class="summary-sig-name">_do_select_scene</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scene</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent._do_select_scene">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_do_delete_scene"></a><span class="summary-sig-name">_do_delete_scene</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scene</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent._do_delete_scene">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_on_is_triggered_changed"></a><span class="summary-sig-name">_on_is_triggered_changed</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent._on_is_triggered_changed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_create_clip_slot"></a><span class="summary-sig-name">_create_clip_slot</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent._create_clip_slot">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html">CompoundComponent.CompoundComponent</a></code></b>:
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#has_component">has_component</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#register_component">register_component</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#register_components">register_components</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#set_allow_update">set_allow_update</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#set_enabled">set_enabled</a></code>,
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#update_all">update_all</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html">CompoundComponent.CompoundComponent</a></code></b> (private):
+      <code><a href="_Framework.CompoundComponent.CompoundComponent-class.html#_set_enabled_recursive" onclick="show_private();">_set_enabled_recursive</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b>:
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#application">application</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#is_enabled">is_enabled</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_enabled_changed">on_enabled_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_scene_list_changed">on_scene_list_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_selected_scene_changed">on_selected_scene_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_selected_track_changed">on_selected_track_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#song">song</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b> (private):
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_get_layer" onclick="show_private();">_get_layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_internal_on_enabled_changed" onclick="show_private();">_internal_on_enabled_changed</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_register_timer_callback" onclick="show_private();">_register_timer_callback</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_set_layer" onclick="show_private();">_set_layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_tasks" onclick="show_private();">_tasks</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_unregister_timer_callback" onclick="show_private();">_unregister_timer_callback</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_update_is_enabled" onclick="show_private();">_update_is_enabled</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.SubjectSlot.SlotManager-class.html">SubjectSlot.SlotManager</a></code></b>:
+      <code><a href="_Framework.SubjectSlot.SlotManager-class.html#register_slot">register_slot</a></code>,
+      <code><a href="_Framework.SubjectSlot.SlotManager-class.html#register_slot_manager">register_slot_manager</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html">Disconnectable.CompoundDisconnectable</a></code></b>:
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#disconnect_disconnectable">disconnect_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#find_disconnectable">find_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#has_disconnectable">has_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#register_disconnectable">register_disconnectable</a></code>,
+      <code><a href="_Framework.Disconnectable.CompoundDisconnectable-class.html#unregister_disconnectable">unregister_disconnectable</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="clip_slot_component_type"></a><span class="summary-name">clip_slot_component_type</span> = <code title="ClipSlotComponent">ClipSlotComponent</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b>:
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#canonical_parent">canonical_parent</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#is_private">is_private</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#layer">layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#name">name</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html">ControlSurfaceComponent.ControlSurfaceComponent</a></code></b> (private):
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_has_task_group" onclick="show_private();">_has_task_group</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_layer" onclick="show_private();">_layer</a></code>,
+      <code><a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#_show_msg_callback" onclick="show_private();">_show_msg_callback</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">num_slots</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">tracks_to_use_callback</span>=<span class="sig-default">nop</span>,
+        <span class="sig-arg">*a</span>,
+        <span class="sig-arg">**k</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="disconnect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">disconnect</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.disconnect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.Disconnectable.Disconnectable-class.html#disconnect">Disconnectable.Disconnectable.disconnect</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="on_track_list_changed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">on_track_list_changed</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.on_track_list_changed">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Called by the control surface if tracks are added/removed, to be 
+  overridden</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#on_track_list_changed">ControlSurfaceComponent.ControlSurfaceComponent.on_track_list_changed</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="update"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="_Framework.SceneComponent-pysrc.html#SceneComponent.update">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#update">ControlSurfaceComponent.ControlSurfaceComponent.update</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 18:53:32 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

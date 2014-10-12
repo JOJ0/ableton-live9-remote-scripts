@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Push.Sysex</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="Push-module.html">Package&nbsp;Push</a> ::
+        Module&nbsp;Sysex
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="Push.Sysex-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="Push.Sysex-module.html">Module Push.Sysex</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/Push/Sysex.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable Push.Sysex.START=Push.Sysex-module.html#START"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-0', 'START', 'link-0');">START</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">240</tt><tt class="py-op">,</tt> <tt class="py-number">71</tt><tt class="py-op">,</tt> <tt class="py-number">127</tt><tt class="py-op">,</tt> <tt class="py-number">21</tt><tt class="py-op">)</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable Push.Sysex.CLEAR_LINE1=Push.Sysex-module.html#CLEAR_LINE1"><a title="Push.Sysex.CLEAR_LINE1" class="py-name" href="#" onclick="return doclink('link-1', 'CLEAR_LINE1', 'link-1');">CLEAR_LINE1</a></tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-2', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">28</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable Push.Sysex.CLEAR_LINE2=Push.Sysex-module.html#CLEAR_LINE2"><a title="Push.Sysex.CLEAR_LINE2" class="py-name" href="#" onclick="return doclink('link-3', 'CLEAR_LINE2', 'link-3');">CLEAR_LINE2</a></tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-4', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">29</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt id="link-5" class="py-name" targets="Variable Push.Sysex.CLEAR_LINE3=Push.Sysex-module.html#CLEAR_LINE3"><a title="Push.Sysex.CLEAR_LINE3" class="py-name" href="#" onclick="return doclink('link-5', 'CLEAR_LINE3', 'link-5');">CLEAR_LINE3</a></tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-6', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">30</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt id="link-7" class="py-name" targets="Variable Push.Sysex.CLEAR_LINE4=Push.Sysex-module.html#CLEAR_LINE4"><a title="Push.Sysex.CLEAR_LINE4" class="py-name" href="#" onclick="return doclink('link-7', 'CLEAR_LINE4', 'link-7');">CLEAR_LINE4</a></tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-8', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">31</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt id="link-9" class="py-name" targets="Variable Push.Sysex.WRITE_LINE1=Push.Sysex-module.html#WRITE_LINE1"><a title="Push.Sysex.WRITE_LINE1" class="py-name" href="#" onclick="return doclink('link-9', 'WRITE_LINE1', 'link-9');">WRITE_LINE1</a></tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-10', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">24</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">69</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt id="link-11" class="py-name" targets="Variable Push.Sysex.WRITE_LINE2=Push.Sysex-module.html#WRITE_LINE2"><a title="Push.Sysex.WRITE_LINE2" class="py-name" href="#" onclick="return doclink('link-11', 'WRITE_LINE2', 'link-11');">WRITE_LINE2</a></tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-12', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">25</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">69</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt id="link-13" class="py-name" targets="Variable Push.Sysex.WRITE_LINE3=Push.Sysex-module.html#WRITE_LINE3"><a title="Push.Sysex.WRITE_LINE3" class="py-name" href="#" onclick="return doclink('link-13', 'WRITE_LINE3', 'link-13');">WRITE_LINE3</a></tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-14', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">26</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">69</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt id="link-15" class="py-name" targets="Variable Push.Sysex.WRITE_LINE4=Push.Sysex-module.html#WRITE_LINE4"><a title="Push.Sysex.WRITE_LINE4" class="py-name" href="#" onclick="return doclink('link-15', 'WRITE_LINE4', 'link-15');">WRITE_LINE4</a></tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-16', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">27</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">69</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt id="link-17" class="py-name" targets="Variable Push.Sysex.SET_AFTERTOUCH_MODE=Push.Sysex-module.html#SET_AFTERTOUCH_MODE"><a title="Push.Sysex.SET_AFTERTOUCH_MODE" class="py-name" href="#" onclick="return doclink('link-17', 'SET_AFTERTOUCH_MODE', 'link-17');">SET_AFTERTOUCH_MODE</a></tt> <tt class="py-op">=</tt> <tt id="link-18" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-18', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">92</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt id="link-19" class="py-name" targets="Variable Push.Sysex.CONTRAST_PREFIX=Push.Sysex-module.html#CONTRAST_PREFIX"><a title="Push.Sysex.CONTRAST_PREFIX" class="py-name" href="#" onclick="return doclink('link-19', 'CONTRAST_PREFIX', 'link-19');">CONTRAST_PREFIX</a></tt> <tt class="py-op">=</tt> <tt id="link-20" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-20', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">122</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt id="link-21" class="py-name" targets="Variable Push.Sysex.CONTRAST_ENQUIRY=Push.Sysex-module.html#CONTRAST_ENQUIRY"><a title="Push.Sysex.CONTRAST_ENQUIRY" class="py-name" href="#" onclick="return doclink('link-21', 'CONTRAST_ENQUIRY', 'link-21');">CONTRAST_ENQUIRY</a></tt> <tt class="py-op">=</tt> <tt id="link-22" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-22', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">122</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt id="link-23" class="py-name" targets="Variable Push.Sysex.BRIGHTNESS_PREFIX=Push.Sysex-module.html#BRIGHTNESS_PREFIX"><a title="Push.Sysex.BRIGHTNESS_PREFIX" class="py-name" href="#" onclick="return doclink('link-23', 'BRIGHTNESS_PREFIX', 'link-23');">BRIGHTNESS_PREFIX</a></tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-24', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">124</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt id="link-25" class="py-name" targets="Variable Push.Sysex.BRIGHTNESS_ENQUIRY=Push.Sysex-module.html#BRIGHTNESS_ENQUIRY"><a title="Push.Sysex.BRIGHTNESS_ENQUIRY" class="py-name" href="#" onclick="return doclink('link-25', 'BRIGHTNESS_ENQUIRY', 'link-25');">BRIGHTNESS_ENQUIRY</a></tt> <tt class="py-op">=</tt> <tt id="link-26" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-26', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">124</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt id="link-27" class="py-name" targets="Variable Push.Sysex.PAD_SENSITIVITY_PREFIX=Push.Sysex-module.html#PAD_SENSITIVITY_PREFIX"><a title="Push.Sysex.PAD_SENSITIVITY_PREFIX" class="py-name" href="#" onclick="return doclink('link-27', 'PAD_SENSITIVITY_PREFIX', 'link-27');">PAD_SENSITIVITY_PREFIX</a></tt> <tt class="py-op">=</tt> <tt id="link-28" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-28', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">93</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">32</tt><tt class="py-op">)</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt id="link-29" class="py-name" targets="Variable Push.Sysex.PAD_SENSITIVITY_ENQUIRY=Push.Sysex-module.html#PAD_SENSITIVITY_ENQUIRY"><a title="Push.Sysex.PAD_SENSITIVITY_ENQUIRY" class="py-name" href="#" onclick="return doclink('link-29', 'PAD_SENSITIVITY_ENQUIRY', 'link-29');">PAD_SENSITIVITY_ENQUIRY</a></tt> <tt class="py-op">=</tt> <tt id="link-30" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-30', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">90</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt id="link-31" class="py-name" targets="Variable Push.Sysex.MODE_CHANGE=Push.Sysex-module.html#MODE_CHANGE"><a title="Push.Sysex.MODE_CHANGE" class="py-name" href="#" onclick="return doclink('link-31', 'MODE_CHANGE', 'link-31');">MODE_CHANGE</a></tt> <tt class="py-op">=</tt> <tt id="link-32" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-32', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">98</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt id="link-33" class="py-name" targets="Variable Push.Sysex.USER_MODE=Push.Sysex-module.html#USER_MODE"><a title="Push.Sysex.USER_MODE" class="py-name" href="#" onclick="return doclink('link-33', 'USER_MODE', 'link-33');">USER_MODE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt id="link-34" class="py-name" targets="Variable Push.Sysex.LIVE_MODE=Push.Sysex-module.html#LIVE_MODE"><a title="Push.Sysex.LIVE_MODE" class="py-name" href="#" onclick="return doclink('link-34', 'LIVE_MODE', 'link-34');">LIVE_MODE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt id="link-35" class="py-name" targets="Variable Push.Sysex.WELCOME_MESSAGE=Push.Sysex-module.html#WELCOME_MESSAGE"><a title="Push.Sysex.WELCOME_MESSAGE" class="py-name" href="#" onclick="return doclink('link-35', 'WELCOME_MESSAGE', 'link-35');">WELCOME_MESSAGE</a></tt> <tt class="py-op">=</tt> <tt id="link-36" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-36', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt id="link-37" class="py-name" targets="Variable Push.Sysex.GOOD_BYE_MESSAGE=Push.Sysex-module.html#GOOD_BYE_MESSAGE"><a title="Push.Sysex.GOOD_BYE_MESSAGE" class="py-name" href="#" onclick="return doclink('link-37', 'GOOD_BYE_MESSAGE', 'link-37');">GOOD_BYE_MESSAGE</a></tt> <tt class="py-op">=</tt> <tt id="link-38" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-38', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt id="link-39" class="py-name" targets="Variable Push.Sysex.IDENTITY_PREFIX=Push.Sysex-module.html#IDENTITY_PREFIX"><a title="Push.Sysex.IDENTITY_PREFIX" class="py-name" href="#" onclick="return doclink('link-39', 'IDENTITY_PREFIX', 'link-39');">IDENTITY_PREFIX</a></tt> <tt class="py-op">=</tt> <tt id="link-40" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-40', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">6</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt id="link-41" class="py-name" targets="Variable Push.Sysex.IDENTITY_ENQUIRY=Push.Sysex-module.html#IDENTITY_ENQUIRY"><a title="Push.Sysex.IDENTITY_ENQUIRY" class="py-name" href="#" onclick="return doclink('link-41', 'IDENTITY_ENQUIRY', 'link-41');">IDENTITY_ENQUIRY</a></tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-42', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">6</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt id="link-43" class="py-name" targets="Variable Push.Sysex.DONGLE_PREFIX=Push.Sysex-module.html#DONGLE_PREFIX"><a title="Push.Sysex.DONGLE_PREFIX" class="py-name" href="#" onclick="return doclink('link-43', 'DONGLE_PREFIX', 'link-43');">DONGLE_PREFIX</a></tt> <tt class="py-op">=</tt> <tt id="link-44" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-44', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="make_presentation_message"></a><div id="make_presentation_message-def"><a name="L27"></a><tt class="py-lineno">27</tt> <a class="py-toggle" href="#" id="make_presentation_message-toggle" onclick="return toggle('make_presentation_message');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.Sysex-module.html#make_presentation_message">make_presentation_message</a><tt class="py-op">(</tt><tt class="py-param">application</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="make_presentation_message-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="make_presentation_message-expanded"><a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-45" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-45', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">96</tt><tt class="py-op">,</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">     <tt class="py-number">0</tt><tt class="py-op">,</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">     <tt class="py-number">4</tt><tt class="py-op">,</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">     <tt class="py-number">65</tt><tt class="py-op">,</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">     <tt class="py-name">application</tt><tt class="py-op">.</tt><tt class="py-name">get_major_version</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">     <tt class="py-name">application</tt><tt class="py-op">.</tt><tt class="py-name">get_minor_version</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">     <tt class="py-name">application</tt><tt class="py-op">.</tt><tt class="py-name">get_bugfix_version</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">     <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt id="link-46" class="py-name"><a title="Push.Sysex.IDENTITY_ENQUIRY" class="py-name" href="#" onclick="return doclink('link-46', 'IDENTITY_ENQUIRY', 'link-41');">IDENTITY_ENQUIRY</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">240</tt><tt class="py-op">,</tt> <tt class="py-number">126</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">6</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">247</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt id="link-47" class="py-name"><a title="Push.Sysex.IDENTITY_PREFIX" class="py-name" href="#" onclick="return doclink('link-47', 'IDENTITY_PREFIX', 'link-39');">IDENTITY_PREFIX</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">240</tt><tt class="py-op">,</tt> <tt class="py-number">126</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">6</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-number">71</tt><tt class="py-op">,</tt> <tt class="py-number">21</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">25</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt id="link-48" class="py-name" targets="Variable Push.Sysex.DONGLE_ENQUIRY_PREFIX=Push.Sysex-module.html#DONGLE_ENQUIRY_PREFIX"><a title="Push.Sysex.DONGLE_ENQUIRY_PREFIX" class="py-name" href="#" onclick="return doclink('link-48', 'DONGLE_ENQUIRY_PREFIX', 'link-48');">DONGLE_ENQUIRY_PREFIX</a></tt> <tt class="py-op">=</tt> <tt id="link-49" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-49', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt id="link-50" class="py-name"><a title="Push.Sysex.DONGLE_PREFIX" class="py-name" href="#" onclick="return doclink('link-50', 'DONGLE_PREFIX', 'link-43');">DONGLE_PREFIX</a></tt> <tt class="py-op">=</tt> <tt id="link-51" class="py-name"><a title="Push.Sysex.START" class="py-name" href="#" onclick="return doclink('link-51', 'START', 'link-0');">START</a></tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">81</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 19:32:47 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

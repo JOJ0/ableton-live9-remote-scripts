@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Push.MessageBoxComponent</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="Push-module.html">Package&nbsp;Push</a> ::
+        Module&nbsp;MessageBoxComponent
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="Push.MessageBoxComponent-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="Push.MessageBoxComponent-module.html">Module Push.MessageBoxComponent</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/Push/MessageBoxComponent.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">functools</tt> <tt class="py-keyword">import</tt> <tt class="py-name">partial</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">Dependency</tt> <tt class="py-keyword">import</tt> <tt class="py-name">dependency</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">CompoundComponent</tt> <tt class="py-keyword">import</tt> <tt class="py-name">CompoundComponent</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">DisplayDataSource</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DisplayDataSource</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">SubjectSlot</tt> <tt class="py-keyword">import</tt> <tt class="py-name">subject_slot</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">Util</tt> <tt class="py-keyword">import</tt> <tt class="py-name">forward_property</tt><tt class="py-op">,</tt> <tt class="py-name">const</tt><tt class="py-op">,</tt> <tt class="py-name">nop</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Task</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">ControlElement</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ControlElement</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">Layer</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Layer</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module Push.BackgroundComponent=Push.BackgroundComponent-module.html,Class Push.BackgroundComponent.BackgroundComponent=Push.BackgroundComponent.BackgroundComponent-class.html"><a title="Push.BackgroundComponent
+Push.BackgroundComponent.BackgroundComponent" class="py-name" href="#" onclick="return doclink('link-0', 'BackgroundComponent', 'link-0');">BackgroundComponent</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name"><a title="Push.BackgroundComponent
+Push.BackgroundComponent.BackgroundComponent" class="py-name" href="#" onclick="return doclink('link-1', 'BackgroundComponent', 'link-0');">BackgroundComponent</a></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module Push.consts=Push.consts-module.html"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-2', 'consts', 'link-2');">consts</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class Push.consts.MessageBoxText=Push.consts.MessageBoxText-class.html"><a title="Push.consts.MessageBoxText" class="py-name" href="#" onclick="return doclink('link-3', 'MessageBoxText', 'link-3');">MessageBoxText</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Variable Push.consts.DISPLAY_LENGTH=Push.consts-module.html#DISPLAY_LENGTH"><a title="Push.consts.DISPLAY_LENGTH" class="py-name" href="#" onclick="return doclink('link-4', 'DISPLAY_LENGTH', 'link-4');">DISPLAY_LENGTH</a></tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-5" class="py-name"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-5', 'consts', 'link-2');">consts</a></tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_Framework</tt><tt class="py-op">.</tt><tt class="py-name">CompoundElement</tt> <tt class="py-keyword">import</tt> <tt class="py-name">CompoundElement</tt> </tt>
+<a name="Messenger"></a><div id="Messenger-def"><a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="Messenger-toggle" onclick="return toggle('Messenger');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MessageBoxComponent.Messenger-class.html">Messenger</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Messenger-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Messenger-expanded"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">    Externally provided interface for those components that provide</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring">    global Push feedback.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt id="link-6" class="py-name" targets="Method Push.MessageBoxComponent.DialogComponent.expect_dialog()=Push.MessageBoxComponent.DialogComponent-class.html#expect_dialog,Variable Push.MessageBoxComponent.Messenger.expect_dialog=Push.MessageBoxComponent.Messenger-class.html#expect_dialog,Method Push.Push.Push.expect_dialog()=Push.Push.Push-class.html#expect_dialog"><a title="Push.MessageBoxComponent.DialogComponent.expect_dialog
+Push.MessageBoxComponent.Messenger.expect_dialog
+Push.Push.Push.expect_dialog" class="py-name" href="#" onclick="return doclink('link-6', 'expect_dialog', 'link-6');">expect_dialog</a></tt> <tt class="py-op">=</tt> <tt class="py-name">dependency</tt><tt class="py-op">(</tt><tt id="link-7" class="py-name"><a title="Push.MessageBoxComponent.DialogComponent.expect_dialog
+Push.MessageBoxComponent.Messenger.expect_dialog
+Push.Push.Push.expect_dialog" class="py-name" href="#" onclick="return doclink('link-7', 'expect_dialog', 'link-6');">expect_dialog</a></tt><tt class="py-op">=</tt><tt class="py-name">const</tt><tt class="py-op">(</tt><tt class="py-name">nop</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Variable Push.MessageBoxComponent.Messenger.show_notification=Push.MessageBoxComponent.Messenger-class.html#show_notification,Method Push.MessageBoxComponent.NotificationComponent.show_notification()=Push.MessageBoxComponent.NotificationComponent-class.html#show_notification,Method Push.Push.Push.show_notification()=Push.Push.Push-class.html#show_notification"><a title="Push.MessageBoxComponent.Messenger.show_notification
+Push.MessageBoxComponent.NotificationComponent.show_notification
+Push.Push.Push.show_notification" class="py-name" href="#" onclick="return doclink('link-8', 'show_notification', 'link-8');">show_notification</a></tt> <tt class="py-op">=</tt> <tt class="py-name">dependency</tt><tt class="py-op">(</tt><tt id="link-9" class="py-name"><a title="Push.MessageBoxComponent.Messenger.show_notification
+Push.MessageBoxComponent.NotificationComponent.show_notification
+Push.Push.Push.show_notification" class="py-name" href="#" onclick="return doclink('link-9', 'show_notification', 'link-8');">show_notification</a></tt><tt class="py-op">=</tt><tt class="py-name">const</tt><tt class="py-op">(</tt><tt class="py-name">nop</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent"></a><div id="MessageBoxComponent-def"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="MessageBoxComponent-toggle" onclick="return toggle('MessageBoxComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html">MessageBoxComponent</a><tt class="py-op">(</tt><tt class="py-base-class">BackgroundComponent</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MessageBoxComponent-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    Component showing a temporary message in the display</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt id="link-10" class="py-name" targets="Variable Push.ActionWithOptionsComponent.OptionsComponent.__subject_events__=Push.ActionWithOptionsComponent.OptionsComponent-class.html#__subject_events__,Variable Push.ActionWithOptionsComponent.ToggleWithOptionsComponent.__subject_events__=Push.ActionWithOptionsComponent.ToggleWithOptionsComponent-class.html#__subject_events__,Variable Push.BrowserComponent.BrowserComponent.__subject_events__=Push.BrowserComponent.BrowserComponent-class.html#__subject_events__,Variable Push.BrowserComponent.BrowserModel.__subject_events__=Push.BrowserComponent.BrowserModel-class.html#__subject_events__,Variable Push.DrumGroupComponent.DrumGroupComponent.__subject_events__=Push.DrumGroupComponent.DrumGroupComponent-class.html#__subject_events__,Variable Push.HandshakeComponent.HandshakeComponent.__subject_events__=Push.HandshakeComponent.HandshakeComponent-class.html#__subject_events__,Variable Push.InstrumentComponent.InstrumentScalesComponent.__subject_events__=Push.InstrumentComponent.InstrumentScalesComponent-class.html#__subject_events__,Variable Push.LoopSelectorComponent.Paginator.__subject_events__=Push.LoopSelectorComponent.Paginator-class.html#__subject_events__,Variable Push.MessageBoxComponent.MessageBoxComponent.__subject_events__=Push.MessageBoxComponent.MessageBoxComponent-class.html#__subject_events__,Variable Push.NavigationNode.NavigationNode.__subject_events__=Push.NavigationNode.NavigationNode-class.html#__subject_events__,Variable Push.ScrollableList.ListComponent.__subject_events__=Push.ScrollableList.ListComponent-class.html#__subject_events__,Variable Push.ScrollableList.ScrollableList.__subject_events__=Push.ScrollableList.ScrollableList-class.html#__subject_events__,Variable Push.ScrollableListComponent.ScrollableListComponent.__subject_events__=Push.ScrollableListComponent.ScrollableListComponent-class.html#__subject_events__,Variable Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__subject_events__=Push.ScrollableListComponent.ScrollableListWithTogglesComponent-class.html#__subject_events__,Variable Push.Setting.Setting.__subject_events__=Push.Setting.Setting-class.html#__subject_events__,Variable Push.TouchEncoderElement.TouchEncoderElement.__subject_events__=Push.TouchEncoderElement.TouchEncoderElement-class.html#__subject_events__,Variable Push.UserSettingsComponent.UserComponent.__subject_events__=Push.UserSettingsComponent.UserComponent-class.html#__subject_events__"><a title="Push.ActionWithOptionsComponent.OptionsComponent.__subject_events__
+Push.ActionWithOptionsComponent.ToggleWithOptionsComponent.__subject_events__
+Push.BrowserComponent.BrowserComponent.__subject_events__
+Push.BrowserComponent.BrowserModel.__subject_events__
+Push.DrumGroupComponent.DrumGroupComponent.__subject_events__
+Push.HandshakeComponent.HandshakeComponent.__subject_events__
+Push.InstrumentComponent.InstrumentScalesComponent.__subject_events__
+Push.LoopSelectorComponent.Paginator.__subject_events__
+Push.MessageBoxComponent.MessageBoxComponent.__subject_events__
+Push.NavigationNode.NavigationNode.__subject_events__
+Push.ScrollableList.ListComponent.__subject_events__
+Push.ScrollableList.ScrollableList.__subject_events__
+Push.ScrollableListComponent.ScrollableListComponent.__subject_events__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__subject_events__
+Push.Setting.Setting.__subject_events__
+Push.TouchEncoderElement.TouchEncoderElement.__subject_events__
+Push.UserSettingsComponent.UserComponent.__subject_events__" class="py-name" href="#" onclick="return doclink('link-10', '__subject_events__', 'link-10');">__subject_events__</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">'cancel'</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Variable Push.MessageBoxComponent.MessageBoxComponent._cancel_button_index=Push.MessageBoxComponent.MessageBoxComponent-class.html#_cancel_button_index"><a title="Push.MessageBoxComponent.MessageBoxComponent._cancel_button_index" class="py-name" href="#" onclick="return doclink('link-11', '_cancel_button_index', 'link-11');">_cancel_button_index</a></tt> <tt class="py-op">=</tt> <tt class="py-number">7</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt id="link-12" class="py-name" targets="Variable Push.MessageBoxComponent.MessageBoxComponent.num_lines=Push.MessageBoxComponent.MessageBoxComponent-class.html#num_lines"><a title="Push.MessageBoxComponent.MessageBoxComponent.num_lines" class="py-name" href="#" onclick="return doclink('link-12', 'num_lines', 'link-12');">num_lines</a></tt> <tt class="py-op">=</tt> <tt class="py-number">4</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent.__init__"></a><div id="MessageBoxComponent.__init__-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="MessageBoxComponent.__init__-toggle" onclick="return toggle('MessageBoxComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent.__init__-expanded"><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-13" class="py-name" targets="Module Push.MessageBoxComponent=Push.MessageBoxComponent-module.html,Class Push.MessageBoxComponent.MessageBoxComponent=Push.MessageBoxComponent.MessageBoxComponent-class.html"><a title="Push.MessageBoxComponent
+Push.MessageBoxComponent.MessageBoxComponent" class="py-name" href="#" onclick="return doclink('link-13', 'MessageBoxComponent', 'link-13');">MessageBoxComponent</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method Push.AccentComponent.AccentComponent.__init__()=Push.AccentComponent.AccentComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithOptionsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__()=Push.ActionWithOptionsComponent.ActionWithSettingsComponent-class.html#__init__,Method Push.ActionWithOptionsComponent.OptionsComponent.__init__()=Push.ActionWithOptionsComponent.OptionsComponent-class.html#__init__,Method Push.Actions.CreateDefaultTrackComponent.__init__()=Push.Actions.CreateDefaultTrackComponent-class.html#__init__,Method Push.Actions.CreateDeviceComponent.__init__()=Push.Actions.CreateDeviceComponent-class.html#__init__,Method Push.Actions.CreateInstrumentTrackComponent.__init__()=Push.Actions.CreateInstrumentTrackComponent-class.html#__init__,Method Push.Actions.DeleteComponent.__init__()=Push.Actions.DeleteComponent-class.html#__init__,Method Push.Actions.DuplicateLoopComponent.__init__()=Push.Actions.DuplicateLoopComponent-class.html#__init__,Method Push.Actions.SelectComponent.__init__()=Push.Actions.SelectComponent-class.html#__init__,Method Push.Actions.SelectionDisplayComponent.__init__()=Push.Actions.SelectionDisplayComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmComponent.__init__()=Push.AutoArmComponent.AutoArmComponent-class.html#__init__,Method Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__()=Push.AutoArmComponent.AutoArmRestoreBehaviour-class.html#__init__,Method Push.BackgroundComponent.BackgroundComponent.__init__()=Push.BackgroundComponent.BackgroundComponent-class.html#__init__,Method Push.BackgroundComponent.ModifierBackgroundComponent.__init__()=Push.BackgroundComponent.ModifierBackgroundComponent-class.html#__init__,Method Push.BrowserComponent.BrowserComponent.__init__()=Push.BrowserComponent.BrowserComponent-class.html#__init__,Method Push.BrowserComponent.BrowserList.__init__()=Push.BrowserComponent.BrowserList-class.html#__init__,Method Push.BrowserComponent.BrowserModel.__init__()=Push.BrowserComponent.BrowserModel-class.html#__init__,Method Push.BrowserComponent.BrowserQuery.__init__()=Push.BrowserComponent.BrowserQuery-class.html#__init__,Method Push.BrowserComponent.FullBrowserModel.__init__()=Push.BrowserComponent.FullBrowserModel-class.html#__init__,Method Push.BrowserComponent.PathBrowserQuery.__init__()=Push.BrowserComponent.PathBrowserQuery-class.html#__init__,Method Push.BrowserComponent.QueryingBrowserModel.__init__()=Push.BrowserComponent.QueryingBrowserModel-class.html#__init__,Method Push.BrowserComponent.SourceBrowserQuery.__init__()=Push.BrowserComponent.SourceBrowserQuery-class.html#__init__,Method Push.BrowserComponent.TagBrowserQuery.__init__()=Push.BrowserComponent.TagBrowserQuery-class.html#__init__,Method Push.BrowserComponent.VirtualBrowserItem.__init__()=Push.BrowserComponent.VirtualBrowserItem-class.html#__init__,Method Push.BrowserModes.BrowserAddEffectMode.__init__()=Push.BrowserModes.BrowserAddEffectMode-class.html#__init__,Method Push.BrowserModes.BrowserHotswapMode.__init__()=Push.BrowserModes.BrowserHotswapMode-class.html#__init__,Method Push.ClipControlComponent.AudioClipSettingsComponent.__init__()=Push.ClipControlComponent.AudioClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.ClipControlComponent.__init__()=Push.ClipControlComponent.ClipControlComponent-class.html#__init__,Method Push.ClipControlComponent.ClipNameComponent.__init__()=Push.ClipControlComponent.ClipNameComponent-class.html#__init__,Method Push.ClipControlComponent.LoopSettingsComponent.__init__()=Push.ClipControlComponent.LoopSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.MidiClipSettingsComponent.__init__()=Push.ClipControlComponent.MidiClipSettingsComponent-class.html#__init__,Method Push.ClipControlComponent.NoClipSettingsComponent.__init__()=Push.ClipControlComponent.NoClipSettingsComponent-class.html#__init__,Method Push.ClipCreator.ClipCreator.__init__()=Push.ClipCreator.ClipCreator-class.html#__init__,Method Push.Colors.AnimatedColor.__init__()=Push.Colors.AnimatedColor-class.html#__init__,Method Push.Colors.Blink.__init__()=Push.Colors.Blink-class.html#__init__,Method Push.Colors.Color.__init__()=Push.Colors.Color-class.html#__init__,Method Push.Colors.FallbackColor.__init__()=Push.Colors.FallbackColor-class.html#__init__,Method Push.Colors.Pulse.__init__()=Push.Colors.Pulse-class.html#__init__,Method Push.Colors.RgbColor.__init__()=Push.Colors.RgbColor-class.html#__init__,Method Push.ComboElement.ComboElement.__init__()=Push.ComboElement.ComboElement-class.html#__init__,Method Push.ComboElement.WrapperElement.__init__()=Push.ComboElement.WrapperElement-class.html#__init__,Method Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#__init__,Method Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__()=Push.DeviceNavigationComponent.DeviceNavigationComponent-class.html#__init__,Method Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__()=Push.DisplayingDeviceComponent.DisplayingDeviceComponent-class.html#__init__,Method Push.DrumGroupComponent.DrumGroupComponent.__init__()=Push.DrumGroupComponent.DrumGroupComponent-class.html#__init__,Method Push.HandshakeComponent.HandshakeComponent.__init__()=Push.HandshakeComponent.HandshakeComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentComponent.__init__()=Push.InstrumentComponent.InstrumentComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentPresetsComponent.__init__()=Push.InstrumentComponent.InstrumentPresetsComponent-class.html#__init__,Method Push.InstrumentComponent.InstrumentScalesComponent.__init__()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#__init__,Method Push.InstrumentComponent.ScalesInfoComponent.__init__()=Push.InstrumentComponent.ScalesInfoComponent-class.html#__init__,Method Push.LoopSelectorComponent.LoopSelectorComponent.__init__()=Push.LoopSelectorComponent.LoopSelectorComponent-class.html#__init__,Method Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__()=Push.M4LInterfaceComponent.M4LInterfaceComponent-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.NoteInfo.__init__()=Push.MelodicComponent.MelodicPattern.NoteInfo-class.html#__init__,Method Push.MelodicComponent.MelodicPattern.__init__()=Push.MelodicComponent.MelodicPattern-class.html#__init__,Method Push.MelodicComponent.Modus.__init__()=Push.MelodicComponent.Modus-class.html#__init__,Method Push.MelodicComponent.Scale.__init__()=Push.MelodicComponent.Scale-class.html#__init__,Method Push.MessageBoxComponent.DialogComponent.__init__()=Push.MessageBoxComponent.DialogComponent-class.html#__init__,Method Push.MessageBoxComponent.MessageBoxComponent.__init__()=Push.MessageBoxComponent.MessageBoxComponent-class.html#__init__,Method Push.MessageBoxComponent.NotificationComponent.__init__()=Push.MessageBoxComponent.NotificationComponent-class.html#__init__,Method Push.MessageBoxComponent._CallbackControl.__init__()=Push.MessageBoxComponent._CallbackControl-class.html#__init__,Method Push.NavigationNode.ChainNode.__init__()=Push.NavigationNode.ChainNode-class.html#__init__,Method Push.NavigationNode.ModelNode.__init__()=Push.NavigationNode.ModelNode-class.html#__init__,Method Push.NavigationNode.RackNode.__init__()=Push.NavigationNode.RackNode-class.html#__init__,Method Push.NavigationNode.SimpleDeviceNode.__init__()=Push.NavigationNode.SimpleDeviceNode-class.html#__init__,Method Push.NavigationNode.SongNode.__init__()=Push.NavigationNode.SongNode-class.html#__init__,Method Push.NoteEditorComponent.NoteEditorComponent.__init__()=Push.NoteEditorComponent.NoteEditorComponent-class.html#__init__,Method Push.NoteEditorComponent.TimeStep.__init__()=Push.NoteEditorComponent.TimeStep-class.html#__init__,Method Push.NoteRepeatComponent.NoteRepeatComponent.__init__()=Push.NoteRepeatComponent.NoteRepeatComponent-class.html#__init__,Method Push.OptionalElement.OptionalElement.__init__()=Push.OptionalElement.OptionalElement-class.html#__init__,Method Push.PadSensitivity.PadSensitivity.__init__()=Push.PadSensitivity.PadSensitivity-class.html#__init__,Method Push.Push.Push.__init__()=Push.Push.Push-class.html#__init__,Method Push.ScrollableList.ListComponent.__init__()=Push.ScrollableList.ListComponent-class.html#__init__,Method Push.ScrollableList.ScrollableList.__init__()=Push.ScrollableList.ScrollableList-class.html#__init__,Method Push.ScrollableList.ScrollableListItem.__init__()=Push.ScrollableList.ScrollableListItem-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListComponent.__init__()=Push.ScrollableListComponent.ScrollableListComponent-class.html#__init__,Method Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__()=Push.ScrollableListComponent.ScrollableListWithTogglesComponent-class.html#__init__,Method Push.Selection.L9CSelection.__init__()=Push.Selection.L9CSelection-class.html#__init__,Method Push.SessionRecordingComponent.SessionRecordingComponent.__init__()=Push.SessionRecordingComponent.SessionRecordingComponent-class.html#__init__,Method Push.Setting.EnumerableSetting.__init__()=Push.Setting.EnumerableSetting-class.html#__init__,Method Push.Setting.OnOffSetting.__init__()=Push.Setting.OnOffSetting-class.html#__init__,Method Push.Setting.Setting.__init__()=Push.Setting.Setting-class.html#__init__,Method Push.Skin.Skin.__init__()=Push.Skin.Skin-class.html#__init__,Method Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__()=Push.SpecialChanStripComponent.SpecialChanStripComponent-class.html#__init__,Method Push.SpecialMixerComponent.SpecialMixerComponent.__init__()=Push.SpecialMixerComponent.SpecialMixerComponent-class.html#__init__,Method Push.SpecialSessionComponent.DuplicateSceneComponent.__init__()=Push.SpecialSessionComponent.DuplicateSceneComponent-class.html#__init__,Method Push.SpecialSessionComponent.SpecialSessionComponent.__init__()=Push.SpecialSessionComponent.SpecialSessionComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationComponent.__init__()=Push.SpecialTransportComponent.QuantizationComponent-class.html#__init__,Method Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__()=Push.SpecialTransportComponent.QuantizationSettingsComponent-class.html#__init__,Method Push.SpecialTransportComponent.SpecialTransportComponent.__init__()=Push.SpecialTransportComponent.SpecialTransportComponent-class.html#__init__,Method Push.StepSeqComponent.StepSeqComponent.__init__()=Push.StepSeqComponent.StepSeqComponent-class.html#__init__,Method Push.TouchEncoderElement.TouchEncoderElement.__init__()=Push.TouchEncoderElement.TouchEncoderElement-class.html#__init__,Method Push.TouchStripController.TouchStripControllerComponent.__init__()=Push.TouchStripController.TouchStripControllerComponent-class.html#__init__,Method Push.TouchStripController.TouchStripEncoderConnection.__init__()=Push.TouchStripController.TouchStripEncoderConnection-class.html#__init__,Method Push.TouchStripElement.TouchStripElement.__init__()=Push.TouchStripElement.TouchStripElement-class.html#__init__,Method Push.UserSettingsComponent.UserComponent.__init__()=Push.UserSettingsComponent.UserComponent-class.html#__init__,Method Push.UserSettingsComponent.UserSettingsComponent.__init__()=Push.UserSettingsComponent.UserSettingsComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueComponent.__init__()=Push.ValueComponent.ParameterValueComponent-class.html#__init__,Method Push.ValueComponent.ParameterValueDisplayComponent.__init__()=Push.ValueComponent.ParameterValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueComponent.__init__()=Push.ValueComponent.ValueComponent-class.html#__init__,Method Push.ValueComponent.ValueComponentBase.__init__()=Push.ValueComponent.ValueComponentBase-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponent.__init__()=Push.ValueComponent.ValueDisplayComponent-class.html#__init__,Method Push.ValueComponent.ValueDisplayComponentBase.__init__()=Push.ValueComponent.ValueDisplayComponentBase-class.html#__init__,Method Push.ViewControlComponent.ViewControlComponent.__init__()=Push.ViewControlComponent.ViewControlComponent-class.html#__init__,Method Push.ViewControlComponent._DeltaSongScroller.__init__()=Push.ViewControlComponent._DeltaSongScroller-class.html#__init__"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-14', '__init__', 'link-14');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_current_text</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_can_cancel</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_top_row_buttons</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data_sources</tt> <tt class="py-op">=</tt> <tt class="py-name">map</tt><tt class="py-op">(</tt><tt class="py-name">DisplayDataSource</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-string">''</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> <tt class="py-op">*</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.num_lines" class="py-name" href="#" onclick="return doclink('link-15', 'num_lines', 'link-12');">num_lines</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_notification_display</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">property</tt> </tt>
+<a name="MessageBoxComponent.can_cancel"></a><div id="MessageBoxComponent.can_cancel-def"><a name="L42"></a><tt class="py-lineno"> 42</tt> <a class="py-toggle" href="#" id="MessageBoxComponent.can_cancel-toggle" onclick="return toggle('MessageBoxComponent.can_cancel');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#can_cancel">can_cancel</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent.can_cancel-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent.can_cancel-expanded"><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_can_cancel</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent._set_display_line"></a><div id="MessageBoxComponent._set_display_line-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="MessageBoxComponent._set_display_line-toggle" onclick="return toggle('MessageBoxComponent._set_display_line');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#_set_display_line">_set_display_line</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">n</tt><tt class="py-op">,</tt> <tt class="py-param">display_line</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent._set_display_line-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent._set_display_line-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-16" class="py-name" targets="Variable Push.ScrollableListComponent.ScrollableListComponent.display_line=Push.ScrollableListComponent.ScrollableListComponent-class.html#display_line"><a title="Push.ScrollableListComponent.ScrollableListComponent.display_line" class="py-name" href="#" onclick="return doclink('link-16', 'display_line', 'link-16');">display_line</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt id="link-17" class="py-name"><a title="Push.ScrollableListComponent.ScrollableListComponent.display_line" class="py-name" href="#" onclick="return doclink('link-17', 'display_line', 'link-16');">display_line</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method Push.ScrollableList.ListComponent.set_data_sources()=Push.ScrollableList.ListComponent-class.html#set_data_sources"><a title="Push.ScrollableList.ListComponent.set_data_sources" class="py-name" href="#" onclick="return doclink('link-18', 'set_data_sources', 'link-18');">set_data_sources</a></tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data_sources</tt><tt class="py-op">[</tt><tt class="py-name">n</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent.set_display_line1"></a><div id="MessageBoxComponent.set_display_line1-def"><a name="L49"></a><tt class="py-lineno"> 49</tt> <a class="py-toggle" href="#" id="MessageBoxComponent.set_display_line1-toggle" onclick="return toggle('MessageBoxComponent.set_display_line1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#set_display_line1">set_display_line1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display_line</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent.set_display_line1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent.set_display_line1-expanded"><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Method Push.DisplayingDeviceComponent.DisplayingDeviceComponent._set_display_line()=Push.DisplayingDeviceComponent.DisplayingDeviceComponent-class.html#_set_display_line,Method Push.InstrumentComponent.InstrumentPresetsComponent._set_display_line()=Push.InstrumentComponent.InstrumentPresetsComponent-class.html#_set_display_line,Method Push.InstrumentComponent.InstrumentScalesComponent._set_display_line()=Push.InstrumentComponent.InstrumentScalesComponent-class.html#_set_display_line,Method Push.MessageBoxComponent.MessageBoxComponent._set_display_line()=Push.MessageBoxComponent.MessageBoxComponent-class.html#_set_display_line,Method Push.SpecialTransportComponent.QuantizationSettingsComponent._set_display_line()=Push.SpecialTransportComponent.QuantizationSettingsComponent-class.html#_set_display_line"><a title="Push.DisplayingDeviceComponent.DisplayingDeviceComponent._set_display_line
+Push.InstrumentComponent.InstrumentPresetsComponent._set_display_line
+Push.InstrumentComponent.InstrumentScalesComponent._set_display_line
+Push.MessageBoxComponent.MessageBoxComponent._set_display_line
+Push.SpecialTransportComponent.QuantizationSettingsComponent._set_display_line" class="py-name" href="#" onclick="return doclink('link-19', '_set_display_line', 'link-19');">_set_display_line</a></tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt id="link-20" class="py-name"><a title="Push.ScrollableListComponent.ScrollableListComponent.display_line" class="py-name" href="#" onclick="return doclink('link-20', 'display_line', 'link-16');">display_line</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent.set_display_line2"></a><div id="MessageBoxComponent.set_display_line2-def"><a name="L52"></a><tt class="py-lineno"> 52</tt> <a class="py-toggle" href="#" id="MessageBoxComponent.set_display_line2-toggle" onclick="return toggle('MessageBoxComponent.set_display_line2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#set_display_line2">set_display_line2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display_line</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent.set_display_line2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent.set_display_line2-expanded"><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="Push.DisplayingDeviceComponent.DisplayingDeviceComponent._set_display_line
+Push.InstrumentComponent.InstrumentPresetsComponent._set_display_line
+Push.InstrumentComponent.InstrumentScalesComponent._set_display_line
+Push.MessageBoxComponent.MessageBoxComponent._set_display_line
+Push.SpecialTransportComponent.QuantizationSettingsComponent._set_display_line" class="py-name" href="#" onclick="return doclink('link-21', '_set_display_line', 'link-19');">_set_display_line</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt id="link-22" class="py-name"><a title="Push.ScrollableListComponent.ScrollableListComponent.display_line" class="py-name" href="#" onclick="return doclink('link-22', 'display_line', 'link-16');">display_line</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent.set_display_line3"></a><div id="MessageBoxComponent.set_display_line3-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="MessageBoxComponent.set_display_line3-toggle" onclick="return toggle('MessageBoxComponent.set_display_line3');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#set_display_line3">set_display_line3</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display_line</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent.set_display_line3-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent.set_display_line3-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="Push.DisplayingDeviceComponent.DisplayingDeviceComponent._set_display_line
+Push.InstrumentComponent.InstrumentPresetsComponent._set_display_line
+Push.InstrumentComponent.InstrumentScalesComponent._set_display_line
+Push.MessageBoxComponent.MessageBoxComponent._set_display_line
+Push.SpecialTransportComponent.QuantizationSettingsComponent._set_display_line" class="py-name" href="#" onclick="return doclink('link-23', '_set_display_line', 'link-19');">_set_display_line</a></tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">,</tt> <tt id="link-24" class="py-name"><a title="Push.ScrollableListComponent.ScrollableListComponent.display_line" class="py-name" href="#" onclick="return doclink('link-24', 'display_line', 'link-16');">display_line</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent.set_display_line4"></a><div id="MessageBoxComponent.set_display_line4-def"><a name="L58"></a><tt class="py-lineno"> 58</tt> <a class="py-toggle" href="#" id="MessageBoxComponent.set_display_line4-toggle" onclick="return toggle('MessageBoxComponent.set_display_line4');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#set_display_line4">set_display_line4</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">display_line</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent.set_display_line4-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent.set_display_line4-expanded"><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="Push.DisplayingDeviceComponent.DisplayingDeviceComponent._set_display_line
+Push.InstrumentComponent.InstrumentPresetsComponent._set_display_line
+Push.InstrumentComponent.InstrumentScalesComponent._set_display_line
+Push.MessageBoxComponent.MessageBoxComponent._set_display_line
+Push.SpecialTransportComponent.QuantizationSettingsComponent._set_display_line" class="py-name" href="#" onclick="return doclink('link-25', '_set_display_line', 'link-19');">_set_display_line</a></tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">,</tt> <tt id="link-26" class="py-name"><a title="Push.ScrollableListComponent.ScrollableListComponent.display_line" class="py-name" href="#" onclick="return doclink('link-26', 'display_line', 'link-16');">display_line</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent.set_top_buttons"></a><div id="MessageBoxComponent.set_top_buttons-def"><a name="L61"></a><tt class="py-lineno"> 61</tt> <a class="py-toggle" href="#" id="MessageBoxComponent.set_top_buttons-toggle" onclick="return toggle('MessageBoxComponent.set_top_buttons');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#set_top_buttons">set_top_buttons</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">buttons</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent.set_top_buttons-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent.set_top_buttons-expanded"><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_top_row_buttons</tt> <tt class="py-op">=</tt> <tt class="py-name">buttons</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">buttons</tt><tt class="py-op">:</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">            <tt class="py-name">buttons</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method Push.ConfigurableButtonElement.ConfigurableButtonElement.reset()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#reset,Method Push.MessageBoxComponent._TokenControlElement.reset()=Push.MessageBoxComponent._TokenControlElement-class.html#reset,Method Push.TouchStripElement.TouchStripElement.reset()=Push.TouchStripElement.TouchStripElement-class.html#reset"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.reset
+Push.MessageBoxComponent._TokenControlElement.reset
+Push.TouchStripElement.TouchStripElement.reset" class="py-name" href="#" onclick="return doclink('link-27', 'reset', 'link-27');">reset</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method Push.MessageBoxComponent.MessageBoxComponent.set_cancel_button()=Push.MessageBoxComponent.MessageBoxComponent-class.html#set_cancel_button"><a title="Push.MessageBoxComponent.MessageBoxComponent.set_cancel_button" class="py-name" href="#" onclick="return doclink('link-28', 'set_cancel_button', 'link-28');">set_cancel_button</a></tt><tt class="py-op">(</tt><tt class="py-name">buttons</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent._cancel_button_index" class="py-name" href="#" onclick="return doclink('link-29', '_cancel_button_index', 'link-11');">_cancel_button_index</a></tt><tt class="py-op">]</tt> <tt class="py-keyword">if</tt> <tt class="py-name">buttons</tt> <tt class="py-keyword">else</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent.set_cancel_button"></a><div id="MessageBoxComponent.set_cancel_button-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="MessageBoxComponent.set_cancel_button-toggle" onclick="return toggle('MessageBoxComponent.set_cancel_button');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#set_cancel_button">set_cancel_button</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">button</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent.set_cancel_button-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent.set_cancel_button-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method Push.MessageBoxComponent.MessageBoxComponent._on_cancel_button_value()=Push.MessageBoxComponent.MessageBoxComponent-class.html#_on_cancel_button_value"><a title="Push.MessageBoxComponent.MessageBoxComponent._on_cancel_button_value" class="py-name" href="#" onclick="return doclink('link-30', '_on_cancel_button_value', 'link-30');">_on_cancel_button_value</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt> <tt class="py-op">=</tt> <tt class="py-name">button</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method Push.MessageBoxComponent.MessageBoxComponent._update_cancel_button()=Push.MessageBoxComponent.MessageBoxComponent-class.html#_update_cancel_button"><a title="Push.MessageBoxComponent.MessageBoxComponent._update_cancel_button" class="py-name" href="#" onclick="return doclink('link-31', '_update_cancel_button', 'link-31');">_update_cancel_button</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent._update_cancel_button"></a><div id="MessageBoxComponent._update_cancel_button-def"><a name="L71"></a><tt class="py-lineno"> 71</tt> <a class="py-toggle" href="#" id="MessageBoxComponent._update_cancel_button-toggle" onclick="return toggle('MessageBoxComponent._update_cancel_button');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#_update_cancel_button">_update_cancel_button</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent._update_cancel_button-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent._update_cancel_button-expanded"><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Method Push.ConfigurableButtonElement.ConfigurableButtonElement.is_enabled()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#is_enabled"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.is_enabled" class="py-name" href="#" onclick="return doclink('link-32', 'is_enabled', 'link-32');">is_enabled</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">            <tt class="py-name">button</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent._on_cancel_button_value" class="py-name" href="#" onclick="return doclink('link-33', '_on_cancel_button_value', 'link-30');">_on_cancel_button_value</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_top_row_buttons</tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_top_row_buttons</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.reset
+Push.MessageBoxComponent._TokenControlElement.reset
+Push.TouchStripElement.TouchStripElement.reset" class="py-name" href="#" onclick="return doclink('link-34', 'reset', 'link-27');">reset</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_can_cancel</tt> <tt class="py-keyword">and</tt> <tt class="py-name">button</tt><tt class="py-op">:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                <tt class="py-name">button</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Method Push.ComboElement.WrapperElement.set_light()=Push.ComboElement.WrapperElement-class.html#set_light,Method Push.ConfigurableButtonElement.ConfigurableButtonElement.set_light()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#set_light"><a title="Push.ComboElement.WrapperElement.set_light
+Push.ConfigurableButtonElement.ConfigurableButtonElement.set_light" class="py-name" href="#" onclick="return doclink('link-35', 'set_light', 'link-35');">set_light</a></tt><tt class="py-op">(</tt><tt class="py-string">'MessageBox.Cancel'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent._update_display"></a><div id="MessageBoxComponent._update_display-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="MessageBoxComponent._update_display-toggle" onclick="return toggle('MessageBoxComponent._update_display');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#_update_display">_update_display</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent._update_display-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent._update_display-expanded"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_current_text</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">            <tt class="py-name">lines</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_current_text</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">'\n'</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">source_line</tt><tt class="py-op">,</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">map</tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data_sources</tt><tt class="py-op">,</tt> <tt class="py-name">lines</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">source_line</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                    <tt class="py-name">source_line</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Method Push.Actions.SelectionDisplayComponent.set_display_string()=Push.Actions.SelectionDisplayComponent-class.html#set_display_string"><a title="Push.Actions.SelectionDisplayComponent.set_display_string" class="py-name" href="#" onclick="return doclink('link-36', 'set_display_string', 'link-36');">set_display_string</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt> <tt class="py-keyword">or</tt> <tt class="py-string">''</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_can_cancel</tt><tt class="py-op">:</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data_sources</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="Push.Actions.SelectionDisplayComponent.set_display_string" class="py-name" href="#" onclick="return doclink('link-37', 'set_display_string', 'link-36');">set_display_string</a></tt><tt class="py-op">(</tt><tt class="py-string">'[  Ok  ]'</tt><tt class="py-op">.</tt><tt class="py-name">rjust</tt><tt class="py-op">(</tt><tt id="link-38" class="py-name"><a title="Push.consts.DISPLAY_LENGTH" class="py-name" href="#" onclick="return doclink('link-38', 'DISPLAY_LENGTH', 'link-4');">DISPLAY_LENGTH</a></tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">subject_slot</tt><tt class="py-op">(</tt><tt class="py-string">'value'</tt><tt class="py-op">)</tt> </tt>
+<a name="MessageBoxComponent._on_cancel_button_value"></a><div id="MessageBoxComponent._on_cancel_button_value-def"><a name="L90"></a><tt class="py-lineno"> 90</tt> <a class="py-toggle" href="#" id="MessageBoxComponent._on_cancel_button_value-toggle" onclick="return toggle('MessageBoxComponent._on_cancel_button_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#_on_cancel_button_value">_on_cancel_button_value</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent._on_cancel_button_value-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent._on_cancel_button_value-expanded"><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.is_enabled" class="py-name" href="#" onclick="return doclink('link-39', 'is_enabled', 'link-32');">is_enabled</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_can_cancel</tt> <tt class="py-keyword">and</tt> <tt id="link-40" class="py-name" targets="Variable Push.Setting.Setting.value=Push.Setting.Setting-class.html#value"><a title="Push.Setting.Setting.value" class="py-name" href="#" onclick="return doclink('link-40', 'value', 'link-40');">value</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">notify_cancel</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent._get_text"></a><div id="MessageBoxComponent._get_text-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="MessageBoxComponent._get_text-toggle" onclick="return toggle('MessageBoxComponent._get_text');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#_get_text">_get_text</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent._get_text-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent._get_text-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_current_text</tt> </tt>
+</div><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent._set_text"></a><div id="MessageBoxComponent._set_text-def"><a name="L97"></a><tt class="py-lineno"> 97</tt> <a class="py-toggle" href="#" id="MessageBoxComponent._set_text-toggle" onclick="return toggle('MessageBoxComponent._set_text');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#_set_text">_set_text</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">text</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent._set_text-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent._set_text-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_current_text</tt> <tt class="py-op">=</tt> <tt id="link-41" class="py-name" targets="Variable Push.MessageBoxComponent.MessageBoxComponent.text=Push.MessageBoxComponent.MessageBoxComponent-class.html#text"><a title="Push.MessageBoxComponent.MessageBoxComponent.text" class="py-name" href="#" onclick="return doclink('link-41', 'text', 'link-41');">text</a></tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method Push.MessageBoxComponent.MessageBoxComponent._update_display()=Push.MessageBoxComponent.MessageBoxComponent-class.html#_update_display,Method Push.ScrollableList.ListComponent._update_display()=Push.ScrollableList.ListComponent-class.html#_update_display,Method Push.UserSettingsComponent.UserSettingsComponent._update_display()=Push.UserSettingsComponent.UserSettingsComponent-class.html#_update_display"><a title="Push.MessageBoxComponent.MessageBoxComponent._update_display
+Push.ScrollableList.ListComponent._update_display
+Push.UserSettingsComponent.UserSettingsComponent._update_display" class="py-name" href="#" onclick="return doclink('link-42', '_update_display', 'link-42');">_update_display</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">    <tt id="link-43" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.text" class="py-name" href="#" onclick="return doclink('link-43', 'text', 'link-41');">text</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-44" class="py-name" targets="Method Push.MessageBoxComponent.MessageBoxComponent._get_text()=Push.MessageBoxComponent.MessageBoxComponent-class.html#_get_text"><a title="Push.MessageBoxComponent.MessageBoxComponent._get_text" class="py-name" href="#" onclick="return doclink('link-44', '_get_text', 'link-44');">_get_text</a></tt><tt class="py-op">,</tt> <tt id="link-45" class="py-name" targets="Method Push.MessageBoxComponent.MessageBoxComponent._set_text()=Push.MessageBoxComponent.MessageBoxComponent-class.html#_set_text"><a title="Push.MessageBoxComponent.MessageBoxComponent._set_text" class="py-name" href="#" onclick="return doclink('link-45', '_set_text', 'link-45');">_set_text</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent._get_can_cancel"></a><div id="MessageBoxComponent._get_can_cancel-def"><a name="L103"></a><tt class="py-lineno">103</tt> <a class="py-toggle" href="#" id="MessageBoxComponent._get_can_cancel-toggle" onclick="return toggle('MessageBoxComponent._get_can_cancel');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#_get_can_cancel">_get_can_cancel</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent._get_can_cancel-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent._get_can_cancel-expanded"><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_can_cancel</tt> </tt>
+</div><a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent._set_can_cancel"></a><div id="MessageBoxComponent._set_can_cancel-def"><a name="L106"></a><tt class="py-lineno">106</tt> <a class="py-toggle" href="#" id="MessageBoxComponent._set_can_cancel-toggle" onclick="return toggle('MessageBoxComponent._set_can_cancel');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#_set_can_cancel">_set_can_cancel</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">can_cancel</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent._set_can_cancel-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent._set_can_cancel-expanded"><a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_can_cancel</tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name" targets="Variable Push.MessageBoxComponent.MessageBoxComponent.can_cancel=Push.MessageBoxComponent.MessageBoxComponent-class.html#can_cancel"><a title="Push.MessageBoxComponent.MessageBoxComponent.can_cancel" class="py-name" href="#" onclick="return doclink('link-46', 'can_cancel', 'link-46');">can_cancel</a></tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent._update_cancel_button" class="py-name" href="#" onclick="return doclink('link-47', '_update_cancel_button', 'link-31');">_update_cancel_button</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent._update_display
+Push.ScrollableList.ListComponent._update_display
+Push.UserSettingsComponent.UserSettingsComponent._update_display" class="py-name" href="#" onclick="return doclink('link-48', '_update_display', 'link-42');">_update_display</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt id="link-49" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.can_cancel" class="py-name" href="#" onclick="return doclink('link-49', 'can_cancel', 'link-46');">can_cancel</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-50" class="py-name" targets="Method Push.MessageBoxComponent.MessageBoxComponent._get_can_cancel()=Push.MessageBoxComponent.MessageBoxComponent-class.html#_get_can_cancel"><a title="Push.MessageBoxComponent.MessageBoxComponent._get_can_cancel" class="py-name" href="#" onclick="return doclink('link-50', '_get_can_cancel', 'link-50');">_get_can_cancel</a></tt><tt class="py-op">,</tt> <tt id="link-51" class="py-name" targets="Method Push.MessageBoxComponent.MessageBoxComponent._set_can_cancel()=Push.MessageBoxComponent.MessageBoxComponent-class.html#_set_can_cancel"><a title="Push.MessageBoxComponent.MessageBoxComponent._set_can_cancel" class="py-name" href="#" onclick="return doclink('link-51', '_set_can_cancel', 'link-51');">_set_can_cancel</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"> </tt>
+<a name="MessageBoxComponent.update"></a><div id="MessageBoxComponent.update-def"><a name="L113"></a><tt class="py-lineno">113</tt> <a class="py-toggle" href="#" id="MessageBoxComponent.update-toggle" onclick="return toggle('MessageBoxComponent.update');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.MessageBoxComponent-class.html#update">update</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MessageBoxComponent.update-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MessageBoxComponent.update-expanded"><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent._update_cancel_button" class="py-name" href="#" onclick="return doclink('link-52', '_update_cancel_button', 'link-31');">_update_cancel_button</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent._update_display
+Push.ScrollableList.ListComponent._update_display
+Push.UserSettingsComponent.UserSettingsComponent._update_display" class="py-name" href="#" onclick="return doclink('link-53', '_update_display', 'link-42');">_update_display</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"> </tt>
+<a name="_CallbackControl"></a><div id="_CallbackControl-def"><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt> <a class="py-toggle" href="#" id="_CallbackControl-toggle" onclick="return toggle('_CallbackControl');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MessageBoxComponent._CallbackControl-class.html">_CallbackControl</a><tt class="py-op">(</tt><tt class="py-base-class">CompoundElement</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_CallbackControl-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_CallbackControl-expanded"><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"> </tt>
+<a name="_CallbackControl.__init__"></a><div id="_CallbackControl.__init__-def"><a name="L120"></a><tt class="py-lineno">120</tt> <a class="py-toggle" href="#" id="_CallbackControl.__init__-toggle" onclick="return toggle('_CallbackControl.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent._CallbackControl-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">token</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">callback</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_CallbackControl.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_CallbackControl.__init__-expanded"><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-54" class="py-name" targets="Class Push.MessageBoxComponent._CallbackControl=Push.MessageBoxComponent._CallbackControl-class.html"><a title="Push.MessageBoxComponent._CallbackControl" class="py-name" href="#" onclick="return doclink('link-54', '_CallbackControl', 'link-54');">_CallbackControl</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-55', '__init__', 'link-14');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_callback</tt> <tt class="py-op">=</tt> <tt class="py-name">callback</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_control_element</tt><tt class="py-op">(</tt><tt class="py-name">token</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="_CallbackControl.on_nested_control_element_grabbed"></a><div id="_CallbackControl.on_nested_control_element_grabbed-def"><a name="L125"></a><tt class="py-lineno">125</tt> <a class="py-toggle" href="#" id="_CallbackControl.on_nested_control_element_grabbed-toggle" onclick="return toggle('_CallbackControl.on_nested_control_element_grabbed');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent._CallbackControl-class.html#on_nested_control_element_grabbed">on_nested_control_element_grabbed</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">control</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_CallbackControl.on_nested_control_element_grabbed-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_CallbackControl.on_nested_control_element_grabbed-expanded"><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_callback</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="_CallbackControl.on_nested_control_element_released"></a><div id="_CallbackControl.on_nested_control_element_released-def"><a name="L128"></a><tt class="py-lineno">128</tt> <a class="py-toggle" href="#" id="_CallbackControl.on_nested_control_element_released-toggle" onclick="return toggle('_CallbackControl.on_nested_control_element_released');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent._CallbackControl-class.html#on_nested_control_element_released">on_nested_control_element_released</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">control</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_CallbackControl.on_nested_control_element_released-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_CallbackControl.on_nested_control_element_released-expanded"><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="_TokenControlElement"></a><div id="_TokenControlElement-def"><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt> <a class="py-toggle" href="#" id="_TokenControlElement-toggle" onclick="return toggle('_TokenControlElement');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MessageBoxComponent._TokenControlElement-class.html">_TokenControlElement</a><tt class="py-op">(</tt><tt class="py-base-class">ControlElement</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_TokenControlElement-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_TokenControlElement-expanded"><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"> </tt>
+<a name="_TokenControlElement.reset"></a><div id="_TokenControlElement.reset-def"><a name="L134"></a><tt class="py-lineno">134</tt> <a class="py-toggle" href="#" id="_TokenControlElement.reset-toggle" onclick="return toggle('_TokenControlElement.reset');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent._TokenControlElement-class.html#reset">reset</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_TokenControlElement.reset-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_TokenControlElement.reset-expanded"><a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="NotificationComponent"></a><div id="NotificationComponent-def"><a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt> <a class="py-toggle" href="#" id="NotificationComponent-toggle" onclick="return toggle('NotificationComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MessageBoxComponent.NotificationComponent-class.html">NotificationComponent</a><tt class="py-op">(</tt><tt class="py-base-class">CompoundComponent</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotificationComponent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="NotificationComponent-expanded"><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring">    Displays notifications to the user for a given amount of time.</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-docstring">    To adjust the way notifications are shown in special cases, assign a generated</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-docstring">    control using use_single_line or use_full_display to a layer. If the layer is on</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-docstring">    top, it will set the preferred view.</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"><tt class="py-docstring">    This will show the notification on line 1 if my_component is enabled and</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-docstring">    the priority premise of the layer is met:</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring">        my_component.layer = Layer(</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">            _notification = notification_component.use_single_line(1))</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"> </tt>
+<a name="NotificationComponent.__init__"></a><div id="NotificationComponent.__init__-def"><a name="L152"></a><tt class="py-lineno">152</tt> <a class="py-toggle" href="#" id="NotificationComponent.__init__-toggle" onclick="return toggle('NotificationComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.NotificationComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">notification_time</tt> <tt class="py-op">=</tt> <tt class="py-number">2.5</tt><tt class="py-op">,</tt> <tt class="py-param">blinking_time</tt> <tt class="py-op">=</tt> <tt class="py-number">0.3</tt><tt class="py-op">,</tt> <tt class="py-param">display_lines</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotificationComponent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NotificationComponent.__init__-expanded"><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-56" class="py-name" targets="Class Push.MessageBoxComponent.NotificationComponent=Push.MessageBoxComponent.NotificationComponent-class.html"><a title="Push.MessageBoxComponent.NotificationComponent" class="py-name" href="#" onclick="return doclink('link-56', 'NotificationComponent', 'link-56');">NotificationComponent</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-57', '__init__', 'link-14');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_lines</tt> <tt class="py-op">=</tt> <tt class="py-name">display_lines</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_token_control</tt> <tt class="py-op">=</tt> <tt id="link-58" class="py-name" targets="Class Push.MessageBoxComponent._TokenControlElement=Push.MessageBoxComponent._TokenControlElement-class.html"><a title="Push.MessageBoxComponent._TokenControlElement" class="py-name" href="#" onclick="return doclink('link-58', '_TokenControlElement', 'link-58');">_TokenControlElement</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_component</tt><tt class="py-op">(</tt><tt id="link-59" class="py-name"><a title="Push.MessageBoxComponent
+Push.MessageBoxComponent.MessageBoxComponent" class="py-name" href="#" onclick="return doclink('link-59', 'MessageBoxComponent', 'link-13');">MessageBoxComponent</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name" targets="Method Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled()=Push.ConfigurableButtonElement.ConfigurableButtonElement-class.html#set_enabled"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled" class="py-name" href="#" onclick="return doclink('link-60', 'set_enabled', 'link-60');">set_enabled</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_notification_timeout_task</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_tasks</tt><tt class="py-op">.</tt><tt class="py-name">add</tt><tt class="py-op">(</tt><tt class="py-name">Task</tt><tt class="py-op">.</tt><tt class="py-name">sequence</tt><tt class="py-op">(</tt><tt class="py-name">Task</tt><tt class="py-op">.</tt><tt class="py-name">wait</tt><tt class="py-op">(</tt><tt class="py-name">notification_time</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">Task</tt><tt class="py-op">.</tt><tt class="py-name">run</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Method Push.MessageBoxComponent.NotificationComponent.hide_notification()=Push.MessageBoxComponent.NotificationComponent-class.html#hide_notification"><a title="Push.MessageBoxComponent.NotificationComponent.hide_notification" class="py-name" href="#" onclick="return doclink('link-61', 'hide_notification', 'link-61');">hide_notification</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">kill</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_blink_text_task</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_tasks</tt><tt class="py-op">.</tt><tt class="py-name">add</tt><tt class="py-op">(</tt><tt class="py-name">Task</tt><tt class="py-op">.</tt><tt class="py-name">loop</tt><tt class="py-op">(</tt><tt class="py-name">Task</tt><tt class="py-op">.</tt><tt class="py-name">sequence</tt><tt class="py-op">(</tt><tt class="py-name">Task</tt><tt class="py-op">.</tt><tt class="py-name">run</tt><tt class="py-op">(</tt><tt class="py-keyword">lambda</tt> <tt class="py-op">:</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt class="py-name">__setattr__</tt><tt class="py-op">(</tt><tt class="py-string">'text'</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_original_text</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">Task</tt><tt class="py-op">.</tt><tt class="py-name">wait</tt><tt class="py-op">(</tt><tt class="py-name">blinking_time</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">Task</tt><tt class="py-op">.</tt><tt class="py-name">run</tt><tt class="py-op">(</tt><tt class="py-keyword">lambda</tt> <tt class="py-op">:</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt class="py-name">__setattr__</tt><tt class="py-op">(</tt><tt class="py-string">'text'</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_blink_text</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">Task</tt><tt class="py-op">.</tt><tt class="py-name">wait</tt><tt class="py-op">(</tt><tt class="py-name">blinking_time</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">kill</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_original_text</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_blink_text</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">    <tt id="link-62" class="py-name" targets="Variable Push.MessageBoxComponent.DialogComponent.message_box_layer=Push.MessageBoxComponent.DialogComponent-class.html#message_box_layer,Variable Push.MessageBoxComponent.NotificationComponent.message_box_layer=Push.MessageBoxComponent.NotificationComponent-class.html#message_box_layer"><a title="Push.MessageBoxComponent.DialogComponent.message_box_layer
+Push.MessageBoxComponent.NotificationComponent.message_box_layer" class="py-name" href="#" onclick="return doclink('link-62', 'message_box_layer', 'link-62');">message_box_layer</a></tt> <tt class="py-op">=</tt> <tt class="py-name">forward_property</tt><tt class="py-op">(</tt><tt class="py-string">'_message_box'</tt><tt class="py-op">)</tt><tt class="py-op">(</tt><tt class="py-string">'layer'</tt><tt class="py-op">)</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"> </tt>
+<a name="NotificationComponent.show_notification"></a><div id="NotificationComponent.show_notification-def"><a name="L165"></a><tt class="py-lineno">165</tt> <a class="py-toggle" href="#" id="NotificationComponent.show_notification-toggle" onclick="return toggle('NotificationComponent.show_notification');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.NotificationComponent-class.html#show_notification">show_notification</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">text</tt><tt class="py-op">,</tt> <tt class="py-param">blink_text</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotificationComponent.show_notification-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NotificationComponent.show_notification-expanded"><a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">        Triggers a notification with the given text.</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">blink_text</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_original_text</tt> <tt class="py-op">=</tt> <tt id="link-63" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.text" class="py-name" href="#" onclick="return doclink('link-63', 'text', 'link-41');">text</a></tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_blink_text</tt> <tt class="py-op">=</tt> <tt class="py-name">blink_text</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_blink_text_task</tt><tt class="py-op">.</tt><tt class="py-name">restart</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.text" class="py-name" href="#" onclick="return doclink('link-64', 'text', 'link-41');">text</a></tt> <tt class="py-op">=</tt> <tt id="link-65" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.text" class="py-name" href="#" onclick="return doclink('link-65', 'text', 'link-41');">text</a></tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled" class="py-name" href="#" onclick="return doclink('link-66', 'set_enabled', 'link-60');">set_enabled</a></tt><tt class="py-op">(</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_notification_timeout_task</tt><tt class="py-op">.</tt><tt class="py-name">restart</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"> </tt>
+<a name="NotificationComponent.hide_notification"></a><div id="NotificationComponent.hide_notification-def"><a name="L177"></a><tt class="py-lineno">177</tt> <a class="py-toggle" href="#" id="NotificationComponent.hide_notification-toggle" onclick="return toggle('NotificationComponent.hide_notification');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.NotificationComponent-class.html#hide_notification">hide_notification</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotificationComponent.hide_notification-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NotificationComponent.hide_notification-expanded"><a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-docstring">        Hides the current notification, if any existing.</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_blink_text_task</tt><tt class="py-op">.</tt><tt class="py-name">kill</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled" class="py-name" href="#" onclick="return doclink('link-67', 'set_enabled', 'link-60');">set_enabled</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"> </tt>
+<a name="NotificationComponent.use_single_line"></a><div id="NotificationComponent.use_single_line-def"><a name="L184"></a><tt class="py-lineno">184</tt> <a class="py-toggle" href="#" id="NotificationComponent.use_single_line-toggle" onclick="return toggle('NotificationComponent.use_single_line');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.NotificationComponent-class.html#use_single_line">use_single_line</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">line_index</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotificationComponent.use_single_line-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NotificationComponent.use_single_line-expanded"><a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-docstring">        Returns a control, that will change the notification to a single line view,</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-docstring">        if it is grabbed.</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-68" class="py-name"><a title="Push.MessageBoxComponent._CallbackControl" class="py-name" href="#" onclick="return doclink('link-68', '_CallbackControl', 'link-54');">_CallbackControl</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_token_control</tt><tt class="py-op">,</tt> <tt class="py-name">partial</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name" targets="Method Push.MessageBoxComponent.NotificationComponent._set_single_line()=Push.MessageBoxComponent.NotificationComponent-class.html#_set_single_line"><a title="Push.MessageBoxComponent.NotificationComponent._set_single_line" class="py-name" href="#" onclick="return doclink('link-69', '_set_single_line', 'link-69');">_set_single_line</a></tt><tt class="py-op">,</tt> <tt class="py-name">line_index</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"> </tt>
+<a name="NotificationComponent.use_full_display"></a><div id="NotificationComponent.use_full_display-def"><a name="L191"></a><tt class="py-lineno">191</tt> <a class="py-toggle" href="#" id="NotificationComponent.use_full_display-toggle" onclick="return toggle('NotificationComponent.use_full_display');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.NotificationComponent-class.html#use_full_display">use_full_display</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">message_line_index</tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotificationComponent.use_full_display-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NotificationComponent.use_full_display-expanded"><a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"><tt class="py-docstring">        Returns a control, that will change the notification to use the whole display,</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-docstring">        if it is grabbed.</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-70" class="py-name"><a title="Push.MessageBoxComponent._CallbackControl" class="py-name" href="#" onclick="return doclink('link-70', '_CallbackControl', 'link-54');">_CallbackControl</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_token_control</tt><tt class="py-op">,</tt> <tt class="py-name">partial</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name" targets="Method Push.MessageBoxComponent.NotificationComponent._set_full_display()=Push.MessageBoxComponent.NotificationComponent-class.html#_set_full_display"><a title="Push.MessageBoxComponent.NotificationComponent._set_full_display" class="py-name" href="#" onclick="return doclink('link-71', '_set_full_display', 'link-71');">_set_full_display</a></tt><tt class="py-op">,</tt> <tt class="py-name">message_line_index</tt><tt class="py-op">=</tt><tt class="py-name">message_line_index</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"> </tt>
+<a name="NotificationComponent._set_single_line"></a><div id="NotificationComponent._set_single_line-def"><a name="L198"></a><tt class="py-lineno">198</tt> <a class="py-toggle" href="#" id="NotificationComponent._set_single_line-toggle" onclick="return toggle('NotificationComponent._set_single_line');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.NotificationComponent-class.html#_set_single_line">_set_single_line</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">line_index</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotificationComponent._set_single_line-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NotificationComponent._set_single_line-expanded"><a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">line_index</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">0</tt> <tt class="py-keyword">and</tt> <tt class="py-name">line_index</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_lines</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">        <tt class="py-name">layer</tt> <tt class="py-op">=</tt> <tt class="py-name">Layer</tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt class="py-op">{</tt><tt class="py-string">'display_line1'</tt><tt class="py-op">:</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_lines</tt><tt class="py-op">[</tt><tt class="py-name">line_index</tt><tt class="py-op">]</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">        <tt class="py-name">layer</tt><tt class="py-op">.</tt><tt class="py-name">priority</tt> <tt class="py-op">=</tt> <tt id="link-72" class="py-name"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-72', 'consts', 'link-2');">consts</a></tt><tt class="py-op">.</tt><tt id="link-73" class="py-name" targets="Variable Push.consts.MESSAGE_BOX_PRIORITY=Push.consts-module.html#MESSAGE_BOX_PRIORITY"><a title="Push.consts.MESSAGE_BOX_PRIORITY" class="py-name" href="#" onclick="return doclink('link-73', 'MESSAGE_BOX_PRIORITY', 'link-73');">MESSAGE_BOX_PRIORITY</a></tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt class="py-name">layer</tt> <tt class="py-op">=</tt> <tt class="py-name">layer</tt> </tt>
+</div><a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"> </tt>
+<a name="NotificationComponent._set_full_display"></a><div id="NotificationComponent._set_full_display-def"><a name="L204"></a><tt class="py-lineno">204</tt> <a class="py-toggle" href="#" id="NotificationComponent._set_full_display-toggle" onclick="return toggle('NotificationComponent._set_full_display');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.NotificationComponent-class.html#_set_full_display">_set_full_display</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">message_line_index</tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotificationComponent._set_full_display-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NotificationComponent._set_full_display-expanded"><a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">        <tt class="py-name">layer</tt> <tt class="py-op">=</tt> <tt class="py-name">Layer</tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-op">[</tt> <tt class="py-op">(</tt><tt class="py-string">'display_line1'</tt> <tt class="py-keyword">if</tt> <tt class="py-name">i</tt> <tt class="py-op">==</tt> <tt class="py-name">message_line_index</tt> <tt class="py-keyword">else</tt> <tt class="py-string">'bg%d'</tt> <tt class="py-op">%</tt> <tt class="py-name">i</tt><tt class="py-op">,</tt> <tt class="py-name">line</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">i</tt><tt class="py-op">,</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">enumerate</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_display_lines</tt><tt class="py-op">)</tt> <tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">        <tt class="py-name">layer</tt><tt class="py-op">.</tt><tt class="py-name">priority</tt> <tt class="py-op">=</tt> <tt id="link-74" class="py-name"><a title="Push.consts" class="py-name" href="#" onclick="return doclink('link-74', 'consts', 'link-2');">consts</a></tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="Push.consts.MESSAGE_BOX_PRIORITY" class="py-name" href="#" onclick="return doclink('link-75', 'MESSAGE_BOX_PRIORITY', 'link-73');">MESSAGE_BOX_PRIORITY</a></tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt class="py-name">layer</tt> <tt class="py-op">=</tt> <tt class="py-name">layer</tt> </tt>
+</div><a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"> </tt>
+<a name="NotificationComponent.update"></a><div id="NotificationComponent.update-def"><a name="L209"></a><tt class="py-lineno">209</tt> <a class="py-toggle" href="#" id="NotificationComponent.update-toggle" onclick="return toggle('NotificationComponent.update');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.NotificationComponent-class.html#update">update</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NotificationComponent.update-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NotificationComponent.update-expanded"><a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"> </tt>
+<a name="DialogComponent"></a><div id="DialogComponent-def"><a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt> <a class="py-toggle" href="#" id="DialogComponent-toggle" onclick="return toggle('DialogComponent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Push.MessageBoxComponent.DialogComponent-class.html">DialogComponent</a><tt class="py-op">(</tt><tt class="py-base-class">CompoundComponent</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DialogComponent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="DialogComponent-expanded"><a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-docstring">    Handles representing modal dialogs from the application.  The</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-docstring">    script can also request dialogs.</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"> </tt>
+<a name="DialogComponent.__init__"></a><div id="DialogComponent.__init__-def"><a name="L219"></a><tt class="py-lineno">219</tt> <a class="py-toggle" href="#" id="DialogComponent.__init__-toggle" onclick="return toggle('DialogComponent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.DialogComponent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DialogComponent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DialogComponent.__init__-expanded"><a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-76" class="py-name" targets="Class Push.MessageBoxComponent.DialogComponent=Push.MessageBoxComponent.DialogComponent-class.html"><a title="Push.MessageBoxComponent.DialogComponent" class="py-name" href="#" onclick="return doclink('link-76', 'DialogComponent', 'link-76');">DialogComponent</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name"><a title="Push.AccentComponent.AccentComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithOptionsComponent.__init__
+Push.ActionWithOptionsComponent.ActionWithSettingsComponent.__init__
+Push.ActionWithOptionsComponent.OptionsComponent.__init__
+Push.Actions.CreateDefaultTrackComponent.__init__
+Push.Actions.CreateDeviceComponent.__init__
+Push.Actions.CreateInstrumentTrackComponent.__init__
+Push.Actions.DeleteComponent.__init__
+Push.Actions.DuplicateLoopComponent.__init__
+Push.Actions.SelectComponent.__init__
+Push.Actions.SelectionDisplayComponent.__init__
+Push.AutoArmComponent.AutoArmComponent.__init__
+Push.AutoArmComponent.AutoArmRestoreBehaviour.__init__
+Push.BackgroundComponent.BackgroundComponent.__init__
+Push.BackgroundComponent.ModifierBackgroundComponent.__init__
+Push.BrowserComponent.BrowserComponent.__init__
+Push.BrowserComponent.BrowserList.__init__
+Push.BrowserComponent.BrowserModel.__init__
+Push.BrowserComponent.BrowserQuery.__init__
+Push.BrowserComponent.FullBrowserModel.__init__
+Push.BrowserComponent.PathBrowserQuery.__init__
+Push.BrowserComponent.QueryingBrowserModel.__init__
+Push.BrowserComponent.SourceBrowserQuery.__init__
+Push.BrowserComponent.TagBrowserQuery.__init__
+Push.BrowserComponent.VirtualBrowserItem.__init__
+Push.BrowserModes.BrowserAddEffectMode.__init__
+Push.BrowserModes.BrowserHotswapMode.__init__
+Push.ClipControlComponent.AudioClipSettingsComponent.__init__
+Push.ClipControlComponent.ClipControlComponent.__init__
+Push.ClipControlComponent.ClipNameComponent.__init__
+Push.ClipControlComponent.LoopSettingsComponent.__init__
+Push.ClipControlComponent.MidiClipSettingsComponent.__init__
+Push.ClipControlComponent.NoClipSettingsComponent.__init__
+Push.ClipCreator.ClipCreator.__init__
+Push.Colors.AnimatedColor.__init__
+Push.Colors.Blink.__init__
+Push.Colors.Color.__init__
+Push.Colors.FallbackColor.__init__
+Push.Colors.Pulse.__init__
+Push.Colors.RgbColor.__init__
+Push.ComboElement.ComboElement.__init__
+Push.ComboElement.WrapperElement.__init__
+Push.ConfigurableButtonElement.ConfigurableButtonElement.__init__
+Push.DeviceNavigationComponent.DeviceNavigationComponent.__init__
+Push.DisplayingDeviceComponent.DisplayingDeviceComponent.__init__
+Push.DrumGroupComponent.DrumGroupComponent.__init__
+Push.HandshakeComponent.HandshakeComponent.__init__
+Push.InstrumentComponent.InstrumentComponent.__init__
+Push.InstrumentComponent.InstrumentPresetsComponent.__init__
+Push.InstrumentComponent.InstrumentScalesComponent.__init__
+Push.InstrumentComponent.ScalesInfoComponent.__init__
+Push.LoopSelectorComponent.LoopSelectorComponent.__init__
+Push.M4LInterfaceComponent.M4LInterfaceComponent.__init__
+Push.MelodicComponent.MelodicPattern.NoteInfo.__init__
+Push.MelodicComponent.MelodicPattern.__init__
+Push.MelodicComponent.Modus.__init__
+Push.MelodicComponent.Scale.__init__
+Push.MessageBoxComponent.DialogComponent.__init__
+Push.MessageBoxComponent.MessageBoxComponent.__init__
+Push.MessageBoxComponent.NotificationComponent.__init__
+Push.MessageBoxComponent._CallbackControl.__init__
+Push.NavigationNode.ChainNode.__init__
+Push.NavigationNode.ModelNode.__init__
+Push.NavigationNode.RackNode.__init__
+Push.NavigationNode.SimpleDeviceNode.__init__
+Push.NavigationNode.SongNode.__init__
+Push.NoteEditorComponent.NoteEditorComponent.__init__
+Push.NoteEditorComponent.TimeStep.__init__
+Push.NoteRepeatComponent.NoteRepeatComponent.__init__
+Push.OptionalElement.OptionalElement.__init__
+Push.PadSensitivity.PadSensitivity.__init__
+Push.Push.Push.__init__
+Push.ScrollableList.ListComponent.__init__
+Push.ScrollableList.ScrollableList.__init__
+Push.ScrollableList.ScrollableListItem.__init__
+Push.ScrollableListComponent.ScrollableListComponent.__init__
+Push.ScrollableListComponent.ScrollableListWithTogglesComponent.__init__
+Push.Selection.L9CSelection.__init__
+Push.SessionRecordingComponent.SessionRecordingComponent.__init__
+Push.Setting.EnumerableSetting.__init__
+Push.Setting.OnOffSetting.__init__
+Push.Setting.Setting.__init__
+Push.Skin.Skin.__init__
+Push.SpecialChanStripComponent.SpecialChanStripComponent.__init__
+Push.SpecialMixerComponent.SpecialMixerComponent.__init__
+Push.SpecialSessionComponent.DuplicateSceneComponent.__init__
+Push.SpecialSessionComponent.SpecialSessionComponent.__init__
+Push.SpecialTransportComponent.QuantizationComponent.__init__
+Push.SpecialTransportComponent.QuantizationSettingsComponent.__init__
+Push.SpecialTransportComponent.SpecialTransportComponent.__init__
+Push.StepSeqComponent.StepSeqComponent.__init__
+Push.TouchEncoderElement.TouchEncoderElement.__init__
+Push.TouchStripController.TouchStripControllerComponent.__init__
+Push.TouchStripController.TouchStripEncoderConnection.__init__
+Push.TouchStripElement.TouchStripElement.__init__
+Push.UserSettingsComponent.UserComponent.__init__
+Push.UserSettingsComponent.UserSettingsComponent.__init__
+Push.ValueComponent.ParameterValueComponent.__init__
+Push.ValueComponent.ParameterValueDisplayComponent.__init__
+Push.ValueComponent.ValueComponent.__init__
+Push.ValueComponent.ValueComponentBase.__init__
+Push.ValueComponent.ValueDisplayComponent.__init__
+Push.ValueComponent.ValueDisplayComponentBase.__init__
+Push.ViewControlComponent.ViewControlComponent.__init__
+Push.ViewControlComponent._DeltaSongScroller.__init__" class="py-name" href="#" onclick="return doclink('link-77', '__init__', 'link-14');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">register_component</tt><tt class="py-op">(</tt><tt id="link-78" class="py-name"><a title="Push.MessageBoxComponent
+Push.MessageBoxComponent.MessageBoxComponent" class="py-name" href="#" onclick="return doclink('link-78', 'MessageBoxComponent', 'link-13');">MessageBoxComponent</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt id="link-79" class="py-name"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled" class="py-name" href="#" onclick="return doclink('link-79', 'set_enabled', 'link-60');">set_enabled</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_next_message</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name" targets="Method Push.MessageBoxComponent.DialogComponent._on_open_dialog_count()=Push.MessageBoxComponent.DialogComponent-class.html#_on_open_dialog_count"><a title="Push.MessageBoxComponent.DialogComponent._on_open_dialog_count" class="py-name" href="#" onclick="return doclink('link-80', '_on_open_dialog_count', 'link-80');">_on_open_dialog_count</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">application</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-81" class="py-name" targets="Method Push.MessageBoxComponent.DialogComponent._on_message_cancel()=Push.MessageBoxComponent.DialogComponent-class.html#_on_message_cancel"><a title="Push.MessageBoxComponent.DialogComponent._on_message_cancel" class="py-name" href="#" onclick="return doclink('link-81', '_on_message_cancel', 'link-81');">_on_message_cancel</a></tt><tt class="py-op">.</tt><tt class="py-name">subject</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt> </tt>
+</div><a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">    <tt id="link-82" class="py-name"><a title="Push.MessageBoxComponent.DialogComponent.message_box_layer
+Push.MessageBoxComponent.NotificationComponent.message_box_layer" class="py-name" href="#" onclick="return doclink('link-82', 'message_box_layer', 'link-62');">message_box_layer</a></tt> <tt class="py-op">=</tt> <tt class="py-name">forward_property</tt><tt class="py-op">(</tt><tt class="py-string">'_message_box'</tt><tt class="py-op">)</tt><tt class="py-op">(</tt><tt class="py-string">'layer'</tt><tt class="py-op">)</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> </tt>
+<a name="DialogComponent.expect_dialog"></a><div id="DialogComponent.expect_dialog-def"><a name="L229"></a><tt class="py-lineno">229</tt> <a class="py-toggle" href="#" id="DialogComponent.expect_dialog-toggle" onclick="return toggle('DialogComponent.expect_dialog');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.DialogComponent-class.html#expect_dialog">expect_dialog</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">message</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DialogComponent.expect_dialog-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DialogComponent.expect_dialog-expanded"><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"><tt class="py-docstring">        Expects a dialog from Live to appear soon.  The dialog will be</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"><tt class="py-docstring">        shown on the controller with the given message regardless of</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"><tt class="py-docstring">        wether a dialog actually appears.  This dialog can be</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line"><tt class="py-docstring">        cancelled.</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_next_message</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-83" class="py-name" targets="Method Push.MessageBoxComponent.DialogComponent._update_dialog()=Push.MessageBoxComponent.DialogComponent-class.html#_update_dialog"><a title="Push.MessageBoxComponent.DialogComponent._update_dialog" class="py-name" href="#" onclick="return doclink('link-83', '_update_dialog', 'link-83');">_update_dialog</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line"> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">subject_slot</tt><tt class="py-op">(</tt><tt class="py-string">'open_dialog_count'</tt><tt class="py-op">)</tt> </tt>
+<a name="DialogComponent._on_open_dialog_count"></a><div id="DialogComponent._on_open_dialog_count-def"><a name="L240"></a><tt class="py-lineno">240</tt> <a class="py-toggle" href="#" id="DialogComponent._on_open_dialog_count-toggle" onclick="return toggle('DialogComponent._on_open_dialog_count');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.DialogComponent-class.html#_on_open_dialog_count">_on_open_dialog_count</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DialogComponent._on_open_dialog_count-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DialogComponent._on_open_dialog_count-expanded"><a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-84" class="py-name"><a title="Push.MessageBoxComponent.DialogComponent._update_dialog" class="py-name" href="#" onclick="return doclink('link-84', '_update_dialog', 'link-83');">_update_dialog</a></tt><tt class="py-op">(</tt><tt class="py-name">open_dialog_changed</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_next_message</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">subject_slot</tt><tt class="py-op">(</tt><tt class="py-string">'cancel'</tt><tt class="py-op">)</tt> </tt>
+<a name="DialogComponent._on_message_cancel"></a><div id="DialogComponent._on_message_cancel-def"><a name="L245"></a><tt class="py-lineno">245</tt> <a class="py-toggle" href="#" id="DialogComponent._on_message_cancel-toggle" onclick="return toggle('DialogComponent._on_message_cancel');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.DialogComponent-class.html#_on_message_cancel">_on_message_cancel</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DialogComponent._on_message_cancel-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DialogComponent._on_message_cancel-expanded"><a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_next_message</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">application</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">press_current_dialog_button</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line"> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name"><a title="Push.MessageBoxComponent.DialogComponent._update_dialog" class="py-name" href="#" onclick="return doclink('link-85', '_update_dialog', 'link-83');">_update_dialog</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line"> </tt>
+<a name="DialogComponent._update_dialog"></a><div id="DialogComponent._update_dialog-def"><a name="L254"></a><tt class="py-lineno">254</tt> <a class="py-toggle" href="#" id="DialogComponent._update_dialog-toggle" onclick="return toggle('DialogComponent._update_dialog');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.DialogComponent-class.html#_update_dialog">_update_dialog</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">open_dialog_changed</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DialogComponent._update_dialog-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DialogComponent._update_dialog-expanded"><a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">        <tt class="py-name">message</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_next_message</tt> <tt class="py-keyword">or</tt> <tt id="link-86" class="py-name"><a title="Push.consts.MessageBoxText" class="py-name" href="#" onclick="return doclink('link-86', 'MessageBoxText', 'link-3');">MessageBoxText</a></tt><tt class="py-op">.</tt><tt id="link-87" class="py-name" targets="Variable Push.consts.MessageBoxText.LIVE_DIALOG=Push.consts.MessageBoxText-class.html#LIVE_DIALOG"><a title="Push.consts.MessageBoxText.LIVE_DIALOG" class="py-name" href="#" onclick="return doclink('link-87', 'LIVE_DIALOG', 'link-87');">LIVE_DIALOG</a></tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt id="link-88" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.can_cancel" class="py-name" href="#" onclick="return doclink('link-88', 'can_cancel', 'link-46');">can_cancel</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_next_message</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt id="link-89" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.text" class="py-name" href="#" onclick="return doclink('link-89', 'text', 'link-41');">text</a></tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt id="link-90" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.can_cancel" class="py-name" href="#" onclick="return doclink('link-90', 'can_cancel', 'link-46');">can_cancel</a></tt> <tt class="py-op">=</tt> <tt id="link-91" class="py-name"><a title="Push.MessageBoxComponent.MessageBoxComponent.can_cancel" class="py-name" href="#" onclick="return doclink('link-91', 'can_cancel', 'link-46');">can_cancel</a></tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_message_box</tt><tt class="py-op">.</tt><tt id="link-92" class="py-name"><a title="Push.ConfigurableButtonElement.ConfigurableButtonElement.set_enabled" class="py-name" href="#" onclick="return doclink('link-92', 'set_enabled', 'link-60');">set_enabled</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">application</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">open_dialog_count</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt> <tt class="py-keyword">or</tt> <tt class="py-keyword">not</tt> <tt class="py-name">open_dialog_changed</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_next_message</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line"> </tt>
+<a name="DialogComponent.update"></a><div id="DialogComponent.update-def"><a name="L261"></a><tt class="py-lineno">261</tt> <a class="py-toggle" href="#" id="DialogComponent.update-toggle" onclick="return toggle('DialogComponent.update');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Push.MessageBoxComponent.DialogComponent-class.html#update">update</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DialogComponent.update-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DialogComponent.update-expanded"><a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="Push-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 19:32:46 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

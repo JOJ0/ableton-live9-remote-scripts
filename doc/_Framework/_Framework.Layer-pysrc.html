@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>_Framework.Layer</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="_Framework-module.html">Package&nbsp;_Framework</a> ::
+        Module&nbsp;Layer
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="_Framework.Layer-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="_Framework.Layer-module.html">Module _Framework.Layer</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/_Framework/Layer.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">Module implementing a way to resource-based access to controls in an</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">unified interface dynamic.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module _Framework.Util=_Framework.Util-module.html"><a title="_Framework.Util" class="py-name" href="#" onclick="return doclink('link-0', 'Util', 'link-0');">Util</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Function _Framework.Util.nop()=_Framework.Util-module.html#nop"><a title="_Framework.Util.nop" class="py-name" href="#" onclick="return doclink('link-1', 'nop', 'link-1');">nop</a></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">itertools</tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Function _Framework.Task.repeat()=_Framework.Task-module.html#repeat"><a title="_Framework.Task.repeat" class="py-name" href="#" onclick="return doclink('link-2', 'repeat', 'link-2');">repeat</a></tt><tt class="py-op">,</tt> <tt class="py-name">izip</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-3" class="py-name" targets="Module _Framework.Resource=_Framework.Resource-module.html,Class _Framework.Resource.Resource=_Framework.Resource.Resource-class.html"><a title="_Framework.Resource
+_Framework.Resource.Resource" class="py-name" href="#" onclick="return doclink('link-3', 'Resource', 'link-3');">Resource</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name" targets="Class _Framework.Resource.ExclusiveResource=_Framework.Resource.ExclusiveResource-class.html"><a title="_Framework.Resource.ExclusiveResource" class="py-name" href="#" onclick="return doclink('link-4', 'ExclusiveResource', 'link-4');">ExclusiveResource</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="LayerError"></a><div id="LayerError-def"><a name="L10"></a><tt class="py-lineno"> 10</tt> <a class="py-toggle" href="#" id="LayerError-toggle" onclick="return toggle('LayerError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.Layer.LayerError-class.html">LayerError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LayerError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="LayerError-expanded"><a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="UnhandledControlError"></a><div id="UnhandledControlError-def"><a name="L14"></a><tt class="py-lineno"> 14</tt> <a class="py-toggle" href="#" id="UnhandledControlError-toggle" onclick="return toggle('UnhandledControlError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.Layer.UnhandledControlError-class.html">UnhandledControlError</a><tt class="py-op">(</tt><tt class="py-base-class">LayerError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnhandledControlError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="UnhandledControlError-expanded"><a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="Layer"></a><div id="Layer-def"><a name="L18"></a><tt class="py-lineno"> 18</tt> <a class="py-toggle" href="#" id="Layer-toggle" onclick="return toggle('Layer');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.Layer.Layer-class.html">Layer</a><tt class="py-op">(</tt><tt class="py-base-class">ExclusiveResource</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Layer-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Layer-expanded"><a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">    A layer provides a convenient interface to control resources. In a</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">    layer, you can group several controls by name.  The layer itself</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">    is an exclusive resource.  When grabbing the layer, it will try to</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">    grab all controls and will forward them to its own owner when he</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    receives them, and will take them from him when they are</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    release. The layer with give and take away the controls from its</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    client using methods of the form::</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">        client.set[control-name](control)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">    Where [control-name] is the name the control was given in this</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">    layer.  This way, layers are a convenient way to provide controls</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">    to components indirectly, with automatic handling of competition</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">    for them.</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="Layer.__init__"></a><div id="Layer.__init__-def"><a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="Layer.__init__-toggle" onclick="return toggle('Layer.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.Layer.Layer-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">controls</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Layer.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Layer.__init__-expanded"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-5" class="py-name" targets="Module _Framework.Layer=_Framework.Layer-module.html,Class _Framework.Layer.Layer=_Framework.Layer.Layer-class.html"><a title="_Framework.Layer
+_Framework.Layer.Layer" class="py-name" href="#" onclick="return doclink('link-5', 'Layer', 'link-5');">Layer</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method _Framework.ButtonElement.ButtonElement.__init__()=_Framework.ButtonElement.ButtonElement-class.html#__init__,Method _Framework.ButtonMatrixElement.ButtonMatrixElement.__init__()=_Framework.ButtonMatrixElement.ButtonMatrixElement-class.html#__init__,Method _Framework.ButtonSliderElement.ButtonSliderElement.__init__()=_Framework.ButtonSliderElement.ButtonSliderElement-class.html#__init__,Method _Framework.ChannelStripComponent.ChannelStripComponent.__init__()=_Framework.ChannelStripComponent.ChannelStripComponent-class.html#__init__,Method _Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__()=_Framework.ChannelTranslationSelector.ChannelTranslationSelector-class.html#__init__,Method _Framework.ClipSlotComponent.ClipSlotComponent.__init__()=_Framework.ClipSlotComponent.ClipSlotComponent-class.html#__init__,Method _Framework.CompoundComponent.CompoundComponent.__init__()=_Framework.CompoundComponent.CompoundComponent-class.html#__init__,Method _Framework.CompoundElement.CompoundElement.__init__()=_Framework.CompoundElement.CompoundElement-class.html#__init__,Method _Framework.ControlElement.ControlElement.__init__()=_Framework.ControlElement.ControlElement-class.html#__init__,Method _Framework.ControlSurface.ControlSurface.__init__()=_Framework.ControlSurface.ControlSurface-class.html#__init__,Method _Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__()=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#__init__,Method _Framework.Dependency.InjectionFactory.__init__()=_Framework.Dependency.InjectionFactory-class.html#__init__,Method _Framework.Dependency.InjectionRegistry.__init__()=_Framework.Dependency.InjectionRegistry-class.html#__init__,Method _Framework.Dependency.RegistryInjector.__init__()=_Framework.Dependency.RegistryInjector-class.html#__init__,Method _Framework.Dependency.dependency.__init__()=_Framework.Dependency.dependency-class.html#__init__,Method _Framework.DeviceBankRegistry.DeviceBankRegistry.__init__()=_Framework.DeviceBankRegistry.DeviceBankRegistry-class.html#__init__,Method _Framework.DeviceComponent.DeviceComponent.__init__()=_Framework.DeviceComponent.DeviceComponent-class.html#__init__,Method _Framework.Disconnectable.CompoundDisconnectable.__init__()=_Framework.Disconnectable.CompoundDisconnectable-class.html#__init__,Method _Framework.Disconnectable.disconnectable.__init__()=_Framework.Disconnectable.disconnectable-class.html#__init__,Method _Framework.DisplayDataSource.DisplayDataSource.__init__()=_Framework.DisplayDataSource.DisplayDataSource-class.html#__init__,Method _Framework.EncoderElement.EncoderElement.__init__()=_Framework.EncoderElement.EncoderElement-class.html#__init__,Method _Framework.InputControlElement.InputControlElement.__init__()=_Framework.InputControlElement.InputControlElement-class.html#__init__,Method _Framework.InputControlElement.InputSignal.__init__()=_Framework.InputControlElement.InputSignal-class.html#__init__,Method _Framework.InputControlElement.ParameterSlot.__init__()=_Framework.InputControlElement.ParameterSlot-class.html#__init__,Method _Framework.Layer.Layer.__init__()=_Framework.Layer.Layer-class.html#__init__,Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#__init__,Method _Framework.MixerComponent.MixerComponent.__init__()=_Framework.MixerComponent.MixerComponent-class.html#__init__,Method _Framework.ModeSelectorComponent.ModeSelectorComponent.__init__()=_Framework.ModeSelectorComponent.ModeSelectorComponent-class.html#__init__,Method _Framework.ModesComponent.AddLayerMode.__init__()=_Framework.ModesComponent.AddLayerMode-class.html#__init__,Method _Framework.ModesComponent.AlternativeBehaviour.__init__()=_Framework.ModesComponent.AlternativeBehaviour-class.html#__init__,Method _Framework.ModesComponent.ComponentMode.__init__()=_Framework.ModesComponent.ComponentMode-class.html#__init__,Method _Framework.ModesComponent.CompoundMode.__init__()=_Framework.ModesComponent.CompoundMode-class.html#__init__,Method _Framework.ModesComponent.ContextManagerMode.__init__()=_Framework.ModesComponent.ContextManagerMode-class.html#__init__,Method _Framework.ModesComponent.DisableMode.__init__()=_Framework.ModesComponent.DisableMode-class.html#__init__,Method _Framework.ModesComponent.DisplayingModesComponent.__init__()=_Framework.ModesComponent.DisplayingModesComponent-class.html#__init__,Method _Framework.ModesComponent.DynamicBehaviourMixin.__init__()=_Framework.ModesComponent.DynamicBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.ExcludingBehaviourMixin.__init__()=_Framework.ModesComponent.ExcludingBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.LayerMode.__init__()=_Framework.ModesComponent.LayerMode-class.html#__init__,Method _Framework.ModesComponent.ModesComponent.__init__()=_Framework.ModesComponent.ModesComponent-class.html#__init__,Method _Framework.ModesComponent.MultiEntryMode.__init__()=_Framework.ModesComponent.MultiEntryMode-class.html#__init__,Method _Framework.ModesComponent.ReenterBehaviour.__init__()=_Framework.ModesComponent.ReenterBehaviour-class.html#__init__,Method _Framework.ModesComponent.SetAttributeMode.__init__()=_Framework.ModesComponent.SetAttributeMode-class.html#__init__,Method _Framework.MomentaryModeObserver.MomentaryModeObserver.__init__()=_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#__init__,Method _Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__()=_Framework.PhysicalDisplayElement.PhysicalDisplayElement-class.html#__init__,Method _Framework.Resource.CompoundResource.__init__()=_Framework.Resource.CompoundResource-class.html#__init__,Method _Framework.Resource.ExclusiveResource.__init__()=_Framework.Resource.ExclusiveResource-class.html#__init__,Method _Framework.Resource.PrioritizedResource.__init__()=_Framework.Resource.PrioritizedResource-class.html#__init__,Method _Framework.Resource.SharedResource.__init__()=_Framework.Resource.SharedResource-class.html#__init__,Method _Framework.Resource.StackingResource.__init__()=_Framework.Resource.StackingResource-class.html#__init__,Method _Framework.SceneComponent.SceneComponent.__init__()=_Framework.SceneComponent.SceneComponent-class.html#__init__,Method _Framework.ScrollComponent.ScrollComponent.__init__()=_Framework.ScrollComponent.ScrollComponent-class.html#__init__,Method _Framework.SessionComponent.SessionComponent.__init__()=_Framework.SessionComponent.SessionComponent-class.html#__init__,Method _Framework.SessionZoomingComponent.SessionZoomingComponent.__init__()=_Framework.SessionZoomingComponent.SessionZoomingComponent-class.html#__init__,Method _Framework.Signal.IdentifyingSlot.__init__()=_Framework.Signal.IdentifyingSlot-class.html#__init__,Method _Framework.Signal.Signal.__init__()=_Framework.Signal.Signal-class.html#__init__,Method _Framework.Signal.Slot.__init__()=_Framework.Signal.Slot-class.html#__init__,Method _Framework.SliderElement.SliderElement.__init__()=_Framework.SliderElement.SliderElement-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlot.__init__()=_Framework.SubjectSlot.SubjectSlot-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlotGroup.__init__()=_Framework.SubjectSlot.SubjectSlotGroup-class.html#__init__,Method _Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__()=_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent-class.html#__init__,Method _Framework.SysexValueControl.SysexValueControl.__init__()=_Framework.SysexValueControl.SysexValueControl-class.html#__init__,Method _Framework.Task.DelayTask.__init__()=_Framework.Task.DelayTask-class.html#__init__,Method _Framework.Task.FadeTask.__init__()=_Framework.Task.FadeTask-class.html#__init__,Method _Framework.Task.FuncTask.__init__()=_Framework.Task.FuncTask-class.html#__init__,Method _Framework.Task.GeneratorTask.__init__()=_Framework.Task.GeneratorTask-class.html#__init__,Method _Framework.Task.SequenceTask.__init__()=_Framework.Task.SequenceTask-class.html#__init__,Method _Framework.Task.Task.__init__()=_Framework.Task.Task-class.html#__init__,Method _Framework.Task.TaskGroup.__init__()=_Framework.Task.TaskGroup-class.html#__init__,Method _Framework.Task.WaitTask.__init__()=_Framework.Task.WaitTask-class.html#__init__,Method _Framework.Task.WrapperTask.__init__()=_Framework.Task.WrapperTask-class.html#__init__,Method _Framework.ToggleComponent.ToggleComponent.__init__()=_Framework.ToggleComponent.ToggleComponent-class.html#__init__,Method _Framework.TrackEQComponent.TrackEQComponent.__init__()=_Framework.TrackEQComponent.TrackEQComponent-class.html#__init__,Method _Framework.TrackFilterComponent.TrackFilterComponent.__init__()=_Framework.TrackFilterComponent.TrackFilterComponent-class.html#__init__,Method _Framework.TransportComponent.TransportComponent.__init__()=_Framework.TransportComponent.TransportComponent-class.html#__init__,Method _Framework.Util.BooleanContext.Manager.__init__()=_Framework.Util.BooleanContext.Manager-class.html#__init__,Method _Framework.Util.BooleanContext.__init__()=_Framework.Util.BooleanContext-class.html#__init__,Method _Framework.Util.CallCounter.__init__()=_Framework.Util.CallCounter-class.html#__init__,Method _Framework.Util.NamedTuple.__init__()=_Framework.Util.NamedTuple-class.html#__init__,Method _Framework.Util.lazy_attribute.__init__()=_Framework.Util.lazy_attribute-class.html#__init__,Method _Framework.Util.memoize.__init__()=_Framework.Util.memoize-class.html#__init__"><a title="_Framework.ButtonElement.ButtonElement.__init__
+_Framework.ButtonMatrixElement.ButtonMatrixElement.__init__
+_Framework.ButtonSliderElement.ButtonSliderElement.__init__
+_Framework.ChannelStripComponent.ChannelStripComponent.__init__
+_Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__
+_Framework.ClipSlotComponent.ClipSlotComponent.__init__
+_Framework.CompoundComponent.CompoundComponent.__init__
+_Framework.CompoundElement.CompoundElement.__init__
+_Framework.ControlElement.ControlElement.__init__
+_Framework.ControlSurface.ControlSurface.__init__
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__
+_Framework.Dependency.InjectionFactory.__init__
+_Framework.Dependency.InjectionRegistry.__init__
+_Framework.Dependency.RegistryInjector.__init__
+_Framework.Dependency.dependency.__init__
+_Framework.DeviceBankRegistry.DeviceBankRegistry.__init__
+_Framework.DeviceComponent.DeviceComponent.__init__
+_Framework.Disconnectable.CompoundDisconnectable.__init__
+_Framework.Disconnectable.disconnectable.__init__
+_Framework.DisplayDataSource.DisplayDataSource.__init__
+_Framework.EncoderElement.EncoderElement.__init__
+_Framework.InputControlElement.InputControlElement.__init__
+_Framework.InputControlElement.InputSignal.__init__
+_Framework.InputControlElement.ParameterSlot.__init__
+_Framework.Layer.Layer.__init__
+_Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__
+_Framework.MixerComponent.MixerComponent.__init__
+_Framework.ModeSelectorComponent.ModeSelectorComponent.__init__
+_Framework.ModesComponent.AddLayerMode.__init__
+_Framework.ModesComponent.AlternativeBehaviour.__init__
+_Framework.ModesComponent.ComponentMode.__init__
+_Framework.ModesComponent.CompoundMode.__init__
+_Framework.ModesComponent.ContextManagerMode.__init__
+_Framework.ModesComponent.DisableMode.__init__
+_Framework.ModesComponent.DisplayingModesComponent.__init__
+_Framework.ModesComponent.DynamicBehaviourMixin.__init__
+_Framework.ModesComponent.ExcludingBehaviourMixin.__init__
+_Framework.ModesComponent.LayerMode.__init__
+_Framework.ModesComponent.ModesComponent.__init__
+_Framework.ModesComponent.MultiEntryMode.__init__
+_Framework.ModesComponent.ReenterBehaviour.__init__
+_Framework.ModesComponent.SetAttributeMode.__init__
+_Framework.MomentaryModeObserver.MomentaryModeObserver.__init__
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__
+_Framework.Resource.CompoundResource.__init__
+_Framework.Resource.ExclusiveResource.__init__
+_Framework.Resource.PrioritizedResource.__init__
+_Framework.Resource.SharedResource.__init__
+_Framework.Resource.StackingResource.__init__
+_Framework.SceneComponent.SceneComponent.__init__
+_Framework.ScrollComponent.ScrollComponent.__init__
+_Framework.SessionComponent.SessionComponent.__init__
+_Framework.SessionZoomingComponent.SessionZoomingComponent.__init__
+_Framework.Signal.IdentifyingSlot.__init__
+_Framework.Signal.Signal.__init__
+_Framework.Signal.Slot.__init__
+_Framework.SliderElement.SliderElement.__init__
+_Framework.SubjectSlot.SubjectSlot.__init__
+_Framework.SubjectSlot.SubjectSlotGroup.__init__
+_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__
+_Framework.SysexValueControl.SysexValueControl.__init__
+_Framework.Task.DelayTask.__init__
+_Framework.Task.FadeTask.__init__
+_Framework.Task.FuncTask.__init__
+_Framework.Task.GeneratorTask.__init__
+_Framework.Task.SequenceTask.__init__
+_Framework.Task.Task.__init__
+_Framework.Task.TaskGroup.__init__
+_Framework.Task.WaitTask.__init__
+_Framework.Task.WrapperTask.__init__
+_Framework.ToggleComponent.ToggleComponent.__init__
+_Framework.TrackEQComponent.TrackEQComponent.__init__
+_Framework.TrackFilterComponent.TrackFilterComponent.__init__
+_Framework.TransportComponent.TransportComponent.__init__
+_Framework.Util.BooleanContext.Manager.__init__
+_Framework.Util.BooleanContext.__init__
+_Framework.Util.CallCounter.__init__
+_Framework.Util.NamedTuple.__init__
+_Framework.Util.lazy_attribute.__init__
+_Framework.Util.memoize.__init__" class="py-name" href="#" onclick="return doclink('link-6', '__init__', 'link-6');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_layer_owner</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_priority</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_name_to_controls</tt> <tt class="py-op">=</tt> <tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-name">izip</tt><tt class="py-op">(</tt><tt class="py-name">controls</tt><tt class="py-op">.</tt><tt class="py-name">iterkeys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-7" class="py-name"><a title="_Framework.Task.repeat" class="py-name" href="#" onclick="return doclink('link-7', 'repeat', 'link-2');">repeat</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_control_to_names</tt> <tt class="py-op">=</tt> <tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-8" class="py-name" targets="Variable _Framework.ControlElement.ControlElement.name=_Framework.ControlElement.ControlElement-class.html#name,Variable _Framework.ControlSurfaceComponent.ControlSurfaceComponent.name=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#name,Variable _Framework.SubjectSlot.SubjectEvent.name=_Framework.SubjectSlot.SubjectEvent-class.html#name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-8', 'name', 'link-8');">name</a></tt><tt class="py-op">,</tt> <tt id="link-9" class="py-name" targets="Variable _Framework.InputControlElement.ParameterSlot.control=_Framework.InputControlElement.ParameterSlot-class.html#control"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-9', 'control', 'link-9');">control</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">controls</tt><tt class="py-op">.</tt><tt class="py-name">iteritems</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_control_to_names</tt><tt class="py-op">.</tt><tt class="py-name">setdefault</tt><tt class="py-op">(</tt><tt id="link-10" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-10', 'control', 'link-9');">control</a></tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-11" class="py-name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-11', 'name', 'link-8');">name</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="Layer._get_priority"></a><div id="Layer._get_priority-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="Layer._get_priority-toggle" onclick="return toggle('Layer._get_priority');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.Layer.Layer-class.html#_get_priority">_get_priority</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Layer._get_priority-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Layer._get_priority-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_priority</tt> </tt>
+</div><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"> </tt>
+<a name="Layer._set_priority"></a><div id="Layer._set_priority-def"><a name="L48"></a><tt class="py-lineno"> 48</tt> <a class="py-toggle" href="#" id="Layer._set_priority-toggle" onclick="return toggle('Layer._set_priority');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.Layer.Layer-class.html#_set_priority">_set_priority</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">priority</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Layer._set_priority-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Layer._set_priority-expanded"><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-12" class="py-name" targets="Variable _Framework.Layer.Layer.priority=_Framework.Layer.Layer-class.html#priority"><a title="_Framework.Layer.Layer.priority" class="py-name" href="#" onclick="return doclink('link-12', 'priority', 'link-12');">priority</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_priority</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_priority</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="_Framework.Layer.Layer.priority" class="py-name" href="#" onclick="return doclink('link-13', 'priority', 'link-12');">priority</a></tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_layer_owner</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method _Framework.Layer.Layer.grab()=_Framework.Layer.Layer-class.html#grab,Method _Framework.Resource.CompoundResource.grab()=_Framework.Resource.CompoundResource-class.html#grab,Method _Framework.Resource.ExclusiveResource.grab()=_Framework.Resource.ExclusiveResource-class.html#grab,Method _Framework.Resource.PrioritizedResource.grab()=_Framework.Resource.PrioritizedResource-class.html#grab,Method _Framework.Resource.Resource.grab()=_Framework.Resource.Resource-class.html#grab,Method _Framework.Resource.SharedResource.grab()=_Framework.Resource.SharedResource-class.html#grab,Method _Framework.Resource.StackingResource.grab()=_Framework.Resource.StackingResource-class.html#grab"><a title="_Framework.Layer.Layer.grab
+_Framework.Resource.CompoundResource.grab
+_Framework.Resource.ExclusiveResource.grab
+_Framework.Resource.PrioritizedResource.grab
+_Framework.Resource.Resource.grab
+_Framework.Resource.SharedResource.grab
+_Framework.Resource.StackingResource.grab" class="py-name" href="#" onclick="return doclink('link-14', 'grab', 'link-14');">grab</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_layer_owner</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt id="link-15" class="py-name"><a title="_Framework.Layer.Layer.priority" class="py-name" href="#" onclick="return doclink('link-15', 'priority', 'link-12');">priority</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-16" class="py-name" targets="Method _Framework.Layer.Layer._get_priority()=_Framework.Layer.Layer-class.html#_get_priority"><a title="_Framework.Layer.Layer._get_priority" class="py-name" href="#" onclick="return doclink('link-16', '_get_priority', 'link-16');">_get_priority</a></tt><tt class="py-op">,</tt> <tt id="link-17" class="py-name" targets="Method _Framework.Layer.Layer._set_priority()=_Framework.Layer.Layer-class.html#_set_priority"><a title="_Framework.Layer.Layer._set_priority" class="py-name" href="#" onclick="return doclink('link-17', '_set_priority', 'link-17');">_set_priority</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="Layer.__getattr__"></a><div id="Layer.__getattr__-def"><a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="Layer.__getattr__-toggle" onclick="return toggle('Layer.__getattr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.Layer.Layer-class.html#__getattr__">__getattr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Layer.__getattr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Layer.__getattr__-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-docstring">""" Provides access to controls """</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_name_to_controls</tt><tt class="py-op">[</tt><tt id="link-18" class="py-name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-18', 'name', 'link-8');">name</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">AttributeError</tt> </tt>
+</div><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="Layer.set_control_element"></a><div id="Layer.set_control_element-def"><a name="L63"></a><tt class="py-lineno"> 63</tt> <a class="py-toggle" href="#" id="Layer.set_control_element-toggle" onclick="return toggle('Layer.set_control_element');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.Layer.Layer-class.html#set_control_element">set_control_element</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">control</tt><tt class="py-op">,</tt> <tt class="py-param">grabbed</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Layer.set_control_element-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Layer.set_control_element-expanded"><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">        Client interface of the ControlElement resource. Please do not</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">        call this method directly, nor use a layer to grab controls</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">        directly -- do it implicitly by grabing the layer.</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_layer_owner</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-19" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-19', 'control', 'link-9');">control</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_control_to_names</tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt><tt class="py-op">,</tt> <tt class="py-string">'Control not in layer.'</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">            <tt id="link-20" class="py-name" targets="Variable _Framework.Resource.Resource.owner=_Framework.Resource.Resource-class.html#owner"><a title="_Framework.Resource.Resource.owner" class="py-name" href="#" onclick="return doclink('link-20', 'owner', 'link-20');">owner</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_layer_owner</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">            <tt class="py-name">names</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_control_to_names</tt><tt class="py-op">[</tt><tt id="link-21" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-21', 'control', 'link-9');">control</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">            <tt id="link-22" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-22', 'control', 'link-9');">control</a></tt> <tt class="py-op">=</tt> <tt class="py-name">grabbed</tt> <tt class="py-keyword">or</tt> <tt class="py-name">None</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-23" class="py-name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-23', 'name', 'link-8');">name</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">names</tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                <tt class="py-name">handler</tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt id="link-24" class="py-name"><a title="_Framework.Resource.Resource.owner" class="py-name" href="#" onclick="return doclink('link-24', 'owner', 'link-20');">owner</a></tt><tt class="py-op">,</tt> <tt class="py-string">'set_'</tt> <tt class="py-op">+</tt> <tt id="link-25" class="py-name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-25', 'name', 'link-8');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt id="link-26" class="py-name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-26', 'name', 'link-8');">name</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-string">'_'</tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                    <tt class="py-keyword">raise</tt> <tt id="link-27" class="py-name" targets="Class _Framework.Layer.UnhandledControlError=_Framework.Layer.UnhandledControlError-class.html"><a title="_Framework.Layer.UnhandledControlError" class="py-name" href="#" onclick="return doclink('link-27', 'UnhandledControlError', 'link-27');">UnhandledControlError</a></tt><tt class="py-op">,</tt> <tt class="py-string">'Component %s has no handler for control %s'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-28" class="py-name"><a title="_Framework.Resource.Resource.owner" class="py-name" href="#" onclick="return doclink('link-28', 'owner', 'link-20');">owner</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-29" class="py-name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-29', 'name', 'link-8');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">                    <tt class="py-name">handler</tt> <tt class="py-op">=</tt> <tt id="link-30" class="py-name"><a title="_Framework.Util.nop" class="py-name" href="#" onclick="return doclink('link-30', 'nop', 'link-1');">nop</a></tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">            <tt class="py-name">handler</tt><tt class="py-op">(</tt><tt id="link-31" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-31', 'control', 'link-9');">control</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_name_to_controls</tt><tt class="py-op">[</tt><tt id="link-32" class="py-name"><a title="_Framework.ControlElement.ControlElement.name
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.name
+_Framework.SubjectSlot.SubjectEvent.name" class="py-name" href="#" onclick="return doclink('link-32', 'name', 'link-8');">name</a></tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-33" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-33', 'control', 'link-9');">control</a></tt> </tt>
+</div><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="Layer.grab"></a><div id="Layer.grab-def"><a name="L87"></a><tt class="py-lineno"> 87</tt> <a class="py-toggle" href="#" id="Layer.grab-toggle" onclick="return toggle('Layer.grab');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.Layer.Layer-class.html#grab">grab</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">client</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Layer.grab-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Layer.grab-expanded"><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">client</tt> <tt class="py-op">==</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="_Framework.Resource.Resource.owner" class="py-name" href="#" onclick="return doclink('link-34', 'owner', 'link-20');">owner</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Method _Framework.Layer.Layer.on_grab()=_Framework.Layer.Layer-class.html#on_grab,Method _Framework.Resource.ExclusiveResource.on_grab()=_Framework.Resource.ExclusiveResource-class.html#on_grab,Method _Framework.Resource.PrioritizedResource.on_grab()=_Framework.Resource.PrioritizedResource-class.html#on_grab,Method _Framework.Resource.SharedResource.on_grab()=_Framework.Resource.SharedResource-class.html#on_grab,Method _Framework.Resource.StackingResource.on_grab()=_Framework.Resource.StackingResource-class.html#on_grab"><a title="_Framework.Layer.Layer.on_grab
+_Framework.Resource.ExclusiveResource.on_grab
+_Framework.Resource.PrioritizedResource.on_grab
+_Framework.Resource.SharedResource.on_grab
+_Framework.Resource.StackingResource.on_grab" class="py-name" href="#" onclick="return doclink('link-35', 'on_grab', 'link-35');">on_grab</a></tt><tt class="py-op">(</tt><tt class="py-name">client</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-36" class="py-name"><a title="_Framework.Layer
+_Framework.Layer.Layer" class="py-name" href="#" onclick="return doclink('link-36', 'Layer', 'link-5');">Layer</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="_Framework.Layer.Layer.grab
+_Framework.Resource.CompoundResource.grab
+_Framework.Resource.ExclusiveResource.grab
+_Framework.Resource.PrioritizedResource.grab
+_Framework.Resource.Resource.grab
+_Framework.Resource.SharedResource.grab
+_Framework.Resource.StackingResource.grab" class="py-name" href="#" onclick="return doclink('link-37', 'grab', 'link-14');">grab</a></tt><tt class="py-op">(</tt><tt class="py-name">client</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"> </tt>
+<a name="Layer.on_grab"></a><div id="Layer.on_grab-def"><a name="L93"></a><tt class="py-lineno"> 93</tt> <a class="py-toggle" href="#" id="Layer.on_grab-toggle" onclick="return toggle('Layer.on_grab');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.Layer.Layer-class.html#on_grab">on_grab</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">client</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Layer.on_grab-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Layer.on_grab-expanded"><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-docstring">""" Override from ExclusiveResource """</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_layer_owner</tt> <tt class="py-op">=</tt> <tt class="py-name">client</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-38" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-38', 'control', 'link-9');">control</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_control_to_names</tt><tt class="py-op">.</tt><tt class="py-name">iterkeys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            <tt class="py-name">k</tt><tt class="py-op">.</tt><tt class="py-name">setdefault</tt><tt class="py-op">(</tt><tt class="py-string">'priority'</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_priority</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt id="link-39" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-39', 'control', 'link-9');">control</a></tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Variable _Framework.ControlElement.ControlElement.resource=_Framework.ControlElement.ControlElement-class.html#resource"><a title="_Framework.ControlElement.ControlElement.resource" class="py-name" href="#" onclick="return doclink('link-40', 'resource', 'link-40');">resource</a></tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="_Framework.Layer.Layer.grab
+_Framework.Resource.CompoundResource.grab
+_Framework.Resource.ExclusiveResource.grab
+_Framework.Resource.PrioritizedResource.grab
+_Framework.Resource.Resource.grab
+_Framework.Resource.SharedResource.grab
+_Framework.Resource.StackingResource.grab" class="py-name" href="#" onclick="return doclink('link-41', 'grab', 'link-14');">grab</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="Layer.on_release"></a><div id="Layer.on_release-def"><a name="L100"></a><tt class="py-lineno">100</tt> <a class="py-toggle" href="#" id="Layer.on_release-toggle" onclick="return toggle('Layer.on_release');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.Layer.Layer-class.html#on_release">on_release</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">client</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Layer.on_release-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Layer.on_release-expanded"><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-docstring">""" Override from ExclusiveResource """</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-42" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-42', 'control', 'link-9');">control</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_control_to_names</tt><tt class="py-op">.</tt><tt class="py-name">iterkeys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt id="link-43" class="py-name"><a title="_Framework.InputControlElement.ParameterSlot.control" class="py-name" href="#" onclick="return doclink('link-43', 'control', 'link-9');">control</a></tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="_Framework.ControlElement.ControlElement.resource" class="py-name" href="#" onclick="return doclink('link-44', 'resource', 'link-40');">resource</a></tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method _Framework.Resource.CompoundResource.release()=_Framework.Resource.CompoundResource-class.html#release,Method _Framework.Resource.ExclusiveResource.release()=_Framework.Resource.ExclusiveResource-class.html#release,Method _Framework.Resource.PrioritizedResource.release()=_Framework.Resource.PrioritizedResource-class.html#release,Method _Framework.Resource.Resource.release()=_Framework.Resource.Resource-class.html#release,Method _Framework.Resource.SharedResource.release()=_Framework.Resource.SharedResource-class.html#release,Method _Framework.Resource.StackingResource.release()=_Framework.Resource.StackingResource-class.html#release"><a title="_Framework.Resource.CompoundResource.release
+_Framework.Resource.ExclusiveResource.release
+_Framework.Resource.PrioritizedResource.release
+_Framework.Resource.Resource.release
+_Framework.Resource.SharedResource.release
+_Framework.Resource.StackingResource.release" class="py-name" href="#" onclick="return doclink('link-45', 'release', 'link-45');">release</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_layer_owner</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div></div><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 18:53:34 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

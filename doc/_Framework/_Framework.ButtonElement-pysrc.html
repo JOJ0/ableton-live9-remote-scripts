@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>_Framework.ButtonElement</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="_Framework-module.html">Package&nbsp;_Framework</a> ::
+        Module&nbsp;ButtonElement
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="_Framework.ButtonElement-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="_Framework.ButtonElement-module.html">Module _Framework.ButtonElement</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#Embedded file name: /Users/versonator/Hudson/live/Projects/AppLive/Resources/MIDI Remote Scripts/_Framework/ButtonElement.py</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">Live</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module _Framework.InputControlElement=_Framework.InputControlElement-module.html,Class _Framework.InputControlElement.InputControlElement=_Framework.InputControlElement.InputControlElement-class.html"><a title="_Framework.InputControlElement
+_Framework.InputControlElement.InputControlElement" class="py-name" href="#" onclick="return doclink('link-0', 'InputControlElement', 'link-0');">InputControlElement</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name"><a title="_Framework.InputControlElement
+_Framework.InputControlElement.InputControlElement" class="py-name" href="#" onclick="return doclink('link-1', 'InputControlElement', 'link-0');">InputControlElement</a></tt><tt class="py-op">,</tt> <tt id="link-2" class="py-name" targets="Variable _Framework.InputControlElement.MIDI_CC_TYPE=_Framework.InputControlElement-module.html#MIDI_CC_TYPE"><a title="_Framework.InputControlElement.MIDI_CC_TYPE" class="py-name" href="#" onclick="return doclink('link-2', 'MIDI_CC_TYPE', 'link-2');">MIDI_CC_TYPE</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable _Framework.ButtonElement.ON_VALUE=_Framework.ButtonElement-module.html#ON_VALUE"><a title="_Framework.ButtonElement.ON_VALUE" class="py-name" href="#" onclick="return doclink('link-3', 'ON_VALUE', 'link-3');">ON_VALUE</a></tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-number">127</tt><tt class="py-op">)</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt id="link-4" class="py-name" targets="Variable _Framework.ButtonElement.OFF_VALUE=_Framework.ButtonElement-module.html#OFF_VALUE"><a title="_Framework.ButtonElement.OFF_VALUE" class="py-name" href="#" onclick="return doclink('link-4', 'OFF_VALUE', 'link-4');">OFF_VALUE</a></tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"> </tt>
+<a name="DummyUndoStepHandler"></a><div id="DummyUndoStepHandler-def"><a name="L7"></a><tt class="py-lineno"> 7</tt> <a class="py-toggle" href="#" id="DummyUndoStepHandler-toggle" onclick="return toggle('DummyUndoStepHandler');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.ButtonElement.DummyUndoStepHandler-class.html">DummyUndoStepHandler</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DummyUndoStepHandler-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="DummyUndoStepHandler-expanded"><a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="DummyUndoStepHandler.begin_undo_step"></a><div id="DummyUndoStepHandler.begin_undo_step-def"><a name="L9"></a><tt class="py-lineno"> 9</tt> <a class="py-toggle" href="#" id="DummyUndoStepHandler.begin_undo_step-toggle" onclick="return toggle('DummyUndoStepHandler.begin_undo_step');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.DummyUndoStepHandler-class.html#begin_undo_step">begin_undo_step</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DummyUndoStepHandler.begin_undo_step-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="DummyUndoStepHandler.begin_undo_step-expanded"><a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"> </tt>
+<a name="DummyUndoStepHandler.end_undo_step"></a><div id="DummyUndoStepHandler.end_undo_step-def"><a name="L12"></a><tt class="py-lineno">12</tt> <a class="py-toggle" href="#" id="DummyUndoStepHandler.end_undo_step-toggle" onclick="return toggle('DummyUndoStepHandler.end_undo_step');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.DummyUndoStepHandler-class.html#end_undo_step">end_undo_step</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DummyUndoStepHandler.end_undo_step-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="DummyUndoStepHandler.end_undo_step-expanded"><a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElementMixin"></a><div id="ButtonElementMixin-def"><a name="L16"></a><tt class="py-lineno">16</tt> <a class="py-toggle" href="#" id="ButtonElementMixin-toggle" onclick="return toggle('ButtonElementMixin');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElementMixin-class.html">ButtonElementMixin</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElementMixin-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ButtonElementMixin-expanded"><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    Mixin for sending values to button-like control-elements elements.</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElementMixin.set_light"></a><div id="ButtonElementMixin.set_light-def"><a name="L21"></a><tt class="py-lineno">21</tt> <a class="py-toggle" href="#" id="ButtonElementMixin.set_light-toggle" onclick="return toggle('ButtonElementMixin.set_light');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElementMixin-class.html#set_light">set_light</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">is_turned_on</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElementMixin.set_light-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ButtonElementMixin.set_light-expanded"><a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">is_turned_on</tt><tt class="py-op">:</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method _Framework.ButtonElement.ButtonElementMixin.turn_on()=_Framework.ButtonElement.ButtonElementMixin-class.html#turn_on"><a title="_Framework.ButtonElement.ButtonElementMixin.turn_on" class="py-name" href="#" onclick="return doclink('link-5', 'turn_on', 'link-5');">turn_on</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method _Framework.ButtonElement.ButtonElementMixin.turn_off()=_Framework.ButtonElement.ButtonElementMixin-class.html#turn_off"><a title="_Framework.ButtonElement.ButtonElementMixin.turn_off" class="py-name" href="#" onclick="return doclink('link-6', 'turn_off', 'link-6');">turn_off</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElementMixin.turn_on"></a><div id="ButtonElementMixin.turn_on-def"><a name="L27"></a><tt class="py-lineno">27</tt> <a class="py-toggle" href="#" id="ButtonElementMixin.turn_on-toggle" onclick="return toggle('ButtonElementMixin.turn_on');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElementMixin-class.html#turn_on">turn_on</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElementMixin.turn_on-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ButtonElementMixin.turn_on-expanded"><a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method _Framework.ButtonMatrixElement.ButtonMatrixElement.send_value()=_Framework.ButtonMatrixElement.ButtonMatrixElement-class.html#send_value,Method _Framework.ButtonSliderElement.ButtonSliderElement.send_value()=_Framework.ButtonSliderElement.ButtonSliderElement-class.html#send_value,Method _Framework.InputControlElement.InputControlElement.send_value()=_Framework.InputControlElement.InputControlElement-class.html#send_value,Method _Framework.SysexValueControl.SysexValueControl.send_value()=_Framework.SysexValueControl.SysexValueControl-class.html#send_value"><a title="_Framework.ButtonMatrixElement.ButtonMatrixElement.send_value
+_Framework.ButtonSliderElement.ButtonSliderElement.send_value
+_Framework.InputControlElement.InputControlElement.send_value
+_Framework.SysexValueControl.SysexValueControl.send_value" class="py-name" href="#" onclick="return doclink('link-7', 'send_value', 'link-7');">send_value</a></tt><tt class="py-op">(</tt><tt id="link-8" class="py-name"><a title="_Framework.ButtonElement.ON_VALUE" class="py-name" href="#" onclick="return doclink('link-8', 'ON_VALUE', 'link-3');">ON_VALUE</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElementMixin.turn_off"></a><div id="ButtonElementMixin.turn_off-def"><a name="L30"></a><tt class="py-lineno">30</tt> <a class="py-toggle" href="#" id="ButtonElementMixin.turn_off-toggle" onclick="return toggle('ButtonElementMixin.turn_off');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElementMixin-class.html#turn_off">turn_off</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElementMixin.turn_off-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ButtonElementMixin.turn_off-expanded"><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="_Framework.ButtonMatrixElement.ButtonMatrixElement.send_value
+_Framework.ButtonSliderElement.ButtonSliderElement.send_value
+_Framework.InputControlElement.InputControlElement.send_value
+_Framework.SysexValueControl.SysexValueControl.send_value" class="py-name" href="#" onclick="return doclink('link-9', 'send_value', 'link-7');">send_value</a></tt><tt class="py-op">(</tt><tt id="link-10" class="py-name"><a title="_Framework.ButtonElement.OFF_VALUE" class="py-name" href="#" onclick="return doclink('link-10', 'OFF_VALUE', 'link-4');">OFF_VALUE</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElement"></a><div id="ButtonElement-def"><a name="L34"></a><tt class="py-lineno">34</tt> <a class="py-toggle" href="#" id="ButtonElement-toggle" onclick="return toggle('ButtonElement');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElement-class.html">ButtonElement</a><tt class="py-op">(</tt><tt class="py-base-class">InputControlElement</tt><tt class="py-op">,</tt> <tt class="py-base-class">ButtonElementMixin</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElement-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ButtonElement-expanded"><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing a button a the controller</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElement.__init__"></a><div id="ButtonElement.__init__-def"><a name="L39"></a><tt class="py-lineno">39</tt> <a class="py-toggle" href="#" id="ButtonElement.__init__-toggle" onclick="return toggle('ButtonElement.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElement-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">is_momentary</tt><tt class="py-op">,</tt> <tt class="py-param">msg_type</tt><tt class="py-op">,</tt> <tt class="py-param">channel</tt><tt class="py-op">,</tt> <tt class="py-param">identifier</tt><tt class="py-op">,</tt> <tt class="py-param">undo_step_handler</tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name" targets="Class _Framework.ButtonElement.DummyUndoStepHandler=_Framework.ButtonElement.DummyUndoStepHandler-class.html"><a title="_Framework.ButtonElement.DummyUndoStepHandler" class="py-name" href="#" onclick="return doclink('link-11', 'DummyUndoStepHandler', 'link-11');">DummyUndoStepHandler</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">k</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElement.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ButtonElement.__init__-expanded"><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-12" class="py-name" targets="Module _Framework.ButtonElement=_Framework.ButtonElement-module.html,Class _Framework.ButtonElement.ButtonElement=_Framework.ButtonElement.ButtonElement-class.html"><a title="_Framework.ButtonElement
+_Framework.ButtonElement.ButtonElement" class="py-name" href="#" onclick="return doclink('link-12', 'ButtonElement', 'link-12');">ButtonElement</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method _Framework.ButtonElement.ButtonElement.__init__()=_Framework.ButtonElement.ButtonElement-class.html#__init__,Method _Framework.ButtonMatrixElement.ButtonMatrixElement.__init__()=_Framework.ButtonMatrixElement.ButtonMatrixElement-class.html#__init__,Method _Framework.ButtonSliderElement.ButtonSliderElement.__init__()=_Framework.ButtonSliderElement.ButtonSliderElement-class.html#__init__,Method _Framework.ChannelStripComponent.ChannelStripComponent.__init__()=_Framework.ChannelStripComponent.ChannelStripComponent-class.html#__init__,Method _Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__()=_Framework.ChannelTranslationSelector.ChannelTranslationSelector-class.html#__init__,Method _Framework.ClipSlotComponent.ClipSlotComponent.__init__()=_Framework.ClipSlotComponent.ClipSlotComponent-class.html#__init__,Method _Framework.CompoundComponent.CompoundComponent.__init__()=_Framework.CompoundComponent.CompoundComponent-class.html#__init__,Method _Framework.CompoundElement.CompoundElement.__init__()=_Framework.CompoundElement.CompoundElement-class.html#__init__,Method _Framework.ControlElement.ControlElement.__init__()=_Framework.ControlElement.ControlElement-class.html#__init__,Method _Framework.ControlSurface.ControlSurface.__init__()=_Framework.ControlSurface.ControlSurface-class.html#__init__,Method _Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__()=_Framework.ControlSurfaceComponent.ControlSurfaceComponent-class.html#__init__,Method _Framework.Dependency.InjectionFactory.__init__()=_Framework.Dependency.InjectionFactory-class.html#__init__,Method _Framework.Dependency.InjectionRegistry.__init__()=_Framework.Dependency.InjectionRegistry-class.html#__init__,Method _Framework.Dependency.RegistryInjector.__init__()=_Framework.Dependency.RegistryInjector-class.html#__init__,Method _Framework.Dependency.dependency.__init__()=_Framework.Dependency.dependency-class.html#__init__,Method _Framework.DeviceBankRegistry.DeviceBankRegistry.__init__()=_Framework.DeviceBankRegistry.DeviceBankRegistry-class.html#__init__,Method _Framework.DeviceComponent.DeviceComponent.__init__()=_Framework.DeviceComponent.DeviceComponent-class.html#__init__,Method _Framework.Disconnectable.CompoundDisconnectable.__init__()=_Framework.Disconnectable.CompoundDisconnectable-class.html#__init__,Method _Framework.Disconnectable.disconnectable.__init__()=_Framework.Disconnectable.disconnectable-class.html#__init__,Method _Framework.DisplayDataSource.DisplayDataSource.__init__()=_Framework.DisplayDataSource.DisplayDataSource-class.html#__init__,Method _Framework.EncoderElement.EncoderElement.__init__()=_Framework.EncoderElement.EncoderElement-class.html#__init__,Method _Framework.InputControlElement.InputControlElement.__init__()=_Framework.InputControlElement.InputControlElement-class.html#__init__,Method _Framework.InputControlElement.InputSignal.__init__()=_Framework.InputControlElement.InputSignal-class.html#__init__,Method _Framework.InputControlElement.ParameterSlot.__init__()=_Framework.InputControlElement.ParameterSlot-class.html#__init__,Method _Framework.Layer.Layer.__init__()=_Framework.Layer.Layer-class.html#__init__,Method _Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__()=_Framework.LogicalDisplaySegment.LogicalDisplaySegment-class.html#__init__,Method _Framework.MixerComponent.MixerComponent.__init__()=_Framework.MixerComponent.MixerComponent-class.html#__init__,Method _Framework.ModeSelectorComponent.ModeSelectorComponent.__init__()=_Framework.ModeSelectorComponent.ModeSelectorComponent-class.html#__init__,Method _Framework.ModesComponent.AddLayerMode.__init__()=_Framework.ModesComponent.AddLayerMode-class.html#__init__,Method _Framework.ModesComponent.AlternativeBehaviour.__init__()=_Framework.ModesComponent.AlternativeBehaviour-class.html#__init__,Method _Framework.ModesComponent.ComponentMode.__init__()=_Framework.ModesComponent.ComponentMode-class.html#__init__,Method _Framework.ModesComponent.CompoundMode.__init__()=_Framework.ModesComponent.CompoundMode-class.html#__init__,Method _Framework.ModesComponent.ContextManagerMode.__init__()=_Framework.ModesComponent.ContextManagerMode-class.html#__init__,Method _Framework.ModesComponent.DisableMode.__init__()=_Framework.ModesComponent.DisableMode-class.html#__init__,Method _Framework.ModesComponent.DisplayingModesComponent.__init__()=_Framework.ModesComponent.DisplayingModesComponent-class.html#__init__,Method _Framework.ModesComponent.DynamicBehaviourMixin.__init__()=_Framework.ModesComponent.DynamicBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.ExcludingBehaviourMixin.__init__()=_Framework.ModesComponent.ExcludingBehaviourMixin-class.html#__init__,Method _Framework.ModesComponent.LayerMode.__init__()=_Framework.ModesComponent.LayerMode-class.html#__init__,Method _Framework.ModesComponent.ModesComponent.__init__()=_Framework.ModesComponent.ModesComponent-class.html#__init__,Method _Framework.ModesComponent.MultiEntryMode.__init__()=_Framework.ModesComponent.MultiEntryMode-class.html#__init__,Method _Framework.ModesComponent.ReenterBehaviour.__init__()=_Framework.ModesComponent.ReenterBehaviour-class.html#__init__,Method _Framework.ModesComponent.SetAttributeMode.__init__()=_Framework.ModesComponent.SetAttributeMode-class.html#__init__,Method _Framework.MomentaryModeObserver.MomentaryModeObserver.__init__()=_Framework.MomentaryModeObserver.MomentaryModeObserver-class.html#__init__,Method _Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__()=_Framework.PhysicalDisplayElement.PhysicalDisplayElement-class.html#__init__,Method _Framework.Resource.CompoundResource.__init__()=_Framework.Resource.CompoundResource-class.html#__init__,Method _Framework.Resource.ExclusiveResource.__init__()=_Framework.Resource.ExclusiveResource-class.html#__init__,Method _Framework.Resource.PrioritizedResource.__init__()=_Framework.Resource.PrioritizedResource-class.html#__init__,Method _Framework.Resource.SharedResource.__init__()=_Framework.Resource.SharedResource-class.html#__init__,Method _Framework.Resource.StackingResource.__init__()=_Framework.Resource.StackingResource-class.html#__init__,Method _Framework.SceneComponent.SceneComponent.__init__()=_Framework.SceneComponent.SceneComponent-class.html#__init__,Method _Framework.ScrollComponent.ScrollComponent.__init__()=_Framework.ScrollComponent.ScrollComponent-class.html#__init__,Method _Framework.SessionComponent.SessionComponent.__init__()=_Framework.SessionComponent.SessionComponent-class.html#__init__,Method _Framework.SessionZoomingComponent.SessionZoomingComponent.__init__()=_Framework.SessionZoomingComponent.SessionZoomingComponent-class.html#__init__,Method _Framework.Signal.IdentifyingSlot.__init__()=_Framework.Signal.IdentifyingSlot-class.html#__init__,Method _Framework.Signal.Signal.__init__()=_Framework.Signal.Signal-class.html#__init__,Method _Framework.Signal.Slot.__init__()=_Framework.Signal.Slot-class.html#__init__,Method _Framework.SliderElement.SliderElement.__init__()=_Framework.SliderElement.SliderElement-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlot.__init__()=_Framework.SubjectSlot.SubjectSlot-class.html#__init__,Method _Framework.SubjectSlot.SubjectSlotGroup.__init__()=_Framework.SubjectSlot.SubjectSlotGroup-class.html#__init__,Method _Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__()=_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent-class.html#__init__,Method _Framework.SysexValueControl.SysexValueControl.__init__()=_Framework.SysexValueControl.SysexValueControl-class.html#__init__,Method _Framework.Task.DelayTask.__init__()=_Framework.Task.DelayTask-class.html#__init__,Method _Framework.Task.FadeTask.__init__()=_Framework.Task.FadeTask-class.html#__init__,Method _Framework.Task.FuncTask.__init__()=_Framework.Task.FuncTask-class.html#__init__,Method _Framework.Task.GeneratorTask.__init__()=_Framework.Task.GeneratorTask-class.html#__init__,Method _Framework.Task.SequenceTask.__init__()=_Framework.Task.SequenceTask-class.html#__init__,Method _Framework.Task.Task.__init__()=_Framework.Task.Task-class.html#__init__,Method _Framework.Task.TaskGroup.__init__()=_Framework.Task.TaskGroup-class.html#__init__,Method _Framework.Task.WaitTask.__init__()=_Framework.Task.WaitTask-class.html#__init__,Method _Framework.Task.WrapperTask.__init__()=_Framework.Task.WrapperTask-class.html#__init__,Method _Framework.ToggleComponent.ToggleComponent.__init__()=_Framework.ToggleComponent.ToggleComponent-class.html#__init__,Method _Framework.TrackEQComponent.TrackEQComponent.__init__()=_Framework.TrackEQComponent.TrackEQComponent-class.html#__init__,Method _Framework.TrackFilterComponent.TrackFilterComponent.__init__()=_Framework.TrackFilterComponent.TrackFilterComponent-class.html#__init__,Method _Framework.TransportComponent.TransportComponent.__init__()=_Framework.TransportComponent.TransportComponent-class.html#__init__,Method _Framework.Util.BooleanContext.Manager.__init__()=_Framework.Util.BooleanContext.Manager-class.html#__init__,Method _Framework.Util.BooleanContext.__init__()=_Framework.Util.BooleanContext-class.html#__init__,Method _Framework.Util.CallCounter.__init__()=_Framework.Util.CallCounter-class.html#__init__,Method _Framework.Util.NamedTuple.__init__()=_Framework.Util.NamedTuple-class.html#__init__,Method _Framework.Util.lazy_attribute.__init__()=_Framework.Util.lazy_attribute-class.html#__init__,Method _Framework.Util.memoize.__init__()=_Framework.Util.memoize-class.html#__init__"><a title="_Framework.ButtonElement.ButtonElement.__init__
+_Framework.ButtonMatrixElement.ButtonMatrixElement.__init__
+_Framework.ButtonSliderElement.ButtonSliderElement.__init__
+_Framework.ChannelStripComponent.ChannelStripComponent.__init__
+_Framework.ChannelTranslationSelector.ChannelTranslationSelector.__init__
+_Framework.ClipSlotComponent.ClipSlotComponent.__init__
+_Framework.CompoundComponent.CompoundComponent.__init__
+_Framework.CompoundElement.CompoundElement.__init__
+_Framework.ControlElement.ControlElement.__init__
+_Framework.ControlSurface.ControlSurface.__init__
+_Framework.ControlSurfaceComponent.ControlSurfaceComponent.__init__
+_Framework.Dependency.InjectionFactory.__init__
+_Framework.Dependency.InjectionRegistry.__init__
+_Framework.Dependency.RegistryInjector.__init__
+_Framework.Dependency.dependency.__init__
+_Framework.DeviceBankRegistry.DeviceBankRegistry.__init__
+_Framework.DeviceComponent.DeviceComponent.__init__
+_Framework.Disconnectable.CompoundDisconnectable.__init__
+_Framework.Disconnectable.disconnectable.__init__
+_Framework.DisplayDataSource.DisplayDataSource.__init__
+_Framework.EncoderElement.EncoderElement.__init__
+_Framework.InputControlElement.InputControlElement.__init__
+_Framework.InputControlElement.InputSignal.__init__
+_Framework.InputControlElement.ParameterSlot.__init__
+_Framework.Layer.Layer.__init__
+_Framework.LogicalDisplaySegment.LogicalDisplaySegment.__init__
+_Framework.MixerComponent.MixerComponent.__init__
+_Framework.ModeSelectorComponent.ModeSelectorComponent.__init__
+_Framework.ModesComponent.AddLayerMode.__init__
+_Framework.ModesComponent.AlternativeBehaviour.__init__
+_Framework.ModesComponent.ComponentMode.__init__
+_Framework.ModesComponent.CompoundMode.__init__
+_Framework.ModesComponent.ContextManagerMode.__init__
+_Framework.ModesComponent.DisableMode.__init__
+_Framework.ModesComponent.DisplayingModesComponent.__init__
+_Framework.ModesComponent.DynamicBehaviourMixin.__init__
+_Framework.ModesComponent.ExcludingBehaviourMixin.__init__
+_Framework.ModesComponent.LayerMode.__init__
+_Framework.ModesComponent.ModesComponent.__init__
+_Framework.ModesComponent.MultiEntryMode.__init__
+_Framework.ModesComponent.ReenterBehaviour.__init__
+_Framework.ModesComponent.SetAttributeMode.__init__
+_Framework.MomentaryModeObserver.MomentaryModeObserver.__init__
+_Framework.PhysicalDisplayElement.PhysicalDisplayElement.__init__
+_Framework.Resource.CompoundResource.__init__
+_Framework.Resource.ExclusiveResource.__init__
+_Framework.Resource.PrioritizedResource.__init__
+_Framework.Resource.SharedResource.__init__
+_Framework.Resource.StackingResource.__init__
+_Framework.SceneComponent.SceneComponent.__init__
+_Framework.ScrollComponent.ScrollComponent.__init__
+_Framework.SessionComponent.SessionComponent.__init__
+_Framework.SessionZoomingComponent.SessionZoomingComponent.__init__
+_Framework.Signal.IdentifyingSlot.__init__
+_Framework.Signal.Signal.__init__
+_Framework.Signal.Slot.__init__
+_Framework.SliderElement.SliderElement.__init__
+_Framework.SubjectSlot.SubjectSlot.__init__
+_Framework.SubjectSlot.SubjectSlotGroup.__init__
+_Framework.SwitchModeSelectorComponent.SwitchModeSelectorComponent.__init__
+_Framework.SysexValueControl.SysexValueControl.__init__
+_Framework.Task.DelayTask.__init__
+_Framework.Task.FadeTask.__init__
+_Framework.Task.FuncTask.__init__
+_Framework.Task.GeneratorTask.__init__
+_Framework.Task.SequenceTask.__init__
+_Framework.Task.Task.__init__
+_Framework.Task.TaskGroup.__init__
+_Framework.Task.WaitTask.__init__
+_Framework.Task.WrapperTask.__init__
+_Framework.ToggleComponent.ToggleComponent.__init__
+_Framework.TrackEQComponent.TrackEQComponent.__init__
+_Framework.TrackFilterComponent.TrackFilterComponent.__init__
+_Framework.TransportComponent.TransportComponent.__init__
+_Framework.Util.BooleanContext.Manager.__init__
+_Framework.Util.BooleanContext.__init__
+_Framework.Util.CallCounter.__init__
+_Framework.Util.NamedTuple.__init__
+_Framework.Util.lazy_attribute.__init__
+_Framework.Util.memoize.__init__" class="py-name" href="#" onclick="return doclink('link-13', '__init__', 'link-13');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">msg_type</tt><tt class="py-op">,</tt> <tt class="py-name">channel</tt><tt class="py-op">,</tt> <tt class="py-name">identifier</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">a</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">k</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_momentary</tt> <tt class="py-op">=</tt> <tt class="py-name">bool</tt><tt class="py-op">(</tt><tt id="link-14" class="py-name" targets="Method _Framework.ButtonElement.ButtonElement.is_momentary()=_Framework.ButtonElement.ButtonElement-class.html#is_momentary,Variable _Framework.ToggleComponent.ToggleComponent.is_momentary=_Framework.ToggleComponent.ToggleComponent-class.html#is_momentary"><a title="_Framework.ButtonElement.ButtonElement.is_momentary
+_Framework.ToggleComponent.ToggleComponent.is_momentary" class="py-name" href="#" onclick="return doclink('link-14', 'is_momentary', 'link-14');">is_momentary</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_last_received_value</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_undo_step_handler</tt> <tt class="py-op">=</tt> <tt class="py-name">undo_step_handler</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElement.is_momentary"></a><div id="ButtonElement.is_momentary-def"><a name="L45"></a><tt class="py-lineno">45</tt> <a class="py-toggle" href="#" id="ButtonElement.is_momentary-toggle" onclick="return toggle('ButtonElement.is_momentary');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElement-class.html#is_momentary">is_momentary</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElement.is_momentary-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ButtonElement.is_momentary-expanded"><a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">        <tt class="py-docstring">""" returns true if the buttons sends a message on being released """</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_momentary</tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElement.message_map_mode"></a><div id="ButtonElement.message_map_mode-def"><a name="L49"></a><tt class="py-lineno">49</tt> <a class="py-toggle" href="#" id="ButtonElement.message_map_mode-toggle" onclick="return toggle('ButtonElement.message_map_mode');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElement-class.html#message_map_mode">message_map_mode</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElement.message_map_mode-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ButtonElement.message_map_mode-expanded"><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method _Framework.InputControlElement.InputControlElement.message_type()=_Framework.InputControlElement.InputControlElement-class.html#message_type"><a title="_Framework.InputControlElement.InputControlElement.message_type" class="py-name" href="#" onclick="return doclink('link-15', 'message_type', 'link-15');">message_type</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt id="link-16" class="py-name"><a title="_Framework.InputControlElement.MIDI_CC_TYPE" class="py-name" href="#" onclick="return doclink('link-16', 'MIDI_CC_TYPE', 'link-2');">MIDI_CC_TYPE</a></tt> <tt class="py-keyword">or</tt> <tt class="py-name">AssertionError</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">Live</tt><tt class="py-op">.</tt><tt class="py-name">MidiMap</tt><tt class="py-op">.</tt><tt class="py-name">MapMode</tt><tt class="py-op">.</tt><tt class="py-name">absolute</tt> </tt>
+</div><a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElement.is_pressed"></a><div id="ButtonElement.is_pressed-def"><a name="L53"></a><tt class="py-lineno">53</tt> <a class="py-toggle" href="#" id="ButtonElement.is_pressed-toggle" onclick="return toggle('ButtonElement.is_pressed');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElement-class.html#is_pressed">is_pressed</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElement.is_pressed-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ButtonElement.is_pressed-expanded"><a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_momentary</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_last_received_value</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"> </tt>
+<a name="ButtonElement.receive_value"></a><div id="ButtonElement.receive_value-def"><a name="L56"></a><tt class="py-lineno">56</tt> <a class="py-toggle" href="#" id="ButtonElement.receive_value-toggle" onclick="return toggle('ButtonElement.receive_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="_Framework.ButtonElement.ButtonElement-class.html#receive_value">receive_value</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ButtonElement.receive_value-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ButtonElement.receive_value-expanded"><a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-name">pressed_before</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method _Framework.ButtonElement.ButtonElement.is_pressed()=_Framework.ButtonElement.ButtonElement-class.html#is_pressed"><a title="_Framework.ButtonElement.ButtonElement.is_pressed" class="py-name" href="#" onclick="return doclink('link-17', 'is_pressed', 'link-17');">is_pressed</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_last_received_value</tt> <tt class="py-op">=</tt> <tt id="link-18" class="py-name" targets="Variable _Framework.ToggleComponent.ToggleComponent.value=_Framework.ToggleComponent.ToggleComponent-class.html#value,Variable _Framework.Util.BooleanContext.value=_Framework.Util.BooleanContext-class.html#value"><a title="_Framework.ToggleComponent.ToggleComponent.value
+_Framework.Util.BooleanContext.value" class="py-name" href="#" onclick="return doclink('link-18', 'value', 'link-18');">value</a></tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">pressed_before</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="_Framework.ButtonElement.ButtonElement.is_pressed" class="py-name" href="#" onclick="return doclink('link-19', 'is_pressed', 'link-17');">is_pressed</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_undo_step_handler</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method _Framework.ButtonElement.DummyUndoStepHandler.begin_undo_step()=_Framework.ButtonElement.DummyUndoStepHandler-class.html#begin_undo_step"><a title="_Framework.ButtonElement.DummyUndoStepHandler.begin_undo_step" class="py-name" href="#" onclick="return doclink('link-20', 'begin_undo_step', 'link-20');">begin_undo_step</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="_Framework.ButtonElement
+_Framework.ButtonElement.ButtonElement" class="py-name" href="#" onclick="return doclink('link-21', 'ButtonElement', 'link-12');">ButtonElement</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method _Framework.ButtonElement.ButtonElement.receive_value()=_Framework.ButtonElement.ButtonElement-class.html#receive_value,Method _Framework.InputControlElement.InputControlElement.receive_value()=_Framework.InputControlElement.InputControlElement-class.html#receive_value"><a title="_Framework.ButtonElement.ButtonElement.receive_value
+_Framework.InputControlElement.InputControlElement.receive_value" class="py-name" href="#" onclick="return doclink('link-22', 'receive_value', 'link-22');">receive_value</a></tt><tt class="py-op">(</tt><tt id="link-23" class="py-name"><a title="_Framework.ToggleComponent.ToggleComponent.value
+_Framework.Util.BooleanContext.value" class="py-name" href="#" onclick="return doclink('link-23', 'value', 'link-18');">value</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">pressed_before</tt> <tt class="py-keyword">and</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="_Framework.ButtonElement.ButtonElement.is_pressed" class="py-name" href="#" onclick="return doclink('link-24', 'is_pressed', 'link-17');">is_pressed</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_undo_step_handler</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Method _Framework.ButtonElement.DummyUndoStepHandler.end_undo_step()=_Framework.ButtonElement.DummyUndoStepHandler-class.html#end_undo_step"><a title="_Framework.ButtonElement.DummyUndoStepHandler.end_undo_step" class="py-name" href="#" onclick="return doclink('link-25', 'end_undo_step', 'link-25');">end_undo_step</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="_Framework-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar  6 18:53:34 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
