@@ -1,5 +1,6 @@
 from __future__ import with_statement
 from functools import partial
+import Live
 from _Framework.ButtonElement import ButtonElement, Color
 from _Framework.ButtonMatrixElement import ButtonMatrixElement
 from _Framework.ComboElement import ComboElement
@@ -8,7 +9,9 @@ from _Framework.Control import ButtonControl, RadioButtonGroup
 from _Framework.ControlSurface import OptimizedControlSurface
 from _Framework.ControlSurfaceComponent import ControlSurfaceComponent
 from _Framework.Dependency import depends
-from _Framework.InputControlElement import MIDI_NOTE_TYPE, MIDI_CC_TYPE
+from _Framework.InputControlElement import InputControlElement
+from _Framework.InputControlElement import MIDI_CC_TYPE, MIDI_NOTE_TYPE
+from _Framework.InputControlElement import MIDI_PB_TYPE, MIDI_SYSEX_TYPE
 from _Framework.Layer import Layer, SimpleLayerOwner
 from _Framework.ModesComponent import AddLayerMode, ModesComponent
 from _Framework.Resource import SharedResource
@@ -88,7 +91,6 @@ class SendToggleComponent(ControlSurfaceComponent):
 
 class InstrumentComponent(CompoundComponent):
 
-    velocity_buttons = RadioButtonGroup()
     FEEDBACK_CHANNELS = ALL_FEEDBACK_CHANNELS
 
     @depends(show_message=None, log_message=None)
@@ -96,7 +98,6 @@ class InstrumentComponent(CompoundComponent):
         super(InstrumentComponent, self).__init__(*a, **k)
         self._show_message = show_message
         self._log_message = log_message
-        self._velocity = 0
         self._channel = self.FEEDBACK_CHANNELS[0]
         self._grid_offset = 0
         self._grid_buttons = None
@@ -110,7 +111,6 @@ class InstrumentComponent(CompoundComponent):
         self._grid_banking.can_scroll_down = self._can_grid_bank_down
         self._grid_banking.scroll_up = self._grid_bank_up
         self._grid_banking.scroll_down = self._grid_bank_down
-        self.set_velocity_buttons = self.velocity_buttons.set_control_element
 
     def _show(self, message):
         if self._show_message:
@@ -175,11 +175,6 @@ class InstrumentComponent(CompoundComponent):
         self._grid_offset -= self._grid_bank_delta()
         self._remap_grid_buttons()
 
-    @velocity_buttons.checked
-    def _on_velocity_changed(self, button):
-        self._velocity = button.index
-        self._remap_grid_buttons()
-
     def _remap_grid_buttons(self):
         if self._grid_buttons:
             self._grid_buttons.reset()
@@ -197,74 +192,45 @@ class InstrumentComponent(CompoundComponent):
                     button.force_next_send()
                     button.set_light(color)
 
-        actual_velocity = (self._velocity + 1) * 16 - 1
-        # TODO(phs): how to tell Live to change the (fixed, default)
-        # velocity on my non-haptic controller surface?
-
     def _map_note(self, x, y):
         raise AssertionError, 'Override in subclass'
 
 
-class Scale(object):
-    def __init__(self, notes):
-        self._notes = notes
-        self._length = len(self._notes)
-
-    def length(self):
-        return self._length
-
-    def note(self, index):
-        enabled, pitch_offset, color = self._notes[index % self.length()]
-        pitch = (index / self.length()) * 12 + pitch_offset
-
-        if enabled and pitch is 60:
-            color = 'Piano.NoteMiddleC'
-
-        if pitch >= 128:
-            enabled = False
-            pitch = 0
-            color = 'Piano.NoteOff'
-
-        return (enabled, pitch, color)
-
 class PianoComponent(InstrumentComponent):
 
     layout_button = ButtonControl()
+    scale_buttons = RadioButtonGroup()
     FEEDBACK_CHANNELS = PIANO_FEEDBACK_CHANNELS
-    FULL_SCALE = Scale([
-        (True, 0, 'Piano.NoteBase'),
-        (True, 1, 'Piano.NoteOff'),
-        (True, 2, 'Piano.NoteLit'),
-        (True, 3, 'Piano.NoteOff'),
-        (True, 4, 'Piano.NoteLit'),
-        (True, 5, 'Piano.NoteLit'),
-        (True, 6, 'Piano.NoteOff'),
-        (True, 7, 'Piano.NoteLit'),
-        (True, 8, 'Piano.NoteOff'),
-        (True, 9, 'Piano.NoteLit'),
-        (True, 10, 'Piano.NoteOff'),
-        (True, 11, 'Piano.NoteLit')])
-    BRIEF_SCALE = Scale([
-        (True, 0, 'Piano.NoteBase'),
-        (True, 2, 'Piano.NoteOff'),
-        (True, 4, 'Piano.NoteLit'),
-        (True, 5, 'Piano.NoteOff'),
-        (True, 7, 'Piano.NoteLit'),
-        (True, 9, 'Piano.NoteOff'),
-        (True, 11, 'Piano.NoteOff'),
-        (True, 12, 'Piano.NoteBase')])
+    FULL_SCALE = [
+        (0, 'Piano.NoteBase'),
+        (1, 'Piano.NoteOff'),
+        (2, 'Piano.NoteLit'),
+        (3, 'Piano.NoteOff'),
+        (4, 'Piano.NoteLit'),
+        (5, 'Piano.NoteLit'),
+        (6, 'Piano.NoteOff'),
+        (7, 'Piano.NoteLit'),
+        (8, 'Piano.NoteOff'),
+        (9, 'Piano.NoteLit'),
+        (10, 'Piano.NoteOff'),
+        (11, 'Piano.NoteLit')]
+    BRIEF_SCALE = [
+        (0, 'Piano.NoteBase'),
+        (2, 'Piano.NoteOff'),
+        (4, 'Piano.NoteLit'),
+        (5, 'Piano.NoteOff'),
+        (7, 'Piano.NoteLit'),
+        (9, 'Piano.NoteOff'),
+        (11, 'Piano.NoteOff'),
+        (12, 'Piano.NoteBase')]
 
     def __init__(self, *a, **k):
         super(PianoComponent, self).__init__(*a, **k)
         self._full_layout = True
         self._grid_offset = 24
+        self._tonic = 0
         self.set_layout_button = self.layout_button.set_control_element
-
-    def _scale(self):
-        if self._full_layout:
-            return self.FULL_SCALE
-        else:
-            return self.BRIEF_SCALE
+        self.set_scale_buttons = self.scale_buttons.set_control_element
 
     @layout_button.pressed
     def _on_layout_changed(self, button):
@@ -277,6 +243,24 @@ class PianoComponent(InstrumentComponent):
 
         self._remap_grid_buttons()
 
+    # Yes, .value and not .checked: we want to see repeat presses.
+    @scale_buttons.value
+    def _on_scale_changed(self, value, button):
+        if value == 0:
+            return
+
+        old_tonic = self._tonic
+        self._tonic = self.BRIEF_SCALE[button.index][0]
+
+        if self._tonic == old_tonic:
+            # Pressing twice gives you the sharp (where available)
+            if self._tonic not in [4, 11]:
+                self._tonic += 1
+            else:
+                return
+
+        self._remap_grid_buttons()
+
     def _grid_bank_delta(self):
         return 8
 
@@ -284,11 +268,33 @@ class PianoComponent(InstrumentComponent):
         return self._map_note(0, 8)[1] != 0
 
     def _map_note(self, x, y):
-        return self._scale().note(self._grid_offset + 8 * y + x)
+        index = self._grid_offset + 8 * y + x
 
+        if self._full_layout:
+            scale = self.FULL_SCALE
+            pitch_offset = scale[index % len(scale)][0]
+            color = scale[(len(scale) + index - self._tonic) % len(scale)][1]
+        else:
+            scale = self.BRIEF_SCALE
+            pitch_offset = scale[index % len(scale)][0] + self._tonic
+            color = scale[index % len(scale)][1]
+
+        pitch = (index / len(scale)) * 12 + pitch_offset
+
+        if pitch is 60:
+            color = 'Piano.NoteMiddleC'
+
+        enabled = True
+        if pitch < 0 or 128 <= pitch:
+            enabled = False
+            pitch = 0
+            color = 'Piano.NoteOff'
+
+        return (enabled, pitch, color)
 
 class DrumKitComponent(InstrumentComponent):
 
+    velocity_buttons = RadioButtonGroup()
     FEEDBACK_CHANNELS = DRUM_KIT_FEEDBACK_CHANNELS
     PAD_COLORS = [
         'DrumKit.First',
@@ -298,10 +304,28 @@ class DrumKitComponent(InstrumentComponent):
 
     def __init__(self, *a, **k):
         super(DrumKitComponent, self).__init__(*a, **k)
+        self._velocity = 0
         self._grid_offset = self._grid_bank_delta()
+        self.set_velocity_buttons = self.velocity_buttons.set_control_element
+
+    @velocity_buttons.checked
+    def _on_velocity_changed(self, button):
+        self._velocity = button.index
+        self._remap_grid_buttons()
+
+    @velocity_buttons.value
+    def _on_velocity_value(self, value, button):
+        if value == 0:
+            return
 
     def _grid_bank_delta(self):
         return 4
+
+    def _remap_grid_buttons(self):
+        super(DrumKitComponent, self)._remap_grid_buttons()
+        actual_velocity = (self._velocity + 1) * 16 - 1
+        # TODO(phs): how to tell Live to change the (fixed, default)
+        # velocity on my non-haptic controller surface?
 
     def _map_note(self, x, y):
         index = self._grid_offset + x + 4 * y
@@ -372,6 +396,9 @@ class APC_mini(OptimizedControlSurface):
             piano_button = shift(scene_button_list[5])
             drum_kit_button = shift(scene_button_list[6])
             stop_all_button = shift(scene_button_list[7])
+
+            layout_button = track_button_list[7]
+            scale_buttons = ButtonMatrixElement(rows=[track_button_list[0:7]])
 
             grid_buttons = ButtonMatrixElement(rows=[[
                 button(x + width * (height - y - 1))
@@ -464,8 +491,8 @@ class APC_mini(OptimizedControlSurface):
             select_mode = layer_mode(mixer, track_select_buttons=track_buttons)
             piano_mode = layer_mode(piano,
                 grid_buttons=grid_buttons,
-                velocity_buttons=track_buttons,
-                layout_button=piano_button,
+                scale_buttons=scale_buttons,
+                layout_button=layout_button,
                 channel_bank_up_button=right_button,
                 channel_bank_down_button=left_button,
                 grid_bank_up_button=up_button,
@@ -521,3 +548,51 @@ class APC_mini(OptimizedControlSurface):
             with self.component_guard():
                 for component in self._disabled_during_handshake:
                     component.set_enabled(True)
+
+    def _install_forwarding(self, midi_map_handle, control):
+        if not self._in_build_midi_map:
+            raise AssertionError
+
+        if control is None:
+            raise AssertionError
+
+        if not isinstance(control, InputControlElement):
+            raise AssertionError
+
+        success = False
+        if control.message_type() is MIDI_NOTE_TYPE:
+            success = Live.MidiMap.forward_midi_note(
+                self._c_instance.handle(),
+                midi_map_handle,
+                control.message_channel(),
+                control.message_identifier())
+        elif control.message_type() is MIDI_CC_TYPE:
+            success = Live.MidiMap.forward_midi_cc(
+                self._c_instance.handle(),
+                midi_map_handle,
+                control.message_channel(),
+                control.message_identifier())
+        elif control.message_type() is MIDI_PB_TYPE:
+            success = Live.MidiMap.forward_midi_pitchbend(
+                self._c_instance.handle(),
+                midi_map_handle,
+                control.message_channel())
+        elif control.message_type() is MIDI_SYSEX_TYPE:
+            success = True
+        else:
+            raise AssertionError
+
+        if success:
+            forwarding_keys = control.identifier_bytes()
+            for key in forwarding_keys:
+                if control.message_type() != MIDI_SYSEX_TYPE:
+                    registry = self._forwarding_registry
+                else:
+                    registry = self._forwarding_long_identifier_registry
+
+                # Turns out duplicate mappings just don't seem to matter,
+                # and I want repeated octaves in the brief piano layout.
+
+                registry[key] = control
+
+        return success
