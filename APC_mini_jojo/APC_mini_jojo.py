@@ -18,6 +18,9 @@ from _APC.MixerComponent import ChanStripComponent as ChanStripComponentBase
 from _APC.MixerComponent import MixerComponent as MixerComponentBase
 from _APC.SkinDefault import make_default_skin, make_biled_skin, make_stop_button_skin
 
+# copied from midiscripts.net
+from logger import Logger
+
 class SendToggleComponent(ControlSurfaceComponent):
     toggle_control = ButtonControl()
 
@@ -52,13 +55,21 @@ class MixerComponent(MixerComponentBase):
     def _create_strip(self):
         return ChanStripComponent()
 
-class APC_mini(APC, OptimizedControlSurface):
+# added logger from midiscripts.net
+class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
     """ phs' hacked Akai APC mini Controller """
 
     SESSION_WIDTH = 8
     SESSION_HEIGHT = 8
     HAS_TRANSPORT = False
-
+    
+    # copied from midiscripts.net
+    # if you need different button to toggle `session overview`
+    # change following constants
+    OVERVIEW_TOGGLE_BTN_INDEX = 5
+    UNUSED_BTNS_FIRST = 6
+    UNUSED_BTNS_LAST = 7
+    
     def make_shifted_button(self, button):
         return ComboElement(button, modifiers=[self._shift_button])
 
@@ -67,7 +78,14 @@ class APC_mini(APC, OptimizedControlSurface):
         return ButtonMatrixElement(rows=[map(wrapper, control_list)])
 
     def __init__(self, *a, **k):
-        super(APC_mini, self).__init__(*a, **k)
+        # call parent contructor
+        super(APC_mini_jojo, self).__init__(*a, **k)
+
+        # copied from midiscripts.net
+        # assign script name used by Logger
+        self.script_name = 'APCMini jojo hacks v0.1'
+        self.log_start()
+
         self._suppress_session_highlight = False
         self._suppress_send_midi = False
         self._color_skin = make_biled_skin()
@@ -197,7 +215,7 @@ class APC_mini(APC, OptimizedControlSurface):
         return 40
 
     def _on_identity_response(self, midi_bytes):
-        super(APC_mini, self)._on_identity_response(midi_bytes)
+        super(APC_mini_jojo, self)._on_identity_response(midi_bytes)
         self._enable_components()
 
     def _send_dongle_challenge(self):
