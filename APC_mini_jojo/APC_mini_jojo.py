@@ -18,8 +18,11 @@ from _APC.MixerComponent import ChanStripComponent as ChanStripComponentBase
 from _APC.MixerComponent import MixerComponent as MixerComponentBase
 from _APC.SkinDefault import make_default_skin, make_biled_skin, make_stop_button_skin
 
-# copied from midiscripts.net
+# midiscripts.net
+from _Framework.Util import recursive_map
 from logger import Logger
+from _Framework.Control import ToggleButtonControl, ButtonControl
+from _Framework.SessionZoomingComponent import SessionZoomingComponent
 
 class SendToggleComponent(ControlSurfaceComponent):
     toggle_control = ButtonControl()
@@ -57,7 +60,7 @@ class MixerComponent(MixerComponentBase):
 
 # added logger from midiscripts.net
 class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
-    """ phs' hacked Akai APC mini Controller """
+    """ J0J0's APC mini hacks, inspired by phs and midiscripts.net """
 
     SESSION_WIDTH = 8
     SESSION_HEIGHT = 8
@@ -83,7 +86,7 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
 
         # copied from midiscripts.net
         # assign script name used by Logger
-        self.script_name = 'APCMini jojo hacks v0.1'
+        self.script_name = "APCmini + J0J0's hacks v0.1"
         self.log_start()
 
         self._suppress_session_highlight = False
@@ -106,6 +109,24 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
         self._device_selection_follows_track_selection = True
         with self.component_guard():
             self.register_disconnectable(SimpleLayerOwner(layer=Layer(_unused_buttons=self.wrap_matrix(self._unused_buttons))))
+
+        # added from midiscripts.net
+        # create session overview component
+        # basically this component implements all complexity
+        # of a session view, in this script we just re-use it
+        # self._session was created by parent class
+        with self.component_guard():
+            self._session_overview = SessionZoomingComponent(
+                self._session,
+                name='Session_Overview',
+                enable_skinning=True,
+                is_enabled=True)
+            self.log_message('_session_overview created')
+
+    # midiscripts.net, but changed super to jojo:
+    def disconnect(self):
+        super(APC_mini_jojo, self).disconnect()
+        self.log_disconnect()
 
     def get_matrix_button(self, column, row):
         return self._matrix_buttons[row][column]
@@ -141,8 +162,43 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
         self._mute_button = self.make_shifted_button(self._scene_launch_buttons[3])
         self._select_button = self.make_shifted_button(self._scene_launch_buttons[4])
         self._stop_all_button = self._make_stop_all_button()
-        self._unused_buttons = map(self.make_shifted_button, self._scene_launch_buttons[5:7])
+        #self._unused_buttons = map(self.make_shifted_button, self._scene_launch_buttons[5:7])
         self._master_volume_control = make_slider(0, 56, name='Master_Volume')
+
+        # midiscripts.net START 1
+        # update unused buttons list
+        # now we use button with index 5
+        self._unused_buttons = map(
+            self.make_shifted_button,
+            self._scene_launch_buttons[
+                self.UNUSED_BTNS_FIRST:self.UNUSED_BTNS_LAST])
+
+        # create a matrix, which contains grid of scenes (8x8)
+        # that's what user will see on controller upon enabling
+        # session overview
+        self.overview_matrix = ButtonMatrixElement(
+            rows=recursive_map(self.make_shifted_button,
+                               self._matrix_buttons))
+
+        self.overview_layer = Layer(
+            button_matrix=self.overview_matrix)
+
+        # making ButtonElement and connecting it to one of
+        # scene launch button on controller
+        # `make_shifted_button` adds `shift` button combo
+        self.overview_toggle_btn = self.make_shifted_button(
+            self._scene_launch_buttons[
+                self.OVERVIEW_TOGGLE_BTN_INDEX])
+
+        self.overview_manager = OverviewManagerComponent(
+            self, name='Zoom Toggle Manager',
+            layer=Layer(
+                toggle_button=self.overview_toggle_btn,
+                priority=1),
+            is_enabled=False)
+
+        self.log_message('_create_controls finished')
+        # midiscripts.net END 1
 
     def _make_stop_all_button(self):
         return self.make_shifted_button(self._scene_launch_buttons[7])
@@ -204,6 +260,12 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
                 self._transport.set_enabled(True)
             self._encoder_modes.set_enabled(True)
             self._track_modes.set_enabled(True)
+        # midiscripts.net START 2
+        with self.component_guard():
+            self.overview_manager.set_enabled(True)
+
+        self.log_message('_enable_components finished')
+        # midiscripts.net END 2
 
     def _should_combine(self):
         return False
@@ -223,3 +285,57 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
 
     def _on_handshake_successful(self):
         pass
+
+    # midiscripts.net START 3
+    def on_pressed_delayed(self):
+        """
+        Called when user presses `session overview` button with delay
+        """
+        # assigning an overview layer, so user will see session overview
+        self.log_message('pressed_delayed')
+        self._session_overview.layer = self.overview_layer
+
+    def on_released_delayed(self):
+        """
+        Called when user releases `session overview` button with delay
+        """
+        # assigning None to hide session overview
+        self.log_message('released_delayed')
+        self._session_overview.layer = None
+
+    def on_released_immediately(self, is_enabled):
+        """
+        Called when user releases `session overview` button immediately
+        """
+        # assigning None or a layer; depends on `session mode` status
+        self.log_message('released_immediately')
+        new_layer = self.overview_layer if is_enabled else None
+        self._session_overview.layer = new_layer
+    # midiscripts.net END 3
+
+# midiscripts.net, new class
+class OverviewManagerComponent(ControlSurfaceComponent):
+    """
+    This class is connection between button on controller and ButtonControl
+    instance, which gives ability to handle `press` events.
+    Calls appropriate handlers from APCMini_Session_Overview instance
+    """
+    toggle_button = ButtonControl()
+
+    def __init__(self, control_surface, *args, **kwargs):
+        super(OverviewManagerComponent, self).__init__(*args, **kwargs)
+        self.control_surface = control_surface
+        self._enabled = False
+
+    @toggle_button.pressed_delayed
+    def btn_pressed_delayed(self, btn):
+        self.control_surface.on_pressed_delayed()
+
+    @toggle_button.released_delayed
+    def btn_released_delayed(self, btn):
+        self.control_surface.on_released_delayed()
+
+    @toggle_button.released_immediately
+    def btn_released_immediately(self, btn):
+        self._enabled = not self._enabled
+        self.control_surface.on_released_immediately(self._enabled)

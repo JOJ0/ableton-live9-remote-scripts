@@ -23,7 +23,7 @@ def get_capabilities():
     return {
         CONTROLLER_ID_KEY: controller_id(
             vendor_id=2536, product_ids=[40],
-            model_name='APC MINI Session Overview'),
+            model_name="APC MINI + J0J0 hacks v0.1"),
         PORTS_KEY: [
             inport(props=[NOTES_CC, SCRIPT, REMOTE]),
             outport(props=[SCRIPT, REMOTE])]

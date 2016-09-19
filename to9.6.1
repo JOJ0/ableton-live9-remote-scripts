@@ -1,0 +1,12 @@
+#!/bin/bash
+rsync -avhPn APC_mini_jojo /Applications/Ableton\ Live\ 9\ Suite\ 9.6.1.app/Contents/App-Resources/MIDI\ Remote\ Scripts/
+
+echo ""
+echo "really sync to live 9.6.1 and delete pyc files? " 
+read ANSWER
+
+if [ $ANSWER = "y"  ]; then
+  echo ""
+  rsync -avhP APC_mini_jojo /Applications/Ableton\ Live\ 9\ Suite\ 9.6.1.app/Contents/App-Resources/MIDI\ Remote\ Scripts/
+  rm -v /Applications/Ableton\ Live\ 9\ Suite\ 9.6.1.app/Contents/App-Resources/MIDI\ Remote\ Scripts/APC_mini_jojo/*pyc
+fi
