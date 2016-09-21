@@ -24,6 +24,8 @@ from logger import Logger
 from _Framework.Control import ToggleButtonControl, ButtonControl
 from _Framework.SessionZoomingComponent import SessionZoomingComponent
 
+import pprint
+
 class SendToggleComponent(ControlSurfaceComponent):
     toggle_control = ButtonControl()
 
@@ -71,7 +73,7 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
     # change following constants
     OVERVIEW_TOGGLE_BTN_INDEX = 5
     UNUSED_BTNS_FIRST = 6
-    UNUSED_BTNS_LAST = 7
+    UNUSED_BTNS_LAST = 6
     
     def make_shifted_button(self, button):
         return ComboElement(button, modifiers=[self._shift_button])
@@ -80,13 +82,17 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
     def wrap_matrix(cls, control_list, wrapper = nop):
         return ButtonMatrixElement(rows=[map(wrapper, control_list)])
 
+    #@classmethod
+    #def wrap_combo_matrix(cls, control_list, wrapper = nop):
+    #    return ButtonMatrixElement(rows=[[self.make_shifted_button(map(wrapper, control_list))]])
+
     def __init__(self, *a, **k):
         # call parent contructor
         super(APC_mini_jojo, self).__init__(*a, **k)
 
         # copied from midiscripts.net
         # assign script name used by Logger
-        self.script_name = "APCmini + J0J0's hacks v0.1"
+        self.script_name = "APCmini + J0J0's hacks v0.2"
         self.log_start()
 
         self._suppress_session_highlight = False
@@ -94,6 +100,7 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
         self._color_skin = make_biled_skin()
         self._default_skin = make_default_skin()
         self._stop_button_skin = make_stop_button_skin()
+
         with self.component_guard():
             self._create_controls()
             self._session = self._create_session()
@@ -107,8 +114,13 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
             self._encoder_modes = self._create_encoder_modes()
             self._track_modes = self._create_track_button_modes()
         self._device_selection_follows_track_selection = True
+        # original broken since change of shift+scene stuff, try to leave it out
         with self.component_guard():
-            self.register_disconnectable(SimpleLayerOwner(layer=Layer(_unused_buttons=self.wrap_matrix(self._unused_buttons))))
+            self.register_disconnectable(SimpleLayerOwner(
+                layer=Layer(_unused_buttons=self.wrap_matrix(self._unused_buttons))))
+            #phs has it like this:
+            #self.register_disconnectable(SimpleLayerOwner(
+            #    layer=Layer(_unused_buttons=unused_buttons)))
 
         # added from midiscripts.net
         # create session overview component
@@ -123,7 +135,7 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
                 is_enabled=True)
             self.log_message('_session_overview created')
 
-    # midiscripts.net, but changed super to jojo:
+    # midiscripts.net, but changed super to _jojo:
     def disconnect(self):
         super(APC_mini_jojo, self).disconnect()
         self.log_disconnect()
@@ -132,12 +144,21 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
         return self._matrix_buttons[row][column]
 
     def _create_controls(self):
+        """
+        _create_controls will be called by parent class
+        """
         make_on_off_button = partial(make_button, skin=self._default_skin)
         make_color_button = partial(make_button, skin=self._color_skin)
         make_stop_button = partial(make_button, skin=self._stop_button_skin)
+        # which button on the controller is the shift button:
         self._shift_button = make_button(0, 98, resource_type=SharedResource, name='Shift_Button')
         self._parameter_knobs = [ make_knob(0, index + 48, name='Parameter_Knob_%d' % (index + 1)) for index in xrange(self.SESSION_WIDTH) ]
+
+        # BUTTONS BOTTOM: select & shift(function)
+        # originally these are unshifted (stop,solo,rec,mute,select THIS TRACK), leave them
         self._select_buttons = [ make_stop_button(0, 64 + index, name='Track_Select_%d' % (index + 1)) for index in xrange(self.SESSION_WIDTH) ]
+
+        # originally these are shifted (grid-move,vol,pan,send,dev), leave them
         self._up_button = self.make_shifted_button(self._select_buttons[0])
         self._down_button = self.make_shifted_button(self._select_buttons[1])
         self._left_button = self.make_shifted_button(self._select_buttons[2])
@@ -150,45 +171,79 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
             self._play_button = make_on_off_button(0, 91, name='Play_Button')
             self._record_button = make_on_off_button(0, 93, name='Record_Button')
 
+        # BUTTONS 8x8 GRID START
         def matrix_note(x, y):
             return x + self.SESSION_WIDTH * (self.SESSION_HEIGHT - y - 1)
 
         self._matrix_buttons = [ [ make_color_button(0, matrix_note(track, scene), name='%d_Clip_%d_Button' % (track, scene)) for track in xrange(self.SESSION_WIDTH) ] for scene in xrange(self.SESSION_HEIGHT) ]
         self._session_matrix = ButtonMatrixElement(name='Button_Matrix', rows=self._matrix_buttons)
-        self._scene_launch_buttons = [ make_color_button(0, index + 82, name='Scene_Launch_%d' % (index + 1)) for index in xrange(self.SESSION_HEIGHT) ]
-        self._stop_button = self.make_shifted_button(self._scene_launch_buttons[0])
-        self._solo_button = self.make_shifted_button(self._scene_launch_buttons[1])
-        self._arm_button = self.make_shifted_button(self._scene_launch_buttons[2])
-        self._mute_button = self.make_shifted_button(self._scene_launch_buttons[3])
-        self._select_button = self.make_shifted_button(self._scene_launch_buttons[4])
-        self._stop_all_button = self._make_stop_all_button()
+        # BUTTONS 8x8 GRID END
+
+        # BUTTONS RIGHT ROW: scene launch & shift(function), switch them
+        #
+        # scene launch buttons original
+        #self._scene_launch_buttons = [ make_color_button(0, index + 82, name='Scene_Launch_%d' % (index + 1)) for index in xrange(self.SESSION_HEIGHT) ]
+        #
+        # scene launch buttons simplified similar to phs Simplify commit
+        self._scene_buttons = [make_color_button(0, index + 82) for index in xrange(self.SESSION_HEIGHT)]
+        self._scene_matrix = ButtonMatrixElement(
+                rows=[[self.make_shifted_button(button) for button in self._scene_buttons]]) 
+
+        # RIGHT buttons originally are shifted, make them unshifted
+        #self._stop_button = self.make_shifted_button(self._scene_launch_buttons[0])
+        #self._solo_button = self.make_shifted_button(self._scene_launch_buttons[1])
+        #self._arm_button = self.make_shifted_button(self._scene_launch_buttons[2])
+        #self._mute_button = self.make_shifted_button(self._scene_launch_buttons[3])
+        #self._select_button = self.make_shifted_button(self._scene_launch_buttons[4])
+        #self._stop_all_button = self._make_stop_all_button()
         #self._unused_buttons = map(self.make_shifted_button, self._scene_launch_buttons[5:7])
+
+        # phs has unused buttons like this
+        #unused_buttons = ButtonMatrixElement(rows=[[shift(scene_buttons[6])]])
+        #self._unused_buttons = ButtonMatrixElement(rows=[[self._scene_launch_buttons[5:7]]])
+
+        # second try
+        self._stop_button = self._scene_buttons[0]
+        self._solo_button = self._scene_buttons[1]
+        self._arm_button = self._scene_buttons[2]
+        self._mute_button = self._scene_buttons[3]
+        self._select_button = self._scene_buttons[4]
+        self._stop_all_button = self._make_stop_all_button()
+
         self._master_volume_control = make_slider(0, 56, name='Master_Volume')
 
         # midiscripts.net START 1
         # update unused buttons list
         # now we use button with index 5
-        self._unused_buttons = map(
-            self.make_shifted_button,
-            self._scene_launch_buttons[
-                self.UNUSED_BTNS_FIRST:self.UNUSED_BTNS_LAST])
+        #self._unused_buttons = map(
+        #    self.make_shifted_button,
+        #    self._scene_launch_buttons[
+        #        self.UNUSED_BTNS_FIRST:self.UNUSED_BTNS_LAST])
+        ## jojo: unused buttons now unshifted, only button 6 is unused
+        #self._unused_buttons = [self._scene_buttons[6]]
+        self._unused_buttons = self._scene_buttons[self.UNUSED_BTNS_FIRST:self.UNUSED_BTNS_LAST]
 
-        # create a matrix, which contains grid of scenes (8x8)
-        # that's what user will see on controller upon enabling
-        # session overview
+        ## create a matrix, which contains grid of scenes (8x8)
+        ## that's what user will see on controller upon enabling
+        ## session overview
+        #self.overview_matrix = ButtonMatrixElement(
+        #    rows=recursive_map(self.make_shifted_button,
+        #                       self._matrix_buttons))
+        ## jojo: remove shift, map is unnecessary then
         self.overview_matrix = ButtonMatrixElement(
-            rows=recursive_map(self.make_shifted_button,
-                               self._matrix_buttons))
+            rows=self._matrix_buttons)
 
         self.overview_layer = Layer(
             button_matrix=self.overview_matrix)
 
-        # making ButtonElement and connecting it to one of
-        # scene launch button on controller
-        # `make_shifted_button` adds `shift` button combo
-        self.overview_toggle_btn = self.make_shifted_button(
-            self._scene_launch_buttons[
-                self.OVERVIEW_TOGGLE_BTN_INDEX])
+        ## making ButtonElement and connecting it to one of
+        ## scene launch button on controller
+        ## `make_shifted_button` adds `shift` button combo
+        #self.overview_toggle_btn = self.make_shifted_button(
+        #    self._scene_launch_buttons[
+        #        self.OVERVIEW_TOGGLE_BTN_INDEX])
+        ## jojo: make overview toggle button unshifted
+        self.overview_toggle_btn = self._scene_buttons[self.OVERVIEW_TOGGLE_BTN_INDEX]
 
         self.overview_manager = OverviewManagerComponent(
             self, name='Zoom Toggle Manager',
@@ -200,11 +255,34 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
         self.log_message('_create_controls finished')
         # midiscripts.net END 1
 
+    #def _make_stop_all_button(self):
+    #    return self.make_shifted_button(self._scene_launch_buttons[7])
+    ## jojo: make_stop_all unshifted
     def _make_stop_all_button(self):
-        return self.make_shifted_button(self._scene_launch_buttons[7])
+        #return self._scene_launch_buttons[7]
+        return self._scene_buttons[7]
 
     def _create_session(self):
-        session = SessionComponent(self.SESSION_WIDTH, self.SESSION_HEIGHT, auto_name=True, enable_skinning=True, is_enabled=False, layer=Layer(scene_launch_buttons=self.wrap_matrix(self._scene_launch_buttons), clip_launch_buttons=self._session_matrix, stop_all_clips_button=self._stop_all_button, track_bank_left_button=self._left_button, track_bank_right_button=self._right_button, scene_bank_up_button=self._up_button, scene_bank_down_button=self._down_button))
+        #session = SessionComponent(self.SESSION_WIDTH, self.SESSION_HEIGHT, auto_name=True, enable_skinning=True, is_enabled=False, layer=Layer(scene_launch_buttons=self.wrap_matrix(self._scene_launch_buttons), clip_launch_buttons=self._session_matrix, stop_all_clips_button=self._stop_all_button, track_bank_left_button=self._left_button, track_bank_right_button=self._right_button, scene_bank_up_button=self._up_button, scene_bank_down_button=self._down_button))
+        # jojo: clean up this mess
+        session = SessionComponent(
+              self.SESSION_WIDTH,
+              self.SESSION_HEIGHT,
+              auto_name=True,
+              enable_skinning=True,
+              is_enabled=False,
+              layer=Layer(
+                  ## orig
+                  #scene_launch_buttons=self.wrap_matrix(self._scene_launch_buttons),
+                  #scene_launch_buttons=self.wrap_combo_matrix(self._scene_launch_buttons),
+                  ## jojo: get rid of wrap_matrix()
+                  scene_launch_buttons=self._scene_matrix,
+                  clip_launch_buttons=self._session_matrix,
+                  stop_all_clips_button=self._stop_all_button,
+                  track_bank_left_button=self._left_button,
+                  track_bank_right_button=self._right_button,
+                  scene_bank_up_button=self._up_button,
+                  scene_bank_down_button=self._down_button))
         for scene_index in xrange(self.SESSION_HEIGHT):
             for track_index in xrange(self.SESSION_WIDTH):
                 slot = session.scene(scene_index).clip_slot(track_index)
@@ -260,12 +338,14 @@ class APC_mini_jojo(APC, OptimizedControlSurface, Logger):
                 self._transport.set_enabled(True)
             self._encoder_modes.set_enabled(True)
             self._track_modes.set_enabled(True)
+
         # midiscripts.net START 2
         with self.component_guard():
             self.overview_manager.set_enabled(True)
 
         self.log_message('_enable_components finished')
         # midiscripts.net END 2
+    ## enable_components END
 
     def _should_combine(self):
         return False
