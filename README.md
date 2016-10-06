@@ -19,7 +19,7 @@ My work is based on [phs' fork of the Ableton Live 9 MIDI remote scripts](https:
 ### Stuff to come
  * Make compatible with Live 9.6.2 or even better with Abletons new v2 API (thanks to midiscripts.net for the hint!)
  * Adapt phs' code for having a "Drum Rack" mode, pretty sure velocity sensitivity is not possible, but should be enough for jamming out some sliced breakbeats!
- * When soloing tracks, button should be lit grin instead of red, not sure if this can be done with the LEDs on the Hardware
+ * ~~When soloing tracks, button should be lit grin instead of red, not sure if this can be done with the LEDs on the Hardware~~ -> did some tests, it seems these buttons only support red or red blinking
 
 ### Installation
  * If you are not familiar with git and commandlines then download this zip file [APC_mini_jojo.zip](APC_mini_jojo.zip)
